@@ -11,26 +11,28 @@ import abipy.data as abidata
 
 def gs_input(x=0.7, ecut=10, acell=(10, 10, 10)):
     """
-    H2 molecule in a big box
+    This function builds an AbinitInput object to compute the total energy
+    of the H2 molecule in a big box.
 
     Args:
-        x:
-        ecut:
-        acell
+        x: Position of the first Hydrogen along the x-axis in Cartesian coordinates.
+           The second Hydrogen is located at [-x, 0, 0]
+        ecut: Cutoff energy in Ha.
+        acell: Lengths of the primitive vectors (in Bohr)
 
     Returns:
         AbinitInput object.
     """
-    # Build structure from dictionary with input variables
+    # Build structure from dictionary with input variables.
     structure = abilab.Structure.from_abivars(
-        ntypat=1,                           # There is only one type of atom
-        znucl=1,                            # Atomic numbers of the type(s) of atom
-        natom=2,                            # There are two atoms
-        typat=(1, 1),                       # They both are of type 1, that is, Hydrogen
-        xcart=[-x, 0.0, 0.0,                # Cartesian coordinates of atom 1, in Bohr
+        ntypat=1,                           # There is only one type of atom.
+        znucl=1,                            # Atomic numbers of the type(s) of atom.
+        natom=2,                            # There are two atoms.
+        typat=(1, 1),                       # They both are of type 1, that is, Hydrogen.
+        xcart=[-x, 0.0, 0.0,                # Cartesian coordinates of atom 1, in Bohr.
                +x, 0.0, 0.0],               # second atom.
-        acell=acell,                        # Lengths of the primitive vectors (in Bohr)
-        rprim=[1, 0, 0, 0, 1, 0, 0, 0, 1]   # Orthogonal primitive vectors (default)
+        acell=acell,                        # Lengths of the primitive vectors (in Bohr).
+        rprim=[1, 0, 0, 0, 1, 0, 0, 0, 1]   # Orthogonal primitive vectors (default).
     )
 
     # Build AbinitInput from structure and pseudo(s) taken from AbiPy package.
@@ -56,12 +58,17 @@ def build_flow(options):
     """
     Generate a flow to compute the total energy and forces for the H2 molecule in a big box
     as a function of the interatomic distance.
-    """
-    workdir = "flow_h2" if options.workdir is None else options.workdir
 
+    Args:
+        options: Command line options.
+
+    Return:
+        Flow object.
+    """
     inputs = [gs_input(x=x) for x in np.linspace(0.5, 1.025, 21)]
 
-    return flowtk.Flow.from_inputs("flow_h", inputs, remove=options.remove, pickle_protocol=0)
+    workdir = "flow_h2" if options.workdir is None else options.workdir
+    return flowtk.Flow.from_inputs(workdir, inputs, remove=options.remove)
 
 
 @abilab.flow_main

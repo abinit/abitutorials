@@ -9,6 +9,16 @@ import abipy.data as abidata
 
 
 def build_ngkpt_flow(options):
+    """
+    Crystalline silicon: computation of the total energy
+    Convergence with respect to the number of k points. Similar to tbase3_3.in
+
+    Args:
+        options: Command line options.
+
+    Return:
+        Abinit Flow object.
+    """
     # Definition of the different grids
     ngkpt_list = [(2, 2, 2), (4, 4, 4), (6, 6, 6), (8, 8, 8)]
     # These shifts will be the same for all grids
@@ -17,12 +27,13 @@ def build_ngkpt_flow(options):
     multi = abilab.MultiDataset(structure=abidata.cif_file("si.cif"),
                                 pseudos=abidata.pseudos("14si.pspnc"), ndtset=len(ngkpt_list))
     # Global variables
-    multi.set_vars(ecut=8, toldfe=1e-6)
+    multi.set_vars(ecut=8, toldfe=1e-6, diemac=12.0)
 
     for i, ngkpt in enumerate(ngkpt_list):
         multi[i].set_kmesh(ngkpt=ngkpt, shiftk=shiftk)
 
-    return flowtk.Flow.from_inputs(workdir="flow_base3_ngkpt", inputs=multi.split_datasets())
+    workdir = "flow_base3_ngkpt" if options.workdir is None else options.workdir
+    return flowtk.Flow.from_inputs(workdir, inputs=multi.split_datasets(), remove=options.remove)
 
 
 def build_relax_flow(options):
@@ -73,8 +84,8 @@ def build_ebands_flow(options):
 
 @abilab.flow_main
 def main(options):
-    #flow = build_ngkpt_flow(options)
-    flow = build_relax_flow(options)
+    flow = build_ngkpt_flow(options)
+    #flow = build_relax_flow(options)
     #flow = build_ebands_flow(options)
     flow.build_and_pickle_dump()
     return flow

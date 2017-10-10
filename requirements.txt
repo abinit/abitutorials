@@ -1,0 +1,16 @@
+six
+prettytable
+tabulate
+apscheduler==2.1.0
+pydispatcher>=2.0.5
+tqdm
+html2text
+pyyaml>=3.11
+pandas
+numpy>=1.9
+scipy>=0.14
+spglib
+pymatgen>=4.7.2
+netCDF4
+matplotlib>=1.5
+seaborn
