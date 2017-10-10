@@ -67,7 +67,7 @@ def build_flow(options):
     """
     inputs = [gs_input(x=x) for x in np.linspace(0.5, 1.025, 21)]
 
-    workdir = "flow_h2" if options.workdir is None else options.workdir
+    workdir = "flow_h2" if not options.workdir else options.workdir
     return flowtk.Flow.from_inputs(workdir, inputs, remove=options.remove)
 
 

@@ -111,6 +111,7 @@ out_EIG
 out_EBANDS.agr
 out_DEN.nc
 out_WFK.nc
+out_TIM*_DEN.nc
 job.sh
 run.log
 run.err
