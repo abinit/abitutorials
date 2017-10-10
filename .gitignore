@@ -99,3 +99,16 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# Abinit/AbiPy files
+__AbinitFlow__.pickle
+__startlock__
+autoparal.json
+out_OUT.nc
+out_EIG.nc
+out_EIG
+out_EBANDS.agr
+job.sh
+run.log
+run.err
+out_DDB.nc
