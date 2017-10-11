@@ -47,7 +47,6 @@ def build_relax_flow(options):
     Crystalline silicon: computation of the optimal lattice parameter
     Convergence with respect to the number of k points. Similar to tbase3_4.in
     """
-
     # Structural relaxation for different k-point samplings.
     ngkpt_list = [(2, 2, 2), (4, 4, 4)]
 
@@ -105,9 +104,9 @@ def build_ebands_flow(options):
 
 @abilab.flow_main
 def main(options):
-    #flow = build_ngkpt_flow(options)
+    flow = build_ngkpt_flow(options)
     #flow = build_relax_flow(options)
-    flow = build_ebands_flow(options)
+    #flow = build_ebands_flow(options)
     flow.build_and_pickle_dump()
     return flow
 
