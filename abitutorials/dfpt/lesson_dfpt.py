@@ -39,7 +39,7 @@ def make_scf_input(ecut=2, ngkpt=(4, 4, 4)):
         nstep=25,
         diemac=9.0,
         tolvrs=1.0e-10,
-        iomode=3,
+        #iomode=3,
     )
 
     return gs_inp
@@ -68,8 +68,8 @@ def build_flow_alas_phonons(options):
 
 @abilab.flow_main
 def main(options):
-    flow = build_flow_alas_ecut_conv(options)
-    #flow = build_flow_alas_phonons(options)
+    #flow = build_flow_alas_ecut_conv(options)
+    flow = build_flow_alas_phonons(options)
     flow.build_and_pickle_dump()
     return flow
 
