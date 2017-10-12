@@ -39,11 +39,9 @@ def make_scf_input(ecut=2, ngkpt=(4, 4, 4)):
         nstep=25,
         diemac=9.0,
         tolvrs=1.0e-10,
-        prtwf=-1,         # Write WFK file only if *not* converged (save a lot of disk space)
         iomode=3,
     )
 
-    #gs_inp.set_mnemonics(True)
     return gs_inp
 
 
@@ -58,9 +56,10 @@ def build_flow_alas_ecut_conv(options):
 
 def build_flow_alas_phonons(options):
     """
-    Build and return a Flow to compute the dynamical matrix on a (2, 2, 2) qmesh.
+    Build and return a Flow to compute the dynamical matrix on a (2, 2, 2) qmesh
     as well as DDK and Born effective charges.
-    Final DDB with all blocks will be available in the outdir of the Flow.
+    The final DDB with all perturbations will be merged automatically and placed
+    in the Flow `outdir` directory.
     """
     scf_input = make_scf_input(ecut=6, ngkpt=(4, 4, 4))
     return flowtk.PhononFlow.from_scf_input("flow_alas_phonons", scf_input,
@@ -69,8 +68,8 @@ def build_flow_alas_phonons(options):
 
 @abilab.flow_main
 def main(options):
-    #flow = build_flow_alas_ecut_conv(options)
-    flow = build_flow_alas_phonons(options)
+    flow = build_flow_alas_ecut_conv(options)
+    #flow = build_flow_alas_phonons(options)
     flow.build_and_pickle_dump()
     return flow
 

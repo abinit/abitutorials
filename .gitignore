@@ -109,11 +109,15 @@ out_OUT.nc
 out_EIG.nc
 out_EIG
 out_EBANDS.agr
-out_DEN.nc
+out_DEN*.nc
 out_WFK.nc
+out_1WF*.nc
+in_WFK*
 out_TIM*_DEN.nc
 job.sh
 run.log
 run.err
+*stderr
 out_DDB.nc
 out_DVDB
+

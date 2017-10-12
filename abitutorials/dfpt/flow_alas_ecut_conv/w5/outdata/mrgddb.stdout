@@ -1,0 +1,83 @@
+
+.Version 8.5.3 of MRGDDB 
+.(MPI version, prepared for a x86_64_darwin16.7.0_gnu4.8 computer) 
+
+.Copyright (C) 1998-2017 ABINIT group . 
+ MRGDDB comes with ABSOLUTELY NO WARRANTY.
+ It is free software, and you are welcome to redistribute it
+ under certain conditions (GNU General Public License,
+ see ~abinit/COPYING or http://www.gnu.org/copyleft/gpl.txt).
+
+ ABINIT is a project of the Universite Catholique de Louvain,
+ Corning Inc. and other collaborators, see ~abinit/doc/developers/contributors.txt .
+ Please read ~abinit/doc/users/acknowledgments.html for suggested
+ acknowledgments of the ABINIT effort.
+ For more information, see http://www.abinit.org .
+
+.Starting date : Thu 12 Oct 2017.
+- ( at 22h17 )
+  
+  Give name for output derivative database : 
+ /Users/gmatteo/git_repos/abitutorials/abitutorials/dfpt/flow_alas_ecut_conv/w5/outdata/out_DDB
+  Give short description of the derivative database :
+ DDB file merged by PhononWork on Thu Oct 12 22:17:07 2017
+  Give number of input ddbs, or 1 if input GS file
+           2
+  Give name for derivative database number           1  : 
+ /Users/gmatteo/git_repos/abitutorials/abitutorials/dfpt/flow_alas_ecut_conv/w5/t0/outdata/out_DDB
+  Give name for derivative database number           2  : 
+ /Users/gmatteo/git_repos/abitutorials/abitutorials/dfpt/flow_alas_ecut_conv/w5/t1/outdata/out_DDB
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/dfpt/flow_alas_ecut_conv/w5/t0/outdata/out_DDB
+  inprep8 : nband(1)=           4
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/dfpt/flow_alas_ecut_conv/w5/t1/outdata/out_DDB
+  inprep8 : nband(1)=           4
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/dfpt/flow_alas_ecut_conv/w5/t0/outdata/out_DDB
+  inprep8 : nband(1)=           4
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/dfpt/flow_alas_ecut_conv/w5/t1/outdata/out_DDB
+  inprep8 : nband(1)=           4
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01
+  read the input derivative database information
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/dfpt/flow_alas_ecut_conv/w5/t0/outdata/out_DDB
+  inprep8 : nband(1)=           4
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01
+ About to open file /Users/gmatteo/git_repos/abitutorials/abitutorials/dfpt/flow_alas_ecut_conv/w5/t0/outdata/out_DDB
+ read     1 blocks from the input DDB
+
+ read the input derivative database number     2
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/dfpt/flow_alas_ecut_conv/w5/t1/outdata/out_DDB
+  inprep8 : nband(1)=           4
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01
+ About to open file /Users/gmatteo/git_repos/abitutorials/abitutorials/dfpt/flow_alas_ecut_conv/w5/t1/outdata/out_DDB
+ no comparison between the current and input DDB information
+
+--- !COMMENT
+src_file: mblktyp1.F90
+src_line: 206
+message: |
+    No comparison/check is performed for the current and input DDB information because argument --nostrict was passed to the command line. Use at your own risk !
+...
+
+ Will try to merge this input DDB with the current one.
+ Current number of bloks =    1
+ Will read     1 blocks from the input DDB
+ Now, current number of bloks =    2
+ All DDBs have been read
+ check the equality of blocks, and eventually merge
+ merge block #    2 to block #    1
+     1 blocks are merged; the new DDB will have      1 blocks.
+ open the output database, write the preliminary information
+ write the DDB
+ Write bloc number   1
+ Bloc number   2 was merged, so do not write it
+-
+- Proc.   0 individual time (sec): cpu=          0.0  wall=          0.0
++mrgddb : the run completed successfully
