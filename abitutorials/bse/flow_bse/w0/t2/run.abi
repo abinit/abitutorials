@@ -1,0 +1,105 @@
+############################################################################################
+#                                      SECTION: varbas                                      
+############################################################################################
+# <Energy CUToff>
+ ecut 6
+# <Number of BANDs>
+ nband 6
+# <Number of Grid points for K PoinTs generation>
+ ngkpt 6 6 6
+# <KPoinTs OPTion>
+ kptopt 1
+# <Number of SHIFTs for K point grids>
+ nshiftk 1
+# <SHIFT for K points>
+ shiftk    0.11    0.21    0.31
+############################################################################################
+#                                      SECTION: vardev                                      
+############################################################################################
+# <Integer for choice of STorage of WaveFunction at each k point>
+ istwfk *1
+############################################################################################
+#                                      SECTION: varfil                                      
+############################################################################################
+# <Integer that governs the ReaDing of _WFK files>
+ irdwfk 1
+############################################################################################
+#                                       SECTION: vargs                                      
+############################################################################################
+# <model DIElectric MACroscopic constant>
+ diemac 12.0
+# <OPTions for the DRIVER>
+ optdriver 99
+# <CHecK SYMmetry BREAKing>
+ chksymbreak 0
+############################################################################################
+#                                       SECTION: vargw                                      
+############################################################################################
+# <Bethe-Salpeter CALCulation TYPE>
+ bs_calctype 1
+# <Many Body Perturbation Theory SCISSor operator>
+ mbpt_sciss 0.8 eV
+# <Bethe-Salpeter EXCHANGE TERM>
+ bs_exchange_term 1
+# <Bethe-Salpeter COULOMB TERM>
+ bs_coulomb_term 21
+# <Model dielectric function, epsilon infinity>
+ mdf_epsinf 12.0
+# <Bethe-Salpeter COUPLING>
+ bs_coupling 0
+# <Bethe-Salpeter Lowest Occupied BAND>
+ bs_loband 2
+# <Bethe-Salpeter FREQuency MESH>
+ bs_freq_mesh 0 6 0.02 eV
+# <Bethe-Salpeter ALGORITHM>
+ bs_algorithm 2
+# <Z-CUT>
+ zcut 0.15 eV
+# <Energy CUT-off for WaveFunctions>
+ ecutwfn 6
+# <Energy CUT-off for EPSilon (the dielectric matrix)>
+ ecuteps 3
+# <INCLude VKB>
+ inclvkb 2
+############################################################################################
+#                                         STRUCTURE                                         
+############################################################################################
+# <Number of ATOMs>
+ natom 2
+# <Number of TYPEs of atoms>
+ ntypat 1
+# <TYPE of atoms>
+ typat 1 1
+# <charge -Z- of the NUCLeus>
+ znucl 14
+# <vectors (X) of atom positions in REDuced coordinates>
+ xred
+    0.0000000000    0.0000000000    0.0000000000
+    0.2500000000    0.2500000000    0.2500000000
+# <CELL lattice vector scaling>
+ acell    1.0    1.0    1.0
+# <Real space PRIMitive translations>
+ rprim
+    0.0000000000    5.1085000000    5.1085000000
+    5.1085000000    0.0000000000    5.1085000000
+    5.1085000000    5.1085000000    0.0000000000
+
+
+#<JSON>
+#{
+#    "pseudos": [
+#        {
+#            "basename": "14si.pspnc",
+#            "type": "NcAbinitPseudo",
+#            "symbol": "Si",
+#            "Z": 14,
+#            "Z_val": 4.0,
+#            "l_max": 2,
+#            "md5": "3916b143991b1cfa1542b130be320e5e",
+#            "filepath": "/Users/gmatteo/git_repos/abipy/abipy/data/pseudos/14si.pspnc",
+#            "@module": "pymatgen.io.abinit.pseudos",
+#            "@class": "NcAbinitPseudo"
+#        }
+#    ]
+#}
+#</JSON>

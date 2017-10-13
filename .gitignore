@@ -109,6 +109,7 @@ out_OUT.nc
 out_EIG.nc
 out_EIG
 out_EBANDS.agr
+in_DEN*
 out_DEN*
 in_WFK*
 out_WFK*
@@ -124,3 +125,8 @@ run.err
 *stderr
 out_DDB.nc
 out_DVDB
+out_BSR
+out_EXC_*
+out_GW
+out_BSR
+out_HAyDR_SAVE
