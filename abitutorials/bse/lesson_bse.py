@@ -100,6 +100,7 @@ def build_bse_flow():
 def build_bse_metallicW_flow():
     """
     Build a flow to solve the BSE with metallic screening.
+    Note the value of `mdf_epsinf`.
     """
     flow = flowtk.Flow(workdir="flow_bse_metallicW")
 
