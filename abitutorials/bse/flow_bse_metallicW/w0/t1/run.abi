@@ -1,0 +1,78 @@
+############################################################################################
+#                                      SECTION: varbas                                      
+############################################################################################
+# <Energy CUToff>
+ ecut 6
+# <Number of BANDs>
+ nband 15
+# <Integer for Self-Consistent-Field cycles>
+ iscf -2
+# <TOLerance on WaveFunction squared Residual>
+ tolwfr 1e-08
+# <Number of Grid points for K PoinTs generation>
+ ngkpt 4 4 4
+# <KPoinTs OPTion>
+ kptopt 1
+# <Number of SHIFTs for K point grids>
+ nshiftk 1
+# <SHIFT for K points>
+ shiftk    0.11    0.21    0.31
+############################################################################################
+#                                      SECTION: vardev                                      
+############################################################################################
+# <Integer for choice of STorage of WaveFunction at each k point>
+ istwfk *1
+############################################################################################
+#                                      SECTION: varfil                                      
+############################################################################################
+# <Integer that governs the ReaDing of DEN file>
+ irdden 1
+############################################################################################
+#                                       SECTION: vargs                                      
+############################################################################################
+# <model DIElectric MACroscopic constant>
+ diemac 12.0
+# <CHecK SYMmetry BREAKing>
+ chksymbreak 0
+############################################################################################
+#                                         STRUCTURE                                         
+############################################################################################
+# <Number of ATOMs>
+ natom 2
+# <Number of TYPEs of atoms>
+ ntypat 1
+# <TYPE of atoms>
+ typat 1 1
+# <charge -Z- of the NUCLeus>
+ znucl 14
+# <vectors (X) of atom positions in REDuced coordinates>
+ xred
+    0.0000000000    0.0000000000    0.0000000000
+    0.2500000000    0.2500000000    0.2500000000
+# <CELL lattice vector scaling>
+ acell    1.0    1.0    1.0
+# <Real space PRIMitive translations>
+ rprim
+    0.0000000000    5.1085000000    5.1085000000
+    5.1085000000    0.0000000000    5.1085000000
+    5.1085000000    5.1085000000    0.0000000000
+
+
+#<JSON>
+#{
+#    "pseudos": [
+#        {
+#            "basename": "14si.pspnc",
+#            "type": "NcAbinitPseudo",
+#            "symbol": "Si",
+#            "Z": 14,
+#            "Z_val": 4.0,
+#            "l_max": 2,
+#            "md5": "3916b143991b1cfa1542b130be320e5e",
+#            "filepath": "/Users/gmatteo/git_repos/abipy/abipy/data/pseudos/14si.pspnc",
+#            "@module": "pymatgen.io.abinit.pseudos",
+#            "@class": "NcAbinitPseudo"
+#        }
+#    ]
+#}
+#</JSON>

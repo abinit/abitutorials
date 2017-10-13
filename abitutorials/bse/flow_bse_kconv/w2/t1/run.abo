@@ -1,0 +1,988 @@
+
+.Version 8.5.3 of ABINIT 
+.(MPI version, prepared for a x86_64_darwin16.7.0_gnu4.8 computer) 
+
+.Copyright (C) 1998-2017 ABINIT group . 
+ ABINIT comes with ABSOLUTELY NO WARRANTY.
+ It is free software, and you are welcome to redistribute it
+ under certain conditions (GNU General Public License,
+ see ~abinit/COPYING or http://www.gnu.org/copyleft/gpl.txt).
+
+ ABINIT is a project of the Universite Catholique de Louvain,
+ Corning Inc. and other collaborators, see ~abinit/doc/developers/contributors.txt .
+ Please read ~abinit/doc/users/acknowledgments.html for suggested
+ acknowledgments of the ABINIT effort.
+ For more information, see http://www.abinit.org .
+
+.Starting date : Fri 13 Oct 2017.
+- ( at 15h18 )
+  
+- input  file    -> /Users/gmatteo/git_repos/abitutorials/abitutorials/bse/flow_bse_kconv/w2/t1/run.abi
+- output file    -> /Users/gmatteo/git_repos/abitutorials/abitutorials/bse/flow_bse_kconv/w2/t1/run.abo
+- root for input  files -> /Users/gmatteo/git_repos/abitutorials/abitutorials/bse/flow_bse_kconv/w2/t1/indata/in
+- root for output files -> /Users/gmatteo/git_repos/abitutorials/abitutorials/bse/flow_bse_kconv/w2/t1/outdata/out
+
+
+ Symmetries : space group Fd -3 m (#227); Bravais cF (face-center cubic)
+================================================================================
+ Values of the parameters that define the memory need of the present run
+     intxc =       0    ionmov =       0      iscf =      -2    lmnmax =       2
+     lnmax =       2     mgfft =      16  mpssoang =       3    mqgrid =    3001
+     natom =       2  nloc_mem =       1    nspden =       1   nspinor =       1
+    nsppol =       1      nsym =      48    n1xccc =    2501    ntypat =       1
+    occopt =       1   xclevel =       1
+-    mband =          15        mffmem =           1         mkmem =         256
+       mpw =         199          nfft =        4096          nkpt =         512
+================================================================================
+P This job should need less than                      14.640 Mbytes of memory.
+  Rough estimation (10% accuracy) of disk space for files :
+_ WF disk file :     23.322 Mbytes ; DEN or POT disk file :      0.033 Mbytes.
+================================================================================
+
+--------------------------------------------------------------------------------
+------------- Echo of variables that govern the present computation ------------
+--------------------------------------------------------------------------------
+-
+- outvars: echo of selected default values                                      
+-   iomode0 =  0 , fftalg0 =112 , wfoptalg0 =  0
+-
+- outvars: echo of global parameters not present in the input file              
+-  max_nthreads =    0
+-
+ -outvars: echo values of preprocessed input variables --------
+            acell      1.0000000000E+00  1.0000000000E+00  1.0000000000E+00 Bohr
+              amu      2.80855000E+01
+      chksymbreak           0
+           diemac      1.20000000E+01
+             ecut      6.00000000E+00 Hartree
+-          fftalg         112
+           irdden           1
+             iscf          -2
+              kpt      1.37500000E-02  2.62500000E-02  3.87500000E-02
+                       1.38750000E-01  2.62500000E-02  3.87500000E-02
+                       2.63750000E-01  2.62500000E-02  3.87500000E-02
+                       3.88750000E-01  2.62500000E-02  3.87500000E-02
+                      -4.86250000E-01  2.62500000E-02  3.87500000E-02
+                      -3.61250000E-01  2.62500000E-02  3.87500000E-02
+                      -2.36250000E-01  2.62500000E-02  3.87500000E-02
+                      -1.11250000E-01  2.62500000E-02  3.87500000E-02
+                       1.37500000E-02  1.51250000E-01  3.87500000E-02
+                       1.38750000E-01  1.51250000E-01  3.87500000E-02
+                       2.63750000E-01  1.51250000E-01  3.87500000E-02
+                       3.88750000E-01  1.51250000E-01  3.87500000E-02
+                      -4.86250000E-01  1.51250000E-01  3.87500000E-02
+                      -3.61250000E-01  1.51250000E-01  3.87500000E-02
+                      -2.36250000E-01  1.51250000E-01  3.87500000E-02
+                      -1.11250000E-01  1.51250000E-01  3.87500000E-02
+                       1.37500000E-02  2.76250000E-01  3.87500000E-02
+                       1.38750000E-01  2.76250000E-01  3.87500000E-02
+                       2.63750000E-01  2.76250000E-01  3.87500000E-02
+                       3.88750000E-01  2.76250000E-01  3.87500000E-02
+                      -4.86250000E-01  2.76250000E-01  3.87500000E-02
+                      -3.61250000E-01  2.76250000E-01  3.87500000E-02
+                      -2.36250000E-01  2.76250000E-01  3.87500000E-02
+                      -1.11250000E-01  2.76250000E-01  3.87500000E-02
+                       1.37500000E-02  4.01250000E-01  3.87500000E-02
+                       1.38750000E-01  4.01250000E-01  3.87500000E-02
+                       2.63750000E-01  4.01250000E-01  3.87500000E-02
+                       3.88750000E-01  4.01250000E-01  3.87500000E-02
+                      -4.86250000E-01  4.01250000E-01  3.87500000E-02
+                      -3.61250000E-01  4.01250000E-01  3.87500000E-02
+                      -2.36250000E-01  4.01250000E-01  3.87500000E-02
+                      -1.11250000E-01  4.01250000E-01  3.87500000E-02
+                       1.37500000E-02 -4.73750000E-01  3.87500000E-02
+                       1.38750000E-01 -4.73750000E-01  3.87500000E-02
+                       2.63750000E-01 -4.73750000E-01  3.87500000E-02
+                       3.88750000E-01 -4.73750000E-01  3.87500000E-02
+                      -4.86250000E-01 -4.73750000E-01  3.87500000E-02
+                      -3.61250000E-01 -4.73750000E-01  3.87500000E-02
+                      -2.36250000E-01 -4.73750000E-01  3.87500000E-02
+                      -1.11250000E-01 -4.73750000E-01  3.87500000E-02
+                       1.37500000E-02 -3.48750000E-01  3.87500000E-02
+                       1.38750000E-01 -3.48750000E-01  3.87500000E-02
+                       2.63750000E-01 -3.48750000E-01  3.87500000E-02
+                       3.88750000E-01 -3.48750000E-01  3.87500000E-02
+                      -4.86250000E-01 -3.48750000E-01  3.87500000E-02
+                      -3.61250000E-01 -3.48750000E-01  3.87500000E-02
+                      -2.36250000E-01 -3.48750000E-01  3.87500000E-02
+                      -1.11250000E-01 -3.48750000E-01  3.87500000E-02
+                       1.37500000E-02 -2.23750000E-01  3.87500000E-02
+                       1.38750000E-01 -2.23750000E-01  3.87500000E-02
+                       outvar_i_n : Printing only first  50 k-points.
+         kptrlatt        8    0    0      0    8    0      0    0    8
+          kptrlen      5.77960799E+01
+P           mkmem         256
+            natom           2
+            nband          15
+           nbdbuf           2
+            ngfft          16      16      16
+             nkpt         512
+             nsym          48
+           ntypat           1
+            rprim      0.0000000000E+00  5.1085000000E+00  5.1085000000E+00
+                       5.1085000000E+00  0.0000000000E+00  5.1085000000E+00
+                       5.1085000000E+00  5.1085000000E+00  0.0000000000E+00
+           shiftk      1.10000000E-01  2.10000000E-01  3.10000000E-01
+          spgroup         227
+           symrel      1  0  0   0  1  0   0  0  1      -1  0  0   0 -1  0   0  0 -1
+                       0 -1  1   0 -1  0   1 -1  0       0  1 -1   0  1  0  -1  1  0
+                      -1  0  0  -1  0  1  -1  1  0       1  0  0   1  0 -1   1 -1  0
+                       0  1 -1   1  0 -1   0  0 -1       0 -1  1  -1  0  1   0  0  1
+                      -1  0  0  -1  1  0  -1  0  1       1  0  0   1 -1  0   1  0 -1
+                       0 -1  1   1 -1  0   0 -1  0       0  1 -1  -1  1  0   0  1  0
+                       1  0  0   0  0  1   0  1  0      -1  0  0   0  0 -1   0 -1  0
+                       0  1 -1   0  0 -1   1  0 -1       0 -1  1   0  0  1  -1  0  1
+                      -1  0  1  -1  1  0  -1  0  0       1  0 -1   1 -1  0   1  0  0
+                       0 -1  0   1 -1  0   0 -1  1       0  1  0  -1  1  0   0  1 -1
+                       1  0 -1   0  0 -1   0  1 -1      -1  0  1   0  0  1   0 -1  1
+                       0  1  0   0  0  1   1  0  0       0 -1  0   0  0 -1  -1  0  0
+                       1  0 -1   0  1 -1   0  0 -1      -1  0  1   0 -1  1   0  0  1
+                       0 -1  0   0 -1  1   1 -1  0       0  1  0   0  1 -1  -1  1  0
+                      -1  0  1  -1  0  0  -1  1  0       1  0 -1   1  0  0   1 -1  0
+                       0  1  0   1  0  0   0  0  1       0 -1  0  -1  0  0   0  0 -1
+                       0  0 -1   0  1 -1   1  0 -1       0  0  1   0 -1  1  -1  0  1
+                       1 -1  0   0 -1  1   0 -1  0      -1  1  0   0  1 -1   0  1  0
+                       0  0  1   1  0  0   0  1  0       0  0 -1  -1  0  0   0 -1  0
+                      -1  1  0  -1  0  0  -1  0  1       1 -1  0   1  0  0   1  0 -1
+                       0  0  1   0  1  0   1  0  0       0  0 -1   0 -1  0  -1  0  0
+                       1 -1  0   0 -1  0   0 -1  1      -1  1  0   0  1  0   0  1 -1
+                       0  0 -1   1  0 -1   0  1 -1       0  0  1  -1  0  1   0 -1  1
+                      -1  1  0  -1  0  1  -1  0  0       1 -1  0   1  0 -1   1  0  0
+            tnons      0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+           tolwfr      1.00000000E-08
+            typat      1  1
+              wtk        0.00195    0.00195    0.00195    0.00195    0.00195    0.00195
+                         0.00195    0.00195    0.00195    0.00195    0.00195    0.00195
+                         0.00195    0.00195    0.00195    0.00195    0.00195    0.00195
+                         0.00195    0.00195    0.00195    0.00195    0.00195    0.00195
+                         0.00195    0.00195    0.00195    0.00195    0.00195    0.00195
+                         0.00195    0.00195    0.00195    0.00195    0.00195    0.00195
+                         0.00195    0.00195    0.00195    0.00195    0.00195    0.00195
+                         0.00195    0.00195    0.00195    0.00195    0.00195    0.00195
+                         0.00195    0.00195
+                       outvars : Printing only first  50 k-points.
+           xangst      0.0000000000E+00  0.0000000000E+00  0.0000000000E+00
+                       1.3516508850E+00  1.3516508850E+00  1.3516508850E+00
+            xcart      0.0000000000E+00  0.0000000000E+00  0.0000000000E+00
+                       2.5542500000E+00  2.5542500000E+00  2.5542500000E+00
+             xred      0.0000000000E+00  0.0000000000E+00  0.0000000000E+00
+                       2.5000000000E-01  2.5000000000E-01  2.5000000000E-01
+            znucl       14.00000
+
+================================================================================
+
+ chkinp: Checking input parameters for consistency.
+
+================================================================================
+== DATASET  1 ==================================================================
+-   nproc =    2
+
+ Exchange-correlation functional for the present dataset will be:
+  LDA: new Teter (4/93) with spin-polarized option - ixc=1
+ Citation for XC functional:
+  S. Goedecker, M. Teter, J. Huetter, PRB 54, 1703 (1996)
+
+ Real(R)+Recip(G) space primitive vectors, cartesian coordinates (Bohr,Bohr^-1):
+ R(1)=  0.0000000  5.1085000  5.1085000  G(1)= -0.0978761  0.0978761  0.0978761
+ R(2)=  5.1085000  0.0000000  5.1085000  G(2)=  0.0978761 -0.0978761  0.0978761
+ R(3)=  5.1085000  5.1085000  0.0000000  G(3)=  0.0978761  0.0978761 -0.0978761
+ Unit cell volume ucvol=  2.6663072E+02 bohr^3
+ Angles (23,13,12)=  6.00000000E+01  6.00000000E+01  6.00000000E+01 degrees
+
+ getcut: wavevector=  0.0000  0.0000  0.0000  ngfft=  16  16  16
+         ecut(hartree)=      6.000   => boxcut(ratio)=   2.00850
+
+--- Pseudopotential description ------------------------------------------------
+- pspini: atom type   1  psp file is /Users/gmatteo/git_repos/abipy/abipy/data/pseudos/14si.pspnc
+- pspatm: opening atomic psp file    /Users/gmatteo/git_repos/abipy/abipy/data/pseudos/14si.pspnc
+-  Troullier-Martins psp for element  Si        Thu Oct 27 17:31:21 EDT 1994
+- 14.00000   4.00000    940714                znucl, zion, pspdat
+    1    1    2    2      2001   0.00000      pspcod,pspxc,lmax,lloc,mmax,r2well
+    0   5.907  14.692    1   2.0872718        l,e99.0,e99.9,nproj,rcpsp
+   0.00000000   0.00000000   0.00000000   0.00000000     rms, ekb1, ekb2, epsatm
+    1   2.617   4.181    1   2.0872718        l,e99.0,e99.9,nproj,rcpsp
+   0.00000000   0.00000000   0.00000000   0.00000000     rms, ekb1, ekb2, epsatm
+    2   0.000   0.000    0   2.0872718        l,e99.0,e99.9,nproj,rcpsp
+   0.00000000   0.00000000   0.00000000   0.00000000     rms, ekb1, ekb2, epsatm
+    1.80626423934776    0.22824404341771    1.17378968127746   rchrg,fchrg,qchrg
+  pspatm : epsatm=    1.43386982
+         --- l  ekb(1:nproj) -->
+             0    3.287949
+             1    1.849886
+ pspatm: atomic psp has been read  and splines computed
+
+--------------------------------------------------------------------------------
+
+
+================================================================================
+ prteigrs : about to open file /Users/gmatteo/git_repos/abitutorials/abitutorials/bse/flow_bse_kconv/w2/t1/outdata/out_EIG
+ Non-SCF case, kpt    1 (  0.01375  0.02625  0.03875), residuals and eigenvalues=
+  7.29E-10  8.36E-10  6.26E-10  1.79E-09  3.94E-09  4.12E-09  2.29E-09  6.55E-10
+  7.76E-09  2.68E-09  6.01E-09  1.29E-09  1.08E-09  4.61E-10  1.56E-09
+ -2.2501E-01  2.1362E-01  2.1638E-01  2.1804E-01  3.1161E-01  3.1426E-01
+  3.1488E-01  3.4216E-01  5.0246E-01  5.0945E-01  5.1343E-01  6.3033E-01
+  6.3186E-01  6.3592E-01  7.7584E-01
+ prteigrs : prtvol=0 or 1, do not print more k-points.
+
+  prteigrs : nnsclo,ikpt=   30    3 max resid (incl. the buffer)=  5.59425E-05
+  prteigrs : nnsclo,ikpt=   30    4 max resid (incl. the buffer)=  5.93522E-07
+  prteigrs : nnsclo,ikpt=   30    5 max resid (incl. the buffer)=  1.95478E-04
+  prteigrs : nnsclo,ikpt=   30    6 max resid (incl. the buffer)=  7.84995E-07
+  prteigrs : nnsclo,ikpt=   30    7 max resid (incl. the buffer)=  9.12251E-05
+  prteigrs : nnsclo,ikpt=   30   10 max resid (incl. the buffer)=  1.02566E-08
+  prteigrs : nnsclo,ikpt=   30   11 max resid (incl. the buffer)=  8.32836E-05
+  prteigrs : nnsclo,ikpt=   30   12 max resid (incl. the buffer)=  3.98980E-07
+  prteigrs : nnsclo,ikpt=   30   13 max resid (incl. the buffer)=  3.55077E-06
+  prteigrs : nnsclo,ikpt=   30   14 max resid (incl. the buffer)=  5.54173E-07
+  prteigrs : nnsclo,ikpt=   30   15 max resid (incl. the buffer)=  1.28929E-06
+  prteigrs : nnsclo,ikpt=   30   16 max resid (incl. the buffer)=  3.09032E-05
+  prteigrs : nnsclo,ikpt=   30   17 max resid (incl. the buffer)=  1.90280E-05
+  prteigrs : nnsclo,ikpt=   30   18 max resid (incl. the buffer)=  9.13354E-05
+  prteigrs : nnsclo,ikpt=   30   19 max resid (incl. the buffer)=  2.39815E-04
+  prteigrs : nnsclo,ikpt=   30   21 max resid (incl. the buffer)=  3.11250E-04
+  prteigrs : nnsclo,ikpt=   30   22 max resid (incl. the buffer)=  4.54161E-07
+  prteigrs : nnsclo,ikpt=   30   23 max resid (incl. the buffer)=  6.21788E-06
+  prteigrs : nnsclo,ikpt=   30   24 max resid (incl. the buffer)=  2.17430E-06
+  prteigrs : nnsclo,ikpt=   30   25 max resid (incl. the buffer)=  1.94161E-06
+  prteigrs : nnsclo,ikpt=   30   26 max resid (incl. the buffer)=  4.22399E-06
+  prteigrs : nnsclo,ikpt=   30   27 max resid (incl. the buffer)=  3.60355E-07
+  prteigrs : nnsclo,ikpt=   30   28 max resid (incl. the buffer)=  2.00664E-06
+  prteigrs : nnsclo,ikpt=   30   29 max resid (incl. the buffer)=  1.44389E-07
+  prteigrs : nnsclo,ikpt=   30   30 max resid (incl. the buffer)=  2.11755E-08
+  prteigrs : nnsclo,ikpt=   30   31 max resid (incl. the buffer)=  1.71607E-07
+  prteigrs : nnsclo,ikpt=   30   32 max resid (incl. the buffer)=  1.07391E-06
+  prteigrs : nnsclo,ikpt=   30   33 max resid (incl. the buffer)=  9.97243E-05
+  prteigrs : nnsclo,ikpt=   30   34 max resid (incl. the buffer)=  6.30919E-06
+  prteigrs : nnsclo,ikpt=   30   35 max resid (incl. the buffer)=  8.84866E-04
+  prteigrs : nnsclo,ikpt=   30   37 max resid (incl. the buffer)=  4.04522E-05
+  prteigrs : nnsclo,ikpt=   30   38 max resid (incl. the buffer)=  2.51059E-07
+  prteigrs : nnsclo,ikpt=   30   39 max resid (incl. the buffer)=  2.67384E-05
+  prteigrs : nnsclo,ikpt=   30   40 max resid (incl. the buffer)=  3.85631E-06
+  prteigrs : nnsclo,ikpt=   30   41 max resid (incl. the buffer)=  3.06671E-06
+  prteigrs : nnsclo,ikpt=   30   42 max resid (incl. the buffer)=  2.08187E-07
+  prteigrs : nnsclo,ikpt=   30   43 max resid (incl. the buffer)=  1.68793E-08
+  prteigrs : nnsclo,ikpt=   30   44 max resid (incl. the buffer)=  2.26312E-07
+  prteigrs : nnsclo,ikpt=   30   45 max resid (incl. the buffer)=  1.51992E-07
+  prteigrs : nnsclo,ikpt=   30   46 max resid (incl. the buffer)=  3.25631E-06
+  prteigrs : nnsclo,ikpt=   30   47 max resid (incl. the buffer)=  7.85068E-08
+  prteigrs : nnsclo,ikpt=   30   48 max resid (incl. the buffer)=  2.94965E-07
+  prteigrs : nnsclo,ikpt=   30   49 max resid (incl. the buffer)=  9.67709E-05
+  prteigrs : nnsclo,ikpt=   30   50 max resid (incl. the buffer)=  2.03255E-06
+  prteigrs : nnsclo,ikpt=   30   51 max resid (incl. the buffer)=  2.94113E-05
+  prteigrs : nnsclo,ikpt=   30   53 max resid (incl. the buffer)=  1.51918E-04
+  prteigrs : nnsclo,ikpt=   30   54 max resid (incl. the buffer)=  5.35112E-07
+  prteigrs : nnsclo,ikpt=   30   55 max resid (incl. the buffer)=  5.05708E-05
+  prteigrs : nnsclo,ikpt=   30   56 max resid (incl. the buffer)=  6.96000E-06
+  prteigrs : nnsclo,ikpt=   30   58 max resid (incl. the buffer)=  7.72247E-06
+  prteigrs : nnsclo,ikpt=   30   59 max resid (incl. the buffer)=  1.22990E-07
+  prteigrs : nnsclo,ikpt=   30   60 max resid (incl. the buffer)=  1.49529E-07
+  prteigrs : nnsclo,ikpt=   30   61 max resid (incl. the buffer)=  1.10540E-05
+  prteigrs : nnsclo,ikpt=   30   62 max resid (incl. the buffer)=  5.78029E-06
+  prteigrs : nnsclo,ikpt=   30   63 max resid (incl. the buffer)=  1.56554E-04
+  prteigrs : nnsclo,ikpt=   30   67 max resid (incl. the buffer)=  1.68433E-05
+  prteigrs : nnsclo,ikpt=   30   68 max resid (incl. the buffer)=  2.98961E-06
+  prteigrs : nnsclo,ikpt=   30   69 max resid (incl. the buffer)=  1.51639E-06
+  prteigrs : nnsclo,ikpt=   30   70 max resid (incl. the buffer)=  5.56303E-08
+  prteigrs : nnsclo,ikpt=   30   71 max resid (incl. the buffer)=  1.63495E-05
+  prteigrs : nnsclo,ikpt=   30   72 max resid (incl. the buffer)=  1.14904E-03
+  prteigrs : nnsclo,ikpt=   30   73 max resid (incl. the buffer)=  8.49860E-08
+  prteigrs : nnsclo,ikpt=   30   75 max resid (incl. the buffer)=  3.09976E-05
+  prteigrs : nnsclo,ikpt=   30   76 max resid (incl. the buffer)=  4.45933E-06
+  prteigrs : nnsclo,ikpt=   30   78 max resid (incl. the buffer)=  6.37182E-06
+  prteigrs : nnsclo,ikpt=   30   79 max resid (incl. the buffer)=  2.56008E-05
+  prteigrs : nnsclo,ikpt=   30   80 max resid (incl. the buffer)=  1.79547E-04
+  prteigrs : nnsclo,ikpt=   30   81 max resid (incl. the buffer)=  1.16359E-05
+  prteigrs : nnsclo,ikpt=   30   82 max resid (incl. the buffer)=  3.04299E-06
+  prteigrs : nnsclo,ikpt=   30   83 max resid (incl. the buffer)=  1.92111E-04
+  prteigrs : nnsclo,ikpt=   30   84 max resid (incl. the buffer)=  1.01906E-06
+  prteigrs : nnsclo,ikpt=   30   85 max resid (incl. the buffer)=  2.12596E-06
+  prteigrs : nnsclo,ikpt=   30   86 max resid (incl. the buffer)=  1.33620E-05
+  prteigrs : nnsclo,ikpt=   30   87 max resid (incl. the buffer)=  2.50416E-05
+  prteigrs : nnsclo,ikpt=   30   88 max resid (incl. the buffer)=  5.52693E-08
+  prteigrs : nnsclo,ikpt=   30   89 max resid (incl. the buffer)=  3.27334E-05
+  prteigrs : nnsclo,ikpt=   30   90 max resid (incl. the buffer)=  7.39366E-05
+  prteigrs : nnsclo,ikpt=   30   91 max resid (incl. the buffer)=  1.21125E-06
+  prteigrs : nnsclo,ikpt=   30   92 max resid (incl. the buffer)=  3.96880E-05
+  prteigrs : nnsclo,ikpt=   30   93 max resid (incl. the buffer)=  3.32291E-06
+  prteigrs : nnsclo,ikpt=   30   94 max resid (incl. the buffer)=  4.71883E-06
+  prteigrs : nnsclo,ikpt=   30   95 max resid (incl. the buffer)=  1.97990E-07
+  prteigrs : nnsclo,ikpt=   30   96 max resid (incl. the buffer)=  5.33798E-05
+  prteigrs : nnsclo,ikpt=   30   97 max resid (incl. the buffer)=  6.63218E-05
+  prteigrs : nnsclo,ikpt=   30   98 max resid (incl. the buffer)=  8.43129E-08
+  prteigrs : nnsclo,ikpt=   30   99 max resid (incl. the buffer)=  1.39564E-05
+  prteigrs : nnsclo,ikpt=   30  100 max resid (incl. the buffer)=  7.06950E-07
+  prteigrs : nnsclo,ikpt=   30  102 max resid (incl. the buffer)=  4.22936E-05
+  prteigrs : nnsclo,ikpt=   30  103 max resid (incl. the buffer)=  6.09010E-07
+  prteigrs : nnsclo,ikpt=   30  104 max resid (incl. the buffer)=  2.27470E-05
+  prteigrs : nnsclo,ikpt=   30  105 max resid (incl. the buffer)=  9.75127E-08
+  prteigrs : nnsclo,ikpt=   30  106 max resid (incl. the buffer)=  2.86430E-06
+  prteigrs : nnsclo,ikpt=   30  107 max resid (incl. the buffer)=  4.94774E-05
+  prteigrs : nnsclo,ikpt=   30  108 max resid (incl. the buffer)=  6.85265E-06
+  prteigrs : nnsclo,ikpt=   30  109 max resid (incl. the buffer)=  1.16054E-05
+  prteigrs : nnsclo,ikpt=   30  111 max resid (incl. the buffer)=  4.27249E-06
+  prteigrs : nnsclo,ikpt=   30  112 max resid (incl. the buffer)=  8.32137E-06
+  prteigrs : nnsclo,ikpt=   30  113 max resid (incl. the buffer)=  2.97152E-04
+  prteigrs : nnsclo,ikpt=   30  114 max resid (incl. the buffer)=  9.85557E-06
+  prteigrs : nnsclo,ikpt=   30  115 max resid (incl. the buffer)=  8.48075E-06
+  prteigrs : nnsclo,ikpt=   30  116 max resid (incl. the buffer)=  1.20752E-07
+  prteigrs : nnsclo,ikpt=   30  117 max resid (incl. the buffer)=  1.39586E-06
+  prteigrs : nnsclo,ikpt=   30  118 max resid (incl. the buffer)=  1.98424E-06
+  prteigrs : nnsclo,ikpt=   30  119 max resid (incl. the buffer)=  1.81997E-06
+  prteigrs : nnsclo,ikpt=   30  120 max resid (incl. the buffer)=  2.51274E-07
+  prteigrs : nnsclo,ikpt=   30  121 max resid (incl. the buffer)=  4.11336E-05
+  prteigrs : nnsclo,ikpt=   30  122 max resid (incl. the buffer)=  1.31233E-05
+  prteigrs : nnsclo,ikpt=   30  123 max resid (incl. the buffer)=  6.10731E-08
+  prteigrs : nnsclo,ikpt=   30  124 max resid (incl. the buffer)=  9.61332E-06
+  prteigrs : nnsclo,ikpt=   30  125 max resid (incl. the buffer)=  2.25168E-05
+  prteigrs : nnsclo,ikpt=   30  126 max resid (incl. the buffer)=  1.55756E-05
+  prteigrs : nnsclo,ikpt=   30  127 max resid (incl. the buffer)=  7.36068E-06
+  prteigrs : nnsclo,ikpt=   30  128 max resid (incl. the buffer)=  2.31737E-04
+  prteigrs : nnsclo,ikpt=   30  129 max resid (incl. the buffer)=  2.73523E-05
+  prteigrs : nnsclo,ikpt=   30  130 max resid (incl. the buffer)=  2.80747E-05
+  prteigrs : nnsclo,ikpt=   30  131 max resid (incl. the buffer)=  4.71054E-05
+  prteigrs : nnsclo,ikpt=   30  132 max resid (incl. the buffer)=  1.79439E-06
+  prteigrs : nnsclo,ikpt=   30  133 max resid (incl. the buffer)=  6.88732E-06
+  prteigrs : nnsclo,ikpt=   30  134 max resid (incl. the buffer)=  1.43605E-05
+  prteigrs : nnsclo,ikpt=   30  135 max resid (incl. the buffer)=  9.61983E-05
+  prteigrs : nnsclo,ikpt=   30  136 max resid (incl. the buffer)=  2.03102E-06
+  prteigrs : nnsclo,ikpt=   30  137 max resid (incl. the buffer)=  2.13053E-05
+  prteigrs : nnsclo,ikpt=   30  138 max resid (incl. the buffer)=  7.79699E-06
+  prteigrs : nnsclo,ikpt=   30  139 max resid (incl. the buffer)=  4.93498E-06
+  prteigrs : nnsclo,ikpt=   30  140 max resid (incl. the buffer)=  1.32253E-07
+  prteigrs : nnsclo,ikpt=   30  141 max resid (incl. the buffer)=  1.47901E-05
+  prteigrs : nnsclo,ikpt=   30  142 max resid (incl. the buffer)=  7.43750E-07
+  prteigrs : nnsclo,ikpt=   30  143 max resid (incl. the buffer)=  4.90948E-05
+  prteigrs : nnsclo,ikpt=   30  144 max resid (incl. the buffer)=  2.24990E-07
+  prteigrs : nnsclo,ikpt=   30  145 max resid (incl. the buffer)=  2.11934E-05
+  prteigrs : nnsclo,ikpt=   30  146 max resid (incl. the buffer)=  1.21441E-05
+  prteigrs : nnsclo,ikpt=   30  147 max resid (incl. the buffer)=  1.11752E-05
+  prteigrs : nnsclo,ikpt=   30  148 max resid (incl. the buffer)=  1.20258E-05
+  prteigrs : nnsclo,ikpt=   30  149 max resid (incl. the buffer)=  7.19095E-05
+  prteigrs : nnsclo,ikpt=   30  150 max resid (incl. the buffer)=  1.11889E-06
+  prteigrs : nnsclo,ikpt=   30  151 max resid (incl. the buffer)=  1.72718E-05
+  prteigrs : nnsclo,ikpt=   30  152 max resid (incl. the buffer)=  4.25153E-08
+  prteigrs : nnsclo,ikpt=   30  153 max resid (incl. the buffer)=  6.69108E-08
+  prteigrs : nnsclo,ikpt=   30  154 max resid (incl. the buffer)=  1.04432E-07
+  prteigrs : nnsclo,ikpt=   30  155 max resid (incl. the buffer)=  6.22960E-06
+  prteigrs : nnsclo,ikpt=   30  156 max resid (incl. the buffer)=  1.48356E-04
+  prteigrs : nnsclo,ikpt=   30  157 max resid (incl. the buffer)=  1.21392E-05
+  prteigrs : nnsclo,ikpt=   30  158 max resid (incl. the buffer)=  9.93524E-06
+  prteigrs : nnsclo,ikpt=   30  159 max resid (incl. the buffer)=  1.65467E-05
+  prteigrs : nnsclo,ikpt=   30  160 max resid (incl. the buffer)=  8.99221E-06
+  prteigrs : nnsclo,ikpt=   30  161 max resid (incl. the buffer)=  7.42146E-05
+  prteigrs : nnsclo,ikpt=   30  162 max resid (incl. the buffer)=  4.88201E-04
+  prteigrs : nnsclo,ikpt=   30  163 max resid (incl. the buffer)=  6.50872E-05
+  prteigrs : nnsclo,ikpt=   30  164 max resid (incl. the buffer)=  8.12448E-06
+  prteigrs : nnsclo,ikpt=   30  165 max resid (incl. the buffer)=  9.71088E-04
+  prteigrs : nnsclo,ikpt=   30  166 max resid (incl. the buffer)=  1.26760E-04
+  prteigrs : nnsclo,ikpt=   30  167 max resid (incl. the buffer)=  9.33290E-05
+  prteigrs : nnsclo,ikpt=   30  168 max resid (incl. the buffer)=  2.28646E-05
+  prteigrs : nnsclo,ikpt=   30  169 max resid (incl. the buffer)=  4.74935E-06
+  prteigrs : nnsclo,ikpt=   30  170 max resid (incl. the buffer)=  1.89170E-06
+  prteigrs : nnsclo,ikpt=   30  171 max resid (incl. the buffer)=  5.23268E-06
+  prteigrs : nnsclo,ikpt=   30  172 max resid (incl. the buffer)=  6.54760E-05
+  prteigrs : nnsclo,ikpt=   30  173 max resid (incl. the buffer)=  1.20564E-05
+  prteigrs : nnsclo,ikpt=   30  174 max resid (incl. the buffer)=  5.31727E-08
+  prteigrs : nnsclo,ikpt=   30  175 max resid (incl. the buffer)=  1.52274E-06
+  prteigrs : nnsclo,ikpt=   30  176 max resid (incl. the buffer)=  1.01823E-06
+  prteigrs : nnsclo,ikpt=   30  177 max resid (incl. the buffer)=  3.21896E-04
+  prteigrs : nnsclo,ikpt=   30  178 max resid (incl. the buffer)=  2.27587E-05
+  prteigrs : nnsclo,ikpt=   30  179 max resid (incl. the buffer)=  2.97959E-05
+  prteigrs : nnsclo,ikpt=   30  180 max resid (incl. the buffer)=  3.54386E-05
+  prteigrs : nnsclo,ikpt=   30  181 max resid (incl. the buffer)=  1.74146E-06
+  prteigrs : nnsclo,ikpt=   30  182 max resid (incl. the buffer)=  5.37188E-05
+  prteigrs : nnsclo,ikpt=   30  183 max resid (incl. the buffer)=  4.31600E-04
+  prteigrs : nnsclo,ikpt=   30  184 max resid (incl. the buffer)=  3.00749E-05
+  prteigrs : nnsclo,ikpt=   30  185 max resid (incl. the buffer)=  4.30060E-06
+  prteigrs : nnsclo,ikpt=   30  186 max resid (incl. the buffer)=  1.67148E-06
+  prteigrs : nnsclo,ikpt=   30  187 max resid (incl. the buffer)=  1.26526E-06
+  prteigrs : nnsclo,ikpt=   30  188 max resid (incl. the buffer)=  1.07541E-05
+  prteigrs : nnsclo,ikpt=   30  189 max resid (incl. the buffer)=  3.08454E-05
+  prteigrs : nnsclo,ikpt=   30  190 max resid (incl. the buffer)=  2.85659E-06
+  prteigrs : nnsclo,ikpt=   30  191 max resid (incl. the buffer)=  1.47757E-04
+  prteigrs : nnsclo,ikpt=   30  192 max resid (incl. the buffer)=  4.59792E-05
+  prteigrs : nnsclo,ikpt=   30  193 max resid (incl. the buffer)=  5.43049E-05
+  prteigrs : nnsclo,ikpt=   30  194 max resid (incl. the buffer)=  6.06143E-05
+  prteigrs : nnsclo,ikpt=   30  195 max resid (incl. the buffer)=  4.42899E-06
+  prteigrs : nnsclo,ikpt=   30  196 max resid (incl. the buffer)=  7.66897E-07
+  prteigrs : nnsclo,ikpt=   30  197 max resid (incl. the buffer)=  3.10241E-08
+  prteigrs : nnsclo,ikpt=   30  198 max resid (incl. the buffer)=  7.11953E-07
+  prteigrs : nnsclo,ikpt=   30  199 max resid (incl. the buffer)=  8.89290E-07
+  prteigrs : nnsclo,ikpt=   30  200 max resid (incl. the buffer)=  1.72999E-06
+  prteigrs : nnsclo,ikpt=   30  201 max resid (incl. the buffer)=  3.17300E-05
+  prteigrs : nnsclo,ikpt=   30  202 max resid (incl. the buffer)=  1.42176E-05
+  prteigrs : nnsclo,ikpt=   30  203 max resid (incl. the buffer)=  4.88117E-06
+  prteigrs : nnsclo,ikpt=   30  204 max resid (incl. the buffer)=  2.52307E-06
+  prteigrs : nnsclo,ikpt=   30  205 max resid (incl. the buffer)=  3.06353E-05
+  prteigrs : nnsclo,ikpt=   30  206 max resid (incl. the buffer)=  3.04766E-05
+  prteigrs : nnsclo,ikpt=   30  207 max resid (incl. the buffer)=  7.49414E-07
+  prteigrs : nnsclo,ikpt=   30  208 max resid (incl. the buffer)=  2.63024E-04
+  prteigrs : nnsclo,ikpt=   30  209 max resid (incl. the buffer)=  9.33042E-06
+  prteigrs : nnsclo,ikpt=   30  210 max resid (incl. the buffer)=  2.03948E-07
+  prteigrs : nnsclo,ikpt=   30  211 max resid (incl. the buffer)=  4.50309E-06
+  prteigrs : nnsclo,ikpt=   30  212 max resid (incl. the buffer)=  1.51677E-04
+  prteigrs : nnsclo,ikpt=   30  213 max resid (incl. the buffer)=  1.72790E-05
+  prteigrs : nnsclo,ikpt=   30  214 max resid (incl. the buffer)=  6.17063E-06
+  prteigrs : nnsclo,ikpt=   30  215 max resid (incl. the buffer)=  2.23925E-06
+  prteigrs : nnsclo,ikpt=   30  216 max resid (incl. the buffer)=  2.02225E-05
+  prteigrs : nnsclo,ikpt=   30  217 max resid (incl. the buffer)=  8.06954E-06
+  prteigrs : nnsclo,ikpt=   30  218 max resid (incl. the buffer)=  4.65348E-06
+  prteigrs : nnsclo,ikpt=   30  219 max resid (incl. the buffer)=  6.59241E-05
+  prteigrs : nnsclo,ikpt=   30  220 max resid (incl. the buffer)=  1.83914E-07
+  prteigrs : nnsclo,ikpt=   30  221 max resid (incl. the buffer)=  1.27530E-07
+  prteigrs : nnsclo,ikpt=   30  222 max resid (incl. the buffer)=  1.19426E-06
+  prteigrs : nnsclo,ikpt=   30  223 max resid (incl. the buffer)=  2.12872E-04
+  prteigrs : nnsclo,ikpt=   30  224 max resid (incl. the buffer)=  6.97350E-07
+  prteigrs : nnsclo,ikpt=   30  225 max resid (incl. the buffer)=  5.53758E-07
+  prteigrs : nnsclo,ikpt=   30  226 max resid (incl. the buffer)=  7.94293E-06
+  prteigrs : nnsclo,ikpt=   30  227 max resid (incl. the buffer)=  2.58921E-05
+  prteigrs : nnsclo,ikpt=   30  228 max resid (incl. the buffer)=  1.51500E-07
+  prteigrs : nnsclo,ikpt=   30  229 max resid (incl. the buffer)=  2.73123E-04
+  prteigrs : nnsclo,ikpt=   30  230 max resid (incl. the buffer)=  1.01322E-05
+  prteigrs : nnsclo,ikpt=   30  231 max resid (incl. the buffer)=  1.36702E-05
+  prteigrs : nnsclo,ikpt=   30  232 max resid (incl. the buffer)=  3.74544E-06
+  prteigrs : nnsclo,ikpt=   30  233 max resid (incl. the buffer)=  3.53903E-05
+  prteigrs : nnsclo,ikpt=   30  234 max resid (incl. the buffer)=  3.20590E-05
+  prteigrs : nnsclo,ikpt=   30  235 max resid (incl. the buffer)=  4.40752E-07
+  prteigrs : nnsclo,ikpt=   30  236 max resid (incl. the buffer)=  4.77300E-08
+  prteigrs : nnsclo,ikpt=   30  237 max resid (incl. the buffer)=  5.47580E-04
+  prteigrs : nnsclo,ikpt=   30  239 max resid (incl. the buffer)=  5.95897E-07
+  prteigrs : nnsclo,ikpt=   30  240 max resid (incl. the buffer)=  4.62759E-05
+  prteigrs : nnsclo,ikpt=   30  241 max resid (incl. the buffer)=  8.63812E-08
+  prteigrs : nnsclo,ikpt=   30  242 max resid (incl. the buffer)=  1.20498E-07
+  prteigrs : nnsclo,ikpt=   30  243 max resid (incl. the buffer)=  6.85526E-07
+  prteigrs : nnsclo,ikpt=   30  244 max resid (incl. the buffer)=  9.35939E-07
+  prteigrs : nnsclo,ikpt=   30  245 max resid (incl. the buffer)=  2.68350E-05
+  prteigrs : nnsclo,ikpt=   30  246 max resid (incl. the buffer)=  1.37000E-07
+  prteigrs : nnsclo,ikpt=   30  248 max resid (incl. the buffer)=  9.76760E-06
+  prteigrs : nnsclo,ikpt=   30  249 max resid (incl. the buffer)=  6.29579E-07
+  prteigrs : nnsclo,ikpt=   30  250 max resid (incl. the buffer)=  6.77213E-05
+  prteigrs : nnsclo,ikpt=   30  251 max resid (incl. the buffer)=  9.75818E-06
+  prteigrs : nnsclo,ikpt=   30  252 max resid (incl. the buffer)=  2.04095E-07
+  prteigrs : nnsclo,ikpt=   30  253 max resid (incl. the buffer)=  8.10359E-05
+  prteigrs : nnsclo,ikpt=   30  254 max resid (incl. the buffer)=  1.19745E-05
+  prteigrs : nnsclo,ikpt=   30  255 max resid (incl. the buffer)=  2.89496E-05
+  prteigrs : nnsclo,ikpt=   30  256 max resid (incl. the buffer)=  5.31939E-05
+  prteigrs : nnsclo,ikpt=   30  257 max resid (incl. the buffer)=  1.92571E-05
+  prteigrs : nnsclo,ikpt=   30  258 max resid (incl. the buffer)=  1.58403E-04
+  prteigrs : nnsclo,ikpt=   30  259 max resid (incl. the buffer)=  6.88554E-04
+  prteigrs : nnsclo,ikpt=   30  260 max resid (incl. the buffer)=  5.76401E-08
+  prteigrs : nnsclo,ikpt=   30  261 max resid (incl. the buffer)=  4.44437E-05
+  prteigrs : nnsclo,ikpt=   30  263 max resid (incl. the buffer)=  2.59851E-05
+  prteigrs : nnsclo,ikpt=   30  264 max resid (incl. the buffer)=  2.17047E-05
+  prteigrs : nnsclo,ikpt=   30  265 max resid (incl. the buffer)=  4.78596E-04
+  prteigrs : nnsclo,ikpt=   30  266 max resid (incl. the buffer)=  1.28165E-06
+  prteigrs : nnsclo,ikpt=   30  267 max resid (incl. the buffer)=  1.86713E-04
+  prteigrs : nnsclo,ikpt=   30  268 max resid (incl. the buffer)=  9.69365E-07
+  prteigrs : nnsclo,ikpt=   30  269 max resid (incl. the buffer)=  1.71976E-08
+  prteigrs : nnsclo,ikpt=   30  270 max resid (incl. the buffer)=  5.01263E-06
+  prteigrs : nnsclo,ikpt=   30  271 max resid (incl. the buffer)=  7.13878E-08
+  prteigrs : nnsclo,ikpt=   30  272 max resid (incl. the buffer)=  2.52389E-07
+  prteigrs : nnsclo,ikpt=   30  273 max resid (incl. the buffer)=  3.60181E-05
+  prteigrs : nnsclo,ikpt=   30  274 max resid (incl. the buffer)=  1.66953E-05
+  prteigrs : nnsclo,ikpt=   30  275 max resid (incl. the buffer)=  1.53592E-05
+  prteigrs : nnsclo,ikpt=   30  276 max resid (incl. the buffer)=  1.12530E-04
+  prteigrs : nnsclo,ikpt=   30  277 max resid (incl. the buffer)=  4.07839E-04
+  prteigrs : nnsclo,ikpt=   30  278 max resid (incl. the buffer)=  4.92676E-06
+  prteigrs : nnsclo,ikpt=   30  279 max resid (incl. the buffer)=  5.17875E-05
+  prteigrs : nnsclo,ikpt=   30  280 max resid (incl. the buffer)=  3.89681E-05
+  prteigrs : nnsclo,ikpt=   30  281 max resid (incl. the buffer)=  2.23500E-07
+  prteigrs : nnsclo,ikpt=   30  282 max resid (incl. the buffer)=  4.94998E-07
+  prteigrs : nnsclo,ikpt=   30  283 max resid (incl. the buffer)=  4.28738E-05
+  prteigrs : nnsclo,ikpt=   30  284 max resid (incl. the buffer)=  1.88054E-06
+  prteigrs : nnsclo,ikpt=   30  285 max resid (incl. the buffer)=  2.11449E-04
+  prteigrs : nnsclo,ikpt=   30  286 max resid (incl. the buffer)=  6.63366E-07
+  prteigrs : nnsclo,ikpt=   30  287 max resid (incl. the buffer)=  7.97139E-07
+  prteigrs : nnsclo,ikpt=   30  288 max resid (incl. the buffer)=  3.44799E-07
+  prteigrs : nnsclo,ikpt=   30  289 max resid (incl. the buffer)=  2.34297E-05
+  prteigrs : nnsclo,ikpt=   30  290 max resid (incl. the buffer)=  1.36438E-07
+  prteigrs : nnsclo,ikpt=   30  291 max resid (incl. the buffer)=  8.68720E-04
+  prteigrs : nnsclo,ikpt=   30  292 max resid (incl. the buffer)=  1.18204E-04
+  prteigrs : nnsclo,ikpt=   30  293 max resid (incl. the buffer)=  3.37113E-05
+  prteigrs : nnsclo,ikpt=   30  294 max resid (incl. the buffer)=  1.11060E-06
+  prteigrs : nnsclo,ikpt=   30  295 max resid (incl. the buffer)=  1.06852E-05
+  prteigrs : nnsclo,ikpt=   30  297 max resid (incl. the buffer)=  1.60060E-08
+  prteigrs : nnsclo,ikpt=   30  298 max resid (incl. the buffer)=  2.86192E-06
+  prteigrs : nnsclo,ikpt=   30  299 max resid (incl. the buffer)=  3.61324E-06
+  prteigrs : nnsclo,ikpt=   30  300 max resid (incl. the buffer)=  4.35769E-07
+  prteigrs : nnsclo,ikpt=   30  301 max resid (incl. the buffer)=  1.78509E-05
+  prteigrs : nnsclo,ikpt=   30  302 max resid (incl. the buffer)=  5.51807E-08
+  prteigrs : nnsclo,ikpt=   30  303 max resid (incl. the buffer)=  2.63823E-06
+  prteigrs : nnsclo,ikpt=   30  304 max resid (incl. the buffer)=  2.84728E-06
+  prteigrs : nnsclo,ikpt=   30  305 max resid (incl. the buffer)=  3.02038E-05
+  prteigrs : nnsclo,ikpt=   30  306 max resid (incl. the buffer)=  9.52172E-07
+  prteigrs : nnsclo,ikpt=   30  307 max resid (incl. the buffer)=  1.83654E-05
+  prteigrs : nnsclo,ikpt=   30  308 max resid (incl. the buffer)=  8.59285E-06
+  prteigrs : nnsclo,ikpt=   30  309 max resid (incl. the buffer)=  8.80119E-06
+  prteigrs : nnsclo,ikpt=   30  310 max resid (incl. the buffer)=  4.95698E-07
+  prteigrs : nnsclo,ikpt=   30  311 max resid (incl. the buffer)=  4.36454E-05
+  prteigrs : nnsclo,ikpt=   30  312 max resid (incl. the buffer)=  4.41177E-06
+  prteigrs : nnsclo,ikpt=   30  313 max resid (incl. the buffer)=  2.07977E-04
+  prteigrs : nnsclo,ikpt=   30  314 max resid (incl. the buffer)=  1.02129E-06
+  prteigrs : nnsclo,ikpt=   30  315 max resid (incl. the buffer)=  1.77211E-06
+  prteigrs : nnsclo,ikpt=   30  316 max resid (incl. the buffer)=  5.99206E-05
+  prteigrs : nnsclo,ikpt=   30  317 max resid (incl. the buffer)=  4.88426E-08
+  prteigrs : nnsclo,ikpt=   30  318 max resid (incl. the buffer)=  4.82823E-06
+  prteigrs : nnsclo,ikpt=   30  319 max resid (incl. the buffer)=  1.57624E-07
+  prteigrs : nnsclo,ikpt=   30  320 max resid (incl. the buffer)=  1.76630E-08
+  prteigrs : nnsclo,ikpt=   30  321 max resid (incl. the buffer)=  2.36134E-06
+  prteigrs : nnsclo,ikpt=   30  322 max resid (incl. the buffer)=  1.33340E-06
+  prteigrs : nnsclo,ikpt=   30  323 max resid (incl. the buffer)=  2.16058E-08
+  prteigrs : nnsclo,ikpt=   30  324 max resid (incl. the buffer)=  1.41159E-08
+  prteigrs : nnsclo,ikpt=   30  325 max resid (incl. the buffer)=  5.42399E-08
+  prteigrs : nnsclo,ikpt=   30  326 max resid (incl. the buffer)=  1.63197E-05
+  prteigrs : nnsclo,ikpt=   30  327 max resid (incl. the buffer)=  1.29752E-06
+  prteigrs : nnsclo,ikpt=   30  328 max resid (incl. the buffer)=  3.24672E-07
+  prteigrs : nnsclo,ikpt=   30  329 max resid (incl. the buffer)=  2.03644E-07
+  prteigrs : nnsclo,ikpt=   30  330 max resid (incl. the buffer)=  9.47299E-06
+  prteigrs : nnsclo,ikpt=   30  331 max resid (incl. the buffer)=  3.32485E-06
+  prteigrs : nnsclo,ikpt=   30  332 max resid (incl. the buffer)=  3.29183E-06
+  prteigrs : nnsclo,ikpt=   30  333 max resid (incl. the buffer)=  1.72733E-06
+  prteigrs : nnsclo,ikpt=   30  334 max resid (incl. the buffer)=  5.95958E-07
+  prteigrs : nnsclo,ikpt=   30  335 max resid (incl. the buffer)=  6.19958E-05
+  prteigrs : nnsclo,ikpt=   30  336 max resid (incl. the buffer)=  1.32394E-06
+  prteigrs : nnsclo,ikpt=   30  337 max resid (incl. the buffer)=  2.35709E-08
+  prteigrs : nnsclo,ikpt=   30  338 max resid (incl. the buffer)=  4.06824E-06
+  prteigrs : nnsclo,ikpt=   30  339 max resid (incl. the buffer)=  2.01674E-05
+  prteigrs : nnsclo,ikpt=   30  340 max resid (incl. the buffer)=  1.56029E-05
+  prteigrs : nnsclo,ikpt=   30  341 max resid (incl. the buffer)=  1.06092E-05
+  prteigrs : nnsclo,ikpt=   30  342 max resid (incl. the buffer)=  1.38467E-07
+  prteigrs : nnsclo,ikpt=   30  343 max resid (incl. the buffer)=  2.15754E-04
+  prteigrs : nnsclo,ikpt=   30  344 max resid (incl. the buffer)=  1.47424E-06
+  prteigrs : nnsclo,ikpt=   30  345 max resid (incl. the buffer)=  6.13580E-07
+  prteigrs : nnsclo,ikpt=   30  346 max resid (incl. the buffer)=  1.44091E-05
+  prteigrs : nnsclo,ikpt=   30  347 max resid (incl. the buffer)=  3.54186E-05
+  prteigrs : nnsclo,ikpt=   30  348 max resid (incl. the buffer)=  5.39841E-06
+  prteigrs : nnsclo,ikpt=   30  349 max resid (incl. the buffer)=  6.52920E-06
+  prteigrs : nnsclo,ikpt=   30  350 max resid (incl. the buffer)=  3.31411E-07
+  prteigrs : nnsclo,ikpt=   30  351 max resid (incl. the buffer)=  7.93353E-06
+  prteigrs : nnsclo,ikpt=   30  352 max resid (incl. the buffer)=  1.79619E-06
+  prteigrs : nnsclo,ikpt=   30  353 max resid (incl. the buffer)=  2.89025E-08
+  prteigrs : nnsclo,ikpt=   30  354 max resid (incl. the buffer)=  8.10186E-08
+  prteigrs : nnsclo,ikpt=   30  355 max resid (incl. the buffer)=  2.56329E-05
+  prteigrs : nnsclo,ikpt=   30  356 max resid (incl. the buffer)=  8.28413E-07
+  prteigrs : nnsclo,ikpt=   30  357 max resid (incl. the buffer)=  4.97759E-05
+  prteigrs : nnsclo,ikpt=   30  358 max resid (incl. the buffer)=  9.56275E-07
+  prteigrs : nnsclo,ikpt=   30  359 max resid (incl. the buffer)=  3.17800E-07
+  prteigrs : nnsclo,ikpt=   30  360 max resid (incl. the buffer)=  1.45757E-05
+  prteigrs : nnsclo,ikpt=   30  361 max resid (incl. the buffer)=  3.48108E-05
+  prteigrs : nnsclo,ikpt=   30  362 max resid (incl. the buffer)=  2.13697E-06
+  prteigrs : nnsclo,ikpt=   30  363 max resid (incl. the buffer)=  2.65875E-08
+  prteigrs : nnsclo,ikpt=   30  364 max resid (incl. the buffer)=  5.04724E-08
+  prteigrs : nnsclo,ikpt=   30  365 max resid (incl. the buffer)=  3.17019E-08
+  prteigrs : nnsclo,ikpt=   30  366 max resid (incl. the buffer)=  1.60129E-05
+  prteigrs : nnsclo,ikpt=   30  367 max resid (incl. the buffer)=  5.98214E-06
+  prteigrs : nnsclo,ikpt=   30  368 max resid (incl. the buffer)=  1.50156E-06
+  prteigrs : nnsclo,ikpt=   30  369 max resid (incl. the buffer)=  5.34118E-06
+  prteigrs : nnsclo,ikpt=   30  370 max resid (incl. the buffer)=  1.65295E-06
+  prteigrs : nnsclo,ikpt=   30  371 max resid (incl. the buffer)=  8.16882E-06
+  prteigrs : nnsclo,ikpt=   30  372 max resid (incl. the buffer)=  4.59266E-06
+  prteigrs : nnsclo,ikpt=   30  373 max resid (incl. the buffer)=  6.63782E-07
+  prteigrs : nnsclo,ikpt=   30  374 max resid (incl. the buffer)=  4.68575E-07
+  prteigrs : nnsclo,ikpt=   30  375 max resid (incl. the buffer)=  8.35963E-07
+  prteigrs : nnsclo,ikpt=   30  376 max resid (incl. the buffer)=  2.45967E-08
+  prteigrs : nnsclo,ikpt=   30  377 max resid (incl. the buffer)=  7.37817E-07
+  prteigrs : nnsclo,ikpt=   30  378 max resid (incl. the buffer)=  5.36999E-07
+  prteigrs : nnsclo,ikpt=   30  379 max resid (incl. the buffer)=  3.17824E-06
+  prteigrs : nnsclo,ikpt=   30  380 max resid (incl. the buffer)=  4.46613E-05
+  prteigrs : nnsclo,ikpt=   30  381 max resid (incl. the buffer)=  1.47703E-06
+  prteigrs : nnsclo,ikpt=   30  382 max resid (incl. the buffer)=  8.00540E-05
+  prteigrs : nnsclo,ikpt=   30  383 max resid (incl. the buffer)=  1.54816E-07
+  prteigrs : nnsclo,ikpt=   30  384 max resid (incl. the buffer)=  7.35872E-07
+  prteigrs : nnsclo,ikpt=   30  385 max resid (incl. the buffer)=  4.94700E-05
+  prteigrs : nnsclo,ikpt=   30  386 max resid (incl. the buffer)=  5.45908E-06
+  prteigrs : nnsclo,ikpt=   30  387 max resid (incl. the buffer)=  3.65243E-05
+  prteigrs : nnsclo,ikpt=   30  388 max resid (incl. the buffer)=  1.60382E-07
+  prteigrs : nnsclo,ikpt=   30  389 max resid (incl. the buffer)=  7.06832E-04
+  prteigrs : nnsclo,ikpt=   30  390 max resid (incl. the buffer)=  1.44314E-07
+  prteigrs : nnsclo,ikpt=   30  391 max resid (incl. the buffer)=  6.08609E-04
+  prteigrs : nnsclo,ikpt=   30  392 max resid (incl. the buffer)=  3.42863E-04
+  prteigrs : nnsclo,ikpt=   30  393 max resid (incl. the buffer)=  8.47063E-08
+  prteigrs : nnsclo,ikpt=   30  394 max resid (incl. the buffer)=  7.43124E-07
+  prteigrs : nnsclo,ikpt=   30  395 max resid (incl. the buffer)=  4.42092E-07
+  prteigrs : nnsclo,ikpt=   30  396 max resid (incl. the buffer)=  4.48017E-07
+  prteigrs : nnsclo,ikpt=   30  397 max resid (incl. the buffer)=  1.36267E-06
+  prteigrs : nnsclo,ikpt=   30  398 max resid (incl. the buffer)=  8.71572E-07
+  prteigrs : nnsclo,ikpt=   30  399 max resid (incl. the buffer)=  2.71778E-06
+  prteigrs : nnsclo,ikpt=   30  400 max resid (incl. the buffer)=  4.91569E-08
+  prteigrs : nnsclo,ikpt=   30  401 max resid (incl. the buffer)=  4.48188E-04
+  prteigrs : nnsclo,ikpt=   30  402 max resid (incl. the buffer)=  1.24284E-06
+  prteigrs : nnsclo,ikpt=   30  403 max resid (incl. the buffer)=  8.28388E-06
+  prteigrs : nnsclo,ikpt=   30  404 max resid (incl. the buffer)=  1.81467E-06
+  prteigrs : nnsclo,ikpt=   30  405 max resid (incl. the buffer)=  2.58041E-05
+  prteigrs : nnsclo,ikpt=   30  406 max resid (incl. the buffer)=  7.19661E-06
+  prteigrs : nnsclo,ikpt=   30  407 max resid (incl. the buffer)=  2.02828E-04
+  prteigrs : nnsclo,ikpt=   30  408 max resid (incl. the buffer)=  1.50389E-05
+  prteigrs : nnsclo,ikpt=   30  409 max resid (incl. the buffer)=  2.10464E-07
+  prteigrs : nnsclo,ikpt=   30  410 max resid (incl. the buffer)=  7.17177E-08
+  prteigrs : nnsclo,ikpt=   30  411 max resid (incl. the buffer)=  7.28621E-07
+  prteigrs : nnsclo,ikpt=   30  412 max resid (incl. the buffer)=  3.06633E-05
+  prteigrs : nnsclo,ikpt=   30  413 max resid (incl. the buffer)=  2.04919E-06
+  prteigrs : nnsclo,ikpt=   30  414 max resid (incl. the buffer)=  7.54673E-08
+  prteigrs : nnsclo,ikpt=   30  416 max resid (incl. the buffer)=  3.10424E-05
+  prteigrs : nnsclo,ikpt=   30  417 max resid (incl. the buffer)=  1.06775E-04
+  prteigrs : nnsclo,ikpt=   30  418 max resid (incl. the buffer)=  1.08799E-06
+  prteigrs : nnsclo,ikpt=   30  419 max resid (incl. the buffer)=  1.04095E-05
+  prteigrs : nnsclo,ikpt=   30  420 max resid (incl. the buffer)=  3.08068E-06
+  prteigrs : nnsclo,ikpt=   30  421 max resid (incl. the buffer)=  8.77736E-06
+  prteigrs : nnsclo,ikpt=   30  422 max resid (incl. the buffer)=  4.95101E-06
+  prteigrs : nnsclo,ikpt=   30  423 max resid (incl. the buffer)=  1.19665E-05
+  prteigrs : nnsclo,ikpt=   30  424 max resid (incl. the buffer)=  7.10509E-06
+  prteigrs : nnsclo,ikpt=   30  425 max resid (incl. the buffer)=  8.77662E-07
+  prteigrs : nnsclo,ikpt=   30  426 max resid (incl. the buffer)=  8.83160E-07
+  prteigrs : nnsclo,ikpt=   30  427 max resid (incl. the buffer)=  1.00394E-06
+  prteigrs : nnsclo,ikpt=   30  428 max resid (incl. the buffer)=  1.40413E-06
+  prteigrs : nnsclo,ikpt=   30  429 max resid (incl. the buffer)=  1.62399E-06
+  prteigrs : nnsclo,ikpt=   30  430 max resid (incl. the buffer)=  3.31144E-07
+  prteigrs : nnsclo,ikpt=   30  431 max resid (incl. the buffer)=  1.38272E-06
+  prteigrs : nnsclo,ikpt=   30  432 max resid (incl. the buffer)=  2.08414E-07
+  prteigrs : nnsclo,ikpt=   30  433 max resid (incl. the buffer)=  7.97742E-06
+  prteigrs : nnsclo,ikpt=   30  434 max resid (incl. the buffer)=  2.61515E-08
+  prteigrs : nnsclo,ikpt=   30  435 max resid (incl. the buffer)=  5.69315E-05
+  prteigrs : nnsclo,ikpt=   30  437 max resid (incl. the buffer)=  1.14587E-05
+  prteigrs : nnsclo,ikpt=   30  438 max resid (incl. the buffer)=  2.18555E-07
+  prteigrs : nnsclo,ikpt=   30  439 max resid (incl. the buffer)=  6.50093E-05
+  prteigrs : nnsclo,ikpt=   30  440 max resid (incl. the buffer)=  1.47958E-04
+  prteigrs : nnsclo,ikpt=   30  441 max resid (incl. the buffer)=  8.87176E-05
+  prteigrs : nnsclo,ikpt=   30  442 max resid (incl. the buffer)=  9.83859E-08
+  prteigrs : nnsclo,ikpt=   30  443 max resid (incl. the buffer)=  3.97185E-06
+  prteigrs : nnsclo,ikpt=   30  444 max resid (incl. the buffer)=  1.10943E-04
+  prteigrs : nnsclo,ikpt=   30  445 max resid (incl. the buffer)=  2.24653E-05
+  prteigrs : nnsclo,ikpt=   30  446 max resid (incl. the buffer)=  6.94989E-08
+  prteigrs : nnsclo,ikpt=   30  447 max resid (incl. the buffer)=  4.06996E-04
+  prteigrs : nnsclo,ikpt=   30  448 max resid (incl. the buffer)=  8.63089E-08
+  prteigrs : nnsclo,ikpt=   30  450 max resid (incl. the buffer)=  1.27837E-05
+  prteigrs : nnsclo,ikpt=   30  451 max resid (incl. the buffer)=  8.84101E-07
+  prteigrs : nnsclo,ikpt=   30  452 max resid (incl. the buffer)=  8.13758E-07
+  prteigrs : nnsclo,ikpt=   30  453 max resid (incl. the buffer)=  3.53832E-06
+  prteigrs : nnsclo,ikpt=   30  454 max resid (incl. the buffer)=  2.71824E-05
+  prteigrs : nnsclo,ikpt=   30  455 max resid (incl. the buffer)=  3.77275E-06
+  prteigrs : nnsclo,ikpt=   30  457 max resid (incl. the buffer)=  6.22913E-06
+  prteigrs : nnsclo,ikpt=   30  458 max resid (incl. the buffer)=  5.56586E-05
+  prteigrs : nnsclo,ikpt=   30  459 max resid (incl. the buffer)=  2.06089E-08
+  prteigrs : nnsclo,ikpt=   30  460 max resid (incl. the buffer)=  1.93541E-06
+  prteigrs : nnsclo,ikpt=   30  461 max resid (incl. the buffer)=  3.91528E-04
+  prteigrs : nnsclo,ikpt=   30  462 max resid (incl. the buffer)=  6.69614E-06
+  prteigrs : nnsclo,ikpt=   30  463 max resid (incl. the buffer)=  5.45051E-07
+  prteigrs : nnsclo,ikpt=   30  464 max resid (incl. the buffer)=  4.70826E-06
+  prteigrs : nnsclo,ikpt=   30  465 max resid (incl. the buffer)=  2.61018E-07
+  prteigrs : nnsclo,ikpt=   30  466 max resid (incl. the buffer)=  1.54720E-06
+  prteigrs : nnsclo,ikpt=   30  467 max resid (incl. the buffer)=  1.63773E-06
+  prteigrs : nnsclo,ikpt=   30  468 max resid (incl. the buffer)=  5.20223E-06
+  prteigrs : nnsclo,ikpt=   30  469 max resid (incl. the buffer)=  3.37268E-05
+  prteigrs : nnsclo,ikpt=   30  470 max resid (incl. the buffer)=  6.97739E-06
+  prteigrs : nnsclo,ikpt=   30  471 max resid (incl. the buffer)=  1.34852E-05
+  prteigrs : nnsclo,ikpt=   30  472 max resid (incl. the buffer)=  9.66407E-05
+  prteigrs : nnsclo,ikpt=   30  473 max resid (incl. the buffer)=  1.95765E-06
+  prteigrs : nnsclo,ikpt=   30  474 max resid (incl. the buffer)=  2.16132E-05
+  prteigrs : nnsclo,ikpt=   30  475 max resid (incl. the buffer)=  3.00863E-04
+  prteigrs : nnsclo,ikpt=   30  476 max resid (incl. the buffer)=  1.77842E-07
+  prteigrs : nnsclo,ikpt=   30  477 max resid (incl. the buffer)=  2.48037E-05
+  prteigrs : nnsclo,ikpt=   30  478 max resid (incl. the buffer)=  3.36725E-04
+  prteigrs : nnsclo,ikpt=   30  479 max resid (incl. the buffer)=  3.30301E-05
+  prteigrs : nnsclo,ikpt=   30  480 max resid (incl. the buffer)=  3.68205E-06
+  prteigrs : nnsclo,ikpt=   30  481 max resid (incl. the buffer)=  7.24514E-07
+  prteigrs : nnsclo,ikpt=   30  482 max resid (incl. the buffer)=  2.26665E-05
+  prteigrs : nnsclo,ikpt=   30  483 max resid (incl. the buffer)=  6.37589E-05
+  prteigrs : nnsclo,ikpt=   30  484 max resid (incl. the buffer)=  1.54934E-05
+  prteigrs : nnsclo,ikpt=   30  485 max resid (incl. the buffer)=  3.27325E-07
+  prteigrs : nnsclo,ikpt=   30  486 max resid (incl. the buffer)=  6.50041E-06
+  prteigrs : nnsclo,ikpt=   30  487 max resid (incl. the buffer)=  1.45229E-05
+  prteigrs : nnsclo,ikpt=   30  488 max resid (incl. the buffer)=  1.03020E-06
+  prteigrs : nnsclo,ikpt=   30  489 max resid (incl. the buffer)=  1.73283E-05
+  prteigrs : nnsclo,ikpt=   30  490 max resid (incl. the buffer)=  3.47139E-06
+  prteigrs : nnsclo,ikpt=   30  491 max resid (incl. the buffer)=  4.89861E-06
+  prteigrs : nnsclo,ikpt=   30  492 max resid (incl. the buffer)=  6.77099E-05
+  prteigrs : nnsclo,ikpt=   30  493 max resid (incl. the buffer)=  1.67604E-05
+  prteigrs : nnsclo,ikpt=   30  494 max resid (incl. the buffer)=  1.69649E-06
+  prteigrs : nnsclo,ikpt=   30  495 max resid (incl. the buffer)=  2.09852E-08
+  prteigrs : nnsclo,ikpt=   30  496 max resid (incl. the buffer)=  1.63735E-06
+  prteigrs : nnsclo,ikpt=   30  497 max resid (incl. the buffer)=  4.35277E-05
+  prteigrs : nnsclo,ikpt=   30  498 max resid (incl. the buffer)=  3.64423E-07
+  prteigrs : nnsclo,ikpt=   30  499 max resid (incl. the buffer)=  1.86058E-05
+  prteigrs : nnsclo,ikpt=   30  500 max resid (incl. the buffer)=  2.74929E-05
+  prteigrs : nnsclo,ikpt=   30  501 max resid (incl. the buffer)=  5.76226E-05
+  prteigrs : nnsclo,ikpt=   30  502 max resid (incl. the buffer)=  3.41760E-06
+  prteigrs : nnsclo,ikpt=   30  503 max resid (incl. the buffer)=  2.03065E-04
+  prteigrs : nnsclo,ikpt=   30  504 max resid (incl. the buffer)=  9.93138E-07
+  prteigrs : nnsclo,ikpt=   30  506 max resid (incl. the buffer)=  7.82230E-05
+  prteigrs : nnsclo,ikpt=   30  507 max resid (incl. the buffer)=  1.83050E-04
+  prteigrs : nnsclo,ikpt=   30  508 max resid (incl. the buffer)=  3.32099E-06
+  prteigrs : nnsclo,ikpt=   30  509 max resid (incl. the buffer)=  4.08177E-07
+  prteigrs : nnsclo,ikpt=   30  510 max resid (incl. the buffer)=  7.17889E-07
+  prteigrs : nnsclo,ikpt=   30  511 max resid (incl. the buffer)=  1.14587E-05
+
+ Integrated electronic density in atomic spheres:
+ ------------------------------------------------
+ Atom  Sphere_radius  Integrated_density
+    1        2.00000          1.84474861
+    2        2.00000          1.84474861
+================================================================================
+
+ ----iterations are completed or convergence reached----
+
+ Mean square residual over all n,k,spin=   2.9507E-06; max=  1.1490E-03
+ reduced coordinates (array xred) for    2 atoms
+       0.000000000000      0.000000000000      0.000000000000
+       0.250000000000      0.250000000000      0.250000000000
+
+ cartesian coordinates (angstrom) at end:
+    1      0.00000000000000     0.00000000000000     0.00000000000000
+    2      1.35165088504101     1.35165088504101     1.35165088504101
+ length scales=  1.000000000000  1.000000000000  1.000000000000 bohr
+              =  0.529177208590  0.529177208590  0.529177208590 angstroms
+ prteigrs : about to open file /Users/gmatteo/git_repos/abitutorials/abitutorials/bse/flow_bse_kconv/w2/t1/outdata/out_EIG
+ Eigenvalues (hartree) for nkpt= 512  k points:
+ kpt#   1, nband= 15, wtk=  0.00195, kpt=  0.0138  0.0263  0.0388 (reduced coord)
+  -0.22501    0.21362    0.21638    0.21804    0.31161    0.31426    0.31488    0.34216
+   0.50246    0.50945    0.51343    0.63033    0.63186    0.63592    0.77584
+ prteigrs : prtvol=0 or 1, do not print more k-points.
+
+
+== END DATASET(S) ==============================================================
+================================================================================
+  
+ -outvars: echo values of variables after computation  --------
+            acell      1.0000000000E+00  1.0000000000E+00  1.0000000000E+00 Bohr
+              amu      2.80855000E+01
+      chksymbreak           0
+           diemac      1.20000000E+01
+             ecut      6.00000000E+00 Hartree
+-          fftalg         112
+           irdden           1
+             iscf          -2
+              kpt      1.37500000E-02  2.62500000E-02  3.87500000E-02
+                       1.38750000E-01  2.62500000E-02  3.87500000E-02
+                       2.63750000E-01  2.62500000E-02  3.87500000E-02
+                       3.88750000E-01  2.62500000E-02  3.87500000E-02
+                      -4.86250000E-01  2.62500000E-02  3.87500000E-02
+                      -3.61250000E-01  2.62500000E-02  3.87500000E-02
+                      -2.36250000E-01  2.62500000E-02  3.87500000E-02
+                      -1.11250000E-01  2.62500000E-02  3.87500000E-02
+                       1.37500000E-02  1.51250000E-01  3.87500000E-02
+                       1.38750000E-01  1.51250000E-01  3.87500000E-02
+                       2.63750000E-01  1.51250000E-01  3.87500000E-02
+                       3.88750000E-01  1.51250000E-01  3.87500000E-02
+                      -4.86250000E-01  1.51250000E-01  3.87500000E-02
+                      -3.61250000E-01  1.51250000E-01  3.87500000E-02
+                      -2.36250000E-01  1.51250000E-01  3.87500000E-02
+                      -1.11250000E-01  1.51250000E-01  3.87500000E-02
+                       1.37500000E-02  2.76250000E-01  3.87500000E-02
+                       1.38750000E-01  2.76250000E-01  3.87500000E-02
+                       2.63750000E-01  2.76250000E-01  3.87500000E-02
+                       3.88750000E-01  2.76250000E-01  3.87500000E-02
+                      -4.86250000E-01  2.76250000E-01  3.87500000E-02
+                      -3.61250000E-01  2.76250000E-01  3.87500000E-02
+                      -2.36250000E-01  2.76250000E-01  3.87500000E-02
+                      -1.11250000E-01  2.76250000E-01  3.87500000E-02
+                       1.37500000E-02  4.01250000E-01  3.87500000E-02
+                       1.38750000E-01  4.01250000E-01  3.87500000E-02
+                       2.63750000E-01  4.01250000E-01  3.87500000E-02
+                       3.88750000E-01  4.01250000E-01  3.87500000E-02
+                      -4.86250000E-01  4.01250000E-01  3.87500000E-02
+                      -3.61250000E-01  4.01250000E-01  3.87500000E-02
+                      -2.36250000E-01  4.01250000E-01  3.87500000E-02
+                      -1.11250000E-01  4.01250000E-01  3.87500000E-02
+                       1.37500000E-02 -4.73750000E-01  3.87500000E-02
+                       1.38750000E-01 -4.73750000E-01  3.87500000E-02
+                       2.63750000E-01 -4.73750000E-01  3.87500000E-02
+                       3.88750000E-01 -4.73750000E-01  3.87500000E-02
+                      -4.86250000E-01 -4.73750000E-01  3.87500000E-02
+                      -3.61250000E-01 -4.73750000E-01  3.87500000E-02
+                      -2.36250000E-01 -4.73750000E-01  3.87500000E-02
+                      -1.11250000E-01 -4.73750000E-01  3.87500000E-02
+                       1.37500000E-02 -3.48750000E-01  3.87500000E-02
+                       1.38750000E-01 -3.48750000E-01  3.87500000E-02
+                       2.63750000E-01 -3.48750000E-01  3.87500000E-02
+                       3.88750000E-01 -3.48750000E-01  3.87500000E-02
+                      -4.86250000E-01 -3.48750000E-01  3.87500000E-02
+                      -3.61250000E-01 -3.48750000E-01  3.87500000E-02
+                      -2.36250000E-01 -3.48750000E-01  3.87500000E-02
+                      -1.11250000E-01 -3.48750000E-01  3.87500000E-02
+                       1.37500000E-02 -2.23750000E-01  3.87500000E-02
+                       1.38750000E-01 -2.23750000E-01  3.87500000E-02
+                       outvar_i_n : Printing only first  50 k-points.
+         kptrlatt        8    0    0      0    8    0      0    0    8
+          kptrlen      5.77960799E+01
+P           mkmem         256
+            natom           2
+            nband          15
+           nbdbuf           2
+            ngfft          16      16      16
+             nkpt         512
+             nsym          48
+           ntypat           1
+            rprim      0.0000000000E+00  5.1085000000E+00  5.1085000000E+00
+                       5.1085000000E+00  0.0000000000E+00  5.1085000000E+00
+                       5.1085000000E+00  5.1085000000E+00  0.0000000000E+00
+           shiftk      1.10000000E-01  2.10000000E-01  3.10000000E-01
+          spgroup         227
+           symrel      1  0  0   0  1  0   0  0  1      -1  0  0   0 -1  0   0  0 -1
+                       0 -1  1   0 -1  0   1 -1  0       0  1 -1   0  1  0  -1  1  0
+                      -1  0  0  -1  0  1  -1  1  0       1  0  0   1  0 -1   1 -1  0
+                       0  1 -1   1  0 -1   0  0 -1       0 -1  1  -1  0  1   0  0  1
+                      -1  0  0  -1  1  0  -1  0  1       1  0  0   1 -1  0   1  0 -1
+                       0 -1  1   1 -1  0   0 -1  0       0  1 -1  -1  1  0   0  1  0
+                       1  0  0   0  0  1   0  1  0      -1  0  0   0  0 -1   0 -1  0
+                       0  1 -1   0  0 -1   1  0 -1       0 -1  1   0  0  1  -1  0  1
+                      -1  0  1  -1  1  0  -1  0  0       1  0 -1   1 -1  0   1  0  0
+                       0 -1  0   1 -1  0   0 -1  1       0  1  0  -1  1  0   0  1 -1
+                       1  0 -1   0  0 -1   0  1 -1      -1  0  1   0  0  1   0 -1  1
+                       0  1  0   0  0  1   1  0  0       0 -1  0   0  0 -1  -1  0  0
+                       1  0 -1   0  1 -1   0  0 -1      -1  0  1   0 -1  1   0  0  1
+                       0 -1  0   0 -1  1   1 -1  0       0  1  0   0  1 -1  -1  1  0
+                      -1  0  1  -1  0  0  -1  1  0       1  0 -1   1  0  0   1 -1  0
+                       0  1  0   1  0  0   0  0  1       0 -1  0  -1  0  0   0  0 -1
+                       0  0 -1   0  1 -1   1  0 -1       0  0  1   0 -1  1  -1  0  1
+                       1 -1  0   0 -1  1   0 -1  0      -1  1  0   0  1 -1   0  1  0
+                       0  0  1   1  0  0   0  1  0       0  0 -1  -1  0  0   0 -1  0
+                      -1  1  0  -1  0  0  -1  0  1       1 -1  0   1  0  0   1  0 -1
+                       0  0  1   0  1  0   1  0  0       0  0 -1   0 -1  0  -1  0  0
+                       1 -1  0   0 -1  0   0 -1  1      -1  1  0   0  1  0   0  1 -1
+                       0  0 -1   1  0 -1   0  1 -1       0  0  1  -1  0  1   0 -1  1
+                      -1  1  0  -1  0  1  -1  0  0       1 -1  0   1  0 -1   1  0  0
+            tnons      0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+           tolwfr      1.00000000E-08
+            typat      1  1
+              wtk        0.00195    0.00195    0.00195    0.00195    0.00195    0.00195
+                         0.00195    0.00195    0.00195    0.00195    0.00195    0.00195
+                         0.00195    0.00195    0.00195    0.00195    0.00195    0.00195
+                         0.00195    0.00195    0.00195    0.00195    0.00195    0.00195
+                         0.00195    0.00195    0.00195    0.00195    0.00195    0.00195
+                         0.00195    0.00195    0.00195    0.00195    0.00195    0.00195
+                         0.00195    0.00195    0.00195    0.00195    0.00195    0.00195
+                         0.00195    0.00195    0.00195    0.00195    0.00195    0.00195
+                         0.00195    0.00195
+                       outvars : Printing only first  50 k-points.
+           xangst      0.0000000000E+00  0.0000000000E+00  0.0000000000E+00
+                       1.3516508850E+00  1.3516508850E+00  1.3516508850E+00
+            xcart      0.0000000000E+00  0.0000000000E+00  0.0000000000E+00
+                       2.5542500000E+00  2.5542500000E+00  2.5542500000E+00
+             xred      0.0000000000E+00  0.0000000000E+00  0.0000000000E+00
+                       2.5000000000E-01  2.5000000000E-01  2.5000000000E-01
+            znucl       14.00000
+
+================================================================================
+
+
+- Timing analysis has been suppressed with timopt=0
+
+
+
+================================================================================
+
+ Suggested references for the acknowledgment of ABINIT usage.
+
+ The users of ABINIT have little formal obligations with respect to the ABINIT group
+ (those specified in the GNU General Public License, http://www.gnu.org/copyleft/gpl.txt).
+ However, it is common practice in the scientific literature,
+ to acknowledge the efforts of people that have made the research possible.
+ In this spirit, please find below suggested citations of work written by ABINIT developers,
+ corresponding to implementations inside of ABINIT that you have used in the present run.
+ Note also that it will be of great value to readers of publications presenting these results,
+ to read papers enabling them to understand the theoretical formalism and details
+ of the ABINIT implementation.
+ For information on why they are suggested, see also http://www.abinit.org/about/?text=acknowledgments.
+-
+- [1] Recent developments in the ABINIT software package.
+- Computer Phys. Comm. 205, 106 (2016).
+- X.Gonze, F.Jollet, F.Abreu Araujo, D.Adams, B.Amadon, T.Applencourt,
+- C.Audouze, J.-M.Beuken, J.Bieder, A.Bokhanchuk, E.Bousquet, F.Bruneval
+- D.Caliste, M.Cote, F.Dahm, F.Da Pieve, M.Delaveau, M.Di Gennaro,
+- B.Dorado, C.Espejo, G.Geneste, L.Genovese, A.Gerossier, M.Giantomassi,
+- Y.Gillet, D.R.Hamann, L.He, G.Jomard, J.Laflamme Janssen, S.Le Roux,
+- A.Levitt, A.Lherbier, F.Liu, I.Lukacevic, A.Martin, C.Martins,
+- M.J.T.Oliveira, S.Ponce, Y.Pouillon, T.Rangel, G.-M.Rignanese,
+- A.H.Romero, B.Rousseau, O.Rubel, A.A.Shukri, M.Stankovski, M.Torrent,
+- M.J.Van Setten, B.Van Troeye, M.J.Verstraete, D.Waroquier, J.Wiktor,
+- B.Xue, A.Zhou, J.W.Zwanziger.
+- Comment : the fourth generic paper describing the ABINIT project.
+- Note that a version of this paper, that is not formatted for Computer Phys. Comm. 
+- is available at http://www.abinit.org/about/ABINIT16.pdf .
+- The licence allows the authors to put it on the Web.
+-
+- [2] ABINIT : First-principles approach of materials and nanosystem properties.
+- Computer Phys. Comm. 180, 2582-2615 (2009).
+- X. Gonze, B. Amadon, P.-M. Anglade, J.-M. Beuken, F. Bottin, P. Boulanger, F. Bruneval,
+- D. Caliste, R. Caracas, M. Cote, T. Deutsch, L. Genovese, Ph. Ghosez, M. Giantomassi
+- S. Goedecker, D.R. Hamann, P. Hermet, F. Jollet, G. Jomard, S. Leroux, M. Mancini, S. Mazevet,
+- M.J.T. Oliveira, G. Onida, Y. Pouillon, T. Rangel, G.-M. Rignanese, D. Sangalli, R. Shaltaf,
+- M. Torrent, M.J. Verstraete, G. Zerah, J.W. Zwanziger
+- Comment : the third generic paper describing the ABINIT project.
+- Note that a version of this paper, that is not formatted for Computer Phys. Comm. 
+- is available at http://www.abinit.org/about/ABINIT_CPC_v10.pdf .
+- The licence allows the authors to put it on the Web.
+-
+- [3] A brief introduction to the ABINIT software package.
+- Z. Kristallogr. 220, 558-562 (2005).
+- X. Gonze, G.-M. Rignanese, M. Verstraete, J.-M. Beuken, Y. Pouillon, R. Caracas, F. Jollet,
+- M. Torrent, G. Zerah, M. Mikami, Ph. Ghosez, M. Veithen, J.-Y. Raty, V. Olevano, F. Bruneval,
+- L. Reining, R. Godby, G. Onida, D.R. Hamann, and D.C. Allan.
+- Comment : the second generic paper describing the ABINIT project. Note that this paper
+- should be cited especially if you are using the GW part of ABINIT, as several authors
+- of this part are not in the list of authors of the first or third paper.
+- The .pdf of the latter paper is available at http://www.abinit.org/about/zfk_0505-06_558-562.pdf.
+- Note that it should not redistributed (Copyright by Oldenburg Wissenshaftverlag,
+- the licence allows the authors to put it on the Web).
+-
+- And optionally:
+-
+- [4] First-principles computation of material properties : the ABINIT software project. 
+- X. Gonze, J.-M. Beuken, R. Caracas, F. Detraux, M. Fuchs, G.-M. Rignanese, L. Sindic,
+- M. Verstraete, G. Zerah, F. Jollet, M. Torrent, A. Roy, M. Mikami, Ph. Ghosez, J.-Y. Raty, D.C. Allan.
+- Computational Materials Science 25, 478-492 (2002). http://dx.doi.org/10.1016/S0927-0256(02)00325-7
+- Comment : the original paper describing the ABINIT project.
+-
+- Proc.   0 individual time (sec): cpu=         22.1  wall=         36.1
+
+================================================================================
+
+ Calculation completed.
+.Delivered   0 WARNINGs and   0 COMMENTs to log file.
++Overall time at end (sec) : cpu=         44.2  wall=         72.3
