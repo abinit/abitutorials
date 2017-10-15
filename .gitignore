@@ -130,3 +130,5 @@ out_EXC_*
 out_GW
 out_BSR
 out_HAyDR_SAVE
+in_SCR*
+out_SCR*
