@@ -104,8 +104,8 @@ def build_ebands_flow(options):
 
 @abilab.flow_main
 def main(options):
-    flow = build_ngkpt_flow(options)
-    #flow = build_relax_flow(options)
+    #flow = build_ngkpt_flow(options)
+    flow = build_relax_flow(options)
     #flow = build_ebands_flow(options)
     flow.build_and_pickle_dump()
     return flow
