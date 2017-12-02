@@ -8,7 +8,7 @@ pack_dir, x = os.path.split(os.path.abspath(__file__))
 pack_dir, x = os.path.split(pack_dir)
 sys.path.insert(0, pack_dir)
 
-from abipy.core.testing import *
+from abipy.core.testing import AbipyTest
 
 
 class TestLessons(AbipyTest):
