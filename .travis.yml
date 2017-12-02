@@ -93,10 +93,9 @@ script: ./dev_scripts/runtests.sh
 branches:
   only:
     - master
-    - develop
 
-after_success:
-- if [[ "${PYTHON_VERSION}" == "2.7" && "${TRAVIS_OS_NAME}" == "linux" ]]; then coveralls; fi
+#after_success:
+#- if [[ "${PYTHON_VERSION}" == "2.7" && "${TRAVIS_OS_NAME}" == "linux" ]]; then coveralls; fi
 
 notifications:
   email:

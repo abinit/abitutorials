@@ -101,6 +101,7 @@ ENV/
 .mypy_cache/
 
 # Abinit/AbiPy files
+abinb_*.ipynb
 .nodeid
 __AbinitFlow__.pickle
 __startlock__
@@ -129,6 +130,6 @@ out_BSR
 out_EXC_*
 out_GW
 out_BSR
-out_HAyDR_SAVE
+out_HAYDR_SAVE
 in_SCR*
 out_SCR*
