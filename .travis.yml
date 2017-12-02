@@ -1,0 +1,106 @@
+language: python
+
+# We don't actually use the Travis Python but conda
+matrix:
+  include:
+    - os: linux
+      python: 2.7
+      env: PYTHON_VERSION=2.7
+    - os: linux
+      python: 3.6
+      env: PYTHON_VERSION=3.6
+
+sudo: false
+install:
+  #- sudo apt-get update
+  - env
+
+  # pip-based installation.
+  #- pip install numpy
+  #- travis_wait pip install -q -r requirements.txt
+  #- travis_wait pip install -q -r requirements-optional.txt
+
+  # Install conda https://conda.io/docs/travis.html
+  - source dev_scripts/conda_installer.sh
+  - conda config --add channels conda-forge
+
+  # See https://github.com/BVLC/caffe/issues/3884 and https://docs.continuum.io/mkl-optimizations/
+  - conda install nomkl
+  #- conda install gcc 
+  #- conda install libgcc
+  #- conda install scipy sympy
+  - conda install pandas
+  - conda install netcdf4 
+  # See https://github.com/ContinuumIO/anaconda-issues/issues/1360
+  #- conda install hdf4=4.2.12
+  - pip install pytest scripttest nose nose-exclude
+  - if [[ "${PYTHON_VERSION}" == "2.7" ]]; then conda install mock; fi
+  - pip install pep8 python-coveralls
+  #- conda install matplotlib seaborn
+  #- pip install matplotlib seaborn
+  #- pip install scikit-image
+  #- conda install ipython jupyter nbformat
+  #- pip install ipython jupyter nbformat
+  #- conda install -c conda-forge ipywidgets
+  #- pip install ipywidgets
+
+  # Install abinit from abinit conda channel.
+  #- conda install -c abinit abinit=8.2.2
+  - conda install -c gmatteo abinit=8.6.1
+  - abinit --version
+  - abinit --build
+
+  # Get pymatgen from matsci
+  #- conda config --add channels matsci
+  #- conda install pymatgen #=4.7.2
+
+  # Use my pymatgen fork
+  - git clone --depth=50 https://github.com/gmatteo/pymatgen.git && cd pymatgen && pip install -q -r requirements.txt && pip install -q -r requirements-optional.txt && python setup.py install && cd ../
+
+  # Use pymatgen master
+  #- git clone --depth=50 https://github.com/materialsproject/pymatgen.git && cd pymatgen && pip install -q -r requirements.txt && pip install -q -r requirements-optional.txt && python setup.py install && cd ../
+
+  # Install abipy from github (develop)
+  - git clone --depth=50 https://github.com/abinit/abipy.git && cd abipy && pip install -q -r requirements.txt && pip install -q -r requirements-optional.txt && python setup.py install && cd ../
+  # Install abipy from PyPI 
+  #- pip install abipy=0.2
+
+  # phonopy is not a requirement but we test scripts in data/runs that use it
+  #- conda install -c conda-forge phonopy
+
+  #- python setup.py install
+  - mkdir -p ${HOME}/.abinit/abipy 
+  - cp abipy/data/managers/travis_scheduler.yml ${HOME}/.abinit/abipy/scheduler.yml
+  - cp abipy/data/managers/travis_manager.yml ${HOME}/.abinit/abipy/manager.yml
+  - ./dev_scripts/pyclean.py .
+
+  # Install bader (http://theory.cm.utexas.edu/henkelman/code/bader/) from matsci
+  #- conda install -c matsci bader
+
+before_script:
+    # This to run tests requiring a graphical user e.g. mayavi
+    # https://docs.travis-ci.com/user/gui-and-headless-browsers/#Using-xvfb-to-Run-Tests-That-Require-a-GUI
+    #- "export DISPLAY=:99.0"
+    #- "sh -e /etc/init.d/xvfb start"
+    #- sleep 3 # give xvfb some time to start
+    # https://github.com/travis-ci/travis-ci/issues/6307
+    #- if [[ "${TRAVIS_OS_NAME}" == "osx" ]]; then rvm get head; fi 
+    #- rm abipy/gui/__init__.py 
+
+# command to run tests
+script: ./dev_scripts/runtests.sh
+
+branches:
+  only:
+    - master
+    - develop
+
+after_success:
+- if [[ "${PYTHON_VERSION}" == "2.7" && "${TRAVIS_OS_NAME}" == "linux" ]]; then coveralls; fi
+
+notifications:
+  email:
+    recipients:
+      - gmatteo@gmail.com
+    on_success: change
+    on_failure: always

@@ -80,7 +80,7 @@ def make_scf_nscf_bse_inputs(ngkpt=(6, 6, 6), ecut=6, ecuteps=3,
     return scf_input, nscf_input, bse_input
 
 
-def build_bse_flow():
+def build_bse_flow(options):
     """
     Build a flow to solve the BSE with default parameters.
     """
@@ -97,7 +97,7 @@ def build_bse_flow():
     return flow
 
 
-def build_bse_metallicW_flow():
+def build_bse_metallicW_flow(options):
     """
     Build a flow to solve the BSE with metallic screening.
     Note the value of `mdf_epsinf`.
@@ -113,7 +113,7 @@ def build_bse_metallicW_flow():
     return flow
 
 
-def build_bse_kconv_flow():
+def build_bse_kconv_flow(options):
     """
     Build a flow to analyze the convergence of the BSE spectrum wrt k-point sampling.
     """
