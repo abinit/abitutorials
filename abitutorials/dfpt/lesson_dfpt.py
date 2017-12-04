@@ -66,11 +66,15 @@ def build_flow_alas_phonons(options):
                                             ph_ngqpt=(2, 2, 2), with_becs=True)
 
 
-@abilab.flow_main
+@flowtk.flow_main
 def main(options):
+    """
+    This is our main function that will be invoked by the script.
+    flow_main is a decorator implementing the command line interface.
+    Command line args are stored in `options`.
+    """
     #flow = build_flow_alas_ecut_conv(options)
     flow = build_flow_alas_phonons(options)
-    flow.build_and_pickle_dump()
     return flow
 
 

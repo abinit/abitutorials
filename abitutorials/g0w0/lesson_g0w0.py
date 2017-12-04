@@ -169,11 +169,9 @@ def build_g0w0_flow(workdir="flow_g0w0", ngkpt=(2, 2, 2)):
     return flow
 
 
-@abilab.flow_main
+@flowtk.flow_main
 def main(options):
-    flow = build_g0w0_flow()
-    flow.build_and_pickle_dump()
-    return flow
+    return build_g0w0_flow()
 
 
 if __name__ == "__main__":

@@ -67,15 +67,18 @@ def build_flow(options):
     """
     inputs = [gs_input(x=x) for x in np.linspace(0.5, 1.025, 21)]
 
-    workdir = "flow_h2" if not options.workdir else options.workdir
-    return flowtk.Flow.from_inputs(workdir, inputs, remove=options.remove)
+    options.workdir = "flow_h2" if not options.workdir else options.workdir
+    return flowtk.Flow.from_inputs(options.workdir, inputs)
 
 
-@abilab.flow_main
+@flowtk.flow_main
 def main(options):
-    flow = build_flow(options)
-    flow.build_and_pickle_dump()
-    return flow
+    """
+    This is our main function that will be invoked by the script.
+    flow_main is a decorator implementing the command line interface.
+    Command line args are stored in `options`.
+    """
+    return build_flow(options)
 
 
 if __name__ == "__main__":

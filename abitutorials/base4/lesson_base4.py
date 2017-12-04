@@ -46,9 +46,9 @@ def relax_input(tsmear, nksmall):
 
 
 def build_relax_flow(options):
-    workdir = "flow_al_relax" if not options.workdir else options.workdir
-    return flowtk.Flow.from_inputs(workdir, inputs=relax_input(tsmear=0.05, nksmall=2),
-                                   task_class=flowtk.RelaxTask, remove=options.remove)
+    options.workdir = "flow_al_relax" if not options.workdir else options.workdir
+    return flowtk.Flow.from_inputs(options.workdir, inputs=relax_input(tsmear=0.05, nksmall=2),
+                                   task_class=flowtk.RelaxTask)
 
 
 def build_relax_tsmear_nkpts_convflow(options, tsmear_list=(0.01, 0.02, 0.03, 0.04), nksmall_list=(2, 4, 6)):
@@ -64,15 +64,14 @@ def build_relax_tsmear_nkpts_convflow(options, tsmear_list=(0.01, 0.02, 0.03, 0.
     # AbiPy will use this piece of information to handle the restart of the RelaxTask that differs
     # from the one provided by GsTask.
 
-    workdir = "flow_al_relax_tsmear_nkpt" if not options.workdir else options.workdir
-    return flowtk.Flow.from_inputs(workdir, inputs=inputs, task_class=flowtk.RelaxTask,
-                                   remove=options.remove)
+    options.workdir = "flow_al_relax_tsmear_nkpt" if not options.workdir else options.workdir
+    return flowtk.Flow.from_inputs(options.workdir, inputs=inputs, task_class=flowtk.RelaxTask)
 
-@abilab.flow_main
+
+@flowtk.flow_main
 def main(options):
     #flow = build_relax_flow(options)
     flow = build_relax_tsmear_nkpts_convflow(options)
-    flow.build_and_pickle_dump()
     return flow
 
 

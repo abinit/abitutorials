@@ -38,8 +38,8 @@ def build_ngkpt_flow(options):
         multi[i].set_kmesh(ngkpt=ngkpt, shiftk=shiftk)
 
     # Split the inputs by calling multi.datasets() and pass the list of inputs to Flow.from_inputs.
-    workdir = "flow_base3_ngkpt" if not options.workdir else options.workdir
-    return flowtk.Flow.from_inputs(workdir, inputs=multi.split_datasets(), remove=options.remove)
+    options.workdir = "flow_base3_ngkpt" if not options.workdir else options.workdir
+    return flowtk.Flow.from_inputs(options.workdir, inputs=multi.split_datasets())
 
 
 def build_relax_flow(options):
@@ -71,9 +71,8 @@ def build_relax_flow(options):
     for i, ngkpt in enumerate(ngkpt_list):
         multi[i].set_kmesh(ngkpt=ngkpt, shiftk=shiftk)
 
-    workdir = "flow_base3_relax" if not options.workdir else options.workdir
-    return flowtk.Flow.from_inputs(workdir, inputs=multi.split_datasets(), task_class=flowtk.RelaxTask,
-                                   remove=options.remove)
+    options.workdir = "flow_base3_relax" if not options.workdir else options.workdir
+    return flowtk.Flow.from_inputs(options.workdir, inputs=multi.split_datasets(), task_class=flowtk.RelaxTask)
 
 
 def build_ebands_flow(options):
@@ -98,12 +97,17 @@ def build_ebands_flow(options):
 
     scf_input, nscf_input = multi.split_datasets()
 
-    workdir = "flow_base3_ebands" if not options.workdir else options.workdir
-    return flowtk.bandstructure_flow(workdir, scf_input=scf_input, nscf_input=nscf_input)
+    options.workdir = "flow_base3_ebands" if not options.workdir else options.workdir
+    return flowtk.bandstructure_flow(options.workdir, scf_input=scf_input, nscf_input=nscf_input)
 
 
-@abilab.flow_main
+@flowtk.flow_main
 def main(options):
+    """
+    This is our main function that will be invoked by the script.
+    flow_main is a decorator implementing the command line interface.
+    Command line args are stored in `options`.
+    """
     #flow = build_ngkpt_flow(options)
     flow = build_relax_flow(options)
     #flow = build_ebands_flow(options)

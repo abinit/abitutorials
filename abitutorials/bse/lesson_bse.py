@@ -128,12 +128,16 @@ def build_bse_kconv_flow(options):
     return flow
 
 
-@abilab.flow_main
+@flowtk.flow_main
 def main(options):
+    """
+    This is our main function that will be invoked by the script.
+    flow_main is a decorator implementing the command line interface.
+    Command line args are stored in `options`.
+    """
     flow = build_bse_flow()
     #flow = build_bse_metallicW_flow()
     #flow = build_bse_kconv_flow()
-    flow.build_and_pickle_dump()
     return flow
 
 
