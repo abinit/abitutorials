@@ -1,4 +1,4 @@
-name: abiturialsr3.6
+#name: binder3.6
 channels:
 - anaconda
 - gmatteo
@@ -114,5 +114,5 @@ dependencies:
 - tqdm=4.10.0=py36_1
 - pip:
   - backports.functools-lru-cache==1.4
-prefix: /home/ucl/naps/gmatteo/miniconda3/envs/abiturialsr3.6
+#prefix: /home/ucl/naps/gmatteo/miniconda3/envs/abiturialsr3.6
 
