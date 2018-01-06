@@ -9,7 +9,7 @@ Feedback, as usual, is welcome.
 About
 =====
 
-Abinit tutorials based on AbiPy
+Abinit tutorials based on [AbiPy](https://github.com/abinit/abipy)
 
 ## Getting started
 

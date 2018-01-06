@@ -1,8 +1,9 @@
 """Tests for lessons"""
 from __future__ import print_function, division, unicode_literals, absolute_import
 
-import os
 import sys
+import os
+
 
 pack_dir, x = os.path.split(os.path.abspath(__file__))
 pack_dir, x = os.path.split(pack_dir)

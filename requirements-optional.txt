@@ -1,4 +1,2 @@
-ipython
-jupyter
-nbformat
-mayavi
+pytest
+pytest-cov
