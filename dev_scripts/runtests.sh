@@ -3,7 +3,7 @@ set -ev  # exit on first error, print each command
 
 #echo "PMG_MAPI_KEY: 8pkvwRLQSCVbW2Fe" > ${HOME}/.pmgrc.yaml
 
-abicheck.py --with-flow
+#abicheck.py --with-flow
 
 #nosetests -v --with-coverage --cover-package=abipy --logging-level=INFO
 #nosetests abipy -v --with-coverage --cover-package=abipy --logging-level=INFO
