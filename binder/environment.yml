@@ -1,14 +1,18 @@
-#name: binder3.6
+name: abiturialsr3.6
 channels:
+- anaconda
 - gmatteo
 - abinit
 - matsci
 - conda-forge
 - defaults
 dependencies:
+- abipy=0.2.0=py36_0
 - apscheduler=2.1.0=py36_0
 - html2text=2016.9.19=py36_0
+- setuptools=36.5.0=py36he42e2e1_0
 - asn1crypto=0.22.0=py36_0
+- attrs=17.4.0=py_0
 - backports=1.0=py36_1
 - backports.functools_lru_cache=1.4=py36_1
 - blas=1.1=openblas
@@ -16,11 +20,11 @@ dependencies:
 - certifi=2017.11.5=py36_0
 - cffi=1.11.2=py36_0
 - chardet=3.0.4=py36_0
+- coverage=4.4.2=py36_0
 - cryptography=2.1.4=py36_0
 - curl=7.55.1=0
 - cycler=0.10.0=py36_0
 - dbus=1.10.22=0
-- decorator=4.1.2=py36_0
 - expat=2.2.5=0
 - fastcache=1.0.2=py36_0
 - fontconfig=2.12.6=0
@@ -52,7 +56,6 @@ dependencies:
 - ncurses=5.9=10
 - netcdf-fortran=4.4.4=6
 - netcdf4=1.3.1=py36_1
-- networkx=2.0=py36_1
 - numpy=1.13.3=py36_blas_openblas_201
 - openblas=0.2.20=6
 - openssl=1.0.2n=0
@@ -60,12 +63,16 @@ dependencies:
 - patsy=0.4.1=py36_0
 - pcre=8.39=0
 - pip=9.0.1=py36_1
+- pluggy=0.6.0=py_0
 - prettytable=0.7.2=py36_1
+- py=1.5.2=py_0
 - pycparser=2.18=py36_0
 - pyopenssl=17.4.0=py36_0
 - pyparsing=2.2.0=py36_0
 - pyqt=5.6.0=py36_4
 - pysocks=1.6.7=py36_0
+- pytest=3.3.2=py36_0
+- pytest-cov=2.5.1=py36_0
 - python=3.6.4=0
 - python-dateutil=2.6.1=py36_0
 - pytz=2017.3=py_2
@@ -75,7 +82,6 @@ dependencies:
 - requests=2.18.4=py36_1
 - scipy=1.0.0=py36_blas_openblas_201
 - seaborn=0.8.1=py36_0
-- setuptools=38.2.4=py36_0
 - sip=4.18=py36_1
 - six=1.11.0=py36_1
 - sqlite=3.20.1=2
@@ -84,7 +90,7 @@ dependencies:
 - tk=8.6.7=0
 - tornado=4.5.2=py36_0
 - urllib3=1.22=py36_0
-- wheel=0.30.0=py_1
+- wheel=0.30.0=py36_2
 - xorg-libxau=1.0.8=3
 - xorg-libxdmcp=1.1.2=3
 - xz=5.2.3=0
@@ -97,6 +103,7 @@ dependencies:
 - abinit=8.6.1=1
 - fftw=3.3.6=0
 - libxc=2.2.2=0
+- bader=0.9.5=hcbada71_1
 - monty=1.0.2=py36h8689505_2
 - palettable=2.1.1=py36h1b737fa_2
 - pydispatcher=2.0.5=py36h30c4b39_1
@@ -107,5 +114,5 @@ dependencies:
 - tqdm=4.10.0=py36_1
 - pip:
   - backports.functools-lru-cache==1.4
-#prefix: /home/ucl/naps/gmatteo/miniconda3/envs/binder3.6
+prefix: /home/ucl/naps/gmatteo/miniconda3/envs/abiturialsr3.6
 
