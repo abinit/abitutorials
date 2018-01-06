@@ -25,7 +25,11 @@ install:
   - source dev_scripts/conda_installer.sh
   #- source dev_scripts/conda_develop.sh
   #- conda uninstall -y pymatgen
-  - conda install --file binder/environment.yml
+  #- conda install --file binder/environment.yml
+  - conda env update --file=binder/environment.yml
+
+  #- conda install -y --file ./requirements.txt
+  - conda install -y --file ./requirements-optional.txt
 
   #- if [[ "${PYTHON_VERSION}" == "2.7" ]]; then conda install mock; fi
   #- pip install nose nose-exclude
