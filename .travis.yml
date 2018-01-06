@@ -54,7 +54,7 @@ install:
   #- cp abipy/data/managers/travis_manager.yml ${HOME}/.abinit/abipy/manager.yml
   #- ./dev_scripts/pyclean.py .
 
-before_script:
+#before_script:
     # This to run tests requiring a graphical user e.g. mayavi
     # https://docs.travis-ci.com/user/gui-and-headless-browsers/#Using-xvfb-to-Run-Tests-That-Require-a-GUI
     #- "export DISPLAY=:99.0"
@@ -69,6 +69,7 @@ script: ./dev_scripts/runtests.sh
 branches:
   only:
     - master
+    - develop
 
 after_success:
   - if [[ "${PYTHON_VERSION}" == "3.6" && "${TRAVIS_OS_NAME}" == "linux" ]]; then coveralls; fi
