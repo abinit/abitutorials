@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/abinit/abitutorials.svg?branch=master)](https://travis-ci.org/abinit/abitutorials)
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/abinit/abitutorials/master?filepath=https%3A%2F%2Fgithub.com%2Fabinit%2Fabitutorials%2Fblob%2Fmaster%2Fabitutorials%2Findex.ipynb)
 
 WARNING: This package is under active development. Many things will change rapidly, 
 including a possible history reset. 
