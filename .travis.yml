@@ -26,7 +26,7 @@ install:
   #- source dev_scripts/conda_develop.sh
   #- conda uninstall -y pymatgen
   #- conda install --file binder/environment.yml
-  - conda install -y -c anaconda setuptools
+  #- conda install -y -c anaconda setuptools
   - conda env update --file=binder/environment.yml
 
   #- conda install -y --file ./requirements.txt
