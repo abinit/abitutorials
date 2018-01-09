@@ -83,8 +83,15 @@ def make_scf_nscf_bse_inputs(ngkpt=(6, 6, 6), ecut=6, ecuteps=3,
 def build_bse_flow(options):
     """
     Build a flow to solve the BSE with default parameters.
+
+    Args:
+        options: Command line options.
+
+    Return:
+        Flow object.
     """
-    flow = flowtk.Flow(workdir="flow_bse")
+    workdir = options.workdir if (options and options.workdir) else "flow_bse"
+    flow = flowtk.Flow(workdir=workdir)
 
     # Build a Work for BSE calculation with the model dielectric function ...
     scf_inp, nscf_inp, bse_inp = make_scf_nscf_bse_inputs()
@@ -101,8 +108,15 @@ def build_bse_metallicW_flow(options):
     """
     Build a flow to solve the BSE with metallic screening.
     Note the value of `mdf_epsinf`.
+
+    Args:
+        options: Command line options.
+
+    Return:
+        Flow object.
     """
-    flow = flowtk.Flow(workdir="flow_bse_metallicW")
+    workdir = options.workdir if (options and options.workdir) else "flow_bse_metallicW"
+    flow = flowtk.Flow(workdir=workdir)
 
     # Model dielectric function with metallic screening
     scf_inp, nscf_inp, bse_inp = make_scf_nscf_bse_inputs(ngkpt=(4, 4, 4), ecut=6, ecuteps=3,
@@ -116,8 +130,15 @@ def build_bse_metallicW_flow(options):
 def build_bse_kconv_flow(options):
     """
     Build a flow to analyze the convergence of the BSE spectrum wrt k-point sampling.
+
+    Args:
+        options: Command line options.
+
+    Return:
+        Flow object.
     """
-    flow = flowtk.Flow(workdir="flow_bse_kconv")
+    workdir = options.workdir if (options and options.workdir) else "flow_bse_kconv"
+    flow = flowtk.Flow(workdir=workdir)
 
     # 3 works with differet ngkpt.
     for nk in [4, 6, 8]:
@@ -135,9 +156,9 @@ def main(options):
     flow_main is a decorator implementing the command line interface.
     Command line args are stored in `options`.
     """
-    flow = build_bse_flow()
-    #flow = build_bse_metallicW_flow()
-    #flow = build_bse_kconv_flow()
+    flow = build_bse_flow(options)
+    #flow = build_bse_metallicW_flow(options)
+    #flow = build_bse_kconv_flow(options)
     return flow
 
 
