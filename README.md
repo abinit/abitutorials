@@ -13,10 +13,11 @@ About
 
 Abinit tutorials based on [AbiPy](https://github.com/abinit/abipy)
 
-Click the **Nbviewer** badge to visualize the static version of the jupyter notebooks (cannot execute code).
-Click the **Binder** badge to start a Docker image.
+Click the **Render Nbviewer** badge to visualize the static version of the jupyter notebooks (cannot execute code).
+
+Click the **Launch Binder** badge to start a Docker image.
 The image contains Abinit, AbiPy and all the other python dependencies
-required to run the code in the jupyter notebooks.
+required to run the code inside the jupyter notebooks.
 The notebook will be opened in your browser after building.
 
 ## Getting started
