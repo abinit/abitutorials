@@ -37,9 +37,10 @@ def build_ngkpt_flow(options):
     for i, ngkpt in enumerate(ngkpt_list):
         multi[i].set_kmesh(ngkpt=ngkpt, shiftk=shiftk)
 
+    workdir = options.workdir if (options and options.workdir) else "flow_base3_ngkpt"
+
     # Split the inputs by calling multi.datasets() and pass the list of inputs to Flow.from_inputs.
-    options.workdir = "flow_base3_ngkpt" if not options.workdir else options.workdir
-    return flowtk.Flow.from_inputs(options.workdir, inputs=multi.split_datasets())
+    return flowtk.Flow.from_inputs(workdir, inputs=multi.split_datasets())
 
 
 def build_relax_flow(options):
@@ -71,8 +72,9 @@ def build_relax_flow(options):
     for i, ngkpt in enumerate(ngkpt_list):
         multi[i].set_kmesh(ngkpt=ngkpt, shiftk=shiftk)
 
-    options.workdir = "flow_base3_relax" if not options.workdir else options.workdir
-    return flowtk.Flow.from_inputs(options.workdir, inputs=multi.split_datasets(), task_class=flowtk.RelaxTask)
+    workdir = options.workdir if (options and options.workdir) else "flow_base3_relax"
+
+    return flowtk.Flow.from_inputs(workdir, inputs=multi.split_datasets(), task_class=flowtk.RelaxTask)
 
 
 def build_ebands_flow(options):
@@ -97,8 +99,9 @@ def build_ebands_flow(options):
 
     scf_input, nscf_input = multi.split_datasets()
 
-    options.workdir = "flow_base3_ebands" if not options.workdir else options.workdir
-    return flowtk.bandstructure_flow(options.workdir, scf_input=scf_input, nscf_input=nscf_input)
+    workdir = options.workdir if (options and options.workdir) else "flow_base3_ebands"
+
+    return flowtk.bandstructure_flow(workdir, scf_input=scf_input, nscf_input=nscf_input)
 
 
 @flowtk.flow_main
