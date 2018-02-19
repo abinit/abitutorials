@@ -6,6 +6,10 @@ __pycache__/
 # C extensions
 *.so
 
+# abipy files
+abinb_*.ipynb
+__abinb_workdir__
+
 # Distribution / packaging
 .Python
 env/
