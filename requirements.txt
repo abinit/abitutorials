@@ -1,7 +1,8 @@
-numpy
-seaborn
 abipy
-#ipython
-#jupyter
-#nbformat
+jupyter
+nbformat
+ipywidgets
+networkx
+scikit-image
+#graphviz or python-graphviz if conda
 #mayavi
