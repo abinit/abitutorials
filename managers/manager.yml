@@ -2,12 +2,16 @@ qadapters:
     -
       priority: 1 
       queue:
-        qname: travis
+        qname: abituto
         qtype: shell
       job:
         mpi_runner: mpirun
         #pre_run: 
-        #    - source activate test-environment
+        #    - source activate abienv
+        #    - export PATH=$HOME/git_repos/abinit_build_impi/src/98_main:$PATH
+        #    - ulimit -s unlimited
+        #modules:
+        #    - compiler/intel/composerxe/2013_sp1.1.106
       limits:
          min_cores: 1
          max_cores: 2

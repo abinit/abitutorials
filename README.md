@@ -2,9 +2,6 @@
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/abinit/abitutorials/master)
 [![Build Status](https://travis-ci.org/abinit/abitutorials.svg?branch=master)](https://travis-ci.org/abinit/abitutorials)
 
-WARNING: This package is under active development. 
-Many things will change rapidly, including a possible history reset. 
-
 [Index of jupyter notebooks](https://nbviewer.jupyter.org/github/abinit/abitutorials/blob/master/abitutorials/index.ipynb)
 
 About
@@ -46,37 +43,36 @@ If you opt for the last option, use:
 
 to clone this repository on your machine.
 
-To open the notebook in your browser, use::
+To open the notebook in your browser, use:
 
-    jupyter notebook FILE
+    jupyter notebook FILE.ipynb
 
 Note that the notebook contains python code that will invoke Abinit 
-so before executing the jupyter notebook you need to install all the required dependencies
-(python, jupyter, abipy, abinit  and, obviously, a web browser)
+so before executing the jupyter notebook you need to install all the required dependencies:
+python, jupyter, abipy, abinit  and obviously a web browser (DOH!)
 
-In principle, you can use [pip](https://pip.pypa.io/en/stable/) to install python code with::
+In principle, you can use [pip](https://pip.pypa.io/en/stable/) to install python code with:
 
     pip install jupyter abipy
 
-but then you may need to compile from source some of the low-level dependencies.
-including the Abinit executable so the entire process could require 
-some time and your host must provide a sane environment to build Fortran/C/C++ code, possibly with MPI support.
+Note, however, that you may need to compile from source some of the low-level dependencies
+including the Abinit executable so the entire process could require some time,
+besides your machine must provide a sane environment to build Fortran/C/C++ code, possibly with MPI support.
 
 If you love building software from source, feel free to use this approach and 
 use the configuration examples available on the [abiconfig repository](https://github.com/abinit/abiconda)
 to build Abinit on your machine/cluster.
 
 If you prefer to skip the compilation process, 
-we suggest using the [conda](https://conda.io/miniconda.html) installer.
-to install Abipy and (optionally) Abinit.
-In what follows, we give the list of commands/steps required to bootstrap everything with conda.
+we suggest using the [conda](https://conda.io/miniconda.html) to install Abipy and (optionally) Abinit.
+In what follows, we give the list of steps required to bootstrap everything with conda.
 More detailed instructions on how to install with conda are available
 in the [abiconda](https://github.com/abinit/abiconda) documentation.
 
-## How to install Abinit in five steps <a name="Abinit_in_five_steps"></a>
+## How to install Abinit in five steps <a id="Abinit_in_five_steps"></a>
 
-To install AbiPy with conda, download the `miniconda installer <https://conda.io/miniconda.html>`_
-If you are a Linux user, download and install ``miniconda`` on your local machine with:
+To install AbiPy with conda, download the [miniconda installer](https://conda.io/miniconda.html)
+If you are a Linux user, download and install `miniconda` on your local machine with:
 
     wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
     bash Miniconda3-latest-Linux-x86_64.sh
@@ -96,17 +92,17 @@ Source your ``.bashrc`` file to activate the changes done by ``miniconda`` to yo
 
     source ~/.bashrc
 
-Create a new conda environment (let's call it `abipy3.6`) based on python3.6 with::
+Create a new conda environment (let's call it `abienv`) based on python3.6 with:
 
-    conda create --name abipy3.6 python=3.6
+    conda create --name abienv python=3.6
 
-and activate it with::
+and activate it with:
 
-    source activate abipy3.6
+    source activate abienv
 
 You should see the name of the conda environment in the shell prompt.
 
-Now add ``conda-forge``, ``matsci`` and ``abinit`` to your conda channels with::
+Now add ``conda-forge``, ``matsci`` and ``abinit`` to your conda channels with:
 
     conda config --add channels conda-forge
     conda config --add channels matsci
@@ -118,14 +114,16 @@ To install AbiPy from the [abinit-channel](https://anaconda.org/abinit) use::
 
     conda install abipy -c abinit
 
-At this point, open the python interpreter and import the following three modules
-to check that the python installation is OK::
+Now open the python interpreter and import the following three modules
+to check that the python installation is OK:
 
-    import spglib
-    import pymatgen
-    from abipy import abilab 
+```python
+import spglib
+import pymatgen
+from abipy import abilab 
+```
 
-At this point, you have installed the latest version of AbiPy and you can
+At this point, we have installed the latest version of AbiPy and we can
 start to use the AbiPy scripts from the command line to analyze the output results.
 Note, however, that you won't be able to invoke Abinit from Abipy.
 Firstly because we haven't installed Abinit yet (DOH!), secondly because
@@ -136,25 +134,121 @@ To install the *parallel* version of abinit from the ``abinit channel`` use:
 
     conda install abinit --channel abinit
 
-use which abinit
-and perform a basic validation of the build by executing::
+The Abinit executables are placed inside the anaconda directory associated to the ``abienv`` environment:
+
+    which abinit
+    /Users/gmatteo/anaconda3/envs/abienv/bin/abinit
+
+To perform a basic validation of the build, execute:
 
     abinit -b
 
 Now we explain how to prepare the configuration files required by Abipy
-Copy the `scheduler.yml` and `manager.yml` files from the `managers` directory 
-of this repo to your `$HOME/.abinit/abipy` directory.
+For a more detailed description of the syntax used in this configuration file
+please consult the [TaskManager documentation](http://abinit.github.io/abipy/workflows/taskmanager.html).
 
-At this point, execute::
+Copy the `scheduler.yml` and `manager.yml` files from the `managers` directory 
+of this repository to your `$HOME/.abinit/abipy` directory.
+Open `manager.yml` and make sure that the `pre_run` section contains the shell commands 
+needed to setup the environment before launching Abinit (e.g. Abinit is in $PATH)
+
+At this point, execute:
 
     abicheck.py
 
 You should see:
 
+```shell
+$ abicheck.py
+AbiPy Manager:
+[Qadapter 0]
+ShellAdapter:localhost
+Hardware:
+   num_nodes: 2, sockets_per_node: 1, cores_per_socket: 2, mem_per_node 4096,
+Qadapter selected: 0
+
+Abinitbuild:
+Abinit Build Information:
+    Abinit version: 8.7.6
+    MPI: True, MPI-IO: True, OpenMP: False
+    Netcdf: True
+
+Abipy Scheduler:
+PyFlowScheduler, Pid: 19379
+Scheduler options: {'weeks': 0, 'days': 0, 'hours': 0, 'minutes': 0, 'seconds': 5}
+
+Installed packages:
+Package         Version
+--------------  ---------
+system          Darwin
+python_version  3.6.1
+numpy           1.14.2
+scipy           1.0.0
+netCDF4         1.3.1
+apscheduler     2.1.0
+pydispatch      2.0.5
+yaml            3.12
+pymatgen        2018.3.14
+
+
+Abipy requirements are properly configured
+```
+
+If the script fails with the error message:
+
+    Abinit executable does not support netcdf
+    Abipy requires Abinit version >= 8.0.8 but got 0.0.0
+
+it means that your environment is not property configured or that there's a problem
+with the binary executable.
+In this case, look at the files produced in the temporary directory of the flow.
+The script reports the name of the directory, something like:
+
+    CRITICAL:pymatgen.io.abinit.tasks:Error while executing /var/folders/89/47k8wfdj11x035svqf8qnl4m0000gn/T/tmp28xi4dy1/job.sh
+
+Check the `job.sh` script for possible typos, then search for possible error messages in `run.err`.
+
 The last test consists in executing a small calculation with AbiPy and Abinit.
-Inside the shell, execute::
+Inside the shell, execute:
 
     abicheck.py --with-flow
 
 to run a GS + NSCF band structure calculation for Si.
-If the software stack is propertly configure, you should obtain:
+If the software stack is properly configured, you should obtain:
+
+```shell
+Work #0: <BandStructureWork, node_id=313436, workdir=../../../../var/folders/89/47k8wfdj11x035svqf8qnl4m0000gn/T/tmpygixwf9a/w0>, Finalized=True
+  Finalized works are not shown. Use verbose > 0 to force output.
+
+all_ok reached
+
+
+Submitted on: Sat Mar 17 23:16:57 2018
+Completed on: Sat Mar 17 23:17:07 2018
+Elapsed time: 0:00:10.046392
+Flow completed successfully
+
+Calling flow.finalize()...
+
+Work #0: <BandStructureWork, node_id=313436, workdir=../../../../var/folders/89/47k8wfdj11x035svqf8qnl4m0000gn/T/tmpygixwf9a/w0>, Finalized=True
+  Finalized works are not shown. Use verbose > 0 to force output.
+
+all_ok reached
+
+
+Test flow completed successfully
+```
+
+Great, if you've reached this part it means that you've installed AbiPy and Abinit on your machine!
+We can finally start to run the scripts in this repo or use one of the AbiPy script to analyze 
+the results.
+
+TIP:
+
+All the AbiPy scripts start with the `abi` prefix. 
+Just type:
+
+    abi + <TAB> 
+    
+in the shell to get the list of possible scripts
+Please consult the [AbiPy documentation](http://abinit.github.io/abipy/index.html) for further details.

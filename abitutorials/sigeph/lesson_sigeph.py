@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Electron-phonon calculations."""
+"""Calculations of the Fan-Migdal Debye-Waller self-energy in diamond."""
 from __future__ import print_function, division, unicode_literals, absolute_import
 
 import os
@@ -33,14 +33,14 @@ def build_flow(options):
     )
 
     # Initialize input from structure and norm-conserving pseudo provided by AbiPy.
-    gs_inp = abilab.AbinitInput(structure, pseudos=abidata.pseudos("C.oncvpsp"))
+    gs_inp = abilab.AbinitInput(structure, pseudos="6c.pspnc")
 
     # Set basic variables for GS part.
     gs_inp.set_vars(
         istwfk="*1",
-        ecut=20.0,
+        ecut=20.0,          # Too low, shout be ~30
         nband=4,
-        tolvrs=1e-10,
+        tolvrs=1e-8,
     )
 
     # The kpoint grid is minimalistic to keep the calculation manageable.
@@ -62,10 +62,10 @@ def build_flow(options):
     # Build another NSCF input with k-mesh and empty states.
     # This step generates the WFK file used to build the EPH self-energy.
     nscf_empty_kmesh_inp = gs_inp.new_with_vars(
-        #nband=210,
-        nband=110,
-        nbdbuf=10,      # nbdbuf reduces considerably the time needed
-        tolwfr=1e-16,   # to converge so many empty states!
+        nband=210,
+        #nband=110,     # Too low. ~300
+        nbdbuf=10,     # reduces considerably the time needed to converge empty states!
+        tolwfr=1e-16,
         iscf=-2,
     )
 
@@ -80,27 +80,29 @@ def build_flow(options):
     # Reuse variables from GS input and let AbiPy handle the generation of the input files
     # Note that the q-point grid is a sub-grid of the k-point grid (here 8x8x8)
     ddb_ngqpt = [4, 4, 4]
-    ph_work = flowtk.PhononWork.from_scf_task(work0[0], ddb_ngqpt, is_ngqpt=True)
+    ph_work = flowtk.PhononWork.from_scf_task(work0[0], ddb_ngqpt, is_ngqpt=True,
+                                              tolerance={"tolvrs": 1e-6})  # This to speedup DFPT
     flow.register_work(ph_work)
 
-    # Build input for E-PH run. See also v8/Input/t44.in
+    # Build template for self-energy calculation. See also v8/Input/t44.in
     # Matrix elements of self-energy are computed for 2 k-points and the first 8 bands.
     # The k-points must be in the WFK file
 
     eph_inp = gs_inp.new_with_vars(
-        optdriver=7,               # Enter EPH driver.
-        eph_task=4,                # Activate computation of EPH self-energy.
-        ddb_ngqpt=ddb_ngqpt,       # q-mesh used to produce the DDB file (must be consistent with DDB data)
-        nband=54,
-        symsigma=0,
-        nkptgw=2,
-        kptgw=[0, 0, 0,
-               0.5, 0, 0],
-        bdgw=[1, 8, 1, 8],
-        #eph_intmeth=2,            # Tetra method
-        #gw_qprange-2
-        #tmesh=[10, 1000, 5],
+        optdriver=7,             # Enter EPH driver.
+        eph_task=4,              # Activate computation of EPH self-energy.
+        ddb_ngqpt=ddb_ngqpt,     # q-mesh used to produce the DDB file (must be consistent with DDB data)
+        symsigma=1,              # Use symmetries in self-energy integration (IBZ_k instead of BZ)
+        nkptgw=1,
+        kptgw=[0, 0, 0],
+        bdgw=[1, 8],     # [2, 7] crashes
+        #nkptgw=2,
+        #kptgw=[0, 0, 0,
+        #       0.5, 0, 0],
+        #bdgw=[1, 8, 1, 8],
         #gw_qprange=-4,
+        tmesh=[0, 200, 5],
+        zcut="0.2 eV",
     )
 
     # Set q-path for Fourier interpolation of phonons.
@@ -118,10 +120,20 @@ def build_flow(options):
     # The code will activate the Fourier interpolation of the DFPT potentials if eph_ngqpt_fine != ddb_ngqpt
 
     for eph_ngqpt_fine in [[4, 4, 4], [8, 8, 8]]:
+        # Create empty work to contain EPH tasks with this value of eph_ngqpt_fine
         eph_work = flow.register_work(flowtk.Work())
-        for nband in [25, 50, 75, 100]:
+        #for nband in [50, 75, 100]:
+        for nband in [100, 150, 200]:
             new_inp = eph_inp.new_with_vars(eph_ngqpt_fine=eph_ngqpt_fine, nband=nband)
             eph_work.register_eph_task(new_inp, deps=deps)
+
+    # Generate last work with our best parameters to compute the QP correction in the IBZ
+    # We include all occupied states and 4 empty bands.
+    # The QP corrections in the IBZ are then interpolate with star functions
+    #new_inp = eph_inp.new_with_vars(eph_ngqpt_fine=[8, 8, 8], nband=100)
+    #new_inp.pop_vars(["nkptgw", "kptgw", "bdgw"])
+    #new_inp["gw_qprange"] = -4
+    #flow.register_eph_task(new_inp, deps=deps, task_class=flowtk.EphTask, append=False)
 
     flow.allocate()
 
