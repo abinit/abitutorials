@@ -121,13 +121,13 @@ def build_flow(options):
         # Set q-path to interpolate phonons and phonon linewidths.
         eph_inp.set_qpath(10)
 
-        # TODO: Define wstep and smear
         # Set q-mesh for phonons DOS and a2F(w)
         eph_inp.set_phdos_qmesh(nqsmall=24, method="tetra")
         eph_work.register_eph_task(eph_inp, deps=eph_deps)
 
     flow.register_work(eph_work)
 
+    # Avoid producing (big) output files that not required by children.
     flow.allocate(use_smartio=True)
 
     return flow

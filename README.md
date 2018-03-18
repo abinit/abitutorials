@@ -250,5 +250,5 @@ Just type:
 
     abi + <TAB> 
     
-in the shell to get the list of possible scripts
+in the shell to get the list of possible scripts.
 Please consult the [AbiPy documentation](http://abinit.github.io/abipy/index.html) for further details.
