@@ -1,0 +1,1852 @@
+
+.Version 8.7.6 of ABINIT 
+.(MPI version, prepared for a x86_64_darwin16.7.0_gnu4.8 computer) 
+
+.Copyright (C) 1998-2018 ABINIT group . 
+ ABINIT comes with ABSOLUTELY NO WARRANTY.
+ It is free software, and you are welcome to redistribute it
+ under certain conditions (GNU General Public License,
+ see ~abinit/COPYING or http://www.gnu.org/copyleft/gpl.txt).
+
+ ABINIT is a project of the Universite Catholique de Louvain,
+ Corning Inc. and other collaborators, see ~abinit/doc/developers/contributors.txt .
+ Please read ~abinit/doc/users/acknowledgments.html for suggested
+ acknowledgments of the ABINIT effort.
+ For more information, see https://www.abinit.org .
+
+.Starting date : Mon 19 Mar 2018.
+- ( at 19h18 )
+  
+- input  file    -> /Users/gmatteo/git_repos/abitutorials/abitutorials/sigeph/flow_diamond/w0/t1/run.abi
+- output file    -> /Users/gmatteo/git_repos/abitutorials/abitutorials/sigeph/flow_diamond/w0/t1/run.abo
+- root for input  files -> /Users/gmatteo/git_repos/abitutorials/abitutorials/sigeph/flow_diamond/w0/t1/indata/in
+- root for output files -> /Users/gmatteo/git_repos/abitutorials/abitutorials/sigeph/flow_diamond/w0/t1/outdata/out
+
+
+ Symmetries : space group Fd -3 m (#227); Bravais cF (face-center cubic)
+================================================================================
+ Values of the parameters that define the memory need of the present run
+     intxc =       0    ionmov =       0      iscf =      -2    lmnmax =       1
+     lnmax =       1     mgfft =      20  mpssoang =       2    mqgrid =    3001
+     natom =       2  nloc_mem =       1    nspden =       1   nspinor =       1
+    nsppol =       1      nsym =      48    n1xccc =    2501    ntypat =       1
+    occopt =       1   xclevel =       1
+-    mband =           8        mffmem =           1         mkmem =          99
+       mpw =         332          nfft =        8000          nkpt =         198
+================================================================================
+P This job should need less than                       6.430 Mbytes of memory.
+  Rough estimation (10% accuracy) of disk space for files :
+_ WF disk file :      8.026 Mbytes ; DEN or POT disk file :      0.063 Mbytes.
+================================================================================
+
+--------------------------------------------------------------------------------
+------------- Echo of variables that govern the present computation ------------
+--------------------------------------------------------------------------------
+-
+- outvars: echo of selected default values                                      
+-   iomode0 =  0 , fftalg0 =112 , wfoptalg0 =  0
+-
+- outvars: echo of global parameters not present in the input file              
+-  max_nthreads =    0
+-
+ -outvars: echo values of preprocessed input variables --------
+            acell      1.0000000000E+00  1.0000000000E+00  1.0000000000E+00 Bohr
+              amu      1.20110000E+01
+             ecut      2.00000000E+01 Hartree
+-          fftalg         112
+           irdden           1
+             iscf          -2
+           istwfk        1    0    0    0    0    0    0    0    0    0
+                         0    0    0    0    0    0    0    0    0    0
+                         0    0    0    0    0    0    0    0    1    0
+                         0    0    0    0    0    0    0    0    0    0
+                         0    0    0    0    0    0    0    0    0    0
+                       outvar_i_n : Printing only first  50 k-points.
+              kpt      0.00000000E+00  0.00000000E+00  0.00000000E+00
+                       1.78571429E-02  0.00000000E+00  1.78571429E-02
+                       3.57142857E-02  0.00000000E+00  3.57142857E-02
+                       5.35714286E-02  0.00000000E+00  5.35714286E-02
+                       7.14285714E-02  0.00000000E+00  7.14285714E-02
+                       8.92857143E-02  0.00000000E+00  8.92857143E-02
+                       1.07142857E-01  0.00000000E+00  1.07142857E-01
+                       1.25000000E-01  0.00000000E+00  1.25000000E-01
+                       1.42857143E-01  0.00000000E+00  1.42857143E-01
+                       1.60714286E-01  0.00000000E+00  1.60714286E-01
+                       1.78571429E-01  0.00000000E+00  1.78571429E-01
+                       1.96428571E-01  0.00000000E+00  1.96428571E-01
+                       2.14285714E-01  0.00000000E+00  2.14285714E-01
+                       2.32142857E-01  0.00000000E+00  2.32142857E-01
+                       2.50000000E-01  0.00000000E+00  2.50000000E-01
+                       2.67857143E-01  0.00000000E+00  2.67857143E-01
+                       2.85714286E-01  0.00000000E+00  2.85714286E-01
+                       3.03571429E-01  0.00000000E+00  3.03571429E-01
+                       3.21428571E-01  0.00000000E+00  3.21428571E-01
+                       3.39285714E-01  0.00000000E+00  3.39285714E-01
+                       3.57142857E-01  0.00000000E+00  3.57142857E-01
+                       3.75000000E-01  0.00000000E+00  3.75000000E-01
+                       3.92857143E-01  0.00000000E+00  3.92857143E-01
+                       4.10714286E-01  0.00000000E+00  4.10714286E-01
+                       4.28571429E-01  0.00000000E+00  4.28571429E-01
+                       4.46428571E-01  0.00000000E+00  4.46428571E-01
+                       4.64285714E-01  0.00000000E+00  4.64285714E-01
+                       4.82142857E-01  0.00000000E+00  4.82142857E-01
+                       5.00000000E-01  0.00000000E+00  5.00000000E-01
+                       5.00000000E-01  1.78571429E-02  5.17857143E-01
+                       5.00000000E-01  3.57142857E-02  5.35714286E-01
+                       5.00000000E-01  5.35714286E-02  5.53571429E-01
+                       5.00000000E-01  7.14285714E-02  5.71428571E-01
+                       5.00000000E-01  8.92857143E-02  5.89285714E-01
+                       5.00000000E-01  1.07142857E-01  6.07142857E-01
+                       5.00000000E-01  1.25000000E-01  6.25000000E-01
+                       5.00000000E-01  1.42857143E-01  6.42857143E-01
+                       5.00000000E-01  1.60714286E-01  6.60714286E-01
+                       5.00000000E-01  1.78571429E-01  6.78571429E-01
+                       5.00000000E-01  1.96428571E-01  6.96428571E-01
+                       5.00000000E-01  2.14285714E-01  7.14285714E-01
+                       5.00000000E-01  2.32142857E-01  7.32142857E-01
+                       5.00000000E-01  2.50000000E-01  7.50000000E-01
+                       4.87500000E-01  2.62500000E-01  7.50000000E-01
+                       4.75000000E-01  2.75000000E-01  7.50000000E-01
+                       4.62500000E-01  2.87500000E-01  7.50000000E-01
+                       4.50000000E-01  3.00000000E-01  7.50000000E-01
+                       4.37500000E-01  3.12500000E-01  7.50000000E-01
+                       4.25000000E-01  3.25000000E-01  7.50000000E-01
+                       4.12500000E-01  3.37500000E-01  7.50000000E-01
+                       outvar_i_n : Printing only first  50 k-points.
+           kptopt         -11
+P           mkmem          99
+            natom           2
+            nband           8
+           nbdbuf           2
+           ndivsm          10
+            ngfft          20      20      20
+             nkpt         198
+             nsym          48
+           ntypat           1
+            rprim      0.0000000000E+00  3.3517340250E+00  3.3517340250E+00
+                       3.3517340250E+00  0.0000000000E+00  3.3517340250E+00
+                       3.3517340250E+00  3.3517340250E+00  0.0000000000E+00
+           shiftk      5.00000000E-01  5.00000000E-01  5.00000000E-01
+          spgroup         227
+           symrel      1  0  0   0  1  0   0  0  1      -1  0  0   0 -1  0   0  0 -1
+                       0 -1  1   0 -1  0   1 -1  0       0  1 -1   0  1  0  -1  1  0
+                      -1  0  0  -1  0  1  -1  1  0       1  0  0   1  0 -1   1 -1  0
+                       0  1 -1   1  0 -1   0  0 -1       0 -1  1  -1  0  1   0  0  1
+                      -1  0  0  -1  1  0  -1  0  1       1  0  0   1 -1  0   1  0 -1
+                       0 -1  1   1 -1  0   0 -1  0       0  1 -1  -1  1  0   0  1  0
+                       1  0  0   0  0  1   0  1  0      -1  0  0   0  0 -1   0 -1  0
+                       0  1 -1   0  0 -1   1  0 -1       0 -1  1   0  0  1  -1  0  1
+                      -1  0  1  -1  1  0  -1  0  0       1  0 -1   1 -1  0   1  0  0
+                       0 -1  0   1 -1  0   0 -1  1       0  1  0  -1  1  0   0  1 -1
+                       1  0 -1   0  0 -1   0  1 -1      -1  0  1   0  0  1   0 -1  1
+                       0  1  0   0  0  1   1  0  0       0 -1  0   0  0 -1  -1  0  0
+                       1  0 -1   0  1 -1   0  0 -1      -1  0  1   0 -1  1   0  0  1
+                       0 -1  0   0 -1  1   1 -1  0       0  1  0   0  1 -1  -1  1  0
+                      -1  0  1  -1  0  0  -1  1  0       1  0 -1   1  0  0   1 -1  0
+                       0  1  0   1  0  0   0  0  1       0 -1  0  -1  0  0   0  0 -1
+                       0  0 -1   0  1 -1   1  0 -1       0  0  1   0 -1  1  -1  0  1
+                       1 -1  0   0 -1  1   0 -1  0      -1  1  0   0  1 -1   0  1  0
+                       0  0  1   1  0  0   0  1  0       0  0 -1  -1  0  0   0 -1  0
+                      -1  1  0  -1  0  0  -1  0  1       1 -1  0   1  0  0   1  0 -1
+                       0  0  1   0  1  0   1  0  0       0  0 -1   0 -1  0  -1  0  0
+                       1 -1  0   0 -1  0   0 -1  1      -1  1  0   0  1  0   0  1 -1
+                       0  0 -1   1  0 -1   0  1 -1       0  0  1  -1  0  1   0 -1  1
+                      -1  1  0  -1  0  1  -1  0  0       1 -1  0   1  0 -1   1  0  0
+            tnons      0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+           tolwfr      1.00000000E-16
+            typat      1  1
+                       outvars : Printing only first  50 k-points.
+           xangst      0.0000000000E+00  0.0000000000E+00  0.0000000000E+00
+                       8.8683062764E-01  8.8683062764E-01  8.8683062764E-01
+            xcart      0.0000000000E+00  0.0000000000E+00  0.0000000000E+00
+                       1.6758670125E+00  1.6758670125E+00  1.6758670125E+00
+             xred      0.0000000000E+00  0.0000000000E+00  0.0000000000E+00
+                       2.5000000000E-01  2.5000000000E-01  2.5000000000E-01
+            znucl        6.00000
+
+================================================================================
+
+ chkinp: Checking input parameters for consistency.
+
+================================================================================
+== DATASET  1 ==================================================================
+-   nproc =    2
+
+ Exchange-correlation functional for the present dataset will be:
+  LDA: new Teter (4/93) with spin-polarized option - ixc=1
+ Citation for XC functional:
+  S. Goedecker, M. Teter, J. Huetter, PRB 54, 1703 (1996)
+
+ Real(R)+Recip(G) space primitive vectors, cartesian coordinates (Bohr,Bohr^-1):
+ R(1)=  0.0000000  3.3517340  3.3517340  G(1)= -0.1491765  0.1491765  0.1491765
+ R(2)=  3.3517340  0.0000000  3.3517340  G(2)=  0.1491765 -0.1491765  0.1491765
+ R(3)=  3.3517340  3.3517340  0.0000000  G(3)=  0.1491765  0.1491765 -0.1491765
+ Unit cell volume ucvol=  7.5307571E+01 bohr^3
+ Angles (23,13,12)=  6.00000000E+01  6.00000000E+01  6.00000000E+01 degrees
+
+ getcut: wavevector=  0.0000  0.0000  0.0000  ngfft=  20  20  20
+         ecut(hartree)=     20.000   => boxcut(ratio)=   2.09587
+
+--- Pseudopotential description ------------------------------------------------
+- pspini: atom type   1  psp file is /Users/gmatteo/git_repos/abitutorials/abitutorials/sigeph/6c.pspnc
+- pspatm: opening atomic psp file    /Users/gmatteo/git_repos/abitutorials/abitutorials/sigeph/6c.pspnc
+-  Troullier-Martins psp for element  C         Thu Oct 27 17:29:33 EDT 1994
+-  6.00000   4.00000    940714                znucl, zion, pspdat
+    1    1    1    1      2001   0.00000      pspcod,pspxc,lmax,lloc,mmax,r2well
+    0  10.372  24.987    1   1.4850707        l,e99.0,e99.9,nproj,rcpsp
+   0.00000000   0.00000000   0.00000000   0.00000000     rms, ekb1, ekb2, epsatm
+    1  15.431  21.987    0   1.4850707        l,e99.0,e99.9,nproj,rcpsp
+   0.00000000   0.00000000   0.00000000   0.00000000     rms, ekb1, ekb2, epsatm
+    0.83985002509544    0.99012430797080    0.51184907750884   rchrg,fchrg,qchrg
+  pspatm : epsatm=    0.92590353
+         --- l  ekb(1:nproj) -->
+             0    4.921466
+ pspatm: atomic psp has been read  and splines computed
+
+--------------------------------------------------------------------------------
+
+
+================================================================================
+ prteigrs : about to open file /Users/gmatteo/git_repos/abitutorials/abitutorials/sigeph/flow_diamond/w0/t1/outdata/out_EIG
+ Non-SCF case, kpt    1 (  0.00000  0.00000  0.00000), residuals and eigenvalues=
+  3.24E-17  6.91E-17  5.08E-17  4.45E-17  2.41E-17  2.40E-17  2.63E-17  6.04E-15
+ -3.2354E-01  4.6938E-01  4.6938E-01  4.6938E-01  6.7644E-01  6.7644E-01
+  6.7644E-01  9.7978E-01
+  prteigrs : nnsclo,ikpt=   30    1 max resid (incl. the buffer)=  6.03890E-15
+ Non-SCF case, kpt    2 (  0.01786  0.00000  0.01786), residuals and eigenvalues=
+  2.80E-17  5.54E-17  5.83E-18  6.21E-17  5.63E-17  7.32E-18  2.34E-17  7.61E-15
+ -3.2310E-01  4.6749E-01  4.6749E-01  4.6836E-01  6.7610E-01  6.7871E-01
+  6.7871E-01  9.8005E-01
+  prteigrs : nnsclo,ikpt=   30    2 max resid (incl. the buffer)=  7.60562E-15
+ Non-SCF case, kpt    3 (  0.03571  0.00000  0.03571), residuals and eigenvalues=
+  1.20E-17  4.78E-18  1.28E-17  7.31E-18  5.59E-17  6.10E-17  2.85E-17  1.07E-14
+ -3.2178E-01  4.6207E-01  4.6207E-01  4.6531E-01  6.7509E-01  6.8527E-01
+  6.8527E-01  9.8078E-01
+  prteigrs : nnsclo,ikpt=   30    3 max resid (incl. the buffer)=  1.06833E-14
+ Non-SCF case, kpt    4 (  0.05357  0.00000  0.05357), residuals and eigenvalues=
+  1.43E-17  5.16E-18  1.30E-17  6.74E-18  8.68E-17  1.11E-17  3.06E-17  1.27E-14
+ -3.1958E-01  4.5373E-01  4.5373E-01  4.6029E-01  6.7346E-01  6.9549E-01
+  6.9549E-01  9.8167E-01
+  prteigrs : nnsclo,ikpt=   30    4 max resid (incl. the buffer)=  1.27356E-14
+ Non-SCF case, kpt    5 (  0.07143  0.00000  0.07143), residuals and eigenvalues=
+  4.91E-18  2.63E-17  8.60E-18  1.64E-17  1.81E-17  6.28E-17  2.54E-17  1.16E-14
+ -3.1651E-01  4.4331E-01  4.4331E-01  4.5428E-01  6.7124E-01  7.0869E-01
+  7.0869E-01  9.8241E-01
+  prteigrs : nnsclo,ikpt=   30    5 max resid (incl. the buffer)=  1.15856E-14
+ Non-SCF case, kpt    6 (  0.08929  0.00000  0.08929), residuals and eigenvalues=
+  7.75E-17  3.65E-17  8.98E-18  1.53E-17  1.93E-17  5.02E-17  7.83E-17  1.69E-14
+ -3.1256E-01  4.3134E-01  4.3134E-01  4.4553E-01  6.6851E-01  7.2403E-01
+  7.2403E-01  9.8195E-01
+  prteigrs : nnsclo,ikpt=   30    6 max resid (incl. the buffer)=  1.69278E-14
+ Non-SCF case, kpt    7 (  0.10714  0.00000  0.10714), residuals and eigenvalues=
+  4.91E-17  3.79E-17  1.17E-17  1.78E-17  3.89E-17  8.00E-17  5.43E-17  2.14E-14
+ -3.0773E-01  4.1845E-01  4.1845E-01  4.3515E-01  6.6536E-01  7.4101E-01
+  7.4101E-01  9.7953E-01
+  prteigrs : nnsclo,ikpt=   30    7 max resid (incl. the buffer)=  2.13889E-14
+ Non-SCF case, kpt    8 (  0.12500  0.00000  0.12500), residuals and eigenvalues=
+  8.68E-18  5.18E-18  5.40E-18  3.37E-17  3.58E-17  1.70E-17  1.98E-17  3.48E-17
+ -3.0203E-01  4.0511E-01  4.0511E-01  4.2360E-01  6.6221E-01  7.5964E-01
+  7.5964E-01  9.7429E-01
+ Non-SCF case, kpt    9 (  0.14286  0.00000  0.14286), residuals and eigenvalues=
+  1.32E-17  5.54E-18  3.64E-18  4.05E-17  5.48E-17  6.82E-17  4.01E-17  2.25E-17
+ -2.9547E-01  3.9155E-01  3.9155E-01  4.1033E-01  6.5843E-01  7.7869E-01
+  7.7869E-01  9.6518E-01
+ Non-SCF case, kpt   10 (  0.16071  0.00000  0.16071), residuals and eigenvalues=
+  2.85E-17  7.64E-18  1.07E-17  4.89E-17  5.33E-17  2.58E-17  8.63E-17  9.05E-17
+ -2.8805E-01  3.7803E-01  3.7803E-01  3.9581E-01  6.5450E-01  7.9837E-01
+  7.9837E-01  9.5205E-01
+ Non-SCF case, kpt   11 (  0.17857  0.00000  0.17857), residuals and eigenvalues=
+  2.41E-17  2.70E-17  1.42E-17  7.96E-17  9.19E-18  7.16E-18  5.11E-17  7.55E-17
+ -2.7978E-01  3.6518E-01  3.6518E-01  3.8033E-01  6.5024E-01  8.1899E-01
+  8.1899E-01  9.3549E-01
+ Non-SCF case, kpt   12 (  0.19643  0.00000  0.19643), residuals and eigenvalues=
+  8.97E-17  9.61E-18  1.24E-17  4.08E-18  8.84E-17  3.45E-17  8.41E-17  1.47E-17
+ -2.7065E-01  3.5217E-01  3.5217E-01  3.6363E-01  6.4629E-01  8.3943E-01
+  8.3943E-01  9.1593E-01
+ Non-SCF case, kpt   13 (  0.21429  0.00000  0.21429), residuals and eigenvalues=
+  9.14E-18  5.01E-18  8.33E-17  6.13E-18  5.01E-17  5.66E-17  7.47E-17  1.87E-17
+ -2.6069E-01  3.3968E-01  3.3968E-01  3.4573E-01  6.4244E-01  8.6140E-01
+  8.6140E-01  8.9446E-01
+ Non-SCF case, kpt   14 (  0.23214  0.00000  0.23214), residuals and eigenvalues=
+  2.45E-17  1.46E-17  8.53E-17  3.92E-18  4.32E-18  5.65E-17  2.88E-15  4.67E-15
+ -2.4983E-01  3.2720E-01  3.2765E-01  3.2765E-01  6.3935E-01  8.7227E-01
+  8.8207E-01  8.8207E-01
+  prteigrs : nnsclo,ikpt=   30   14 max resid (incl. the buffer)=  4.67426E-15
+ Non-SCF case, kpt   15 (  0.25000  0.00000  0.25000), residuals and eigenvalues=
+  2.02E-17  1.18E-17  5.45E-17  5.04E-17  2.40E-17  6.58E-17  1.28E-14  1.22E-14
+ -2.3820E-01  3.0789E-01  3.1621E-01  3.1621E-01  6.3586E-01  8.4995E-01
+  9.0262E-01  9.0262E-01
+  prteigrs : nnsclo,ikpt=   30   15 max resid (incl. the buffer)=  1.28488E-14
+ Non-SCF case, kpt   16 (  0.26786  0.00000  0.26786), residuals and eigenvalues=
+  2.38E-17  8.20E-18  1.12E-17  5.17E-17  1.44E-17  5.51E-17  1.22E-13  1.63E-13
+ -2.2575E-01  2.8789E-01  3.0542E-01  3.0542E-01  6.3272E-01  8.2803E-01
+  9.2300E-01  9.2300E-01
+  prteigrs : nnsclo,ikpt=   30   16 max resid (incl. the buffer)=  1.63186E-13
+ Non-SCF case, kpt   17 (  0.28571  0.00000  0.28571), residuals and eigenvalues=
+  4.49E-18  1.52E-17  6.72E-17  9.20E-17  9.24E-17  9.94E-17  7.23E-13  7.41E-13
+ -2.1250E-01  2.6678E-01  2.9520E-01  2.9520E-01  6.2998E-01  8.0673E-01
+  9.4306E-01  9.4306E-01
+  prteigrs : nnsclo,ikpt=   30   17 max resid (incl. the buffer)=  7.41260E-13
+ Non-SCF case, kpt   18 (  0.30357  0.00000  0.30357), residuals and eigenvalues=
+  2.51E-17  1.45E-17  5.03E-17  3.30E-17  5.17E-18  4.68E-17  3.52E-12  5.82E-11
+ -1.9848E-01  2.4532E-01  2.8536E-01  2.8536E-01  6.2740E-01  7.8652E-01
+  9.6255E-01  9.6255E-01
+  prteigrs : nnsclo,ikpt=   30   18 max resid (incl. the buffer)=  5.82016E-11
+ Non-SCF case, kpt   19 (  0.32143  0.00000  0.32143), residuals and eigenvalues=
+  1.37E-17  1.12E-17  6.90E-17  4.86E-17  5.59E-18  2.56E-17  8.20E-12  1.80E-10
+ -1.8368E-01  2.2373E-01  2.7669E-01  2.7669E-01  6.2563E-01  7.6749E-01
+  9.8173E-01  9.8173E-01
+  prteigrs : nnsclo,ikpt=   30   19 max resid (incl. the buffer)=  1.79854E-10
+ Non-SCF case, kpt   20 (  0.33929  0.00000  0.33929), residuals and eigenvalues=
+  6.99E-18  9.23E-18  8.68E-17  7.30E-17  5.54E-18  1.57E-17  1.90E-11  5.35E-10
+ -1.6811E-01  2.0178E-01  2.6879E-01  2.6879E-01  6.2443E-01  7.4970E-01
+  1.0002E+00  1.0002E+00
+  prteigrs : nnsclo,ikpt=   30   20 max resid (incl. the buffer)=  5.35044E-10
+ Non-SCF case, kpt   21 (  0.35714  0.00000  0.35714), residuals and eigenvalues=
+  4.00E-18  5.67E-17  9.50E-17  8.42E-18  4.35E-18  1.02E-17  4.35E-11  1.54E-09
+ -1.5181E-01  1.7955E-01  2.6167E-01  2.6167E-01  6.2383E-01  7.3320E-01
+  1.0179E+00  1.0179E+00
+  prteigrs : nnsclo,ikpt=   30   21 max resid (incl. the buffer)=  1.54479E-09
+ Non-SCF case, kpt   22 (  0.37500  0.00000  0.37500), residuals and eigenvalues=
+  8.30E-18  3.75E-17  8.52E-17  1.82E-17  1.46E-17  1.50E-17  5.67E-11  2.79E-10
+ -1.3480E-01  1.5721E-01  2.5536E-01  2.5536E-01  6.2388E-01  7.1801E-01
+  1.0345E+00  1.0345E+00
+  prteigrs : nnsclo,ikpt=   30   22 max resid (incl. the buffer)=  2.78792E-10
+ Non-SCF case, kpt   23 (  0.39286  0.00000  0.39286), residuals and eigenvalues=
+  8.75E-18  3.28E-17  5.19E-17  2.88E-17  1.53E-17  1.73E-17  2.26E-10  7.13E-10
+ -1.1710E-01  1.3466E-01  2.4987E-01  2.4987E-01  6.2463E-01  7.0411E-01
+  1.0498E+00  1.0498E+00
+  prteigrs : nnsclo,ikpt=   30   23 max resid (incl. the buffer)=  7.13030E-10
+ Non-SCF case, kpt   24 (  0.41071  0.00000  0.41071), residuals and eigenvalues=
+  2.12E-17  4.65E-17  5.90E-17  3.55E-17  1.53E-17  1.68E-17  6.89E-12  3.52E-11
+ -9.8735E-02  1.1210E-01  2.4521E-01  2.4521E-01  6.2612E-01  6.9149E-01
+  1.0636E+00  1.0636E+00
+  prteigrs : nnsclo,ikpt=   30   24 max resid (incl. the buffer)=  3.52299E-11
+ Non-SCF case, kpt   25 (  0.42857  0.00000  0.42857), residuals and eigenvalues=
+  3.36E-17  2.63E-17  4.45E-17  3.15E-17  1.21E-17  6.91E-17  1.38E-11  5.91E-11
+ -7.9738E-02  8.9601E-02  2.4139E-01  2.4139E-01  6.2839E-01  6.8010E-01
+  1.0754E+00  1.0754E+00
+  prteigrs : nnsclo,ikpt=   30   25 max resid (incl. the buffer)=  5.90649E-11
+ Non-SCF case, kpt   26 (  0.44643  0.00000  0.44643), residuals and eigenvalues=
+  4.44E-17  1.28E-17  3.11E-17  2.28E-17  9.28E-18  4.60E-17  2.47E-11  4.80E-11
+ -6.0145E-02  6.7246E-02  2.3841E-01  2.3841E-01  6.3149E-01  6.6991E-01
+  1.0851E+00  1.0851E+00
+  prteigrs : nnsclo,ikpt=   30   26 max resid (incl. the buffer)=  4.79595E-11
+ Non-SCF case, kpt   27 (  0.46429  0.00000  0.46429), residuals and eigenvalues=
+  9.74E-18  1.06E-17  6.63E-18  4.44E-18  1.76E-17  3.75E-17  6.03E-09  6.48E-09
+ -3.9994E-02  4.5044E-02  2.3612E-01  2.3612E-01  6.3546E-01  6.6087E-01
+  1.0920E+00  1.0920E+00
+  prteigrs : nnsclo,ikpt=   30   27 max resid (incl. the buffer)=  6.47505E-09
+ Non-SCF case, kpt   28 (  0.48214  0.00000  0.48214), residuals and eigenvalues=
+  5.42E-18  1.36E-17  1.45E-17  6.86E-17  8.92E-17  3.52E-18  2.35E-10  5.60E-09
+ -1.9286E-02  2.3351E-02  2.3477E-01  2.3477E-01  6.4033E-01  6.5303E-01
+  1.0959E+00  1.0959E+00
+  prteigrs : nnsclo,ikpt=   30   28 max resid (incl. the buffer)=  5.60376E-09
+ Non-SCF case, kpt   29 (  0.50000  0.00000  0.50000), residuals and eigenvalues=
+  6.65E-18  6.17E-18  1.12E-17  3.72E-17  5.99E-17  2.81E-17  3.69E-10  5.50E-09
+  1.8270E-03  1.8270E-03  2.3434E-01  2.3434E-01  6.4617E-01  6.4617E-01
+  1.0974E+00  1.0974E+00
+  prteigrs : nnsclo,ikpt=   30   29 max resid (incl. the buffer)=  5.49950E-09
+ Non-SCF case, kpt   30 (  0.50000  0.01786  0.51786), residuals and eigenvalues=
+  5.94E-18  6.56E-18  1.10E-17  9.50E-18  1.73E-17  1.54E-17  1.48E-09  6.23E-09
+  2.1219E-03  2.1219E-03  2.3335E-01  2.3335E-01  6.4798E-01  6.4798E-01
+  1.0965E+00  1.0965E+00
+  prteigrs : nnsclo,ikpt=   30   30 max resid (incl. the buffer)=  6.23265E-09
+ Non-SCF case, kpt   31 (  0.50000  0.03571  0.53571), residuals and eigenvalues=
+  1.78E-17  1.47E-17  1.57E-17  9.67E-18  4.09E-17  8.25E-17  1.07E-09  9.08E-09
+  3.0661E-03  3.0661E-03  2.3060E-01  2.3060E-01  6.5341E-01  6.5341E-01
+  1.0945E+00  1.0945E+00
+  prteigrs : nnsclo,ikpt=   30   31 max resid (incl. the buffer)=  9.08240E-09
+ Non-SCF case, kpt   32 (  0.50000  0.05357  0.55357), residuals and eigenvalues=
+  2.96E-18  1.03E-17  1.08E-17  5.20E-17  1.55E-17  3.64E-17  6.64E-10  7.88E-09
+  4.4107E-03  4.4107E-03  2.2587E-01  2.2587E-01  6.6206E-01  6.6206E-01
+  1.0900E+00  1.0900E+00
+  prteigrs : nnsclo,ikpt=   30   32 max resid (incl. the buffer)=  7.87515E-09
+ Non-SCF case, kpt   33 (  0.50000  0.07143  0.57143), residuals and eigenvalues=
+  3.73E-17  2.06E-17  3.45E-18  3.37E-17  1.79E-17  9.94E-18  1.26E-09  1.27E-08
+  6.4401E-03  6.4401E-03  2.1984E-01  2.1984E-01  6.7394E-01  6.7394E-01
+  1.0840E+00  1.0840E+00
+  prteigrs : nnsclo,ikpt=   30   33 max resid (incl. the buffer)=  1.27120E-08
+ Non-SCF case, kpt   34 (  0.50000  0.08929  0.58929), residuals and eigenvalues=
+  3.51E-17  2.53E-17  6.15E-17  1.55E-17  3.82E-17  2.14E-17  9.92E-10  9.41E-09
+  8.9129E-03  8.9129E-03  2.1262E-01  2.1262E-01  6.8846E-01  6.8846E-01
+  1.0755E+00  1.0755E+00
+  prteigrs : nnsclo,ikpt=   30   34 max resid (incl. the buffer)=  9.41260E-09
+ Non-SCF case, kpt   35 (  0.50000  0.10714  0.60714), residuals and eigenvalues=
+  3.12E-17  2.96E-17  5.31E-17  2.26E-17  8.23E-17  4.07E-17  6.87E-10  5.88E-09
+  1.1818E-02  1.1818E-02  2.0465E-01  2.0465E-01  7.0535E-01  7.0535E-01
+  1.0648E+00  1.0648E+00
+  prteigrs : nnsclo,ikpt=   30   35 max resid (incl. the buffer)=  5.88080E-09
+ Non-SCF case, kpt   36 (  0.50000  0.12500  0.62500), residuals and eigenvalues=
+  2.55E-17  3.34E-17  3.62E-17  4.86E-18  7.62E-18  9.38E-17  4.11E-10  3.04E-09
+  1.5069E-02  1.5069E-02  1.9631E-01  1.9631E-01  7.2421E-01  7.2421E-01
+  1.0517E+00  1.0517E+00
+  prteigrs : nnsclo,ikpt=   30   36 max resid (incl. the buffer)=  3.03867E-09
+ Non-SCF case, kpt   37 (  0.50000  0.14286  0.64286), residuals and eigenvalues=
+  7.63E-18  6.17E-17  5.54E-18  3.47E-18  7.37E-17  3.60E-17  2.92E-11  1.60E-09
+  1.8459E-02  1.8459E-02  1.8791E-01  1.8791E-01  7.4460E-01  7.4460E-01
+  1.0362E+00  1.0362E+00
+  prteigrs : nnsclo,ikpt=   30   37 max resid (incl. the buffer)=  1.59582E-09
+ Non-SCF case, kpt   38 (  0.50000  0.16071  0.66071), residuals and eigenvalues=
+  1.69E-17  9.25E-17  6.08E-17  6.95E-17  3.86E-17  3.14E-17  1.98E-14  7.29E-14
+  2.2002E-02  2.2002E-02  1.7969E-01  1.7969E-01  7.6627E-01  7.6627E-01
+  1.0180E+00  1.0180E+00
+  prteigrs : nnsclo,ikpt=   30   38 max resid (incl. the buffer)=  7.28979E-14
+ Non-SCF case, kpt   39 (  0.50000  0.17857  0.67857), residuals and eigenvalues=
+  1.53E-17  3.58E-17  9.69E-17  8.46E-17  4.07E-17  2.12E-17  2.82E-14  2.76E-13
+  2.5504E-02  2.5504E-02  1.7248E-01  1.7248E-01  7.8890E-01  7.8890E-01
+  9.9864E-01  9.9864E-01
+  prteigrs : nnsclo,ikpt=   30   39 max resid (incl. the buffer)=  2.76120E-13
+ Non-SCF case, kpt   40 (  0.50000  0.19643  0.69643), residuals and eigenvalues=
+  1.16E-17  9.45E-18  4.68E-18  4.00E-18  8.38E-17  2.39E-17  6.86E-14  7.80E-14
+  2.8623E-02  2.8623E-02  1.6639E-01  1.6639E-01  8.1180E-01  8.1180E-01
+  9.7854E-01  9.7854E-01
+  prteigrs : nnsclo,ikpt=   30   40 max resid (incl. the buffer)=  7.79730E-14
+ Non-SCF case, kpt   41 (  0.50000  0.21429  0.71429), residuals and eigenvalues=
+  1.13E-17  9.72E-18  7.08E-18  4.84E-18  4.70E-17  4.03E-17  1.01E-14  1.81E-14
+  3.1128E-02  3.1128E-02  1.6158E-01  1.6158E-01  8.3352E-01  8.3352E-01
+  9.5839E-01  9.5839E-01
+  prteigrs : nnsclo,ikpt=   30   41 max resid (incl. the buffer)=  1.80875E-14
+ Non-SCF case, kpt   42 (  0.50000  0.23214  0.73214), residuals and eigenvalues=
+  1.05E-17  9.41E-18  7.21E-18  4.41E-18  5.07E-17  9.84E-17  3.50E-15  4.01E-15
+  3.2767E-02  3.2767E-02  1.5853E-01  1.5853E-01  8.5173E-01  8.5173E-01
+  9.4110E-01  9.4110E-01
+  prteigrs : nnsclo,ikpt=   30   42 max resid (incl. the buffer)=  4.00573E-15
+ Non-SCF case, kpt   43 (  0.50000  0.25000  0.75000), residuals and eigenvalues=
+  3.13E-17  1.13E-17  2.82E-18  9.22E-17  2.67E-17  4.67E-17  2.16E-15  1.36E-15
+  3.3283E-02  3.3283E-02  1.5730E-01  1.5730E-01  8.5950E-01  8.5950E-01
+  9.3300E-01  9.3300E-01
+  prteigrs : nnsclo,ikpt=   30   43 max resid (incl. the buffer)=  2.16043E-15
+ Non-SCF case, kpt   44 (  0.48750  0.26250  0.75000), residuals and eigenvalues=
+  9.51E-17  1.63E-17  1.67E-17  1.68E-17  4.11E-17  3.05E-17  6.86E-17  3.66E-16
+  2.6330E-02  3.9155E-02  1.5047E-01  1.6642E-01  8.4535E-01  8.6506E-01
+  9.3702E-01  9.3846E-01
+  prteigrs : nnsclo,ikpt=   30   44 max resid (incl. the buffer)=  3.65827E-16
+ Non-SCF case, kpt   45 (  0.47500  0.27500  0.75000), residuals and eigenvalues=
+  4.86E-18  5.65E-17  2.88E-18  2.16E-17  1.89E-17  8.91E-17  1.88E-14  8.81E-14
+  2.0139E-02  4.2407E-02  1.4439E-01  1.7855E-01  8.2195E-01  8.6841E-01
+  9.4359E-01  9.5338E-01
+  prteigrs : nnsclo,ikpt=   30   45 max resid (incl. the buffer)=  8.80871E-14
+ Non-SCF case, kpt   46 (  0.46250  0.28750  0.75000), residuals and eigenvalues=
+  9.28E-18  3.97E-18  8.22E-17  5.82E-17  5.24E-17  8.32E-18  1.39E-15  1.01E-14
+  1.4627E-02  4.3645E-02  1.3882E-01  1.9281E-01  7.9600E-01  8.7010E-01
+  9.5194E-01  9.7107E-01
+  prteigrs : nnsclo,ikpt=   30   46 max resid (incl. the buffer)=  1.00769E-14
+ Non-SCF case, kpt   47 (  0.45000  0.30000  0.75000), residuals and eigenvalues=
+  6.82E-17  9.88E-18  3.33E-18  5.01E-17  6.36E-17  8.23E-17  3.46E-15  1.35E-14
+  9.8627E-03  4.3676E-02  1.3398E-01  2.0818E-01  7.7029E-01  8.7064E-01
+  9.6174E-01  9.8963E-01
+  prteigrs : nnsclo,ikpt=   30   47 max resid (incl. the buffer)=  1.35240E-14
+ Non-SCF case, kpt   48 (  0.43750  0.31250  0.75000), residuals and eigenvalues=
+  2.01E-17  7.36E-18  8.27E-17  6.13E-17  8.31E-17  5.63E-17  2.31E-13  5.46E-12
+  5.8176E-03  4.3020E-02  1.2978E-01  2.2349E-01  7.4584E-01  8.7041E-01
+  9.7183E-01  1.0071E+00
+  prteigrs : nnsclo,ikpt=   30   48 max resid (incl. the buffer)=  5.45692E-12
+ Non-SCF case, kpt   49 (  0.42500  0.32500  0.75000), residuals and eigenvalues=
+  2.37E-17  8.21E-17  2.74E-17  5.74E-17  4.78E-17  1.76E-17  4.52E-12  9.02E-13
+  2.4797E-03  4.2073E-02  1.2638E-01  2.3803E-01  7.2386E-01  8.6999E-01
+  9.8257E-01  1.0229E+00
+  prteigrs : nnsclo,ikpt=   30   49 max resid (incl. the buffer)=  4.51801E-12
+ Non-SCF case, kpt   50 (  0.41250  0.33750  0.75000), residuals and eigenvalues=
+  2.42E-17  1.78E-17  3.24E-17  2.30E-17  1.74E-17  9.74E-17  3.89E-12  9.93E-12
+ -9.6888E-05  4.1153E-02  1.2370E-01  2.5078E-01  7.0558E-01  8.6940E-01
+  9.9178E-01  1.0363E+00
+  prteigrs : nnsclo,ikpt=   30   50 max resid (incl. the buffer)=  9.93186E-12
+ Non-SCF case, kpt   51 (  0.40000  0.35000  0.75000), residuals and eigenvalues=
+  5.15E-17  9.95E-17  9.85E-18  2.35E-17  3.72E-17  3.07E-17  1.88E-12  1.01E-10
+ -1.9939E-03  4.0292E-02  1.2134E-01  2.6063E-01  6.9158E-01  8.6835E-01
+  9.9907E-01  1.0459E+00
+  prteigrs : nnsclo,ikpt=   30   51 max resid (incl. the buffer)=  1.01243E-10
+ Non-SCF case, kpt   52 (  0.38750  0.36250  0.75000), residuals and eigenvalues=
+  2.64E-17  1.49E-17  1.57E-17  1.29E-17  4.47E-17  4.16E-17  1.99E-12  4.31E-11
+ -3.0738E-03  3.9825E-02  1.2018E-01  2.6723E-01  6.8286E-01  8.6805E-01
+  1.0043E+00  1.0526E+00
+  prteigrs : nnsclo,ikpt=   30   52 max resid (incl. the buffer)=  4.30595E-11
+ Non-SCF case, kpt   53 (  0.37500  0.37500  0.75000), residuals and eigenvalues=
+  2.81E-17  8.70E-18  1.29E-17  1.04E-17  3.39E-17  3.88E-17  2.39E-12  9.90E-11
+ -3.4430E-03  3.9655E-02  1.1979E-01  2.6944E-01  6.7987E-01  8.6794E-01
+  1.0060E+00  1.0548E+00
+  prteigrs : nnsclo,ikpt=   30   53 max resid (incl. the buffer)=  9.90139E-11
+ Non-SCF case, kpt   54 (  0.36250  0.36250  0.72500), residuals and eigenvalues=
+  8.84E-18  5.68E-18  2.77E-17  1.96E-17  6.89E-17  8.24E-17  1.20E-12  1.48E-10
+ -1.2622E-02  4.7621E-02  1.1543E-01  2.7655E-01  6.8681E-01  9.0194E-01
+  9.9032E-01  1.0486E+00
+  prteigrs : nnsclo,ikpt=   30   54 max resid (incl. the buffer)=  1.47625E-10
+ Non-SCF case, kpt   55 (  0.35000  0.35000  0.70000), residuals and eigenvalues=
+  2.10E-17  3.17E-17  1.19E-17  5.32E-17  1.61E-17  9.60E-17  4.25E-13  2.22E-11
+ -2.4811E-02  5.6319E-02  1.1483E-01  2.8390E-01  6.9422E-01  9.3492E-01
+  9.7426E-01  1.0403E+00
+  prteigrs : nnsclo,ikpt=   30   55 max resid (incl. the buffer)=  2.22021E-11
+ Non-SCF case, kpt   56 (  0.33750  0.33750  0.67500), residuals and eigenvalues=
+  5.88E-18  5.13E-17  1.09E-17  4.41E-17  2.43E-17  7.94E-17  7.68E-17  2.31E-12
+ -3.9292E-02  6.5696E-02  1.1747E-01  2.9192E-01  7.0214E-01  9.5765E-01
+  9.6561E-01  1.0333E+00
+  prteigrs : nnsclo,ikpt=   30   56 max resid (incl. the buffer)=  2.31395E-12
+ Non-SCF case, kpt   57 (  0.32500  0.32500  0.65000), residuals and eigenvalues=
+  5.95E-17  1.50E-17  1.98E-17  1.36E-17  2.01E-17  5.17E-17  1.99E-13  3.86E-10
+ -5.5268E-02  7.5797E-02  1.2275E-01  3.0039E-01  7.1051E-01  9.4088E-01
+  9.9094E-01  1.0264E+00
+  prteigrs : nnsclo,ikpt=   30   57 max resid (incl. the buffer)=  3.85826E-10
+ Non-SCF case, kpt   58 (  0.31250  0.31250  0.62500), residuals and eigenvalues=
+  8.82E-17  1.18E-17  1.43E-17  1.54E-17  6.33E-17  5.45E-17  1.58E-11  2.85E-11
+ -7.2083E-02  8.6613E-02  1.3009E-01  3.0925E-01  7.1925E-01  9.2409E-01
+  1.0032E+00  1.0197E+00
+  prteigrs : nnsclo,ikpt=   30   58 max resid (incl. the buffer)=  2.84981E-11
+ Non-SCF case, kpt   59 (  0.30000  0.30000  0.60000), residuals and eigenvalues=
+  8.07E-17  3.48E-17  6.18E-18  1.11E-17  6.67E-17  5.58E-17  1.03E-12  1.00E-13
+ -8.9373E-02  9.8044E-02  1.3886E-01  3.1843E-01  7.2823E-01  9.0668E-01
+  9.9825E-01  1.0126E+00
+  prteigrs : nnsclo,ikpt=   30   59 max resid (incl. the buffer)=  1.03070E-12
+ Non-SCF case, kpt   60 (  0.28750  0.28750  0.57500), residuals and eigenvalues=
+  7.96E-17  4.20E-17  7.86E-18  9.33E-18  2.64E-17  6.18E-17  2.33E-12  1.32E-11
+ -1.0658E-01  1.1031E-01  1.4927E-01  3.2833E-01  7.3753E-01  8.9015E-01
+  9.8437E-01  1.0065E+00
+  prteigrs : nnsclo,ikpt=   30   60 max resid (incl. the buffer)=  1.31621E-11
+ Non-SCF case, kpt   61 (  0.27500  0.27500  0.55000), residuals and eigenvalues=
+  1.12E-17  2.72E-17  4.94E-17  7.13E-18  7.17E-17  5.52E-17  2.42E-15  3.16E-16
+ -1.2352E-01  1.2315E-01  1.6091E-01  3.3801E-01  7.4669E-01  8.7393E-01
+  9.6722E-01  1.0003E+00
+  prteigrs : nnsclo,ikpt=   30   61 max resid (incl. the buffer)=  2.41862E-15
+ Non-SCF case, kpt   62 (  0.26250  0.26250  0.52500), residuals and eigenvalues=
+  2.89E-17  4.24E-17  3.35E-17  8.29E-17  2.35E-17  3.77E-17  3.89E-14  1.43E-12
+ -1.4018E-01  1.3670E-01  1.7328E-01  3.4782E-01  7.5578E-01  8.5801E-01
+  9.4905E-01  9.9500E-01
+  prteigrs : nnsclo,ikpt=   30   62 max resid (incl. the buffer)=  1.42979E-12
+ Non-SCF case, kpt   63 (  0.25000  0.25000  0.50000), residuals and eigenvalues=
+  2.75E-17  2.57E-17  8.68E-18  2.44E-17  2.34E-17  6.83E-17  4.27E-16  2.82E-15
+ -1.5638E-01  1.5086E-01  1.8639E-01  3.5729E-01  7.6446E-01  8.4175E-01
+  9.3065E-01  9.9008E-01
+  prteigrs : nnsclo,ikpt=   30   63 max resid (incl. the buffer)=  2.82399E-15
+ Non-SCF case, kpt   64 (  0.23750  0.23750  0.47500), residuals and eigenvalues=
+  4.91E-17  2.62E-17  2.01E-17  9.90E-17  7.36E-17  4.01E-17  6.38E-17  8.40E-16
+ -1.7200E-01  1.6605E-01  2.0074E-01  3.6760E-01  7.7270E-01  8.2712E-01
+  9.1266E-01  9.8637E-01
+  prteigrs : nnsclo,ikpt=   30   64 max resid (incl. the buffer)=  8.40277E-16
+ Non-SCF case, kpt   65 (  0.22500  0.22500  0.45000), residuals and eigenvalues=
+  6.20E-17  4.06E-17  2.56E-17  8.62E-17  5.89E-17  6.68E-18  3.68E-16  1.05E-14
+ -1.8701E-01  1.8153E-01  2.1541E-01  3.7731E-01  7.7991E-01  8.1261E-01
+  8.9499E-01  9.8333E-01
+  prteigrs : nnsclo,ikpt=   30   65 max resid (incl. the buffer)=  1.04762E-14
+ Non-SCF case, kpt   66 (  0.21250  0.21250  0.42500), residuals and eigenvalues=
+  2.37E-17  8.33E-17  1.32E-17  6.19E-17  4.94E-17  7.03E-17  9.95E-16  4.93E-15
+ -2.0140E-01  1.9759E-01  2.3057E-01  3.8684E-01  7.8583E-01  7.9803E-01
+  8.7771E-01  9.8129E-01
+  prteigrs : nnsclo,ikpt=   30   66 max resid (incl. the buffer)=  4.92712E-15
+ Non-SCF case, kpt   67 (  0.20000  0.20000  0.40000), residuals and eigenvalues=
+  4.88E-18  7.22E-17  6.42E-17  3.54E-17  7.12E-17  8.90E-17  2.24E-16  3.55E-15
+ -2.1503E-01  2.1424E-01  2.4640E-01  3.9609E-01  7.8472E-01  7.9026E-01
+  8.6096E-01  9.8040E-01
+  prteigrs : nnsclo,ikpt=   30   67 max resid (incl. the buffer)=  3.54819E-15
+ Non-SCF case, kpt   68 (  0.18750  0.18750  0.37500), residuals and eigenvalues=
+  3.85E-18  7.01E-17  1.10E-17  2.97E-17  8.34E-17  4.03E-17  4.31E-17  1.84E-15
+ -2.2793E-01  2.3142E-01  2.6271E-01  4.0499E-01  7.7207E-01  7.9288E-01
+  8.4470E-01  9.8060E-01
+  prteigrs : nnsclo,ikpt=   30   68 max resid (incl. the buffer)=  1.83693E-15
+ Non-SCF case, kpt   69 (  0.17500  0.17500  0.35000), residuals and eigenvalues=
+  1.25E-17  9.10E-18  2.93E-17  1.03E-17  2.87E-17  4.41E-17  8.95E-17  3.80E-17
+ -2.4005E-01  2.4921E-01  2.7946E-01  4.1376E-01  7.6029E-01  7.9368E-01
+  8.2906E-01  9.8192E-01
+ Non-SCF case, kpt   70 (  0.16250  0.16250  0.32500), residuals and eigenvalues=
+  9.77E-17  6.06E-17  1.26E-17  4.67E-17  1.50E-17  3.08E-17  3.06E-17  3.58E-17
+ -2.5143E-01  2.6761E-01  2.9642E-01  4.2177E-01  7.4892E-01  7.9228E-01
+  8.1362E-01  9.8398E-01
+ Non-SCF case, kpt   71 (  0.15000  0.15000  0.30000), residuals and eigenvalues=
+  8.96E-17  5.07E-17  6.07E-17  9.70E-17  9.17E-18  2.39E-17  5.88E-17  2.36E-16
+ -2.6199E-01  2.8618E-01  3.1370E-01  4.2920E-01  7.3842E-01  7.8870E-01
+  7.9879E-01  9.8610E-01
+  prteigrs : nnsclo,ikpt=   30   71 max resid (incl. the buffer)=  2.36045E-16
+ Non-SCF case, kpt   72 (  0.13750  0.13750  0.27500), residuals and eigenvalues=
+  1.96E-17  1.60E-17  4.43E-17  1.40E-17  2.49E-17  2.70E-17  6.74E-17  3.89E-16
+ -2.7174E-01  3.0528E-01  3.3125E-01  4.3604E-01  7.2869E-01  7.8316E-01
+  7.8448E-01  9.8817E-01
+  prteigrs : nnsclo,ikpt=   30   72 max resid (incl. the buffer)=  3.89443E-16
+ Non-SCF case, kpt   73 (  0.12500  0.12500  0.25000), residuals and eigenvalues=
+  1.66E-17  9.67E-18  2.86E-17  7.17E-18  8.63E-18  3.81E-17  3.78E-17  4.42E-16
+ -2.8067E-01  3.2444E-01  3.4867E-01  4.4226E-01  7.1974E-01  7.7055E-01
+  7.7576E-01  9.8965E-01
+  prteigrs : nnsclo,ikpt=   30   73 max resid (incl. the buffer)=  4.42392E-16
+ Non-SCF case, kpt   74 (  0.11250  0.11250  0.22500), residuals and eigenvalues=
+  5.19E-18  9.39E-17  2.63E-17  7.97E-17  8.44E-17  6.21E-17  1.26E-17  3.72E-16
+ -2.8877E-01  3.4374E-01  3.6598E-01  4.4785E-01  7.1161E-01  7.5706E-01
+  7.6670E-01  9.9038E-01
+  prteigrs : nnsclo,ikpt=   30   74 max resid (incl. the buffer)=  3.72254E-16
+ Non-SCF case, kpt   75 (  0.10000  0.10000  0.20000), residuals and eigenvalues=
+  4.12E-17  5.07E-17  4.24E-17  4.67E-17  1.95E-17  1.01E-17  7.34E-17  1.35E-13
+ -2.9604E-01  3.6302E-01  3.8296E-01  4.5279E-01  7.0430E-01  7.4364E-01
+  7.5588E-01  9.9017E-01
+  prteigrs : nnsclo,ikpt=   30   75 max resid (incl. the buffer)=  1.35119E-13
+ Non-SCF case, kpt   76 (  0.08750  0.08750  0.17500), residuals and eigenvalues=
+  1.97E-17  3.67E-17  3.12E-17  3.94E-17  5.96E-17  1.47E-17  2.37E-17  4.05E-14
+ -3.0247E-01  3.8187E-01  3.9910E-01  4.5628E-01  6.9780E-01  7.3077E-01
+  7.4418E-01  9.8904E-01
+  prteigrs : nnsclo,ikpt=   30   76 max resid (incl. the buffer)=  4.04836E-14
+ Non-SCF case, kpt   77 (  0.07500  0.07500  0.15000), residuals and eigenvalues=
+  2.27E-17  1.19E-17  1.18E-17  1.49E-17  1.63E-17  9.73E-17  2.32E-17  3.92E-16
+ -3.0805E-01  4.0033E-01  4.1490E-01  4.5990E-01  6.9215E-01  7.1840E-01
+  7.3130E-01  9.8742E-01
+  prteigrs : nnsclo,ikpt=   30   77 max resid (incl. the buffer)=  3.91888E-16
+ Non-SCF case, kpt   78 (  0.06250  0.06250  0.12500), residuals and eigenvalues=
+  4.23E-17  7.06E-18  6.96E-18  1.63E-17  1.17E-17  4.65E-17  4.78E-17  3.88E-16
+ -3.1278E-01  4.1806E-01  4.2948E-01  4.6294E-01  6.8736E-01  7.0733E-01
+  7.1850E-01  9.8569E-01
+  prteigrs : nnsclo,ikpt=   30   78 max resid (incl. the buffer)=  3.88106E-16
+ Non-SCF case, kpt   79 (  0.05000  0.05000  0.10000), residuals and eigenvalues=
+  7.00E-17  8.05E-18  5.66E-18  1.22E-17  8.77E-18  8.00E-18  2.49E-17  3.49E-16
+ -3.1665E-01  4.3445E-01  4.4257E-01  4.6538E-01  6.8344E-01  6.9735E-01
+  7.0596E-01  9.8389E-01
+  prteigrs : nnsclo,ikpt=   30   79 max resid (incl. the buffer)=  3.48908E-16
+ Non-SCF case, kpt   80 (  0.03750  0.03750  0.07500), residuals and eigenvalues=
+  1.93E-17  8.37E-18  9.18E-18  1.21E-17  9.48E-17  5.72E-18  6.26E-17  1.83E-14
+ -3.1966E-01  4.4805E-01  4.5358E-01  4.6703E-01  6.8038E-01  6.8876E-01
+  6.9431E-01  9.8210E-01
+  prteigrs : nnsclo,ikpt=   30   80 max resid (incl. the buffer)=  1.83495E-14
+ Non-SCF case, kpt   81 (  0.02500  0.02500  0.05000), residuals and eigenvalues=
+  2.37E-17  7.18E-18  7.79E-18  6.45E-18  6.67E-17  3.40E-17  2.81E-17  1.11E-14
+ -3.2181E-01  4.5939E-01  4.6211E-01  4.6834E-01  6.7819E-01  6.8213E-01
+  6.8491E-01  9.8085E-01
+  prteigrs : nnsclo,ikpt=   30   81 max resid (incl. the buffer)=  1.11290E-14
+ Non-SCF case, kpt   82 (  0.01250  0.01250  0.02500), residuals and eigenvalues=
+  2.91E-17  9.62E-17  6.97E-18  9.99E-17  1.26E-17  3.15E-17  2.76E-17  7.13E-15
+ -3.2311E-01  4.6679E-01  4.6752E-01  4.6912E-01  6.7687E-01  6.7790E-01
+  6.7865E-01  9.8005E-01
+  prteigrs : nnsclo,ikpt=   30   82 max resid (incl. the buffer)=  7.13459E-15
+ Non-SCF case, kpt   83 (  0.00000  0.00000  0.00000), residuals and eigenvalues=
+  3.24E-17  6.91E-17  5.08E-17  4.45E-17  2.41E-17  2.40E-17  2.63E-17  6.04E-15
+ -3.2354E-01  4.6938E-01  4.6938E-01  4.6938E-01  6.7644E-01  6.7644E-01
+  6.7644E-01  9.7978E-01
+  prteigrs : nnsclo,ikpt=   30   83 max resid (incl. the buffer)=  6.03890E-15
+ Non-SCF case, kpt   84 (  0.02083  0.02083  0.02083), residuals and eigenvalues=
+  1.22E-17  3.55E-17  5.24E-18  9.41E-17  3.13E-17  5.86E-17  1.34E-17  4.91E-15
+ -3.2309E-01  4.6613E-01  4.6856E-01  4.6856E-01  6.7751E-01  6.7751E-01
+  6.7856E-01  9.8006E-01
+  prteigrs : nnsclo,ikpt=   30   84 max resid (incl. the buffer)=  4.90964E-15
+ Non-SCF case, kpt   85 (  0.04167  0.04167  0.04167), residuals and eigenvalues=
+  1.22E-17  4.57E-17  1.05E-17  9.77E-17  9.70E-17  1.67E-17  5.99E-17  7.91E-15
+ -3.2174E-01  4.5683E-01  4.6615E-01  4.6615E-01  6.8067E-01  6.8067E-01
+  6.8451E-01  9.8093E-01
+  prteigrs : nnsclo,ikpt=   30   85 max resid (incl. the buffer)=  7.90990E-15
+ Non-SCF case, kpt   86 (  0.06250  0.06250  0.06250), residuals and eigenvalues=
+  1.19E-17  8.29E-17  1.37E-17  4.89E-18  6.26E-17  2.73E-17  1.04E-17  1.39E-14
+ -3.1950E-01  4.4253E-01  4.6234E-01  4.6234E-01  6.8568E-01  6.8568E-01
+  6.9324E-01  9.8236E-01
+  prteigrs : nnsclo,ikpt=   30   86 max resid (incl. the buffer)=  1.39155E-14
+ Non-SCF case, kpt   87 (  0.08333  0.08333  0.08333), residuals and eigenvalues=
+  1.62E-17  9.08E-17  9.85E-17  5.15E-18  8.93E-18  1.47E-17  3.13E-17  6.29E-17
+ -3.1636E-01  4.2492E-01  4.5747E-01  4.5747E-01  6.9224E-01  6.9224E-01
+  7.0386E-01  9.8452E-01
+ Non-SCF case, kpt   88 (  0.10417  0.10417  0.10417), residuals and eigenvalues=
+  1.47E-17  7.20E-18  7.73E-17  7.52E-17  2.65E-17  3.80E-17  3.90E-17  2.26E-16
+ -3.1233E-01  4.0401E-01  4.5163E-01  4.5163E-01  6.9997E-01  6.9997E-01
+  7.1497E-01  9.8712E-01
+  prteigrs : nnsclo,ikpt=   30   88 max resid (incl. the buffer)=  2.25927E-16
+ Non-SCF case, kpt   89 (  0.12500  0.12500  0.12500), residuals and eigenvalues=
+  1.83E-17  3.42E-18  1.23E-17  2.28E-17  7.04E-17  9.68E-17  1.43E-17  5.22E-13
+ -3.0740E-01  3.8145E-01  4.4574E-01  4.4574E-01  7.0865E-01  7.0865E-01
+  7.2702E-01  9.9073E-01
+  prteigrs : nnsclo,ikpt=   30   89 max resid (incl. the buffer)=  5.22406E-13
+ Non-SCF case, kpt   90 (  0.14583  0.14583  0.14583), residuals and eigenvalues=
+  2.63E-17  1.16E-17  3.76E-17  3.86E-17  2.19E-17  9.57E-17  2.51E-17  1.03E-12
+ -3.0160E-01  3.5714E-01  4.3889E-01  4.3889E-01  7.1762E-01  7.1762E-01
+  7.3762E-01  9.9445E-01
+  prteigrs : nnsclo,ikpt=   30   90 max resid (incl. the buffer)=  1.02658E-12
+ Non-SCF case, kpt   91 (  0.16667  0.16667  0.16667), residuals and eigenvalues=
+  4.37E-18  2.14E-17  2.04E-17  1.79E-17  4.40E-17  1.81E-17  3.56E-17  9.30E-13
+ -2.9491E-01  3.3192E-01  4.3188E-01  4.3188E-01  7.2670E-01  7.2670E-01
+  7.4753E-01  9.9859E-01
+  prteigrs : nnsclo,ikpt=   30   91 max resid (incl. the buffer)=  9.30011E-13
+ Non-SCF case, kpt   92 (  0.18750  0.18750  0.18750), residuals and eigenvalues=
+  3.46E-18  2.39E-17  2.35E-17  2.08E-17  6.99E-17  3.00E-17  3.28E-17  1.06E-12
+ -2.8734E-01  3.0609E-01  4.2486E-01  4.2486E-01  7.3558E-01  7.3558E-01
+  7.5660E-01  1.0031E+00
+  prteigrs : nnsclo,ikpt=   30   92 max resid (incl. the buffer)=  1.05569E-12
+ Non-SCF case, kpt   93 (  0.20833  0.20833  0.20833), residuals and eigenvalues=
+  3.22E-18  2.61E-17  3.13E-17  2.34E-17  9.44E-17  4.04E-17  2.43E-17  1.91E-12
+ -2.7891E-01  2.7991E-01  4.1798E-01  4.1798E-01  7.4399E-01  7.4399E-01
+  7.6480E-01  1.0078E+00
+  prteigrs : nnsclo,ikpt=   30   93 max resid (incl. the buffer)=  1.91241E-12
+ Non-SCF case, kpt   94 (  0.22917  0.22917  0.22917), residuals and eigenvalues=
+  2.85E-18  2.65E-17  3.31E-17  2.32E-17  1.47E-17  5.12E-17  1.84E-17  3.36E-14
+ -2.6961E-01  2.5357E-01  4.1132E-01  4.1132E-01  7.5173E-01  7.5173E-01
+  7.7212E-01  1.0127E+00
+  prteigrs : nnsclo,ikpt=   30   94 max resid (incl. the buffer)=  3.35794E-14
+ Non-SCF case, kpt   95 (  0.25000  0.25000  0.25000), residuals and eigenvalues=
+  7.91E-17  6.01E-17  9.67E-18  7.46E-18  6.80E-17  1.44E-17  4.67E-17  3.84E-14
+ -2.5946E-01  2.2744E-01  4.0510E-01  4.0510E-01  7.5950E-01  7.5950E-01
+  7.7861E-01  1.0179E+00
+  prteigrs : nnsclo,ikpt=   30   95 max resid (incl. the buffer)=  3.83878E-14
+ Non-SCF case, kpt   96 (  0.27083  0.27083  0.27083), residuals and eigenvalues=
+  8.76E-17  4.78E-17  7.87E-17  8.54E-17  7.87E-17  7.83E-17  3.29E-17  2.69E-11
+ -2.4849E-01  2.0077E-01  3.9910E-01  3.9910E-01  7.6533E-01  7.6533E-01
+  7.8429E-01  1.0225E+00
+  prteigrs : nnsclo,ikpt=   30   96 max resid (incl. the buffer)=  2.68894E-11
+ Non-SCF case, kpt   97 (  0.29167  0.29167  0.29167), residuals and eigenvalues=
+  3.48E-17  1.33E-17  2.27E-17  2.54E-17  6.10E-17  5.82E-17  4.52E-17  3.69E-12
+ -2.3669E-01  1.7480E-01  3.9353E-01  3.9353E-01  7.7026E-01  7.7026E-01
+  7.8927E-01  1.0271E+00
+  prteigrs : nnsclo,ikpt=   30   97 max resid (incl. the buffer)=  3.68976E-12
+ Non-SCF case, kpt   98 (  0.31250  0.31250  0.31250), residuals and eigenvalues=
+  9.30E-17  4.24E-17  9.41E-18  7.43E-18  4.96E-17  2.22E-17  1.68E-17  2.23E-13
+ -2.2410E-01  1.4921E-01  3.8874E-01  3.8874E-01  7.7425E-01  7.7425E-01
+  7.9360E-01  1.0313E+00
+  prteigrs : nnsclo,ikpt=   30   98 max resid (incl. the buffer)=  2.23270E-13
+ Non-SCF case, kpt   99 (  0.33333  0.33333  0.33333), residuals and eigenvalues=
+  6.89E-17  5.00E-17  1.97E-17  1.91E-17  2.70E-17  7.98E-17  1.34E-17  4.17E-13
+ -2.1070E-01  1.2420E-01  3.8374E-01  3.8374E-01  7.7759E-01  7.7759E-01
+  7.9722E-01  1.0345E+00
+  prteigrs : nnsclo,ikpt=   30   99 max resid (incl. the buffer)=  4.17326E-13
+ Non-SCF case, kpt  100 (  0.35417  0.35417  0.35417), residuals and eigenvalues=
+  1.87E-17  8.46E-17  8.41E-18  7.29E-17  5.45E-17  4.33E-17  3.18E-17  2.31E-14
+ -1.9664E-01  9.9353E-02  3.7930E-01  3.7930E-01  7.7979E-01  7.7979E-01
+  8.0034E-01  1.0368E+00
+  prteigrs : nnsclo,ikpt=   30  100 max resid (incl. the buffer)=  2.31427E-14
+ Non-SCF case, kpt  101 (  0.37500  0.37500  0.37500), residuals and eigenvalues=
+  3.70E-18  2.40E-17  3.91E-18  6.17E-17  3.95E-17  6.81E-18  5.63E-17  5.66E-12
+ -1.8193E-01  7.5443E-02  3.7557E-01  3.7557E-01  7.8103E-01  7.8103E-01
+  8.0300E-01  1.0392E+00
+  prteigrs : nnsclo,ikpt=   30  101 max resid (incl. the buffer)=  5.65557E-12
+ Non-SCF case, kpt  102 (  0.39583  0.39583  0.39583), residuals and eigenvalues=
+  5.66E-17  2.52E-17  7.27E-17  5.09E-17  4.43E-17  5.00E-17  4.22E-17  1.82E-12
+ -1.6669E-01  5.2370E-02  3.7249E-01  3.7249E-01  7.8209E-01  7.8209E-01
+  8.0524E-01  1.0412E+00
+  prteigrs : nnsclo,ikpt=   30  102 max resid (incl. the buffer)=  1.81743E-12
+ Non-SCF case, kpt  103 (  0.41667  0.41667  0.41667), residuals and eigenvalues=
+  6.03E-17  2.24E-17  3.34E-17  4.33E-17  5.19E-17  7.25E-17  5.42E-18  3.24E-13
+ -1.5112E-01  3.0362E-02  3.6996E-01  3.6996E-01  7.8277E-01  7.8277E-01
+  8.0704E-01  1.0426E+00
+  prteigrs : nnsclo,ikpt=   30  103 max resid (incl. the buffer)=  3.24014E-13
+ Non-SCF case, kpt  104 (  0.43750  0.43750  0.43750), residuals and eigenvalues=
+  1.23E-17  2.77E-17  8.41E-17  2.56E-17  4.37E-17  2.77E-17  1.70E-17  1.34E-12
+ -1.3563E-01  9.6990E-03  3.6785E-01  3.6785E-01  7.8254E-01  7.8254E-01
+  8.0842E-01  1.0436E+00
+  prteigrs : nnsclo,ikpt=   30  104 max resid (incl. the buffer)=  1.33852E-12
+ Non-SCF case, kpt  105 (  0.45833  0.45833  0.45833), residuals and eigenvalues=
+  5.96E-17  4.50E-17  1.25E-17  1.86E-17  8.10E-17  2.05E-17  6.75E-17  6.77E-13
+ -1.2106E-01 -8.3791E-03  3.6645E-01  3.6645E-01  7.8275E-01  7.8275E-01
+  8.0940E-01  1.0452E+00
+  prteigrs : nnsclo,ikpt=   30  105 max resid (incl. the buffer)=  6.77375E-13
+ Non-SCF case, kpt  106 (  0.47917  0.47917  0.47917), residuals and eigenvalues=
+  2.94E-17  4.34E-17  5.50E-17  7.67E-17  2.53E-17  8.34E-17  9.75E-17  2.52E-11
+ -1.0945E-01 -2.2577E-02  3.6558E-01  3.6558E-01  7.8274E-01  7.8274E-01
+  8.0991E-01  1.0452E+00
+  prteigrs : nnsclo,ikpt=   30  106 max resid (incl. the buffer)=  2.52383E-11
+ Non-SCF case, kpt  107 (  0.50000  0.50000  0.50000), residuals and eigenvalues=
+  4.43E-17  8.73E-17  1.44E-17  4.60E-17  2.32E-17  8.40E-18  1.01E-17  4.29E-11
+ -1.0463E-01 -2.8130E-02  3.6529E-01  3.6529E-01  7.8276E-01  7.8276E-01
+  8.1010E-01  1.0454E+00
+  prteigrs : nnsclo,ikpt=   30  107 max resid (incl. the buffer)=  4.29406E-11
+ Non-SCF case, kpt  108 (  0.50735  0.48529  0.50735), residuals and eigenvalues=
+  2.68E-17  2.14E-17  7.86E-17  7.48E-18  1.13E-17  8.92E-18  4.34E-17  1.50E-11
+ -1.0423E-01 -2.7711E-02  3.6329E-01  3.6452E-01  7.8220E-01  7.8425E-01
+  8.1151E-01  1.0456E+00
+  prteigrs : nnsclo,ikpt=   30  108 max resid (incl. the buffer)=  1.50069E-11
+ Non-SCF case, kpt  109 (  0.51471  0.47059  0.51471), residuals and eigenvalues=
+  6.43E-17  8.32E-18  4.56E-17  4.04E-17  2.50E-17  6.72E-17  1.45E-17  4.76E-13
+ -1.0306E-01 -2.6410E-02  3.5748E-01  3.6224E-01  7.8083E-01  7.8866E-01
+  8.1608E-01  1.0462E+00
+  prteigrs : nnsclo,ikpt=   30  109 max resid (incl. the buffer)=  4.76051E-13
+ Non-SCF case, kpt  110 (  0.52206  0.45588  0.52206), residuals and eigenvalues=
+  9.74E-18  7.51E-18  3.04E-17  3.06E-17  4.77E-17  3.63E-17  5.31E-17  9.74E-12
+ -1.0110E-01 -2.4284E-02  3.4783E-01  3.5862E-01  7.7700E-01  7.9610E-01
+  8.2408E-01  1.0467E+00
+  prteigrs : nnsclo,ikpt=   30  110 max resid (incl. the buffer)=  9.74410E-12
+ Non-SCF case, kpt  111 (  0.52941  0.44118  0.52941), residuals and eigenvalues=
+  5.47E-18  1.99E-17  2.37E-17  1.72E-17  9.32E-17  2.57E-17  7.26E-17  1.05E-11
+ -9.8362E-02 -2.1372E-02  3.3523E-01  3.5379E-01  7.7143E-01  8.0628E-01
+  8.3530E-01  1.0467E+00
+  prteigrs : nnsclo,ikpt=   30  111 max resid (incl. the buffer)=  1.04857E-11
+ Non-SCF case, kpt  112 (  0.53676  0.42647  0.53676), residuals and eigenvalues=
+  6.59E-18  5.44E-17  3.44E-17  4.37E-17  2.63E-17  1.01E-17  9.21E-17  8.45E-11
+ -9.4847E-02 -1.7384E-02  3.1999E-01  3.4794E-01  7.6458E-01  8.1829E-01
+  8.4929E-01  1.0456E+00
+  prteigrs : nnsclo,ikpt=   30  112 max resid (incl. the buffer)=  8.45344E-11
+ Non-SCF case, kpt  113 (  0.54412  0.41176  0.54412), residuals and eigenvalues=
+  1.35E-17  1.75E-17  2.27E-17  8.18E-17  3.04E-17  7.15E-17  3.01E-17  6.83E-12
+ -9.0565E-02 -1.2894E-02  3.0270E-01  3.4106E-01  7.5678E-01  8.3212E-01
+  8.6560E-01  1.0427E+00
+  prteigrs : nnsclo,ikpt=   30  113 max resid (incl. the buffer)=  6.83360E-12
+ Non-SCF case, kpt  114 (  0.55147  0.39706  0.55147), residuals and eigenvalues=
+  1.84E-17  8.78E-17  3.12E-17  5.98E-18  4.60E-17  4.30E-17  8.59E-17  4.74E-13
+ -8.5509E-02 -7.6034E-03  2.8374E-01  3.3394E-01  7.4841E-01  8.4810E-01
+  8.8338E-01  1.0376E+00
+  prteigrs : nnsclo,ikpt=   30  114 max resid (incl. the buffer)=  4.74217E-13
+ Non-SCF case, kpt  115 (  0.55882  0.38235  0.55882), residuals and eigenvalues=
+  9.25E-18  4.07E-17  2.24E-17  5.36E-17  8.50E-17  2.86E-17  3.84E-17  7.63E-12
+ -7.9692E-02 -1.6304E-03  2.6371E-01  3.2650E-01  7.3991E-01  8.6480E-01
+  9.0265E-01  1.0297E+00
+  prteigrs : nnsclo,ikpt=   30  115 max resid (incl. the buffer)=  7.63243E-12
+ Non-SCF case, kpt  116 (  0.56618  0.36765  0.56618), residuals and eigenvalues=
+  2.15E-17  1.79E-17  4.93E-17  7.50E-17  2.70E-17  8.80E-17  4.87E-17  5.17E-15
+ -7.3148E-02  4.9413E-03  2.4259E-01  3.1894E-01  7.3130E-01  8.8235E-01
+  9.2259E-01  1.0183E+00
+  prteigrs : nnsclo,ikpt=   30  116 max resid (incl. the buffer)=  5.17407E-15
+ Non-SCF case, kpt  117 (  0.57353  0.35294  0.57353), residuals and eigenvalues=
+  3.85E-18  2.40E-17  7.29E-18  6.63E-17  3.00E-17  6.69E-17  7.77E-17  7.01E-13
+ -6.5830E-02  1.2151E-02  2.2132E-01  3.1144E-01  7.2304E-01  9.0041E-01
+  9.4312E-01  1.0048E+00
+  prteigrs : nnsclo,ikpt=   30  117 max resid (incl. the buffer)=  7.00608E-13
+ Non-SCF case, kpt  118 (  0.58088  0.33824  0.58088), residuals and eigenvalues=
+  1.87E-17  2.21E-17  8.40E-18  4.62E-17  3.54E-17  9.59E-17  4.77E-17  9.07E-15
+ -5.7837E-02  1.9764E-02  1.9987E-01  3.0411E-01  7.1515E-01  9.1852E-01
+  9.6328E-01  9.8901E-01
+  prteigrs : nnsclo,ikpt=   30  118 max resid (incl. the buffer)=  9.06878E-15
+ Non-SCF case, kpt  119 (  0.58824  0.32353  0.58824), residuals and eigenvalues=
+  1.44E-17  2.55E-17  4.59E-17  9.43E-17  4.65E-17  6.91E-17  4.88E-15  1.92E-14
+ -4.9159E-02  2.7411E-02  1.7865E-01  2.9720E-01  7.0759E-01  9.3647E-01
+  9.6802E-01  9.8635E-01
+  prteigrs : nnsclo,ikpt=   30  119 max resid (incl. the buffer)=  1.92197E-14
+ Non-SCF case, kpt  120 (  0.59559  0.30882  0.59559), residuals and eigenvalues=
+  1.60E-17  2.81E-17  2.32E-17  5.89E-17  6.84E-17  5.56E-17  1.49E-16  3.97E-14
+ -3.9887E-02  3.4943E-02  1.5866E-01  2.9057E-01  7.0075E-01  9.4945E-01
+  9.5343E-01  1.0049E+00
+  prteigrs : nnsclo,ikpt=   30  120 max resid (incl. the buffer)=  3.97307E-14
+ Non-SCF case, kpt  121 (  0.60294  0.29412  0.60294), residuals and eigenvalues=
+  1.68E-17  9.29E-18  2.91E-17  1.17E-17  2.70E-17  3.33E-17  2.61E-13  8.36E-13
+ -3.0129E-02  4.1364E-02  1.4070E-01  2.8421E-01  6.9449E-01  9.2931E-01
+  9.6921E-01  1.0225E+00
+  prteigrs : nnsclo,ikpt=   30  121 max resid (incl. the buffer)=  8.36273E-13
+ Non-SCF case, kpt  122 (  0.61029  0.27941  0.61029), residuals and eigenvalues=
+  3.82E-17  4.60E-17  3.63E-17  9.35E-18  7.98E-18  6.03E-17  8.84E-14  1.18E-11
+ -2.0113E-02  4.5071E-02  1.2683E-01  2.7884E-01  6.8898E-01  9.0875E-01
+  9.8363E-01  1.0376E+00
+  prteigrs : nnsclo,ikpt=   30  122 max resid (incl. the buffer)=  1.18408E-11
+ Non-SCF case, kpt  123 (  0.61765  0.26471  0.61765), residuals and eigenvalues=
+  2.80E-17  6.68E-17  2.69E-17  7.15E-17  8.50E-17  6.85E-17  9.36E-12  8.96E-11
+ -1.0563E-02  4.4234E-02  1.1943E-01  2.7375E-01  6.8414E-01  8.8815E-01
+  9.9593E-01  1.0487E+00
+  prteigrs : nnsclo,ikpt=   30  123 max resid (incl. the buffer)=  8.96487E-11
+ Non-SCF case, kpt  124 (  0.62500  0.25000  0.62500), residuals and eigenvalues=
+  1.24E-17  4.46E-17  4.66E-17  1.27E-17  3.71E-17  5.46E-17  1.74E-10  4.64E-09
+ -3.4430E-03  3.9655E-02  1.1979E-01  2.6944E-01  6.7987E-01  8.6794E-01
+  1.0060E+00  1.0548E+00
+  prteigrs : nnsclo,ikpt=   30  124 max resid (incl. the buffer)=  4.63816E-09
+ Non-SCF case, kpt  125 (  0.61250  0.25000  0.63750), residuals and eigenvalues=
+  1.42E-17  5.42E-17  5.76E-17  1.70E-17  8.08E-17  5.25E-17  1.32E-10  4.06E-09
+ -3.0738E-03  3.9825E-02  1.2018E-01  2.6723E-01  6.8286E-01  8.6805E-01
+  1.0043E+00  1.0526E+00
+  prteigrs : nnsclo,ikpt=   30  125 max resid (incl. the buffer)=  4.05555E-09
+ Non-SCF case, kpt  126 (  0.60000  0.25000  0.65000), residuals and eigenvalues=
+  5.84E-17  4.68E-17  5.72E-17  4.84E-17  6.04E-17  3.59E-17  1.04E-11  1.80E-10
+ -1.9939E-03  4.0292E-02  1.2134E-01  2.6063E-01  6.9158E-01  8.6835E-01
+  9.9907E-01  1.0459E+00
+  prteigrs : nnsclo,ikpt=   30  126 max resid (incl. the buffer)=  1.80147E-10
+ Non-SCF case, kpt  127 (  0.58750  0.25000  0.66250), residuals and eigenvalues=
+  6.02E-17  4.92E-17  5.60E-17  4.26E-17  6.69E-17  2.30E-17  2.80E-13  5.31E-11
+ -9.6888E-05  4.1153E-02  1.2370E-01  2.5078E-01  7.0558E-01  8.6940E-01
+  9.9178E-01  1.0363E+00
+  prteigrs : nnsclo,ikpt=   30  127 max resid (incl. the buffer)=  5.30625E-11
+ Non-SCF case, kpt  128 (  0.57500  0.25000  0.67500), residuals and eigenvalues=
+  9.65E-17  5.04E-17  8.46E-17  3.89E-17  2.05E-17  1.76E-17  1.87E-13  3.34E-12
+  2.4797E-03  4.2073E-02  1.2638E-01  2.3803E-01  7.2386E-01  8.6999E-01
+  9.8257E-01  1.0229E+00
+  prteigrs : nnsclo,ikpt=   30  128 max resid (incl. the buffer)=  3.34011E-12
+ Non-SCF case, kpt  129 (  0.56250  0.25000  0.68750), residuals and eigenvalues=
+  1.34E-17  1.02E-17  5.71E-17  1.97E-17  2.01E-17  7.10E-17  3.81E-12  2.77E-12
+  5.8176E-03  4.3020E-02  1.2978E-01  2.2349E-01  7.4584E-01  8.7041E-01
+  9.7183E-01  1.0071E+00
+  prteigrs : nnsclo,ikpt=   30  129 max resid (incl. the buffer)=  3.81047E-12
+ Non-SCF case, kpt  130 (  0.55000  0.25000  0.70000), residuals and eigenvalues=
+  4.76E-17  2.03E-17  2.24E-17  7.11E-18  5.38E-17  6.27E-17  3.76E-14  8.86E-13
+  9.8627E-03  4.3676E-02  1.3398E-01  2.0818E-01  7.7029E-01  8.7064E-01
+  9.6174E-01  9.8963E-01
+  prteigrs : nnsclo,ikpt=   30  130 max resid (incl. the buffer)=  8.85863E-13
+ Non-SCF case, kpt  131 (  0.53750  0.25000  0.71250), residuals and eigenvalues=
+  1.57E-17  3.20E-18  5.63E-17  5.21E-17  9.62E-17  2.95E-17  2.09E-13  5.24E-13
+  1.4627E-02  4.3645E-02  1.3882E-01  1.9281E-01  7.9600E-01  8.7010E-01
+  9.5194E-01  9.7107E-01
+  prteigrs : nnsclo,ikpt=   30  131 max resid (incl. the buffer)=  5.24216E-13
+ Non-SCF case, kpt  132 (  0.52500  0.25000  0.72500), residuals and eigenvalues=
+  2.15E-17  6.20E-17  5.53E-17  6.80E-17  2.80E-17  2.67E-17  4.90E-14  3.69E-14
+  2.0139E-02  4.2407E-02  1.4439E-01  1.7855E-01  8.2195E-01  8.6841E-01
+  9.4359E-01  9.5338E-01
+  prteigrs : nnsclo,ikpt=   30  132 max resid (incl. the buffer)=  4.90366E-14
+ Non-SCF case, kpt  133 (  0.51250  0.25000  0.73750), residuals and eigenvalues=
+  2.39E-17  3.63E-17  7.09E-18  4.89E-17  9.28E-17  1.88E-17  4.49E-15  1.85E-15
+  2.6330E-02  3.9155E-02  1.5047E-01  1.6642E-01  8.4535E-01  8.6506E-01
+  9.3702E-01  9.3846E-01
+  prteigrs : nnsclo,ikpt=   30  133 max resid (incl. the buffer)=  4.49251E-15
+ Non-SCF case, kpt  134 (  0.50000  0.25000  0.75000), residuals and eigenvalues=
+  3.13E-17  1.13E-17  2.82E-18  9.22E-17  2.67E-17  4.67E-17  2.16E-15  1.36E-15
+  3.3283E-02  3.3283E-02  1.5730E-01  1.5730E-01  8.5950E-01  8.5950E-01
+  9.3300E-01  9.3300E-01
+  prteigrs : nnsclo,ikpt=   30  134 max resid (incl. the buffer)=  2.16043E-15
+ Non-SCF case, kpt  135 (  0.50000  0.26250  0.73750), residuals and eigenvalues=
+  4.06E-17  1.89E-17  2.71E-17  3.70E-18  3.50E-17  3.12E-17  1.50E-15  3.95E-15
+  2.2495E-02  4.2894E-02  1.4865E-01  1.6841E-01  8.4967E-01  8.6673E-01
+  9.3174E-01  9.3868E-01
+  prteigrs : nnsclo,ikpt=   30  135 max resid (incl. the buffer)=  3.94718E-15
+ Non-SCF case, kpt  136 (  0.50000  0.27500  0.72500), residuals and eigenvalues=
+  5.87E-17  2.80E-17  9.01E-17  6.24E-18  2.63E-17  5.46E-17  2.04E-16  4.73E-16
+  1.1169E-02  5.0134E-02  1.4350E-01  1.8126E-01  8.3866E-01  8.6915E-01
+  9.3592E-01  9.4638E-01
+  prteigrs : nnsclo,ikpt=   30  136 max resid (incl. the buffer)=  4.72614E-16
+ Non-SCF case, kpt  137 (  0.50000  0.28750  0.71250), residuals and eigenvalues=
+  4.88E-17  2.78E-17  6.12E-18  3.57E-17  3.22E-17  8.67E-17  3.34E-16  3.92E-15
+ -2.0081E-04  5.3471E-02  1.4317E-01  1.9481E-01  8.2749E-01  8.6716E-01
+  9.4482E-01  9.5534E-01
+  prteigrs : nnsclo,ikpt=   30  137 max resid (incl. the buffer)=  3.92030E-15
+ Non-SCF case, kpt  138 (  0.50000  0.30000  0.70000), residuals and eigenvalues=
+  5.43E-17  5.73E-18  2.05E-17  1.77E-17  3.06E-17  9.66E-17  1.60E-15  2.06E-15
+ -1.1370E-02  5.2497E-02  1.4800E-01  2.0898E-01  8.1667E-01  8.6241E-01
+  9.5626E-01  9.6490E-01
+  prteigrs : nnsclo,ikpt=   30  138 max resid (incl. the buffer)=  2.05724E-15
+ Non-SCF case, kpt  139 (  0.50000  0.31250  0.68750), residuals and eigenvalues=
+  2.26E-17  1.27E-17  1.12E-17  2.49E-17  6.24E-17  1.68E-17  2.87E-14  2.56E-13
+ -2.2057E-02  4.8095E-02  1.5775E-01  2.2358E-01  8.0691E-01  8.5640E-01
+  9.6876E-01  9.7562E-01
+  prteigrs : nnsclo,ikpt=   30  139 max resid (incl. the buffer)=  2.55934E-13
+ Non-SCF case, kpt  140 (  0.50000  0.32500  0.67500), residuals and eigenvalues=
+  5.57E-17  1.85E-17  1.52E-17  1.22E-17  3.65E-17  1.98E-17  4.96E-13  1.64E-12
+ -3.2308E-02  4.1560E-02  1.7065E-01  2.3825E-01  7.9803E-01  8.4983E-01
+  9.7966E-01  9.8573E-01
+  prteigrs : nnsclo,ikpt=   30  140 max resid (incl. the buffer)=  1.63973E-12
+ Non-SCF case, kpt  141 (  0.50000  0.33750  0.66250), residuals and eigenvalues=
+  6.14E-17  5.16E-17  1.08E-17  4.57E-17  3.52E-17  9.65E-17  4.55E-11  2.48E-10
+ -4.1972E-02  3.4018E-02  1.8580E-01  2.5287E-01  7.9031E-01  8.4320E-01
+  9.8630E-01  9.9609E-01
+  prteigrs : nnsclo,ikpt=   30  141 max resid (incl. the buffer)=  2.47936E-10
+ Non-SCF case, kpt  142 (  0.50000  0.35000  0.65000), residuals and eigenvalues=
+  5.30E-17  1.02E-17  3.01E-17  5.95E-17  7.83E-17  3.33E-17  5.41E-12  6.06E-12
+ -5.1068E-02  2.6123E-02  2.0208E-01  2.6718E-01  7.8376E-01  8.3668E-01
+  9.8570E-01  1.0055E+00
+  prteigrs : nnsclo,ikpt=   30  142 max resid (incl. the buffer)=  6.05924E-12
+ Non-SCF case, kpt  143 (  0.50000  0.36250  0.63750), residuals and eigenvalues=
+  2.81E-17  4.41E-17  3.84E-17  1.59E-17  2.26E-17  5.97E-17  5.98E-12  1.84E-11
+ -5.9470E-02  1.8469E-02  2.1941E-01  2.8125E-01  7.7876E-01  8.3057E-01
+  9.7689E-01  1.0149E+00
+  prteigrs : nnsclo,ikpt=   30  143 max resid (incl. the buffer)=  1.84426E-11
+ Non-SCF case, kpt  144 (  0.50000  0.37500  0.62500), residuals and eigenvalues=
+  8.45E-17  5.33E-18  6.61E-17  5.09E-17  8.72E-17  7.46E-17  1.04E-12  1.69E-09
+ -6.7203E-02  1.0996E-02  2.3747E-01  2.9465E-01  7.7509E-01  8.2473E-01
+  9.6089E-01  1.0232E+00
+  prteigrs : nnsclo,ikpt=   30  144 max resid (incl. the buffer)=  1.69135E-09
+ Non-SCF case, kpt  145 (  0.50000  0.38750  0.61250), residuals and eigenvalues=
+  4.58E-17  7.74E-17  4.09E-17  2.30E-17  5.03E-17  4.81E-17  3.79E-12  1.13E-08
+ -7.4239E-02  4.0018E-03  2.5547E-01  3.0724E-01  7.7276E-01  8.1926E-01
+  9.4070E-01  1.0305E+00
+  prteigrs : nnsclo,ikpt=   30  145 max resid (incl. the buffer)=  1.13404E-08
+ Non-SCF case, kpt  146 (  0.50000  0.40000  0.60000), residuals and eigenvalues=
+  3.31E-17  3.56E-17  2.37E-17  4.64E-18  7.23E-17  3.46E-17  2.08E-14  8.24E-10
+ -8.0598E-02 -2.4087E-03  2.7311E-01  3.1885E-01  7.7169E-01  8.1421E-01
+  9.1827E-01  1.0364E+00
+  prteigrs : nnsclo,ikpt=   30  146 max resid (incl. the buffer)=  8.23962E-10
+ Non-SCF case, kpt  147 (  0.50000  0.41250  0.58750), residuals and eigenvalues=
+  6.38E-17  9.82E-17  1.20E-17  6.82E-17  3.20E-17  6.63E-17  2.16E-15  6.19E-11
+ -8.6206E-02 -8.4994E-03  2.9062E-01  3.2931E-01  7.7182E-01  8.0921E-01
+  8.9574E-01  1.0410E+00
+  prteigrs : nnsclo,ikpt=   30  147 max resid (incl. the buffer)=  6.18736E-11
+ Non-SCF case, kpt  148 (  0.50000  0.42500  0.57500), residuals and eigenvalues=
+  2.65E-17  6.77E-18  1.23E-17  1.83E-17  2.94E-17  3.15E-17  7.69E-16  5.47E-10
+ -9.1078E-02 -1.3570E-02  3.0719E-01  3.3860E-01  7.7286E-01  8.0491E-01
+  8.7392E-01  1.0442E+00
+  prteigrs : nnsclo,ikpt=   30  148 max resid (incl. the buffer)=  5.46691E-10
+ Non-SCF case, kpt  149 (  0.50000  0.43750  0.56250), residuals and eigenvalues=
+  1.78E-17  3.52E-17  1.42E-17  1.54E-17  5.00E-17  9.30E-18  6.69E-17  1.53E-10
+ -9.5208E-02 -1.7905E-02  3.2282E-01  3.4663E-01  7.7485E-01  8.0084E-01
+  8.5435E-01  1.0461E+00
+  prteigrs : nnsclo,ikpt=   30  149 max resid (incl. the buffer)=  1.52507E-10
+ Non-SCF case, kpt  150 (  0.50000  0.45000  0.55000), residuals and eigenvalues=
+  1.15E-17  1.72E-17  1.47E-17  1.14E-17  5.67E-17  7.65E-17  5.51E-17  4.85E-11
+ -9.8594E-02 -2.1479E-02  3.3682E-01  3.5329E-01  7.7728E-01  7.9680E-01
+  8.3757E-01  1.0468E+00
+  prteigrs : nnsclo,ikpt=   30  150 max resid (incl. the buffer)=  4.85354E-11
+ Non-SCF case, kpt  151 (  0.50000  0.46250  0.53750), residuals and eigenvalues=
+  7.62E-18  1.31E-17  4.93E-17  3.12E-17  2.56E-17  7.17E-18  6.22E-17  1.58E-11
+ -1.0123E-01 -2.4417E-02  3.4889E-01  3.5860E-01  7.7968E-01  7.9254E-01
+  8.2457E-01  1.0468E+00
+  prteigrs : nnsclo,ikpt=   30  151 max resid (incl. the buffer)=  1.57596E-11
+ Non-SCF case, kpt  152 (  0.50000  0.47500  0.52500), residuals and eigenvalues=
+  7.01E-18  8.32E-17  9.72E-17  4.13E-17  3.81E-17  3.58E-17  5.65E-17  3.39E-12
+ -1.0311E-01 -2.6467E-02  3.5785E-01  3.6232E-01  7.8161E-01  7.8792E-01
+  8.1599E-01  1.0461E+00
+  prteigrs : nnsclo,ikpt=   30  152 max resid (incl. the buffer)=  3.38989E-12
+ Non-SCF case, kpt  153 (  0.50000  0.48750  0.51250), residuals and eigenvalues=
+  2.34E-17  1.82E-17  5.19E-17  5.35E-17  1.89E-17  5.83E-17  5.85E-17  1.27E-11
+ -1.0425E-01 -2.7726E-02  3.6336E-01  3.6454E-01  7.8226E-01  7.8415E-01
+  8.1146E-01  1.0456E+00
+  prteigrs : nnsclo,ikpt=   30  153 max resid (incl. the buffer)=  1.26611E-11
+ Non-SCF case, kpt  154 (  0.50000  0.50000  0.50000), residuals and eigenvalues=
+  4.43E-17  8.73E-17  1.44E-17  4.60E-17  2.32E-17  8.40E-18  1.01E-17  4.29E-11
+ -1.0463E-01 -2.8130E-02  3.6529E-01  3.6529E-01  7.8276E-01  7.8276E-01
+  8.1010E-01  1.0454E+00
+  prteigrs : nnsclo,ikpt=   30  154 max resid (incl. the buffer)=  4.29406E-11
+ Non-SCF case, kpt  155 (  0.49265  0.49265  0.51471), residuals and eigenvalues=
+  2.18E-17  2.24E-17  1.60E-17  7.33E-17  2.07E-17  7.74E-18  6.94E-17  1.48E-11
+ -1.0423E-01 -2.7711E-02  3.6329E-01  3.6452E-01  7.8220E-01  7.8425E-01
+  8.1151E-01  1.0456E+00
+  prteigrs : nnsclo,ikpt=   30  155 max resid (incl. the buffer)=  1.47860E-11
+ Non-SCF case, kpt  156 (  0.48529  0.48529  0.52941), residuals and eigenvalues=
+  3.99E-17  2.93E-17  3.49E-17  9.83E-18  2.89E-17  2.61E-17  3.08E-17  2.44E-12
+ -1.0306E-01 -2.6410E-02  3.5748E-01  3.6224E-01  7.8083E-01  7.8866E-01
+  8.1608E-01  1.0462E+00
+  prteigrs : nnsclo,ikpt=   30  156 max resid (incl. the buffer)=  2.43630E-12
+ Non-SCF case, kpt  157 (  0.47794  0.47794  0.54412), residuals and eigenvalues=
+  9.21E-18  5.77E-18  1.49E-17  1.42E-17  4.93E-17  7.05E-17  4.69E-17  7.56E-12
+ -1.0110E-01 -2.4284E-02  3.4783E-01  3.5862E-01  7.7700E-01  7.9610E-01
+  8.2408E-01  1.0467E+00
+  prteigrs : nnsclo,ikpt=   30  157 max resid (incl. the buffer)=  7.55630E-12
+ Non-SCF case, kpt  158 (  0.47059  0.47059  0.55882), residuals and eigenvalues=
+  6.37E-18  5.47E-17  1.94E-17  1.27E-17  2.20E-17  1.75E-17  1.78E-17  1.62E-11
+ -9.8362E-02 -2.1372E-02  3.3523E-01  3.5379E-01  7.7143E-01  8.0628E-01
+  8.3530E-01  1.0467E+00
+  prteigrs : nnsclo,ikpt=   30  158 max resid (incl. the buffer)=  1.62070E-11
+ Non-SCF case, kpt  159 (  0.46324  0.46324  0.57353), residuals and eigenvalues=
+  3.57E-18  7.12E-18  8.26E-17  9.47E-17  8.35E-17  9.49E-17  1.25E-17  1.35E-10
+ -9.4847E-02 -1.7384E-02  3.1999E-01  3.4794E-01  7.6458E-01  8.1829E-01
+  8.4929E-01  1.0456E+00
+  prteigrs : nnsclo,ikpt=   30  159 max resid (incl. the buffer)=  1.34835E-10
+ Non-SCF case, kpt  160 (  0.45588  0.45588  0.58824), residuals and eigenvalues=
+  2.84E-17  2.93E-17  1.61E-17  5.52E-17  2.56E-17  3.19E-17  9.91E-17  1.40E-10
+ -9.0565E-02 -1.2894E-02  3.0270E-01  3.4106E-01  7.5678E-01  8.3212E-01
+  8.6560E-01  1.0427E+00
+  prteigrs : nnsclo,ikpt=   30  160 max resid (incl. the buffer)=  1.39743E-10
+ Non-SCF case, kpt  161 (  0.44853  0.44853  0.60294), residuals and eigenvalues=
+  2.69E-17  2.29E-17  6.54E-17  1.32E-17  7.90E-17  2.45E-17  5.97E-17  6.64E-12
+ -8.5509E-02 -7.6034E-03  2.8374E-01  3.3394E-01  7.4841E-01  8.4810E-01
+  8.8338E-01  1.0376E+00
+  prteigrs : nnsclo,ikpt=   30  161 max resid (incl. the buffer)=  6.63519E-12
+ Non-SCF case, kpt  162 (  0.44118  0.44118  0.61765), residuals and eigenvalues=
+  6.05E-17  4.09E-17  9.07E-17  1.86E-17  7.46E-17  3.78E-17  5.54E-17  5.63E-12
+ -7.9692E-02 -1.6304E-03  2.6371E-01  3.2650E-01  7.3991E-01  8.6480E-01
+  9.0265E-01  1.0297E+00
+  prteigrs : nnsclo,ikpt=   30  162 max resid (incl. the buffer)=  5.62804E-12
+ Non-SCF case, kpt  163 (  0.43382  0.43382  0.63235), residuals and eigenvalues=
+  1.85E-17  1.21E-17  2.75E-17  1.06E-17  1.37E-17  1.87E-17  6.98E-17  5.71E-13
+ -7.3148E-02  4.9413E-03  2.4259E-01  3.1894E-01  7.3130E-01  8.8235E-01
+  9.2259E-01  1.0183E+00
+  prteigrs : nnsclo,ikpt=   30  163 max resid (incl. the buffer)=  5.71485E-13
+ Non-SCF case, kpt  164 (  0.42647  0.42647  0.64706), residuals and eigenvalues=
+  8.14E-17  7.50E-18  6.49E-17  3.13E-17  2.07E-17  2.45E-17  1.02E-16  2.01E-12
+ -6.5830E-02  1.2151E-02  2.2132E-01  3.1144E-01  7.2304E-01  9.0041E-01
+  9.4312E-01  1.0048E+00
+  prteigrs : nnsclo,ikpt=   30  164 max resid (incl. the buffer)=  2.01070E-12
+ Non-SCF case, kpt  165 (  0.41912  0.41912  0.66176), residuals and eigenvalues=
+  3.79E-18  6.30E-17  1.64E-17  1.74E-17  4.69E-17  4.35E-17  5.92E-17  1.86E-15
+ -5.7837E-02  1.9764E-02  1.9987E-01  3.0411E-01  7.1515E-01  9.1852E-01
+  9.6328E-01  9.8901E-01
+  prteigrs : nnsclo,ikpt=   30  165 max resid (incl. the buffer)=  1.86413E-15
+ Non-SCF case, kpt  166 (  0.41176  0.41176  0.67647), residuals and eigenvalues=
+  9.90E-17  1.82E-17  2.34E-17  2.64E-17  5.75E-17  6.78E-17  6.24E-17  1.61E-16
+ -4.9159E-02  2.7411E-02  1.7865E-01  2.9720E-01  7.0759E-01  9.3647E-01
+  9.6802E-01  9.8635E-01
+  prteigrs : nnsclo,ikpt=   30  166 max resid (incl. the buffer)=  1.61282E-16
+ Non-SCF case, kpt  167 (  0.40441  0.40441  0.69118), residuals and eigenvalues=
+  1.34E-17  2.28E-17  2.20E-17  2.19E-17  2.75E-17  8.79E-17  1.00E-16  1.78E-14
+ -3.9887E-02  3.4943E-02  1.5866E-01  2.9057E-01  7.0075E-01  9.4945E-01
+  9.5343E-01  1.0049E+00
+  prteigrs : nnsclo,ikpt=   30  167 max resid (incl. the buffer)=  1.77736E-14
+ Non-SCF case, kpt  168 (  0.39706  0.39706  0.70588), residuals and eigenvalues=
+  2.15E-17  8.34E-18  7.89E-17  7.60E-17  1.21E-17  9.03E-17  8.59E-14  6.10E-12
+ -3.0129E-02  4.1364E-02  1.4070E-01  2.8421E-01  6.9449E-01  9.2931E-01
+  9.6921E-01  1.0225E+00
+  prteigrs : nnsclo,ikpt=   30  168 max resid (incl. the buffer)=  6.09874E-12
+ Non-SCF case, kpt  169 (  0.38971  0.38971  0.72059), residuals and eigenvalues=
+  8.80E-17  6.51E-17  5.09E-17  2.10E-17  2.74E-17  7.98E-17  3.84E-14  1.62E-11
+ -2.0113E-02  4.5071E-02  1.2683E-01  2.7884E-01  6.8898E-01  9.0875E-01
+  9.8363E-01  1.0376E+00
+  prteigrs : nnsclo,ikpt=   30  169 max resid (incl. the buffer)=  1.61637E-11
+ Non-SCF case, kpt  170 (  0.38235  0.38235  0.73529), residuals and eigenvalues=
+  3.41E-17  2.29E-17  5.28E-17  8.77E-17  2.31E-17  3.25E-17  2.01E-11  3.16E-09
+ -1.0563E-02  4.4234E-02  1.1943E-01  2.7375E-01  6.8414E-01  8.8815E-01
+  9.9593E-01  1.0487E+00
+  prteigrs : nnsclo,ikpt=   30  170 max resid (incl. the buffer)=  3.15639E-09
+ Non-SCF case, kpt  171 (  0.37500  0.37500  0.75000), residuals and eigenvalues=
+  2.81E-17  8.70E-18  1.29E-17  1.04E-17  3.39E-17  3.88E-17  2.39E-12  9.90E-11
+ -3.4430E-03  3.9655E-02  1.1979E-01  2.6944E-01  6.7987E-01  8.6794E-01
+  1.0060E+00  1.0548E+00
+  prteigrs : nnsclo,ikpt=   30  171 max resid (incl. the buffer)=  9.90139E-11
+ Non-SCF case, kpt  172 (  0.38971  0.36765  0.74265), residuals and eigenvalues=
+  2.54E-17  2.58E-17  3.88E-17  1.40E-17  5.76E-17  7.21E-17  2.26E-12  5.90E-11
+ -6.1890E-03  4.2222E-02  1.1893E-01  2.6979E-01  6.8421E-01  8.7784E-01
+  9.9977E-01  1.0506E+00
+  prteigrs : nnsclo,ikpt=   30  172 max resid (incl. the buffer)=  5.90495E-11
+ Non-SCF case, kpt  173 (  0.40441  0.36029  0.73529), residuals and eigenvalues=
+  1.61E-17  6.56E-17  6.50E-17  3.92E-17  4.91E-17  9.16E-17  2.60E-12  1.32E-11
+ -9.4247E-03  4.4781E-02  1.2061E-01  2.6698E-01  6.9320E-01  8.8846E-01
+  9.8978E-01  1.0425E+00
+  prteigrs : nnsclo,ikpt=   30  173 max resid (incl. the buffer)=  1.32497E-11
+ Non-SCF case, kpt  174 (  0.41912  0.35294  0.72794), residuals and eigenvalues=
+  2.85E-17  2.17E-17  2.76E-17  3.26E-17  3.80E-17  7.17E-17  1.14E-11  1.71E-10
+ -1.2681E-02  4.6759E-02  1.2454E-01  2.6158E-01  7.0638E-01  8.9845E-01
+  9.7627E-01  1.0326E+00
+  prteigrs : nnsclo,ikpt=   30  174 max resid (incl. the buffer)=  1.70912E-10
+ Non-SCF case, kpt  175 (  0.43382  0.34559  0.72059), residuals and eigenvalues=
+  4.79E-17  8.71E-17  5.18E-18  4.84E-18  2.37E-17  5.87E-17  3.54E-14  2.52E-11
+ -1.5626E-02  4.7850E-02  1.3041E-01  2.5418E-01  7.2319E-01  9.0672E-01
+  9.5999E-01  1.0220E+00
+  prteigrs : nnsclo,ikpt=   30  175 max resid (incl. the buffer)=  2.51997E-11
+ Non-SCF case, kpt  176 (  0.44853  0.33824  0.71324), residuals and eigenvalues=
+  3.47E-17  2.80E-17  4.32E-17  8.63E-18  4.42E-17  3.55E-17  1.42E-15  1.10E-13
+ -1.8111E-02  4.8255E-02  1.3771E-01  2.4550E-01  7.4267E-01  9.0877E-01
+  9.4758E-01  1.0111E+00
+  prteigrs : nnsclo,ikpt=   30  176 max resid (incl. the buffer)=  1.10044E-13
+ Non-SCF case, kpt  177 (  0.46324  0.33088  0.70588), residuals and eigenvalues=
+  3.08E-17  6.00E-18  6.61E-17  1.83E-17  2.18E-17  3.95E-17  9.83E-15  1.10E-11
+ -2.0057E-02  4.8252E-02  1.4552E-01  2.3660E-01  7.6409E-01  8.9688E-01
+  9.4757E-01  9.9999E-01
+  prteigrs : nnsclo,ikpt=   30  177 max resid (incl. the buffer)=  1.10236E-11
+ Non-SCF case, kpt  178 (  0.47794  0.32353  0.69853), residuals and eigenvalues=
+  4.62E-17  1.21E-17  4.54E-17  5.65E-18  5.40E-17  7.81E-17  4.30E-14  2.86E-13
+ -2.1344E-02  4.8210E-02  1.5270E-01  2.2902E-01  7.8599E-01  8.7725E-01
+  9.5567E-01  9.8915E-01
+  prteigrs : nnsclo,ikpt=   30  178 max resid (incl. the buffer)=  2.85855E-13
+ Non-SCF case, kpt  179 (  0.49265  0.31618  0.69118), residuals and eigenvalues=
+  1.29E-17  5.72E-17  5.91E-17  9.85E-17  6.32E-17  2.84E-17  1.59E-13  2.79E-13
+ -2.2003E-02  4.8097E-02  1.5710E-01  2.2421E-01  8.0368E-01  8.5953E-01
+  9.6554E-01  9.7853E-01
+  prteigrs : nnsclo,ikpt=   30  179 max resid (incl. the buffer)=  2.78873E-13
+ Non-SCF case, kpt  180 (  0.50735  0.30882  0.68382), residuals and eigenvalues=
+  5.45E-17  1.75E-17  7.93E-18  5.57E-17  5.50E-17  8.86E-18  1.57E-13  1.91E-12
+ -2.2003E-02  4.8097E-02  1.5710E-01  2.2421E-01  8.0368E-01  8.5953E-01
+  9.6554E-01  9.7853E-01
+  prteigrs : nnsclo,ikpt=   30  180 max resid (incl. the buffer)=  1.90767E-12
+ Non-SCF case, kpt  181 (  0.52206  0.30147  0.67647), residuals and eigenvalues=
+  2.16E-17  5.64E-18  3.76E-17  3.23E-17  4.26E-17  5.77E-17  4.51E-14  2.09E-12
+ -2.1344E-02  4.8210E-02  1.5270E-01  2.2902E-01  7.8599E-01  8.7725E-01
+  9.5567E-01  9.8915E-01
+  prteigrs : nnsclo,ikpt=   30  181 max resid (incl. the buffer)=  2.08658E-12
+ Non-SCF case, kpt  182 (  0.53676  0.29412  0.66912), residuals and eigenvalues=
+  1.04E-17  3.86E-17  2.54E-17  6.78E-17  9.95E-17  2.20E-17  1.22E-16  5.55E-14
+ -2.0057E-02  4.8252E-02  1.4552E-01  2.3660E-01  7.6409E-01  8.9688E-01
+  9.4757E-01  9.9999E-01
+  prteigrs : nnsclo,ikpt=   30  182 max resid (incl. the buffer)=  5.54562E-14
+ Non-SCF case, kpt  183 (  0.55147  0.28676  0.66176), residuals and eigenvalues=
+  1.74E-17  5.52E-18  1.56E-17  7.05E-18  5.46E-17  4.43E-17  1.61E-15  2.29E-12
+ -1.8111E-02  4.8255E-02  1.3771E-01  2.4550E-01  7.4267E-01  9.0877E-01
+  9.4758E-01  1.0111E+00
+  prteigrs : nnsclo,ikpt=   30  183 max resid (incl. the buffer)=  2.29494E-12
+ Non-SCF case, kpt  184 (  0.56618  0.27941  0.65441), residuals and eigenvalues=
+  1.31E-17  4.21E-17  4.11E-18  3.71E-17  9.20E-17  7.99E-17  1.19E-14  9.12E-13
+ -1.5626E-02  4.7850E-02  1.3041E-01  2.5418E-01  7.2319E-01  9.0672E-01
+  9.5999E-01  1.0220E+00
+  prteigrs : nnsclo,ikpt=   30  184 max resid (incl. the buffer)=  9.11934E-13
+ Non-SCF case, kpt  185 (  0.58088  0.27206  0.64706), residuals and eigenvalues=
+  7.77E-17  6.31E-17  9.30E-17  1.67E-17  1.06E-17  4.71E-17  1.04E-14  5.45E-13
+ -1.2681E-02  4.6759E-02  1.2454E-01  2.6158E-01  7.0638E-01  8.9845E-01
+  9.7627E-01  1.0326E+00
+  prteigrs : nnsclo,ikpt=   30  185 max resid (incl. the buffer)=  5.44549E-13
+ Non-SCF case, kpt  186 (  0.59559  0.26471  0.63971), residuals and eigenvalues=
+  1.01E-17  3.56E-17  2.67E-17  1.45E-17  1.17E-17  6.42E-17  8.58E-11  2.07E-10
+ -9.4247E-03  4.4781E-02  1.2061E-01  2.6698E-01  6.9320E-01  8.8846E-01
+  9.8978E-01  1.0425E+00
+  prteigrs : nnsclo,ikpt=   30  186 max resid (incl. the buffer)=  2.07450E-10
+ Non-SCF case, kpt  187 (  0.61029  0.25735  0.63235), residuals and eigenvalues=
+  1.61E-17  2.33E-17  5.87E-17  1.87E-17  8.08E-18  5.60E-17  1.45E-10  6.43E-09
+ -6.1890E-03  4.2222E-02  1.1893E-01  2.6979E-01  6.8421E-01  8.7784E-01
+  9.9977E-01  1.0506E+00
+  prteigrs : nnsclo,ikpt=   30  187 max resid (incl. the buffer)=  6.42659E-09
+ Non-SCF case, kpt  188 (  0.62500  0.25000  0.62500), residuals and eigenvalues=
+  1.24E-17  4.46E-17  4.66E-17  1.27E-17  3.71E-17  5.46E-17  1.74E-10  4.64E-09
+ -3.4430E-03  3.9655E-02  1.1979E-01  2.6944E-01  6.7987E-01  8.6794E-01
+  1.0060E+00  1.0548E+00
+  prteigrs : nnsclo,ikpt=   30  188 max resid (incl. the buffer)=  4.63816E-09
+ Non-SCF case, kpt  189 (  0.61250  0.22500  0.61250), residuals and eigenvalues=
+  7.55E-17  4.00E-17  7.46E-18  7.12E-18  8.63E-18  3.88E-17  5.08E-13  9.29E-11
+  2.5649E-03  3.2473E-02  1.2855E-01  2.6300E-01  6.7357E-01  8.3508E-01
+  1.0212E+00  1.0614E+00
+  prteigrs : nnsclo,ikpt=   30  189 max resid (incl. the buffer)=  9.28805E-11
+ Non-SCF case, kpt  190 (  0.60000  0.20000  0.60000), residuals and eigenvalues=
+  1.18E-17  9.13E-17  9.13E-17  9.35E-17  8.50E-17  2.39E-17  1.33E-09  2.82E-09
+  5.6939E-03  2.6091E-02  1.4089E-01  2.5723E-01  6.6789E-01  8.0301E-01
+  1.0359E+00  1.0687E+00
+  prteigrs : nnsclo,ikpt=   30  190 max resid (incl. the buffer)=  2.82328E-09
+ Non-SCF case, kpt  191 (  0.58750  0.17500  0.58750), residuals and eigenvalues=
+  1.05E-17  1.84E-17  1.91E-17  4.82E-17  4.27E-17  2.03E-17  1.88E-09  7.52E-10
+  6.7513E-03  2.0396E-02  1.5534E-01  2.5201E-01  6.6285E-01  7.7222E-01
+  1.0492E+00  1.0747E+00
+  prteigrs : nnsclo,ikpt=   30  191 max resid (incl. the buffer)=  1.88467E-09
+ Non-SCF case, kpt  192 (  0.57500  0.15000  0.57500), residuals and eigenvalues=
+  8.52E-18  1.27E-17  1.83E-17  2.99E-17  2.77E-17  7.88E-17  1.13E-09  4.77E-10
+  6.5284E-03  1.5457E-02  1.7104E-01  2.4744E-01  6.5844E-01  7.4327E-01
+  1.0614E+00  1.0803E+00
+  prteigrs : nnsclo,ikpt=   30  192 max resid (incl. the buffer)=  1.13429E-09
+ Non-SCF case, kpt  193 (  0.56250  0.12500  0.56250), residuals and eigenvalues=
+  1.29E-17  8.31E-18  8.87E-18  8.65E-18  1.51E-17  9.86E-17  1.55E-10  6.76E-10
+  5.8207E-03  1.1276E-02  1.8695E-01  2.4368E-01  6.5471E-01  7.1685E-01
+  1.0721E+00  1.0855E+00
+  prteigrs : nnsclo,ikpt=   30  193 max resid (incl. the buffer)=  6.76455E-10
+ Non-SCF case, kpt  194 (  0.55000  0.10000  0.55000), residuals and eigenvalues=
+  4.10E-17  4.04E-17  6.79E-17  3.88E-17  1.36E-17  1.93E-17  2.40E-11  2.96E-09
+  4.6380E-03  7.8071E-03  2.0198E-01  2.4027E-01  6.5155E-01  6.9333E-01
+  1.0807E+00  1.0899E+00
+  prteigrs : nnsclo,ikpt=   30  194 max resid (incl. the buffer)=  2.96410E-09
+ Non-SCF case, kpt  195 (  0.53750  0.07500  0.53750), residuals and eigenvalues=
+  3.57E-17  2.40E-17  4.17E-17  1.52E-17  4.87E-17  2.23E-18  4.75E-11  1.89E-09
+  3.5455E-03  5.1430E-03  2.1518E-01  2.3776E-01  6.4916E-01  6.7372E-01
+  1.0880E+00  1.0935E+00
+  prteigrs : nnsclo,ikpt=   30  195 max resid (incl. the buffer)=  1.88982E-09
+ Non-SCF case, kpt  196 (  0.52500  0.05000  0.52500), residuals and eigenvalues=
+  3.99E-17  1.04E-17  4.63E-17  1.68E-17  2.44E-17  1.33E-17  3.27E-09  1.73E-08
+  2.6681E-03  3.4342E-03  2.2569E-01  2.3596E-01  6.4758E-01  6.5884E-01
+  1.0934E+00  1.0962E+00
+  prteigrs : nnsclo,ikpt=   30  196 max resid (incl. the buffer)=  1.72633E-08
+ Non-SCF case, kpt  197 (  0.51250  0.02500  0.51250), residuals and eigenvalues=
+  6.24E-18  8.06E-18  2.09E-17  3.21E-17  6.86E-18  3.58E-18  4.55E-10  1.64E-09
+  2.0227E-03  2.2087E-03  2.3204E-01  2.3470E-01  6.4651E-01  6.4936E-01
+  1.0963E+00  1.0968E+00
+  prteigrs : nnsclo,ikpt=   30  197 max resid (incl. the buffer)=  1.64047E-09
+ Non-SCF case, kpt  198 (  0.50000  0.00000  0.50000), residuals and eigenvalues=
+  6.65E-18  6.17E-18  1.12E-17  3.72E-17  5.99E-17  2.81E-17  3.69E-10  5.50E-09
+  1.8270E-03  1.8270E-03  2.3434E-01  2.3434E-01  6.4617E-01  6.4617E-01
+  1.0974E+00  1.0974E+00
+  prteigrs : nnsclo,ikpt=   30  198 max resid (incl. the buffer)=  5.49950E-09
+
+ Integrated electronic density in atomic spheres:
+ ------------------------------------------------
+ Atom  Sphere_radius  Integrated_density
+    1        2.00000          4.74837941
+    2        2.00000          4.74837941
+================================================================================
+
+ ----iterations are completed or convergence reached----
+
+ Mean square residual over all n,k,spin=   1.1014E-10; max=  1.2712E-08
+ reduced coordinates (array xred) for    2 atoms
+       0.000000000000      0.000000000000      0.000000000000
+       0.250000000000      0.250000000000      0.250000000000
+
+ cartesian coordinates (angstrom) at end:
+    1      0.00000000000000     0.00000000000000     0.00000000000000
+    2      0.88683062764281     0.88683062764281     0.88683062764281
+ length scales=  1.000000000000  1.000000000000  1.000000000000 bohr
+              =  0.529177208590  0.529177208590  0.529177208590 angstroms
+ prteigrs : about to open file /Users/gmatteo/git_repos/abitutorials/abitutorials/sigeph/flow_diamond/w0/t1/outdata/out_EIG
+ Eigenvalues (hartree) for nkpt= 198  k points:
+ kpt#   1, nband=  8, wtk=  1.00000, kpt=  0.0000  0.0000  0.0000 (reduced coord)
+  -0.32354    0.46938    0.46938    0.46938    0.67644    0.67644    0.67644    0.97978
+ kpt#   2, nband=  8, wtk=  1.00000, kpt=  0.0179  0.0000  0.0179 (reduced coord)
+  -0.32310    0.46749    0.46749    0.46836    0.67610    0.67871    0.67871    0.98005
+ kpt#   3, nband=  8, wtk=  1.00000, kpt=  0.0357  0.0000  0.0357 (reduced coord)
+  -0.32178    0.46207    0.46207    0.46531    0.67509    0.68527    0.68527    0.98078
+ kpt#   4, nband=  8, wtk=  1.00000, kpt=  0.0536  0.0000  0.0536 (reduced coord)
+  -0.31958    0.45373    0.45373    0.46029    0.67346    0.69549    0.69549    0.98167
+ kpt#   5, nband=  8, wtk=  1.00000, kpt=  0.0714  0.0000  0.0714 (reduced coord)
+  -0.31651    0.44331    0.44331    0.45428    0.67124    0.70869    0.70869    0.98241
+ kpt#   6, nband=  8, wtk=  1.00000, kpt=  0.0893  0.0000  0.0893 (reduced coord)
+  -0.31256    0.43134    0.43134    0.44553    0.66851    0.72403    0.72403    0.98195
+ kpt#   7, nband=  8, wtk=  1.00000, kpt=  0.1071  0.0000  0.1071 (reduced coord)
+  -0.30773    0.41845    0.41845    0.43515    0.66536    0.74101    0.74101    0.97953
+ kpt#   8, nband=  8, wtk=  1.00000, kpt=  0.1250  0.0000  0.1250 (reduced coord)
+  -0.30203    0.40511    0.40511    0.42360    0.66221    0.75964    0.75964    0.97429
+ kpt#   9, nband=  8, wtk=  1.00000, kpt=  0.1429  0.0000  0.1429 (reduced coord)
+  -0.29547    0.39155    0.39155    0.41033    0.65843    0.77869    0.77869    0.96518
+ kpt#  10, nband=  8, wtk=  1.00000, kpt=  0.1607  0.0000  0.1607 (reduced coord)
+  -0.28805    0.37803    0.37803    0.39581    0.65450    0.79837    0.79837    0.95205
+ kpt#  11, nband=  8, wtk=  1.00000, kpt=  0.1786  0.0000  0.1786 (reduced coord)
+  -0.27978    0.36518    0.36518    0.38033    0.65024    0.81899    0.81899    0.93549
+ kpt#  12, nband=  8, wtk=  1.00000, kpt=  0.1964  0.0000  0.1964 (reduced coord)
+  -0.27065    0.35217    0.35217    0.36363    0.64629    0.83943    0.83943    0.91593
+ kpt#  13, nband=  8, wtk=  1.00000, kpt=  0.2143  0.0000  0.2143 (reduced coord)
+  -0.26069    0.33968    0.33968    0.34573    0.64244    0.86140    0.86140    0.89446
+ kpt#  14, nband=  8, wtk=  1.00000, kpt=  0.2321  0.0000  0.2321 (reduced coord)
+  -0.24983    0.32720    0.32765    0.32765    0.63935    0.87227    0.88207    0.88207
+ kpt#  15, nband=  8, wtk=  1.00000, kpt=  0.2500  0.0000  0.2500 (reduced coord)
+  -0.23820    0.30789    0.31621    0.31621    0.63586    0.84995    0.90262    0.90262
+ kpt#  16, nband=  8, wtk=  1.00000, kpt=  0.2679  0.0000  0.2679 (reduced coord)
+  -0.22575    0.28789    0.30542    0.30542    0.63272    0.82803    0.92300    0.92300
+ kpt#  17, nband=  8, wtk=  1.00000, kpt=  0.2857  0.0000  0.2857 (reduced coord)
+  -0.21250    0.26678    0.29520    0.29520    0.62998    0.80673    0.94306    0.94306
+ kpt#  18, nband=  8, wtk=  1.00000, kpt=  0.3036  0.0000  0.3036 (reduced coord)
+  -0.19848    0.24532    0.28536    0.28536    0.62740    0.78652    0.96255    0.96255
+ kpt#  19, nband=  8, wtk=  1.00000, kpt=  0.3214  0.0000  0.3214 (reduced coord)
+  -0.18368    0.22373    0.27669    0.27669    0.62563    0.76749    0.98173    0.98173
+ kpt#  20, nband=  8, wtk=  1.00000, kpt=  0.3393  0.0000  0.3393 (reduced coord)
+  -0.16811    0.20178    0.26879    0.26879    0.62443    0.74970    1.00024    1.00024
+ kpt#  21, nband=  8, wtk=  1.00000, kpt=  0.3571  0.0000  0.3571 (reduced coord)
+  -0.15181    0.17955    0.26167    0.26167    0.62383    0.73320    1.01791    1.01791
+ kpt#  22, nband=  8, wtk=  1.00000, kpt=  0.3750  0.0000  0.3750 (reduced coord)
+  -0.13480    0.15721    0.25536    0.25536    0.62388    0.71801    1.03452    1.03452
+ kpt#  23, nband=  8, wtk=  1.00000, kpt=  0.3929  0.0000  0.3929 (reduced coord)
+  -0.11710    0.13466    0.24987    0.24987    0.62463    0.70411    1.04983    1.04983
+ kpt#  24, nband=  8, wtk=  1.00000, kpt=  0.4107  0.0000  0.4107 (reduced coord)
+  -0.09873    0.11210    0.24521    0.24521    0.62612    0.69149    1.06357    1.06357
+ kpt#  25, nband=  8, wtk=  1.00000, kpt=  0.4286  0.0000  0.4286 (reduced coord)
+  -0.07974    0.08960    0.24139    0.24139    0.62839    0.68010    1.07543    1.07543
+ kpt#  26, nband=  8, wtk=  1.00000, kpt=  0.4464  0.0000  0.4464 (reduced coord)
+  -0.06015    0.06725    0.23841    0.23841    0.63149    0.66991    1.08511    1.08511
+ kpt#  27, nband=  8, wtk=  1.00000, kpt=  0.4643  0.0000  0.4643 (reduced coord)
+  -0.03999    0.04504    0.23612    0.23612    0.63546    0.66087    1.09196    1.09196
+ kpt#  28, nband=  8, wtk=  1.00000, kpt=  0.4821  0.0000  0.4821 (reduced coord)
+  -0.01929    0.02335    0.23477    0.23477    0.64033    0.65303    1.09589    1.09589
+ kpt#  29, nband=  8, wtk=  1.00000, kpt=  0.5000  0.0000  0.5000 (reduced coord)
+   0.00183    0.00183    0.23434    0.23434    0.64617    0.64617    1.09736    1.09736
+ kpt#  30, nband=  8, wtk=  1.00000, kpt=  0.5000  0.0179  0.5179 (reduced coord)
+   0.00212    0.00212    0.23335    0.23335    0.64798    0.64798    1.09653    1.09653
+ kpt#  31, nband=  8, wtk=  1.00000, kpt=  0.5000  0.0357  0.5357 (reduced coord)
+   0.00307    0.00307    0.23060    0.23060    0.65341    0.65341    1.09447    1.09447
+ kpt#  32, nband=  8, wtk=  1.00000, kpt=  0.5000  0.0536  0.5536 (reduced coord)
+   0.00441    0.00441    0.22587    0.22587    0.66206    0.66206    1.09001    1.09001
+ kpt#  33, nband=  8, wtk=  1.00000, kpt=  0.5000  0.0714  0.5714 (reduced coord)
+   0.00644    0.00644    0.21984    0.21984    0.67394    0.67394    1.08396    1.08396
+ kpt#  34, nband=  8, wtk=  1.00000, kpt=  0.5000  0.0893  0.5893 (reduced coord)
+   0.00891    0.00891    0.21262    0.21262    0.68846    0.68846    1.07550    1.07550
+ kpt#  35, nband=  8, wtk=  1.00000, kpt=  0.5000  0.1071  0.6071 (reduced coord)
+   0.01182    0.01182    0.20465    0.20465    0.70535    0.70535    1.06477    1.06477
+ kpt#  36, nband=  8, wtk=  1.00000, kpt=  0.5000  0.1250  0.6250 (reduced coord)
+   0.01507    0.01507    0.19631    0.19631    0.72421    0.72421    1.05171    1.05171
+ kpt#  37, nband=  8, wtk=  1.00000, kpt=  0.5000  0.1429  0.6429 (reduced coord)
+   0.01846    0.01846    0.18791    0.18791    0.74460    0.74460    1.03624    1.03624
+ kpt#  38, nband=  8, wtk=  1.00000, kpt=  0.5000  0.1607  0.6607 (reduced coord)
+   0.02200    0.02200    0.17969    0.17969    0.76627    0.76627    1.01804    1.01804
+ kpt#  39, nband=  8, wtk=  1.00000, kpt=  0.5000  0.1786  0.6786 (reduced coord)
+   0.02550    0.02550    0.17248    0.17248    0.78890    0.78890    0.99864    0.99864
+ kpt#  40, nband=  8, wtk=  1.00000, kpt=  0.5000  0.1964  0.6964 (reduced coord)
+   0.02862    0.02862    0.16639    0.16639    0.81180    0.81180    0.97854    0.97854
+ kpt#  41, nband=  8, wtk=  1.00000, kpt=  0.5000  0.2143  0.7143 (reduced coord)
+   0.03113    0.03113    0.16158    0.16158    0.83352    0.83352    0.95839    0.95839
+ kpt#  42, nband=  8, wtk=  1.00000, kpt=  0.5000  0.2321  0.7321 (reduced coord)
+   0.03277    0.03277    0.15853    0.15853    0.85173    0.85173    0.94110    0.94110
+ kpt#  43, nband=  8, wtk=  1.00000, kpt=  0.5000  0.2500  0.7500 (reduced coord)
+   0.03328    0.03328    0.15730    0.15730    0.85950    0.85950    0.93300    0.93300
+ kpt#  44, nband=  8, wtk=  1.00000, kpt=  0.4875  0.2625  0.7500 (reduced coord)
+   0.02633    0.03916    0.15047    0.16642    0.84535    0.86506    0.93702    0.93846
+ kpt#  45, nband=  8, wtk=  1.00000, kpt=  0.4750  0.2750  0.7500 (reduced coord)
+   0.02014    0.04241    0.14439    0.17855    0.82195    0.86841    0.94359    0.95338
+ kpt#  46, nband=  8, wtk=  1.00000, kpt=  0.4625  0.2875  0.7500 (reduced coord)
+   0.01463    0.04364    0.13882    0.19281    0.79600    0.87010    0.95194    0.97107
+ kpt#  47, nband=  8, wtk=  1.00000, kpt=  0.4500  0.3000  0.7500 (reduced coord)
+   0.00986    0.04368    0.13398    0.20818    0.77029    0.87064    0.96174    0.98963
+ kpt#  48, nband=  8, wtk=  1.00000, kpt=  0.4375  0.3125  0.7500 (reduced coord)
+   0.00582    0.04302    0.12978    0.22349    0.74584    0.87041    0.97183    1.00705
+ kpt#  49, nband=  8, wtk=  1.00000, kpt=  0.4250  0.3250  0.7500 (reduced coord)
+   0.00248    0.04207    0.12638    0.23803    0.72386    0.86999    0.98257    1.02292
+ kpt#  50, nband=  8, wtk=  1.00000, kpt=  0.4125  0.3375  0.7500 (reduced coord)
+  -0.00010    0.04115    0.12370    0.25078    0.70558    0.86940    0.99178    1.03631
+ kpt#  51, nband=  8, wtk=  1.00000, kpt=  0.4000  0.3500  0.7500 (reduced coord)
+  -0.00199    0.04029    0.12134    0.26063    0.69158    0.86835    0.99907    1.04592
+ kpt#  52, nband=  8, wtk=  1.00000, kpt=  0.3875  0.3625  0.7500 (reduced coord)
+  -0.00307    0.03983    0.12018    0.26723    0.68286    0.86805    1.00430    1.05257
+ kpt#  53, nband=  8, wtk=  1.00000, kpt=  0.3750  0.3750  0.7500 (reduced coord)
+  -0.00344    0.03966    0.11979    0.26944    0.67987    0.86794    1.00604    1.05476
+ kpt#  54, nband=  8, wtk=  1.00000, kpt=  0.3625  0.3625  0.7250 (reduced coord)
+  -0.01262    0.04762    0.11543    0.27655    0.68681    0.90194    0.99032    1.04863
+ kpt#  55, nband=  8, wtk=  1.00000, kpt=  0.3500  0.3500  0.7000 (reduced coord)
+  -0.02481    0.05632    0.11483    0.28390    0.69422    0.93492    0.97426    1.04031
+ kpt#  56, nband=  8, wtk=  1.00000, kpt=  0.3375  0.3375  0.6750 (reduced coord)
+  -0.03929    0.06570    0.11747    0.29192    0.70214    0.95765    0.96561    1.03333
+ kpt#  57, nband=  8, wtk=  1.00000, kpt=  0.3250  0.3250  0.6500 (reduced coord)
+  -0.05527    0.07580    0.12275    0.30039    0.71051    0.94088    0.99094    1.02643
+ kpt#  58, nband=  8, wtk=  1.00000, kpt=  0.3125  0.3125  0.6250 (reduced coord)
+  -0.07208    0.08661    0.13009    0.30925    0.71925    0.92409    1.00320    1.01968
+ kpt#  59, nband=  8, wtk=  1.00000, kpt=  0.3000  0.3000  0.6000 (reduced coord)
+  -0.08937    0.09804    0.13886    0.31843    0.72823    0.90668    0.99825    1.01262
+ kpt#  60, nband=  8, wtk=  1.00000, kpt=  0.2875  0.2875  0.5750 (reduced coord)
+  -0.10658    0.11031    0.14927    0.32833    0.73753    0.89015    0.98437    1.00654
+ kpt#  61, nband=  8, wtk=  1.00000, kpt=  0.2750  0.2750  0.5500 (reduced coord)
+  -0.12352    0.12315    0.16091    0.33801    0.74669    0.87393    0.96722    1.00033
+ kpt#  62, nband=  8, wtk=  1.00000, kpt=  0.2625  0.2625  0.5250 (reduced coord)
+  -0.14018    0.13670    0.17328    0.34782    0.75578    0.85801    0.94905    0.99500
+ kpt#  63, nband=  8, wtk=  1.00000, kpt=  0.2500  0.2500  0.5000 (reduced coord)
+  -0.15638    0.15086    0.18639    0.35729    0.76446    0.84175    0.93065    0.99008
+ kpt#  64, nband=  8, wtk=  1.00000, kpt=  0.2375  0.2375  0.4750 (reduced coord)
+  -0.17200    0.16605    0.20074    0.36760    0.77270    0.82712    0.91266    0.98637
+ kpt#  65, nband=  8, wtk=  1.00000, kpt=  0.2250  0.2250  0.4500 (reduced coord)
+  -0.18701    0.18153    0.21541    0.37731    0.77991    0.81261    0.89499    0.98333
+ kpt#  66, nband=  8, wtk=  1.00000, kpt=  0.2125  0.2125  0.4250 (reduced coord)
+  -0.20140    0.19759    0.23057    0.38684    0.78583    0.79803    0.87771    0.98129
+ kpt#  67, nband=  8, wtk=  1.00000, kpt=  0.2000  0.2000  0.4000 (reduced coord)
+  -0.21503    0.21424    0.24640    0.39609    0.78472    0.79026    0.86096    0.98040
+ kpt#  68, nband=  8, wtk=  1.00000, kpt=  0.1875  0.1875  0.3750 (reduced coord)
+  -0.22793    0.23142    0.26271    0.40499    0.77207    0.79288    0.84470    0.98060
+ kpt#  69, nband=  8, wtk=  1.00000, kpt=  0.1750  0.1750  0.3500 (reduced coord)
+  -0.24005    0.24921    0.27946    0.41376    0.76029    0.79368    0.82906    0.98192
+ kpt#  70, nband=  8, wtk=  1.00000, kpt=  0.1625  0.1625  0.3250 (reduced coord)
+  -0.25143    0.26761    0.29642    0.42177    0.74892    0.79228    0.81362    0.98398
+ kpt#  71, nband=  8, wtk=  1.00000, kpt=  0.1500  0.1500  0.3000 (reduced coord)
+  -0.26199    0.28618    0.31370    0.42920    0.73842    0.78870    0.79879    0.98610
+ kpt#  72, nband=  8, wtk=  1.00000, kpt=  0.1375  0.1375  0.2750 (reduced coord)
+  -0.27174    0.30528    0.33125    0.43604    0.72869    0.78316    0.78448    0.98817
+ kpt#  73, nband=  8, wtk=  1.00000, kpt=  0.1250  0.1250  0.2500 (reduced coord)
+  -0.28067    0.32444    0.34867    0.44226    0.71974    0.77055    0.77576    0.98965
+ kpt#  74, nband=  8, wtk=  1.00000, kpt=  0.1125  0.1125  0.2250 (reduced coord)
+  -0.28877    0.34374    0.36598    0.44785    0.71161    0.75706    0.76670    0.99038
+ kpt#  75, nband=  8, wtk=  1.00000, kpt=  0.1000  0.1000  0.2000 (reduced coord)
+  -0.29604    0.36302    0.38296    0.45279    0.70430    0.74364    0.75588    0.99017
+ kpt#  76, nband=  8, wtk=  1.00000, kpt=  0.0875  0.0875  0.1750 (reduced coord)
+  -0.30247    0.38187    0.39910    0.45628    0.69780    0.73077    0.74418    0.98904
+ kpt#  77, nband=  8, wtk=  1.00000, kpt=  0.0750  0.0750  0.1500 (reduced coord)
+  -0.30805    0.40033    0.41490    0.45990    0.69215    0.71840    0.73130    0.98742
+ kpt#  78, nband=  8, wtk=  1.00000, kpt=  0.0625  0.0625  0.1250 (reduced coord)
+  -0.31278    0.41806    0.42948    0.46294    0.68736    0.70733    0.71850    0.98569
+ kpt#  79, nband=  8, wtk=  1.00000, kpt=  0.0500  0.0500  0.1000 (reduced coord)
+  -0.31665    0.43445    0.44257    0.46538    0.68344    0.69735    0.70596    0.98389
+ kpt#  80, nband=  8, wtk=  1.00000, kpt=  0.0375  0.0375  0.0750 (reduced coord)
+  -0.31966    0.44805    0.45358    0.46703    0.68038    0.68876    0.69431    0.98210
+ kpt#  81, nband=  8, wtk=  1.00000, kpt=  0.0250  0.0250  0.0500 (reduced coord)
+  -0.32181    0.45939    0.46211    0.46834    0.67819    0.68213    0.68491    0.98085
+ kpt#  82, nband=  8, wtk=  1.00000, kpt=  0.0125  0.0125  0.0250 (reduced coord)
+  -0.32311    0.46679    0.46752    0.46912    0.67687    0.67790    0.67865    0.98005
+ kpt#  83, nband=  8, wtk=  1.00000, kpt=  0.0000  0.0000  0.0000 (reduced coord)
+  -0.32354    0.46938    0.46938    0.46938    0.67644    0.67644    0.67644    0.97978
+ kpt#  84, nband=  8, wtk=  1.00000, kpt=  0.0208  0.0208  0.0208 (reduced coord)
+  -0.32309    0.46613    0.46856    0.46856    0.67751    0.67751    0.67856    0.98006
+ kpt#  85, nband=  8, wtk=  1.00000, kpt=  0.0417  0.0417  0.0417 (reduced coord)
+  -0.32174    0.45683    0.46615    0.46615    0.68067    0.68067    0.68451    0.98093
+ kpt#  86, nband=  8, wtk=  1.00000, kpt=  0.0625  0.0625  0.0625 (reduced coord)
+  -0.31950    0.44253    0.46234    0.46234    0.68568    0.68568    0.69324    0.98236
+ kpt#  87, nband=  8, wtk=  1.00000, kpt=  0.0833  0.0833  0.0833 (reduced coord)
+  -0.31636    0.42492    0.45747    0.45747    0.69224    0.69224    0.70386    0.98452
+ kpt#  88, nband=  8, wtk=  1.00000, kpt=  0.1042  0.1042  0.1042 (reduced coord)
+  -0.31233    0.40401    0.45163    0.45163    0.69997    0.69997    0.71497    0.98712
+ kpt#  89, nband=  8, wtk=  1.00000, kpt=  0.1250  0.1250  0.1250 (reduced coord)
+  -0.30740    0.38145    0.44574    0.44574    0.70865    0.70865    0.72702    0.99073
+ kpt#  90, nband=  8, wtk=  1.00000, kpt=  0.1458  0.1458  0.1458 (reduced coord)
+  -0.30160    0.35714    0.43889    0.43889    0.71762    0.71762    0.73762    0.99445
+ kpt#  91, nband=  8, wtk=  1.00000, kpt=  0.1667  0.1667  0.1667 (reduced coord)
+  -0.29491    0.33192    0.43188    0.43188    0.72670    0.72670    0.74753    0.99859
+ kpt#  92, nband=  8, wtk=  1.00000, kpt=  0.1875  0.1875  0.1875 (reduced coord)
+  -0.28734    0.30609    0.42486    0.42486    0.73558    0.73558    0.75660    1.00308
+ kpt#  93, nband=  8, wtk=  1.00000, kpt=  0.2083  0.2083  0.2083 (reduced coord)
+  -0.27891    0.27991    0.41798    0.41798    0.74399    0.74399    0.76480    1.00783
+ kpt#  94, nband=  8, wtk=  1.00000, kpt=  0.2292  0.2292  0.2292 (reduced coord)
+  -0.26961    0.25357    0.41132    0.41132    0.75173    0.75173    0.77212    1.01272
+ kpt#  95, nband=  8, wtk=  1.00000, kpt=  0.2500  0.2500  0.2500 (reduced coord)
+  -0.25946    0.22744    0.40510    0.40510    0.75950    0.75950    0.77861    1.01785
+ kpt#  96, nband=  8, wtk=  1.00000, kpt=  0.2708  0.2708  0.2708 (reduced coord)
+  -0.24849    0.20077    0.39910    0.39910    0.76533    0.76533    0.78429    1.02254
+ kpt#  97, nband=  8, wtk=  1.00000, kpt=  0.2917  0.2917  0.2917 (reduced coord)
+  -0.23669    0.17480    0.39353    0.39353    0.77026    0.77026    0.78927    1.02707
+ kpt#  98, nband=  8, wtk=  1.00000, kpt=  0.3125  0.3125  0.3125 (reduced coord)
+  -0.22410    0.14921    0.38874    0.38874    0.77425    0.77425    0.79360    1.03131
+ kpt#  99, nband=  8, wtk=  1.00000, kpt=  0.3333  0.3333  0.3333 (reduced coord)
+  -0.21070    0.12420    0.38374    0.38374    0.77759    0.77759    0.79722    1.03453
+ kpt# 100, nband=  8, wtk=  1.00000, kpt=  0.3542  0.3542  0.3542 (reduced coord)
+  -0.19664    0.09935    0.37930    0.37930    0.77979    0.77979    0.80034    1.03677
+ kpt# 101, nband=  8, wtk=  1.00000, kpt=  0.3750  0.3750  0.3750 (reduced coord)
+  -0.18193    0.07544    0.37557    0.37557    0.78103    0.78103    0.80300    1.03923
+ kpt# 102, nband=  8, wtk=  1.00000, kpt=  0.3958  0.3958  0.3958 (reduced coord)
+  -0.16669    0.05237    0.37249    0.37249    0.78209    0.78209    0.80524    1.04116
+ kpt# 103, nband=  8, wtk=  1.00000, kpt=  0.4167  0.4167  0.4167 (reduced coord)
+  -0.15112    0.03036    0.36996    0.36996    0.78277    0.78277    0.80704    1.04263
+ kpt# 104, nband=  8, wtk=  1.00000, kpt=  0.4375  0.4375  0.4375 (reduced coord)
+  -0.13563    0.00970    0.36785    0.36785    0.78254    0.78254    0.80842    1.04358
+ kpt# 105, nband=  8, wtk=  1.00000, kpt=  0.4583  0.4583  0.4583 (reduced coord)
+  -0.12106   -0.00838    0.36645    0.36645    0.78275    0.78275    0.80940    1.04518
+ kpt# 106, nband=  8, wtk=  1.00000, kpt=  0.4792  0.4792  0.4792 (reduced coord)
+  -0.10945   -0.02258    0.36558    0.36558    0.78274    0.78274    0.80991    1.04525
+ kpt# 107, nband=  8, wtk=  1.00000, kpt=  0.5000  0.5000  0.5000 (reduced coord)
+  -0.10463   -0.02813    0.36529    0.36529    0.78276    0.78276    0.81010    1.04536
+ kpt# 108, nband=  8, wtk=  1.00000, kpt=  0.5074  0.4853  0.5074 (reduced coord)
+  -0.10423   -0.02771    0.36329    0.36452    0.78220    0.78425    0.81151    1.04556
+ kpt# 109, nband=  8, wtk=  1.00000, kpt=  0.5147  0.4706  0.5147 (reduced coord)
+  -0.10306   -0.02641    0.35748    0.36224    0.78083    0.78866    0.81608    1.04616
+ kpt# 110, nband=  8, wtk=  1.00000, kpt=  0.5221  0.4559  0.5221 (reduced coord)
+  -0.10110   -0.02428    0.34783    0.35862    0.77700    0.79610    0.82408    1.04669
+ kpt# 111, nband=  8, wtk=  1.00000, kpt=  0.5294  0.4412  0.5294 (reduced coord)
+  -0.09836   -0.02137    0.33523    0.35379    0.77143    0.80628    0.83530    1.04668
+ kpt# 112, nband=  8, wtk=  1.00000, kpt=  0.5368  0.4265  0.5368 (reduced coord)
+  -0.09485   -0.01738    0.31999    0.34794    0.76458    0.81829    0.84929    1.04559
+ kpt# 113, nband=  8, wtk=  1.00000, kpt=  0.5441  0.4118  0.5441 (reduced coord)
+  -0.09057   -0.01289    0.30270    0.34106    0.75678    0.83212    0.86560    1.04266
+ kpt# 114, nband=  8, wtk=  1.00000, kpt=  0.5515  0.3971  0.5515 (reduced coord)
+  -0.08551   -0.00760    0.28374    0.33394    0.74841    0.84810    0.88338    1.03757
+ kpt# 115, nband=  8, wtk=  1.00000, kpt=  0.5588  0.3824  0.5588 (reduced coord)
+  -0.07969   -0.00163    0.26371    0.32650    0.73991    0.86480    0.90265    1.02974
+ kpt# 116, nband=  8, wtk=  1.00000, kpt=  0.5662  0.3676  0.5662 (reduced coord)
+  -0.07315    0.00494    0.24259    0.31894    0.73130    0.88235    0.92259    1.01833
+ kpt# 117, nband=  8, wtk=  1.00000, kpt=  0.5735  0.3529  0.5735 (reduced coord)
+  -0.06583    0.01215    0.22132    0.31144    0.72304    0.90041    0.94312    1.00479
+ kpt# 118, nband=  8, wtk=  1.00000, kpt=  0.5809  0.3382  0.5809 (reduced coord)
+  -0.05784    0.01976    0.19987    0.30411    0.71515    0.91852    0.96328    0.98901
+ kpt# 119, nband=  8, wtk=  1.00000, kpt=  0.5882  0.3235  0.5882 (reduced coord)
+  -0.04916    0.02741    0.17865    0.29720    0.70759    0.93647    0.96802    0.98635
+ kpt# 120, nband=  8, wtk=  1.00000, kpt=  0.5956  0.3088  0.5956 (reduced coord)
+  -0.03989    0.03494    0.15866    0.29057    0.70075    0.94945    0.95343    1.00495
+ kpt# 121, nband=  8, wtk=  1.00000, kpt=  0.6029  0.2941  0.6029 (reduced coord)
+  -0.03013    0.04136    0.14070    0.28421    0.69449    0.92931    0.96921    1.02247
+ kpt# 122, nband=  8, wtk=  1.00000, kpt=  0.6103  0.2794  0.6103 (reduced coord)
+  -0.02011    0.04507    0.12683    0.27884    0.68898    0.90875    0.98363    1.03756
+ kpt# 123, nband=  8, wtk=  1.00000, kpt=  0.6176  0.2647  0.6176 (reduced coord)
+  -0.01056    0.04423    0.11943    0.27375    0.68414    0.88815    0.99593    1.04873
+ kpt# 124, nband=  8, wtk=  1.00000, kpt=  0.6250  0.2500  0.6250 (reduced coord)
+  -0.00344    0.03966    0.11979    0.26944    0.67987    0.86794    1.00604    1.05476
+ kpt# 125, nband=  8, wtk=  1.00000, kpt=  0.6125  0.2500  0.6375 (reduced coord)
+  -0.00307    0.03983    0.12018    0.26723    0.68286    0.86805    1.00430    1.05257
+ kpt# 126, nband=  8, wtk=  1.00000, kpt=  0.6000  0.2500  0.6500 (reduced coord)
+  -0.00199    0.04029    0.12134    0.26063    0.69158    0.86835    0.99907    1.04592
+ kpt# 127, nband=  8, wtk=  1.00000, kpt=  0.5875  0.2500  0.6625 (reduced coord)
+  -0.00010    0.04115    0.12370    0.25078    0.70558    0.86940    0.99178    1.03631
+ kpt# 128, nband=  8, wtk=  1.00000, kpt=  0.5750  0.2500  0.6750 (reduced coord)
+   0.00248    0.04207    0.12638    0.23803    0.72386    0.86999    0.98257    1.02292
+ kpt# 129, nband=  8, wtk=  1.00000, kpt=  0.5625  0.2500  0.6875 (reduced coord)
+   0.00582    0.04302    0.12978    0.22349    0.74584    0.87041    0.97183    1.00705
+ kpt# 130, nband=  8, wtk=  1.00000, kpt=  0.5500  0.2500  0.7000 (reduced coord)
+   0.00986    0.04368    0.13398    0.20818    0.77029    0.87064    0.96174    0.98963
+ kpt# 131, nband=  8, wtk=  1.00000, kpt=  0.5375  0.2500  0.7125 (reduced coord)
+   0.01463    0.04364    0.13882    0.19281    0.79600    0.87010    0.95194    0.97107
+ kpt# 132, nband=  8, wtk=  1.00000, kpt=  0.5250  0.2500  0.7250 (reduced coord)
+   0.02014    0.04241    0.14439    0.17855    0.82195    0.86841    0.94359    0.95338
+ kpt# 133, nband=  8, wtk=  1.00000, kpt=  0.5125  0.2500  0.7375 (reduced coord)
+   0.02633    0.03916    0.15047    0.16642    0.84535    0.86506    0.93702    0.93846
+ kpt# 134, nband=  8, wtk=  1.00000, kpt=  0.5000  0.2500  0.7500 (reduced coord)
+   0.03328    0.03328    0.15730    0.15730    0.85950    0.85950    0.93300    0.93300
+ kpt# 135, nband=  8, wtk=  1.00000, kpt=  0.5000  0.2625  0.7375 (reduced coord)
+   0.02250    0.04289    0.14865    0.16841    0.84967    0.86673    0.93174    0.93868
+ kpt# 136, nband=  8, wtk=  1.00000, kpt=  0.5000  0.2750  0.7250 (reduced coord)
+   0.01117    0.05013    0.14350    0.18126    0.83866    0.86915    0.93592    0.94638
+ kpt# 137, nband=  8, wtk=  1.00000, kpt=  0.5000  0.2875  0.7125 (reduced coord)
+  -0.00020    0.05347    0.14317    0.19481    0.82749    0.86716    0.94482    0.95534
+ kpt# 138, nband=  8, wtk=  1.00000, kpt=  0.5000  0.3000  0.7000 (reduced coord)
+  -0.01137    0.05250    0.14800    0.20898    0.81667    0.86241    0.95626    0.96490
+ kpt# 139, nband=  8, wtk=  1.00000, kpt=  0.5000  0.3125  0.6875 (reduced coord)
+  -0.02206    0.04810    0.15775    0.22358    0.80691    0.85640    0.96876    0.97562
+ kpt# 140, nband=  8, wtk=  1.00000, kpt=  0.5000  0.3250  0.6750 (reduced coord)
+  -0.03231    0.04156    0.17065    0.23825    0.79803    0.84983    0.97966    0.98573
+ kpt# 141, nband=  8, wtk=  1.00000, kpt=  0.5000  0.3375  0.6625 (reduced coord)
+  -0.04197    0.03402    0.18580    0.25287    0.79031    0.84320    0.98630    0.99609
+ kpt# 142, nband=  8, wtk=  1.00000, kpt=  0.5000  0.3500  0.6500 (reduced coord)
+  -0.05107    0.02612    0.20208    0.26718    0.78376    0.83668    0.98570    1.00554
+ kpt# 143, nband=  8, wtk=  1.00000, kpt=  0.5000  0.3625  0.6375 (reduced coord)
+  -0.05947    0.01847    0.21941    0.28125    0.77876    0.83057    0.97689    1.01489
+ kpt# 144, nband=  8, wtk=  1.00000, kpt=  0.5000  0.3750  0.6250 (reduced coord)
+  -0.06720    0.01100    0.23747    0.29465    0.77509    0.82473    0.96089    1.02318
+ kpt# 145, nband=  8, wtk=  1.00000, kpt=  0.5000  0.3875  0.6125 (reduced coord)
+  -0.07424    0.00400    0.25547    0.30724    0.77276    0.81926    0.94070    1.03046
+ kpt# 146, nband=  8, wtk=  1.00000, kpt=  0.5000  0.4000  0.6000 (reduced coord)
+  -0.08060   -0.00241    0.27311    0.31885    0.77169    0.81421    0.91827    1.03645
+ kpt# 147, nband=  8, wtk=  1.00000, kpt=  0.5000  0.4125  0.5875 (reduced coord)
+  -0.08621   -0.00850    0.29062    0.32931    0.77182    0.80921    0.89574    1.04098
+ kpt# 148, nband=  8, wtk=  1.00000, kpt=  0.5000  0.4250  0.5750 (reduced coord)
+  -0.09108   -0.01357    0.30719    0.33860    0.77286    0.80491    0.87392    1.04417
+ kpt# 149, nband=  8, wtk=  1.00000, kpt=  0.5000  0.4375  0.5625 (reduced coord)
+  -0.09521   -0.01790    0.32282    0.34663    0.77485    0.80084    0.85435    1.04607
+ kpt# 150, nband=  8, wtk=  1.00000, kpt=  0.5000  0.4500  0.5500 (reduced coord)
+  -0.09859   -0.02148    0.33682    0.35329    0.77728    0.79680    0.83757    1.04681
+ kpt# 151, nband=  8, wtk=  1.00000, kpt=  0.5000  0.4625  0.5375 (reduced coord)
+  -0.10123   -0.02442    0.34889    0.35860    0.77968    0.79254    0.82457    1.04677
+ kpt# 152, nband=  8, wtk=  1.00000, kpt=  0.5000  0.4750  0.5250 (reduced coord)
+  -0.10311   -0.02647    0.35785    0.36232    0.78161    0.78792    0.81599    1.04615
+ kpt# 153, nband=  8, wtk=  1.00000, kpt=  0.5000  0.4875  0.5125 (reduced coord)
+  -0.10425   -0.02773    0.36336    0.36454    0.78226    0.78415    0.81146    1.04556
+ kpt# 154, nband=  8, wtk=  1.00000, kpt=  0.5000  0.5000  0.5000 (reduced coord)
+  -0.10463   -0.02813    0.36529    0.36529    0.78276    0.78276    0.81010    1.04536
+ kpt# 155, nband=  8, wtk=  1.00000, kpt=  0.4926  0.4926  0.5147 (reduced coord)
+  -0.10423   -0.02771    0.36329    0.36452    0.78220    0.78425    0.81151    1.04556
+ kpt# 156, nband=  8, wtk=  1.00000, kpt=  0.4853  0.4853  0.5294 (reduced coord)
+  -0.10306   -0.02641    0.35748    0.36224    0.78083    0.78866    0.81608    1.04616
+ kpt# 157, nband=  8, wtk=  1.00000, kpt=  0.4779  0.4779  0.5441 (reduced coord)
+  -0.10110   -0.02428    0.34783    0.35862    0.77700    0.79610    0.82408    1.04669
+ kpt# 158, nband=  8, wtk=  1.00000, kpt=  0.4706  0.4706  0.5588 (reduced coord)
+  -0.09836   -0.02137    0.33523    0.35379    0.77143    0.80628    0.83530    1.04668
+ kpt# 159, nband=  8, wtk=  1.00000, kpt=  0.4632  0.4632  0.5735 (reduced coord)
+  -0.09485   -0.01738    0.31999    0.34794    0.76458    0.81829    0.84929    1.04559
+ kpt# 160, nband=  8, wtk=  1.00000, kpt=  0.4559  0.4559  0.5882 (reduced coord)
+  -0.09057   -0.01289    0.30270    0.34106    0.75678    0.83212    0.86560    1.04266
+ kpt# 161, nband=  8, wtk=  1.00000, kpt=  0.4485  0.4485  0.6029 (reduced coord)
+  -0.08551   -0.00760    0.28374    0.33394    0.74841    0.84810    0.88338    1.03757
+ kpt# 162, nband=  8, wtk=  1.00000, kpt=  0.4412  0.4412  0.6176 (reduced coord)
+  -0.07969   -0.00163    0.26371    0.32650    0.73991    0.86480    0.90265    1.02974
+ kpt# 163, nband=  8, wtk=  1.00000, kpt=  0.4338  0.4338  0.6324 (reduced coord)
+  -0.07315    0.00494    0.24259    0.31894    0.73130    0.88235    0.92259    1.01833
+ kpt# 164, nband=  8, wtk=  1.00000, kpt=  0.4265  0.4265  0.6471 (reduced coord)
+  -0.06583    0.01215    0.22132    0.31144    0.72304    0.90041    0.94312    1.00479
+ kpt# 165, nband=  8, wtk=  1.00000, kpt=  0.4191  0.4191  0.6618 (reduced coord)
+  -0.05784    0.01976    0.19987    0.30411    0.71515    0.91852    0.96328    0.98901
+ kpt# 166, nband=  8, wtk=  1.00000, kpt=  0.4118  0.4118  0.6765 (reduced coord)
+  -0.04916    0.02741    0.17865    0.29720    0.70759    0.93647    0.96802    0.98635
+ kpt# 167, nband=  8, wtk=  1.00000, kpt=  0.4044  0.4044  0.6912 (reduced coord)
+  -0.03989    0.03494    0.15866    0.29057    0.70075    0.94945    0.95343    1.00495
+ kpt# 168, nband=  8, wtk=  1.00000, kpt=  0.3971  0.3971  0.7059 (reduced coord)
+  -0.03013    0.04136    0.14070    0.28421    0.69449    0.92931    0.96921    1.02247
+ kpt# 169, nband=  8, wtk=  1.00000, kpt=  0.3897  0.3897  0.7206 (reduced coord)
+  -0.02011    0.04507    0.12683    0.27884    0.68898    0.90875    0.98363    1.03756
+ kpt# 170, nband=  8, wtk=  1.00000, kpt=  0.3824  0.3824  0.7353 (reduced coord)
+  -0.01056    0.04423    0.11943    0.27375    0.68414    0.88815    0.99593    1.04873
+ kpt# 171, nband=  8, wtk=  1.00000, kpt=  0.3750  0.3750  0.7500 (reduced coord)
+  -0.00344    0.03966    0.11979    0.26944    0.67987    0.86794    1.00604    1.05476
+ kpt# 172, nband=  8, wtk=  1.00000, kpt=  0.3897  0.3676  0.7426 (reduced coord)
+  -0.00619    0.04222    0.11893    0.26979    0.68421    0.87784    0.99977    1.05057
+ kpt# 173, nband=  8, wtk=  1.00000, kpt=  0.4044  0.3603  0.7353 (reduced coord)
+  -0.00942    0.04478    0.12061    0.26698    0.69320    0.88846    0.98978    1.04250
+ kpt# 174, nband=  8, wtk=  1.00000, kpt=  0.4191  0.3529  0.7279 (reduced coord)
+  -0.01268    0.04676    0.12454    0.26158    0.70638    0.89845    0.97627    1.03264
+ kpt# 175, nband=  8, wtk=  1.00000, kpt=  0.4338  0.3456  0.7206 (reduced coord)
+  -0.01563    0.04785    0.13041    0.25418    0.72319    0.90672    0.95999    1.02201
+ kpt# 176, nband=  8, wtk=  1.00000, kpt=  0.4485  0.3382  0.7132 (reduced coord)
+  -0.01811    0.04825    0.13771    0.24550    0.74267    0.90877    0.94758    1.01110
+ kpt# 177, nband=  8, wtk=  1.00000, kpt=  0.4632  0.3309  0.7059 (reduced coord)
+  -0.02006    0.04825    0.14552    0.23660    0.76409    0.89688    0.94757    0.99999
+ kpt# 178, nband=  8, wtk=  1.00000, kpt=  0.4779  0.3235  0.6985 (reduced coord)
+  -0.02134    0.04821    0.15270    0.22902    0.78599    0.87725    0.95567    0.98915
+ kpt# 179, nband=  8, wtk=  1.00000, kpt=  0.4926  0.3162  0.6912 (reduced coord)
+  -0.02200    0.04810    0.15710    0.22421    0.80368    0.85953    0.96554    0.97853
+ kpt# 180, nband=  8, wtk=  1.00000, kpt=  0.5074  0.3088  0.6838 (reduced coord)
+  -0.02200    0.04810    0.15710    0.22421    0.80368    0.85953    0.96554    0.97853
+ kpt# 181, nband=  8, wtk=  1.00000, kpt=  0.5221  0.3015  0.6765 (reduced coord)
+  -0.02134    0.04821    0.15270    0.22902    0.78599    0.87725    0.95567    0.98915
+ kpt# 182, nband=  8, wtk=  1.00000, kpt=  0.5368  0.2941  0.6691 (reduced coord)
+  -0.02006    0.04825    0.14552    0.23660    0.76409    0.89688    0.94757    0.99999
+ kpt# 183, nband=  8, wtk=  1.00000, kpt=  0.5515  0.2868  0.6618 (reduced coord)
+  -0.01811    0.04825    0.13771    0.24550    0.74267    0.90877    0.94758    1.01110
+ kpt# 184, nband=  8, wtk=  1.00000, kpt=  0.5662  0.2794  0.6544 (reduced coord)
+  -0.01563    0.04785    0.13041    0.25418    0.72319    0.90672    0.95999    1.02201
+ kpt# 185, nband=  8, wtk=  1.00000, kpt=  0.5809  0.2721  0.6471 (reduced coord)
+  -0.01268    0.04676    0.12454    0.26158    0.70638    0.89845    0.97627    1.03264
+ kpt# 186, nband=  8, wtk=  1.00000, kpt=  0.5956  0.2647  0.6397 (reduced coord)
+  -0.00942    0.04478    0.12061    0.26698    0.69320    0.88846    0.98978    1.04250
+ kpt# 187, nband=  8, wtk=  1.00000, kpt=  0.6103  0.2574  0.6324 (reduced coord)
+  -0.00619    0.04222    0.11893    0.26979    0.68421    0.87784    0.99977    1.05057
+ kpt# 188, nband=  8, wtk=  1.00000, kpt=  0.6250  0.2500  0.6250 (reduced coord)
+  -0.00344    0.03966    0.11979    0.26944    0.67987    0.86794    1.00604    1.05476
+ kpt# 189, nband=  8, wtk=  1.00000, kpt=  0.6125  0.2250  0.6125 (reduced coord)
+   0.00256    0.03247    0.12855    0.26300    0.67357    0.83508    1.02123    1.06143
+ kpt# 190, nband=  8, wtk=  1.00000, kpt=  0.6000  0.2000  0.6000 (reduced coord)
+   0.00569    0.02609    0.14089    0.25723    0.66789    0.80301    1.03588    1.06867
+ kpt# 191, nband=  8, wtk=  1.00000, kpt=  0.5875  0.1750  0.5875 (reduced coord)
+   0.00675    0.02040    0.15534    0.25201    0.66285    0.77222    1.04924    1.07474
+ kpt# 192, nband=  8, wtk=  1.00000, kpt=  0.5750  0.1500  0.5750 (reduced coord)
+   0.00653    0.01546    0.17104    0.24744    0.65844    0.74327    1.06139    1.08035
+ kpt# 193, nband=  8, wtk=  1.00000, kpt=  0.5625  0.1250  0.5625 (reduced coord)
+   0.00582    0.01128    0.18695    0.24368    0.65471    0.71685    1.07214    1.08552
+ kpt# 194, nband=  8, wtk=  1.00000, kpt=  0.5500  0.1000  0.5500 (reduced coord)
+   0.00464    0.00781    0.20198    0.24027    0.65155    0.69333    1.08068    1.08988
+ kpt# 195, nband=  8, wtk=  1.00000, kpt=  0.5375  0.0750  0.5375 (reduced coord)
+   0.00355    0.00514    0.21518    0.23776    0.64916    0.67372    1.08798    1.09345
+ kpt# 196, nband=  8, wtk=  1.00000, kpt=  0.5250  0.0500  0.5250 (reduced coord)
+   0.00267    0.00343    0.22569    0.23596    0.64758    0.65884    1.09345    1.09616
+ kpt# 197, nband=  8, wtk=  1.00000, kpt=  0.5125  0.0250  0.5125 (reduced coord)
+   0.00202    0.00221    0.23204    0.23470    0.64651    0.64936    1.09627    1.09683
+ kpt# 198, nband=  8, wtk=  1.00000, kpt=  0.5000  0.0000  0.5000 (reduced coord)
+   0.00183    0.00183    0.23434    0.23434    0.64617    0.64617    1.09736    1.09736
+
+== END DATASET(S) ==============================================================
+================================================================================
+  
+ -outvars: echo values of variables after computation  --------
+            acell      1.0000000000E+00  1.0000000000E+00  1.0000000000E+00 Bohr
+              amu      1.20110000E+01
+             ecut      2.00000000E+01 Hartree
+-          fftalg         112
+           irdden           1
+             iscf          -2
+           istwfk        1    0    0    0    0    0    0    0    0    0
+                         0    0    0    0    0    0    0    0    0    0
+                         0    0    0    0    0    0    0    0    1    0
+                         0    0    0    0    0    0    0    0    0    0
+                         0    0    0    0    0    0    0    0    0    0
+                       outvar_i_n : Printing only first  50 k-points.
+              kpt      0.00000000E+00  0.00000000E+00  0.00000000E+00
+                       1.78571429E-02  0.00000000E+00  1.78571429E-02
+                       3.57142857E-02  0.00000000E+00  3.57142857E-02
+                       5.35714286E-02  0.00000000E+00  5.35714286E-02
+                       7.14285714E-02  0.00000000E+00  7.14285714E-02
+                       8.92857143E-02  0.00000000E+00  8.92857143E-02
+                       1.07142857E-01  0.00000000E+00  1.07142857E-01
+                       1.25000000E-01  0.00000000E+00  1.25000000E-01
+                       1.42857143E-01  0.00000000E+00  1.42857143E-01
+                       1.60714286E-01  0.00000000E+00  1.60714286E-01
+                       1.78571429E-01  0.00000000E+00  1.78571429E-01
+                       1.96428571E-01  0.00000000E+00  1.96428571E-01
+                       2.14285714E-01  0.00000000E+00  2.14285714E-01
+                       2.32142857E-01  0.00000000E+00  2.32142857E-01
+                       2.50000000E-01  0.00000000E+00  2.50000000E-01
+                       2.67857143E-01  0.00000000E+00  2.67857143E-01
+                       2.85714286E-01  0.00000000E+00  2.85714286E-01
+                       3.03571429E-01  0.00000000E+00  3.03571429E-01
+                       3.21428571E-01  0.00000000E+00  3.21428571E-01
+                       3.39285714E-01  0.00000000E+00  3.39285714E-01
+                       3.57142857E-01  0.00000000E+00  3.57142857E-01
+                       3.75000000E-01  0.00000000E+00  3.75000000E-01
+                       3.92857143E-01  0.00000000E+00  3.92857143E-01
+                       4.10714286E-01  0.00000000E+00  4.10714286E-01
+                       4.28571429E-01  0.00000000E+00  4.28571429E-01
+                       4.46428571E-01  0.00000000E+00  4.46428571E-01
+                       4.64285714E-01  0.00000000E+00  4.64285714E-01
+                       4.82142857E-01  0.00000000E+00  4.82142857E-01
+                       5.00000000E-01  0.00000000E+00  5.00000000E-01
+                       5.00000000E-01  1.78571429E-02  5.17857143E-01
+                       5.00000000E-01  3.57142857E-02  5.35714286E-01
+                       5.00000000E-01  5.35714286E-02  5.53571429E-01
+                       5.00000000E-01  7.14285714E-02  5.71428571E-01
+                       5.00000000E-01  8.92857143E-02  5.89285714E-01
+                       5.00000000E-01  1.07142857E-01  6.07142857E-01
+                       5.00000000E-01  1.25000000E-01  6.25000000E-01
+                       5.00000000E-01  1.42857143E-01  6.42857143E-01
+                       5.00000000E-01  1.60714286E-01  6.60714286E-01
+                       5.00000000E-01  1.78571429E-01  6.78571429E-01
+                       5.00000000E-01  1.96428571E-01  6.96428571E-01
+                       5.00000000E-01  2.14285714E-01  7.14285714E-01
+                       5.00000000E-01  2.32142857E-01  7.32142857E-01
+                       5.00000000E-01  2.50000000E-01  7.50000000E-01
+                       4.87500000E-01  2.62500000E-01  7.50000000E-01
+                       4.75000000E-01  2.75000000E-01  7.50000000E-01
+                       4.62500000E-01  2.87500000E-01  7.50000000E-01
+                       4.50000000E-01  3.00000000E-01  7.50000000E-01
+                       4.37500000E-01  3.12500000E-01  7.50000000E-01
+                       4.25000000E-01  3.25000000E-01  7.50000000E-01
+                       4.12500000E-01  3.37500000E-01  7.50000000E-01
+                       outvar_i_n : Printing only first  50 k-points.
+           kptopt         -11
+P           mkmem          99
+            natom           2
+            nband           8
+           nbdbuf           2
+           ndivsm          10
+            ngfft          20      20      20
+             nkpt         198
+             nsym          48
+           ntypat           1
+            rprim      0.0000000000E+00  3.3517340250E+00  3.3517340250E+00
+                       3.3517340250E+00  0.0000000000E+00  3.3517340250E+00
+                       3.3517340250E+00  3.3517340250E+00  0.0000000000E+00
+           shiftk      5.00000000E-01  5.00000000E-01  5.00000000E-01
+          spgroup         227
+           symrel      1  0  0   0  1  0   0  0  1      -1  0  0   0 -1  0   0  0 -1
+                       0 -1  1   0 -1  0   1 -1  0       0  1 -1   0  1  0  -1  1  0
+                      -1  0  0  -1  0  1  -1  1  0       1  0  0   1  0 -1   1 -1  0
+                       0  1 -1   1  0 -1   0  0 -1       0 -1  1  -1  0  1   0  0  1
+                      -1  0  0  -1  1  0  -1  0  1       1  0  0   1 -1  0   1  0 -1
+                       0 -1  1   1 -1  0   0 -1  0       0  1 -1  -1  1  0   0  1  0
+                       1  0  0   0  0  1   0  1  0      -1  0  0   0  0 -1   0 -1  0
+                       0  1 -1   0  0 -1   1  0 -1       0 -1  1   0  0  1  -1  0  1
+                      -1  0  1  -1  1  0  -1  0  0       1  0 -1   1 -1  0   1  0  0
+                       0 -1  0   1 -1  0   0 -1  1       0  1  0  -1  1  0   0  1 -1
+                       1  0 -1   0  0 -1   0  1 -1      -1  0  1   0  0  1   0 -1  1
+                       0  1  0   0  0  1   1  0  0       0 -1  0   0  0 -1  -1  0  0
+                       1  0 -1   0  1 -1   0  0 -1      -1  0  1   0 -1  1   0  0  1
+                       0 -1  0   0 -1  1   1 -1  0       0  1  0   0  1 -1  -1  1  0
+                      -1  0  1  -1  0  0  -1  1  0       1  0 -1   1  0  0   1 -1  0
+                       0  1  0   1  0  0   0  0  1       0 -1  0  -1  0  0   0  0 -1
+                       0  0 -1   0  1 -1   1  0 -1       0  0  1   0 -1  1  -1  0  1
+                       1 -1  0   0 -1  1   0 -1  0      -1  1  0   0  1 -1   0  1  0
+                       0  0  1   1  0  0   0  1  0       0  0 -1  -1  0  0   0 -1  0
+                      -1  1  0  -1  0  0  -1  0  1       1 -1  0   1  0  0   1  0 -1
+                       0  0  1   0  1  0   1  0  0       0  0 -1   0 -1  0  -1  0  0
+                       1 -1  0   0 -1  0   0 -1  1      -1  1  0   0  1  0   0  1 -1
+                       0  0 -1   1  0 -1   0  1 -1       0  0  1  -1  0  1   0 -1  1
+                      -1  1  0  -1  0  1  -1  0  0       1 -1  0   1  0 -1   1  0  0
+            tnons      0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+           tolwfr      1.00000000E-16
+            typat      1  1
+                       outvars : Printing only first  50 k-points.
+           xangst      0.0000000000E+00  0.0000000000E+00  0.0000000000E+00
+                       8.8683062764E-01  8.8683062764E-01  8.8683062764E-01
+            xcart      0.0000000000E+00  0.0000000000E+00  0.0000000000E+00
+                       1.6758670125E+00  1.6758670125E+00  1.6758670125E+00
+             xred      0.0000000000E+00  0.0000000000E+00  0.0000000000E+00
+                       2.5000000000E-01  2.5000000000E-01  2.5000000000E-01
+            znucl        6.00000
+
+================================================================================
+
+
+- Timing analysis has been suppressed with timopt=0
+
+
+
+================================================================================
+
+ Suggested references for the acknowledgment of ABINIT usage.
+
+ The users of ABINIT have little formal obligations with respect to the ABINIT group
+ (those specified in the GNU General Public License, http://www.gnu.org/copyleft/gpl.txt).
+ However, it is common practice in the scientific literature,
+ to acknowledge the efforts of people that have made the research possible.
+ In this spirit, please find below suggested citations of work written by ABINIT developers,
+ corresponding to implementations inside of ABINIT that you have used in the present run.
+ Note also that it will be of great value to readers of publications presenting these results,
+ to read papers enabling them to understand the theoretical formalism and details
+ of the ABINIT implementation.
+ For information on why they are suggested, see also https://www.abinit.org/about/?text=acknowledgments.
+-
+- [1] Recent developments in the ABINIT software package.
+- Computer Phys. Comm. 205, 106 (2016).
+- X.Gonze, F.Jollet, F.Abreu Araujo, D.Adams, B.Amadon, T.Applencourt,
+- C.Audouze, J.-M.Beuken, J.Bieder, A.Bokhanchuk, E.Bousquet, F.Bruneval
+- D.Caliste, M.Cote, F.Dahm, F.Da Pieve, M.Delaveau, M.Di Gennaro,
+- B.Dorado, C.Espejo, G.Geneste, L.Genovese, A.Gerossier, M.Giantomassi,
+- Y.Gillet, D.R.Hamann, L.He, G.Jomard, J.Laflamme Janssen, S.Le Roux,
+- A.Levitt, A.Lherbier, F.Liu, I.Lukacevic, A.Martin, C.Martins,
+- M.J.T.Oliveira, S.Ponce, Y.Pouillon, T.Rangel, G.-M.Rignanese,
+- A.H.Romero, B.Rousseau, O.Rubel, A.A.Shukri, M.Stankovski, M.Torrent,
+- M.J.Van Setten, B.Van Troeye, M.J.Verstraete, D.Waroquier, J.Wiktor,
+- B.Xue, A.Zhou, J.W.Zwanziger.
+- Comment : the fourth generic paper describing the ABINIT project.
+- Note that a version of this paper, that is not formatted for Computer Phys. Comm. 
+- is available at https://www.abinit.org/about/ABINIT16.pdf .
+- The licence allows the authors to put it on the Web.
+-
+- [2] ABINIT : First-principles approach of materials and nanosystem properties.
+- Computer Phys. Comm. 180, 2582-2615 (2009).
+- X. Gonze, B. Amadon, P.-M. Anglade, J.-M. Beuken, F. Bottin, P. Boulanger, F. Bruneval,
+- D. Caliste, R. Caracas, M. Cote, T. Deutsch, L. Genovese, Ph. Ghosez, M. Giantomassi
+- S. Goedecker, D.R. Hamann, P. Hermet, F. Jollet, G. Jomard, S. Leroux, M. Mancini, S. Mazevet,
+- M.J.T. Oliveira, G. Onida, Y. Pouillon, T. Rangel, G.-M. Rignanese, D. Sangalli, R. Shaltaf,
+- M. Torrent, M.J. Verstraete, G. Zerah, J.W. Zwanziger
+- Comment : the third generic paper describing the ABINIT project.
+- Note that a version of this paper, that is not formatted for Computer Phys. Comm. 
+- is available at https://www.abinit.org/about/ABINIT_CPC_v10.pdf .
+- The licence allows the authors to put it on the Web.
+-
+- [3] A brief introduction to the ABINIT software package.
+- Z. Kristallogr. 220, 558-562 (2005).
+- X. Gonze, G.-M. Rignanese, M. Verstraete, J.-M. Beuken, Y. Pouillon, R. Caracas, F. Jollet,
+- M. Torrent, G. Zerah, M. Mikami, Ph. Ghosez, M. Veithen, J.-Y. Raty, V. Olevano, F. Bruneval,
+- L. Reining, R. Godby, G. Onida, D.R. Hamann, and D.C. Allan.
+- Comment : the second generic paper describing the ABINIT project. Note that this paper
+- should be cited especially if you are using the GW part of ABINIT, as several authors
+- of this part are not in the list of authors of the first or third paper.
+- The .pdf of the latter paper is available at https://www.abinit.org/about/zfk_0505-06_558-562.pdf.
+- Note that it should not redistributed (Copyright by Oldenburg Wissenshaftverlag,
+- the licence allows the authors to put it on the Web).
+-
+- And optionally:
+-
+- [4] First-principles computation of material properties : the ABINIT software project. 
+- X. Gonze, J.-M. Beuken, R. Caracas, F. Detraux, M. Fuchs, G.-M. Rignanese, L. Sindic,
+- M. Verstraete, G. Zerah, F. Jollet, M. Torrent, A. Roy, M. Mikami, Ph. Ghosez, J.-Y. Raty, D.C. Allan.
+- Computational Materials Science 25, 478-492 (2002). http://dx.doi.org/10.1016/S0927-0256(02)00325-7
+- Comment : the original paper describing the ABINIT project.
+-
+- Proc.   0 individual time (sec): cpu=         13.7  wall=         15.2
+
+================================================================================
+
+ Calculation completed.
+.Delivered   0 WARNINGs and   0 COMMENTs to log file.
++Overall time at end (sec) : cpu=         27.7  wall=         30.4

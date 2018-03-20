@@ -27,7 +27,7 @@ to interact with the flow and:
 to access the documentation.
 The debug COMMAND is quite handy if something goes wrong!
 
-## Convergence study at Γ
+## How to analyze the electronic properties and the DOS
 
 Use:
 

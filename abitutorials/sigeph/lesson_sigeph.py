@@ -62,9 +62,8 @@ def build_flow(options):
     # Build another NSCF input with k-mesh and empty states.
     # This step generates the WFK file used to build the EPH self-energy.
     nscf_empty_kmesh_inp = gs_inp.new_with_vars(
-        nband=210,
-        #nband=110,     # Too low. ~300
-        nbdbuf=10,     # reduces considerably the time needed to converge empty states!
+        nband=210,     # Too low. ~300
+        nbdbuf=10,     # Reduces considerably the time needed to converge empty states!
         tolwfr=1e-16,
         iscf=-2,
     )
@@ -95,13 +94,14 @@ def build_flow(options):
         symsigma=1,              # Use symmetries in self-energy integration (IBZ_k instead of BZ)
         nkptgw=1,
         kptgw=[0, 0, 0],
-        bdgw=[1, 8],     # [2, 7] crashes
+        bdgw=[1, 8],
+        # For more k-points...
         #nkptgw=2,
         #kptgw=[0, 0, 0,
         #       0.5, 0, 0],
         #bdgw=[1, 8, 1, 8],
         #gw_qprange=-4,
-        tmesh=[0, 200, 5],
+        tmesh=[0, 200, 5],    # (start, step, num)
         zcut="0.2 eV",
     )
 
