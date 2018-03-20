@@ -84,9 +84,8 @@ def build_flow(options):
     flow.register_work(ph_work)
 
     # Build template for self-energy calculation. See also v8/Input/t44.in
-    # Matrix elements of self-energy are computed for 2 k-points and the first 8 bands.
     # The k-points must be in the WFK file
-
+    #
     eph_inp = gs_inp.new_with_vars(
         optdriver=7,             # Enter EPH driver.
         eph_task=4,              # Activate computation of EPH self-energy.
@@ -115,14 +114,14 @@ def build_flow(options):
     # and the database of DFPT potentials (already merged by PhononWork)
     deps = {work0[2]: "WFK", ph_work: ["DDB", "DVDB"]}
 
-    # Now we use the EPH template generated above to perform a convergence study
-    # by varying the q-mesh used to integrate the self-energy and the number of bands
+    # Now we use the EPH template to perform a convergence study in which
+    # we change the q-mesh used to integrate the self-energy and the number of bands.
     # The code will activate the Fourier interpolation of the DFPT potentials if eph_ngqpt_fine != ddb_ngqpt
 
     for eph_ngqpt_fine in [[4, 4, 4], [8, 8, 8]]:
         # Create empty work to contain EPH tasks with this value of eph_ngqpt_fine
         eph_work = flow.register_work(flowtk.Work())
-        #for nband in [50, 75, 100]:
+        #for nband in [50, 100, 200]:
         for nband in [100, 150, 200]:
             new_inp = eph_inp.new_with_vars(eph_ngqpt_fine=eph_ngqpt_fine, nband=nband)
             eph_work.register_eph_task(new_inp, deps=deps)
