@@ -240,8 +240,18 @@ Test flow completed successfully
 ```
 
 Great, if you've reached this part it means that you've installed AbiPy and Abinit on your machine!
-We can finally start to run the scripts in this repo or use one of the AbiPy script to analyze 
-the results.
+We can finally start to run the scripts in this repo or use one of the AbiPy script to analyze  the results.
+
+Select one of the directory with a lesson_*.py script e.g. sigeph/lesson_sigeph.py.
+Read the corresponding README.md file. Then look at the python script and use:
+
+    lesson_sigeph.py
+
+to run the flow automatically or 
+
+    lesson_sigeph.py --help
+
+to get the list of supported options.
 
 TIP:
 

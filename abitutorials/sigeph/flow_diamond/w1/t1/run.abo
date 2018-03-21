@@ -14,8 +14,8 @@
  acknowledgments of the ABINIT effort.
  For more information, see https://www.abinit.org .
 
-.Starting date : Mon 19 Mar 2018.
-- ( at 19h19 )
+.Starting date : Wed 21 Mar 2018.
+- ( at 18h19 )
   
 - input  file    -> /Users/gmatteo/git_repos/abitutorials/abitutorials/sigeph/flow_diamond/w1/t1/run.abi
 - output file    -> /Users/gmatteo/git_repos/abitutorials/abitutorials/sigeph/flow_diamond/w1/t1/run.abo
@@ -596,10 +596,10 @@ P          mk1mem         256
 - Note that it should not redistributed (Copyright by Oldenburg Wissenshaftverlag,
 - the licence allows the authors to put it on the Web).
 -
-- Proc.   0 individual time (sec): cpu=         24.5  wall=         31.7
+- Proc.   0 individual time (sec): cpu=         23.7  wall=         27.0
 
 ================================================================================
 
  Calculation completed.
 .Delivered   1 WARNINGs and   0 COMMENTs to log file.
-+Overall time at end (sec) : cpu=         49.0  wall=         63.4
++Overall time at end (sec) : cpu=         47.3  wall=         54.0
