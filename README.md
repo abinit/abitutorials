@@ -33,6 +33,10 @@ You can:
   The image contains Abinit, AbiPy and all the other python dependencies
   required to run the code inside the jupyter notebooks.
   The notebook will be opened in your browser after building.
+  Go into the `abitutorials` directory and click the `index.ipynb` file to open the index file.
+  Select e.g. the `Structure` notebook and start to run the python code in the jupyter cells
+  (select the cell and click the `Run` button). 
+  See also the other options available in the `Cell` tab.
 
 - Install AbiPy and Abinit on your machine and use the python scripts as well as the netcdf files 
   in the github repository like a real pythonista.
