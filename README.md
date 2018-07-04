@@ -47,9 +47,17 @@ If you opt for the last option, use:
 
 to clone this repository on your machine.
 
-To open the notebook in your browser, use:
+To open the notebook in your browser, use the command:
 
     jupyter notebook FILE.ipynb
+
+where FILE.ipynb is one the ipython notebooks available inside the `abitutorials`
+directory.
+
+To open, for instance, the notebook for the first lessons, use:
+
+    cd abitutorials
+    jupyter notebook base1/lesson_base1.ipynb
 
 Note that the notebook contains python code that will invoke Abinit 
 so before executing the jupyter notebook you need to install all the required dependencies:
