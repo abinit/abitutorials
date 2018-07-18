@@ -2,6 +2,8 @@
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/abinit/abitutorials/master)
 [![Build Status](https://travis-ci.org/abinit/abitutorials.svg?branch=master)](https://travis-ci.org/abinit/abitutorials)
 
+[![Coverage Status](https://coveralls.io/repos/github/abinit/abitutorials/badge.svg?branch=master)](https://coveralls.io/github/abinit/abitutorials?branch=master)
+
 [Index of jupyter notebooks](https://nbviewer.jupyter.org/github/abinit/abitutorials/blob/master/abitutorials/index.ipynb)
 
 About
