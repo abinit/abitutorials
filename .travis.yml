@@ -46,6 +46,7 @@ install:
           # Build conda env from environment.yml
           source dev_scripts/conda_get.sh
           conda env update --file=binder/environment.yml
+      fi
 
 #before_script:
     # This to run tests requiring a graphical user e.g. mayavi
