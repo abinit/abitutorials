@@ -5,9 +5,12 @@ channels:
 - conda-forge
 - defaults
 dependencies:
+- abinit=8.8.2=0
 - abipy=0.5.0=py36_0
 - apscheduler=2.1.0=py36_0
+- fftw=3.3.6=0
 - html2text=2016.9.19=py36_0
+- libxc=2.2.2=0
 - appdirs=1.4.3=py_1
 - asn1crypto=0.24.0=py_1
 - atomicwrites=1.1.5=py36_0
@@ -77,14 +80,18 @@ dependencies:
 - more-itertools=4.2.0=py36_1
 - mpc=1.1.0=4
 - mpfr=3.1.5=0
+- mpi=1.0=mpich
+- mpich=3.2.1=h26a2512_4
 - mpmath=1.0.0=py_0
 - nbconvert=5.3.1=py_1
 - nbformat=4.4.0=py_1
 - ncurses=5.9=10
+- netcdf-fortran=4.4.4=7
 - netcdf4=1.4.0=py36_0
 - networkx=2.1=py_1
 - notebook=5.6.0=py36_0
 - olefile=0.45.1=py_1
+- openblas=0.3.1=hd130d23_0
 - openssl=1.0.2o=0
 - pandas=0.23.3=py36_0
 - pandoc=2.2.2=0
@@ -155,6 +162,7 @@ dependencies:
 - zlib=1.2.11=h470a237_3
 - zope.interface=4.5.0=py36h470a237_0
 - intel-openmp=2018.0.3=0
+- libgcc=7.2.0=h69d50b8_2
 - libgcc-ng=7.2.0=hdf63c60_3
 - libgfortran=3.0.0=1
 - libgfortran-ng=7.2.0=hdf63c60_3
