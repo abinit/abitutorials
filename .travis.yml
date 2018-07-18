@@ -44,6 +44,7 @@ install:
           # conda env export | grep -v "^prefix: " > environment.yml
           source dev_scripts/conda_get.sh
           conda env update --file=binder/environment.yml
+          conda activate abitutorials
       fi
 
   - mkdir -p ${HOME}/.abinit/abipy 
