@@ -11,17 +11,16 @@ env:
     - OPENBLAS_NUM_THREADS=1
     - OMP_NUM_THREADS=1
 
-# We don't actually use the Travis Python but conda
 matrix:
   include:
     - os: linux
       python: 3.6
       env: 
-        - ABIPY_INSTALLER=conda_environment ABIPY_COVERALLS=yes
+        - ABIPY_INSTALLER=conda_environment 
     - os: linux
       python: 3.6
       env: 
-        - ABIPY_INSTALLER=conda 
+        - ABIPY_INSTALLER=conda ABIPY_COVERALLS=yes
 
 install:
   #- sudo apt-get update
