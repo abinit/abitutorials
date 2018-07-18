@@ -1,58 +1,51 @@
 language: python
-#cache: true
+cache: pip
+
+#dist: precise
+sudo: false
+
+env:
+  global:
+    - ABINIT_VERSION=8.8.2
+    - ABIPY_PYTEST=yes
+    - OPENBLAS_NUM_THREADS=1
+    - OMP_NUM_THREADS=1
 
 # We don't actually use the Travis Python but conda
 matrix:
   include:
-    #- os: linux
-    #- python: 2.7
-    #- env: PYTHON_VERSION=2.7
     - os: linux
       python: 3.6
-      env: PYTHON_VERSION=3.6
+      env: 
+        - ABIPY_INSTALLER=conda_environment ABIPY_COVERALLS=yes
+    - os: linux
+      python: 3.6
+      env: 
+        - ABIPY_INSTALLER=conda 
 
-#dist: precise
-sudo: false
 install:
   #- sudo apt-get update
   - env
+  - ulimit -s unlimited
+  - |
+      if [ "${ABIPY_INSTALLER}" == "conda" ]; then
+        source dev_scripts/conda_get.sh
+        # Add channels
+        conda config --add channels conda-forge
+        conda config --add channels matsci
+        conda config --add channels abinit
 
-  # pip-based installation.
-  #- travis_wait pip install -q -r requirements.txt
-  #- travis_wait pip install -q -r requirements-optional.txt
+        # Install abinit and abipy from conda channels.
+        conda install abinit
+        conda install abipy
 
-  # Install conda https://conda.io/docs/travis.html
-  - source dev_scripts/conda_installer.sh
-  #- source dev_scripts/conda_develop.sh
-  #- conda uninstall -y pymatgen
-  #- conda install --file binder/environment.yml
-  #- conda install -y -c anaconda setuptools
-  - conda env update --file=binder/environment.yml
+        conda install -y --file ./requirements.txt
+        conda install -y --file ./requirements-optional.txt
 
-  #- conda install -y --file ./requirements.txt
-  - conda install -y --file ./requirements-optional.txt
-
-  #- if [[ "${PYTHON_VERSION}" == "2.7" ]]; then conda install mock; fi
-  #- pip install nose nose-exclude
-
-  # Install abinit from abinit conda channel.
-  #- conda install -c gmatteo abinit=8.6.1
-  #- abinit --version
-  #- abinit --build
-
-  # Use gmatteo's pymatgen fork
-  #- git clone --depth=50 https://github.com/gmatteo/pymatgen.git && cd pymatgen && pip install -r requirements.txt && pip install -r requirements-optional.txt && python setup.py install && cd ../
-
-  #- git clone --depth=50 https://github.com/gmatteo/pymatgen.git && cd pymatgen && python setup.py install && cd ../
-
-  # Use pymatgen master
-  #- git clone --depth=50 https://github.com/materialsproject/pymatgen.git && cd pymatgen && pip install -r requirements.txt && pip install -r requirements-optional.txt && python setup.py install && cd ../
-
-  #- python setup.py install
-  #- mkdir -p ${HOME}/.abinit/abipy 
-  #- cp abipy/data/managers/travis_scheduler.yml ${HOME}/.abinit/abipy/scheduler.yml
-  #- cp abipy/data/managers/travis_manager.yml ${HOME}/.abinit/abipy/manager.yml
-  #- ./dev_scripts/pyclean.py .
+      elif [ "${ABIPY_INSTALLER}" == "conda_environment" ]; then
+          # Build conda env from environment.yml
+          source dev_scripts/conda_get.sh
+          conda env update --file=binder/environment.yml
 
 #before_script:
     # This to run tests requiring a graphical user e.g. mayavi
@@ -69,10 +62,9 @@ script: ./dev_scripts/runtests.sh
 branches:
   only:
     - master
-    - develop
 
 after_success:
-  - if [[ "${PYTHON_VERSION}" == "3.6" && "${TRAVIS_OS_NAME}" == "linux" ]]; then coveralls; fi
+    - if [[ "${ABIPY_COVERALLS}" == "yes" ]]; then coveralls; fi
 
 notifications:
   email:

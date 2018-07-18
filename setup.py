@@ -42,17 +42,6 @@ with open(release_file) as f:
     exec(code)
 
 #---------------------------------------------------------------------------
-# Find packages
-#---------------------------------------------------------------------------
-#
-#def find_packages():
-#    """
-#    Find all of abipy's packages.
-#    """
-#    return find_packages(exclude=())
-
-
-#---------------------------------------------------------------------------
 # Find package data
 #---------------------------------------------------------------------------
 
@@ -137,23 +126,12 @@ def cleanup():
 # List of external packages we rely on.
 # Note setup install will download them from Pypi if they are not available.
 install_requires = [
-    "six",
-    "prettytable",
-    "tabulate",
-    "apscheduler==2.1.0",
-    "pydispatcher>=2.0.5",
-    "tqdm",
-    "html2text",
-    "pyyaml>=3.11",
-    "pandas",
-    "numpy>=1.9",
-    "scipy>=0.14",
-    "spglib",
-    "pymatgen>=4.7.2",
-    "netCDF4",
-    "matplotlib>=1.5",
-    "seaborn",
     "abipy",
+    "jupyter",
+    "nbformat",
+    "ipywidgets",
+    "networkx",
+    "scikit-image",
 ]
 
 #print("install_requires\n", install_requires)
@@ -186,7 +164,7 @@ setup_args = dict(
       scripts=find_scripts(),
       download_url=download_url,
       ext_modules=ext_modules,
-      )
+)
 
 
 if __name__ == "__main__":

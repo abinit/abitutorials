@@ -1,5 +1,5 @@
 #!/bin/bash
-set -ev  # exit on first error, print each command
+set -e  # exit on first error
 
 # Install conda with travis: https://conda.io/docs/travis.html
 if [[ "${TRAVIS_OS_NAME}" == "osx" ]]; then
@@ -11,11 +11,11 @@ if [[ "${TRAVIS_OS_NAME}" == "osx" ]]; then
     fi
 else
     if [[ "${PYTHON_VERSION}" == "2.7" ]]; then
-        #wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh -O miniconda.sh;
-        wget https://repo.continuum.io/miniconda/Miniconda2-4.3.14-Linux-x86_64.sh -O miniconda.sh;
+        wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh -O miniconda.sh;
+        #wget https://repo.continuum.io/miniconda/Miniconda2-4.3.14-Linux-x86_64.sh -O miniconda.sh;
     else
-        #wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
-        wget https://repo.continuum.io/miniconda/Miniconda3-4.3.14-Linux-x86_64.sh -O miniconda.sh;
+        wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+        #wget https://repo.continuum.io/miniconda/Miniconda3-4.3.14-Linux-x86_64.sh -O miniconda.sh;
     fi
 fi
 
@@ -24,7 +24,7 @@ export PATH="${HOME}/miniconda/bin:${PATH}"
 
 hash -r
 
-conda config --set always_yes yes --set changeps1 no
+conda config --set always_yes yes --set changeps1 yes
 conda update -q conda
 # Useful for debugging any issues with conda
 conda info -a
