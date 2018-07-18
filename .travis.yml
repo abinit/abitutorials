@@ -30,23 +30,25 @@ install:
   - |
       if [ "${ABIPY_INSTALLER}" == "conda" ]; then
         source dev_scripts/conda_get.sh
+
         # Add channels
         conda config --add channels conda-forge
         conda config --add channels matsci
         conda config --add channels abinit
-
         # Install abinit and abipy from conda channels.
-        conda install abinit
-        conda install abipy
-
         conda install -y --file ./requirements.txt
-        conda install -y --file ./requirements-optional.txt
+        conda install -y abinit
 
       elif [ "${ABIPY_INSTALLER}" == "conda_environment" ]; then
-          # Build conda env from environment.yml
+          # Build conda env from environment.yml produced with:
+          # conda env export | grep -v "^prefix: " > environment.yml
           source dev_scripts/conda_get.sh
           conda env update --file=binder/environment.yml
       fi
+
+  - mkdir -p ${HOME}/.abinit/abipy 
+  - cp managers/scheduler.yml ${HOME}/.abinit/abipy/scheduler.yml
+  - cp managers/manager.yml ${HOME}/.abinit/abipy/manager.yml
 
 #before_script:
     # This to run tests requiring a graphical user e.g. mayavi

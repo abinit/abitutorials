@@ -7,7 +7,7 @@ qadapters:
       job:
         mpi_runner: mpirun
         #pre_run: 
-        #    - source activate abienv
+        #    - source activate abitutorials
         #    - export PATH=$HOME/git_repos/abinit_build_impi/src/98_main:$PATH
         #    - ulimit -s unlimited
         #modules:

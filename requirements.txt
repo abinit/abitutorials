@@ -6,3 +6,7 @@ networkx
 scikit-image
 #graphviz or python-graphviz if conda
 #mayavi
+
+# Unit tests
+pytest
+pytest-cov
