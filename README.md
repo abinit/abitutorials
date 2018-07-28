@@ -258,11 +258,11 @@ We can finally start to run the scripts in this repo or use one of the AbiPy scr
 Select one of the directory with a lesson_*.py script e.g. sigeph/lesson_sigeph.py.
 Read the corresponding README.md file. Then look at the python script and use:
 
-    lesson_sigeph.py
+    ./lesson_sigeph.py
 
 to run the flow automatically or 
 
-    lesson_sigeph.py --help
+    ./lesson_sigeph.py --help
 
 to get the list of supported options.
 
