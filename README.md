@@ -157,7 +157,7 @@ To perform a basic validation of the build, execute:
 
     abinit -b
 
-Now we explain how to prepare the configuration files required by Abipy
+Now we explain how to prepare the configuration files required by Abipy.
 For a more detailed description of the syntax used in this configuration file
 please consult the [TaskManager documentation](http://abinit.github.io/abipy/workflows/taskmanager.html).
 
@@ -183,7 +183,7 @@ Qadapter selected: 0
 
 Abinitbuild:
 Abinit Build Information:
-    Abinit version: 8.7.6
+    Abinit version: 8.8.2
     MPI: True, MPI-IO: True, OpenMP: False
     Netcdf: True
 
@@ -195,14 +195,14 @@ Installed packages:
 Package         Version
 --------------  ---------
 system          Darwin
-python_version  3.6.1
-numpy           1.14.2
-scipy           1.0.0
-netCDF4         1.3.1
+python_version  3.6.5
+numpy           1.14.3
+scipy           1.1.0
+netCDF4         1.4.0
 apscheduler     2.1.0
 pydispatch      2.0.5
 yaml            3.12
-pymatgen        2018.3.14
+pymatgen        2018.6.11
 
 
 Abipy requirements are properly configured
@@ -228,7 +228,7 @@ Inside the shell, execute:
     abicheck.py --with-flow
 
 to run a GS + NSCF band structure calculation for Si.
-If the software stack is properly configured, you should obtain:
+If the software stack is properly configured, the output should end with:
 
 ```shell
 Work #0: <BandStructureWork, node_id=313436, workdir=../../../../var/folders/89/47k8wfdj11x035svqf8qnl4m0000gn/T/tmpygixwf9a/w0>, Finalized=True
@@ -236,10 +236,9 @@ Work #0: <BandStructureWork, node_id=313436, workdir=../../../../var/folders/89/
 
 all_ok reached
 
-
-Submitted on: Sat Mar 17 23:16:57 2018
-Completed on: Sat Mar 17 23:17:07 2018
-Elapsed time: 0:00:10.046392
+Submitted on: Sat Jul 28 09:14:28 2018
+Completed on: Sat Jul 28 09:14:38 2018
+Elapsed time: 0:00:10.030767
 Flow completed successfully
 
 Calling flow.finalize()...
@@ -259,11 +258,11 @@ We can finally start to run the scripts in this repo or use one of the AbiPy scr
 Select one of the directory with a lesson_*.py script e.g. sigeph/lesson_sigeph.py.
 Read the corresponding README.md file. Then look at the python script and use:
 
-    lesson_sigeph.py
+    ./lesson_sigeph.py
 
 to run the flow automatically or 
 
-    lesson_sigeph.py --help
+    ./lesson_sigeph.py --help
 
 to get the list of supported options.
 
