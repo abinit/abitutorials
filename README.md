@@ -51,9 +51,11 @@ Then options 1 or 2 are convenient.
 However, if you really plan to use Abipy, we suggest you choose 2 or 3. Really running the examples is the most efficient use of the tutorial.
 Of course, in order to use Abipy, you will obviously need to install it as well as abinit. 
 Choosing 2 only spare you the possible trouble of installing jupyter. The installation of Abipy and abinit (also using git) in a coherent way
-is presented in the [Abipy README on Github](https://github.com/abinit/abipy). 
+is presented in the [Abipy README on Github](https://github.com/abinit/abipy), 
+or in [the stable version of the Abipy doc](https://pythonhosted.org/abipy/installation.html),  
+or in [the develop version of the Abipy doc](https://abinit.github.io/abipy/installation.html). 
 
-If you opt for option 3, after installing Abipy+abinit+jupyter as described below, you will have to
+If you opt for option 3, after installing jupyter as described below, in addition to AbiPy and abinit, you will have to
 open the notebook in your browser 
 
     jupyter notebook FILE.ipynb
@@ -64,8 +66,8 @@ To open, for instance, the notebook for the first lesson, use:
     cd abitutorials
     jupyter notebook base1/lesson_base1.ipynb
 
-Installing jupyter and running the notebooks.
-=============================================
+Acccessing the notebooks and installing jupyter
+===============================================
 
 First step, download the abitutorials
 
@@ -74,7 +76,7 @@ First step, download the abitutorials
 In case you followed the conda way to [install Abipy and abinit](https://github.com/abinit/abipy), the installation of jupyter is very simple.
 Be sure to install it *in the same conda environment* as Abipy and abinit, though.
 
-Inside the abitutorials directory, issue
+Inside the *abitutorials* directory, issue
 
     conda install --file ./requirements.txt
 
@@ -98,181 +100,9 @@ If you love building software from source, feel free to use this approach and
 use the configuration examples available on the [abiconfig repository](https://github.com/abinit/abiconda)
 to build Abinit on your machine/cluster.
 
+After installing jupyter, we can launch one of the notebooks as described above.
 
-## How to install Abipy and abinit in five steps <a id="Abinit_in_five_steps"></a>
-
-
-To install AbiPy with conda, download the [miniconda installer](https://conda.io/miniconda.html)
-If you are a Linux user, download and install `miniconda` on your local machine with:
-
-    wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-    bash Miniconda3-latest-Linux-x86_64.sh
-
-while for MacOSx use:
-
-    curl -o https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
-    bash Miniconda3-latest-MacOSX-x86_64.sh
-
-Answer ``yes`` to the question:
-
-    Do you wish the installer to prepend the Miniconda3 install location
-    to PATH in your /home/gmatteo/.bashrc ? [yes|no]
-    [no] >>> yes
-
-Source your ``.bashrc`` file to activate the changes done by ``miniconda`` to your ``$PATH``:
-
-    source ~/.bashrc
-
-Create a new conda environment (let's call it `abienv`) based on python3.6 with:
-
-    conda create --name abienv python=3.6
-
-and activate it with:
-
-    source activate abienv
-
-You should see the name of the conda environment in the shell prompt.
-
-Now add ``conda-forge``, ``matsci`` and ``abinit`` to your conda channels with:
-
-    conda config --add channels conda-forge
-    conda config --add channels matsci
-    conda config --add channels abinit
-
-These are the channels from which we will download pymatgen, abipy and abinit.
-
-To install AbiPy from the [abinit-channel](https://anaconda.org/abinit) use::
-
-    conda install abipy -c abinit
-
-Now open the python interpreter and import the following three modules
-to check that the python installation is OK:
-
-```python
-import spglib
-import pymatgen
-from abipy import abilab 
-```
-
-At this point, we have installed the latest version of AbiPy and we can
-start to use the AbiPy scripts from the command line to analyze the output results.
-Note, however, that you won't be able to invoke Abinit from Abipy.
-Firstly because we haven't installed Abinit yet (DOH!), secondly because
-we have to generate two configuration files to tell AbiPy how to execute the Fortran code. 
-
-Let's focus on the Abinit installation first.
-To install the *parallel* version of abinit from the ``abinit channel`` use:
-
-    conda install abinit --channel abinit
-
-The Abinit executables are placed inside the anaconda directory associated to the ``abienv`` environment:
-
-    which abinit
-    /Users/gmatteo/anaconda3/envs/abienv/bin/abinit
-
-To perform a basic validation of the build, execute:
-
-    abinit -b
-
-Now we explain how to prepare the configuration files required by Abipy.
-For a more detailed description of the syntax used in this configuration file
-please consult the [TaskManager documentation](http://abinit.github.io/abipy/workflows/taskmanager.html).
-
-Copy the `scheduler.yml` and `manager.yml` files from the `managers` directory 
-of this repository to your `$HOME/.abinit/abipy` directory.
-Open `manager.yml` and make sure that the `pre_run` section contains the shell commands 
-needed to setup the environment before launching Abinit (e.g. Abinit is in $PATH)
-
-At this point, execute:
-
-    abicheck.py
-
-You should see:
-
-```shell
-$ abicheck.py
-AbiPy Manager:
-[Qadapter 0]
-ShellAdapter:localhost
-Hardware:
-   num_nodes: 2, sockets_per_node: 1, cores_per_socket: 2, mem_per_node 4096,
-Qadapter selected: 0
-
-Abinitbuild:
-Abinit Build Information:
-    Abinit version: 8.8.2
-    MPI: True, MPI-IO: True, OpenMP: False
-    Netcdf: True
-
-Abipy Scheduler:
-PyFlowScheduler, Pid: 19379
-Scheduler options: {'weeks': 0, 'days': 0, 'hours': 0, 'minutes': 0, 'seconds': 5}
-
-Installed packages:
-Package         Version
---------------  ---------
-system          Darwin
-python_version  3.6.5
-numpy           1.14.3
-scipy           1.1.0
-netCDF4         1.4.0
-apscheduler     2.1.0
-pydispatch      2.0.5
-yaml            3.12
-pymatgen        2018.6.11
-
-
-Abipy requirements are properly configured
-```
-
-If the script fails with the error message:
-
-    Abinit executable does not support netcdf
-    Abipy requires Abinit version >= 8.0.8 but got 0.0.0
-
-it means that your environment is not property configured or that there's a problem
-with the binary executable.
-In this case, look at the files produced in the temporary directory of the flow.
-The script reports the name of the directory, something like:
-
-    CRITICAL:pymatgen.io.abinit.tasks:Error while executing /var/folders/89/47k8wfdj11x035svqf8qnl4m0000gn/T/tmp28xi4dy1/job.sh
-
-Check the `job.sh` script for possible typos, then search for possible error messages in `run.err`.
-
-The last test consists in executing a small calculation with AbiPy and Abinit.
-Inside the shell, execute:
-
-    abicheck.py --with-flow
-
-to run a GS + NSCF band structure calculation for Si.
-If the software stack is properly configured, the output should end with:
-
-```shell
-Work #0: <BandStructureWork, node_id=313436, workdir=../../../../var/folders/89/47k8wfdj11x035svqf8qnl4m0000gn/T/tmpygixwf9a/w0>, Finalized=True
-  Finalized works are not shown. Use verbose > 0 to force output.
-
-all_ok reached
-
-Submitted on: Sat Jul 28 09:14:28 2018
-Completed on: Sat Jul 28 09:14:38 2018
-Elapsed time: 0:00:10.030767
-Flow completed successfully
-
-Calling flow.finalize()...
-
-Work #0: <BandStructureWork, node_id=313436, workdir=../../../../var/folders/89/47k8wfdj11x035svqf8qnl4m0000gn/T/tmpygixwf9a/w0>, Finalized=True
-  Finalized works are not shown. Use verbose > 0 to force output.
-
-all_ok reached
-
-
-Test flow completed successfully
-```
-
-Great, if you've reached this part it means that you've installed AbiPy and Abinit on your machine!
-We can finally start to run the scripts in this repo or use one of the AbiPy script to analyze  the results.
-
-Select one of the directory with a lesson_*.py script e.g. sigeph/lesson_sigeph.py.
+As a test of the coherent installation of AbiPy and abinit, select one of the directory with a lesson_*.py script e.g. sigeph/lesson_sigeph.py.
 Read the corresponding README.md file. Then look at the python script and use:
 
     ./lesson_sigeph.py
