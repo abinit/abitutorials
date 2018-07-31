@@ -49,7 +49,7 @@ You might only be interested in getting a flavour of how to use Abipy (or what a
 Then options 1 or 2 are convenient.
 
 However, if you really plan to use Abipy, we suggest you choose 2 or 3. Really running the examples is the most efficient use of the tutorial.
-Of course, in order to use Abipy, you will obviously need to install it as well as abinit. 
+Of course, in order to use Abipy, you will obviously need to install it, as well as to install abinit. 
 Choosing 2 only spare you the possible trouble of installing jupyter. The installation of Abipy and abinit (also using git) in a coherent way
 is presented in the [Abipy README on Github](https://github.com/abinit/abipy), 
 or in [the stable version of the Abipy doc](https://pythonhosted.org/abipy/installation.html),  
@@ -88,7 +88,7 @@ Then, you might also like to install graphviz and python-graphviz, in order to a
 More detailed instructions on how to install with conda are available
 in the [abiconda](https://github.com/abinit/abiconda) documentation.
 
-As an alternative to conda, you can use [pip](https://pip.pypa.io/en/stable/) to install python code with:
+As an alternative to conda, you can use [pip](https://pip.pypa.io/en/stable/) to install python code for jupyter with:
 
     pip install jupyter abipy
 
