@@ -9,7 +9,7 @@
 About
 =====
 
-This repository contains notebook-based documentation for [AbiPy](https://github.com/abinit/abipy)
+This repository contains notebook-based documentation for [AbiPy](https://github.com/abinit/abipy).
 This augments our Sphinx-based [documentation](http://pythonhosted.org/abipy/) with jupyter notebooks 
 containing interactive tutorials and examples.
 Additional examples are available on the:
@@ -21,51 +21,72 @@ Additional examples are available on the:
 How to use the tutorials
 ========================
 
-The repository contains the input required to run the lessons as well as the input files,
-the main output in text format and the netcdf files.
+The repository contains the input required to run the lessons on Abipy, as well as the input files,
+the main output in text format and the netcdf files. The workhorse of these tutorials are so-called 'jupyter notebooks'.
 There are several options available to you depending on the software installed on your machine.
 
 You can:
 
-- Follow the tutorial using the static 
-  [HTML version](https://nbviewer.jupyter.org/github/abinit/abitutorials/blob/master/abitutorials/index.ipynb),
-  and look at the input/output files in the github repository **without installing** AbiPy and Abinit.
+1. Follow the tutorial using the static 
+   [HTML version](https://nbviewer.jupyter.org/github/abinit/abitutorials/blob/master/abitutorials/index.ipynb),
+   and look at the input/output files in jupyter notebooks in the github repository **without installing** AbiPy and Abinit.
 
-- Click the **Launch Binder** badge to start a Docker image.
-  The image contains Abinit, AbiPy and all the other python dependencies
-  required to run the code inside the jupyter notebooks.
-  The notebook will be opened in your browser after building.
-  Go into the `abitutorials` directory and click the `index.ipynb` file to open the index file.
-  Select e.g. the `Structure` notebook and start to run the python code in the jupyter cells
-  (select the cell and click the `Run` button). 
-  See also the other options available in the `Cell` tab.
+2. Click the **Launch Binder** badge to start a Docker image.
+   The image contains Abinit, AbiPy and all the other python dependencies
+   required to run the code inside the jupyter notebooks.
+   The notebook will be opened in your browser after building.
+   Go into the `abitutorials` directory and click the `index.ipynb` file to open the index file.
+   Select e.g. the `Structure` notebook and start to run the python code in the jupyter cells
+   (select the cell and click the `Run` button). 
+   See also the other options available in the `Cell` tab.
 
-- Install AbiPy and Abinit on your machine and use the python scripts as well as the netcdf files 
-  in the github repository like a real pythonista.
+3. Install AbiPy, Abinit and Jupyter on your machine (see later) and use the python scripts as well as the netcdf files 
+   in the github repository (you also need git), like a real pythonista. You will need to execute the jupyter notebooks, and thus 
+   install all the required dependencies: python, jupyter, abipy, abinit  and obviously a web browser (DOH!).
 
-If you opt for the last option, use:
+Of course, choosing between these options depends on what is your actual interest with Abipy.
+You might only be interested in getting a flavour of how to use Abipy (or what are these Abipy tutorials), without actually using Abipy.
+Then options 1 or 2 are convenient.
 
-    git clone https://github.com/abinit/abitutorials
+However, if you really plan to use Abipy, we suggest you choose 2 or 3. Really running the examples is the most efficient use of the tutorial.
+Of course, in order to use Abipy, you will obviously need to install it as well as abinit. 
+Choosing 2 only spare you the possible trouble of installing jupyter. The installation of Abipy and abinit (also using git) in a coherent way
+is presented in the [Abipy README on Github](https://github.com/abinit/abipy). 
 
-to clone this repository on your machine.
-
-To open the notebook in your browser, use the command:
+If you opt for option 3, after installing Abipy+abinit+jupyter as described below, you will have to
+open the notebook in your browser 
 
     jupyter notebook FILE.ipynb
 
-where FILE.ipynb is one the ipython notebooks available inside the `abitutorials`
-directory.
-
-To open, for instance, the notebook for the first lessons, use:
+where FILE.ipynb is one the ipython notebooks available inside the `abitutorials` directory. 
+To open, for instance, the notebook for the first lesson, use:
 
     cd abitutorials
     jupyter notebook base1/lesson_base1.ipynb
 
-Note that the notebook contains python code that will invoke Abinit 
-so before executing the jupyter notebook you need to install all the required dependencies:
-python, jupyter, abipy, abinit  and obviously a web browser (DOH!)
+Installing jupyter and running the notebooks.
+=============================================
 
-In principle, you can use [pip](https://pip.pypa.io/en/stable/) to install python code with:
+First step, download the abitutorials
+
+    git clone https://github.com/abinit/abitutorials
+
+In case you followed the conda way to [install Abipy and abinit](https://github.com/abinit/abipy), the installation of jupyter is very simple.
+Be sure to install it *in the same conda environment* as Abipy and abinit, though.
+
+Inside the abitutorials directory, issue
+
+    conda install --file ./requirements.txt
+
+Then, you might also like to install graphviz and python-graphviz, in order to allow the full vizualization of figures in the tutorials.
+
+    conda install graphviz
+    conda install python-graphviz 
+
+More detailed instructions on how to install with conda are available
+in the [abiconda](https://github.com/abinit/abiconda) documentation.
+
+As an alternative to conda, you can use [pip](https://pip.pypa.io/en/stable/) to install python code with:
 
     pip install jupyter abipy
 
@@ -77,13 +98,9 @@ If you love building software from source, feel free to use this approach and
 use the configuration examples available on the [abiconfig repository](https://github.com/abinit/abiconda)
 to build Abinit on your machine/cluster.
 
-If you prefer to skip the compilation process, 
-we suggest using the [conda](https://conda.io/miniconda.html) to install Abipy and (optionally) Abinit.
-In what follows, we give the list of steps required to bootstrap everything with conda.
-More detailed instructions on how to install with conda are available
-in the [abiconda](https://github.com/abinit/abiconda) documentation.
 
-## How to install Abinit in five steps <a id="Abinit_in_five_steps"></a>
+## How to install Abipy and abinit in five steps <a id="Abinit_in_five_steps"></a>
+
 
 To install AbiPy with conda, download the [miniconda installer](https://conda.io/miniconda.html)
 If you are a Linux user, download and install `miniconda` on your local machine with:
