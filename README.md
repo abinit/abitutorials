@@ -80,10 +80,13 @@ Inside the *abitutorials* directory, issue
 
     conda install --file ./requirements.txt
 
-Then, you might also like to install graphviz and python-graphviz, in order to allow the full vizualization of figures in the tutorials.
+Then, you might also like to install some other python packages, that are used in selected tutorials or for specific abipy commands.
+Among the list, graphviz and python-graphviz, in order to allow the full vizualization of figures in the tutorials,
+and pybtex if you want to extract references from CIF files .
 
     conda install graphviz
     conda install python-graphviz 
+    conda install pybtex
 
 More detailed instructions on how to install with conda are available
 in the [abiconda](https://github.com/abinit/abiconda) documentation.
