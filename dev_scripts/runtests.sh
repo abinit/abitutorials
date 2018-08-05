@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e  # exit on first error
 
-#echo "PMG_MAPI_KEY: 8pkvwRLQSCVbW2Fe" > ${HOME}/.pmgrc.yaml
+echo "PMG_MAPI_KEY: 8pkvwRLQSCVbW2Fe" > ${HOME}/.pmgrc.yaml
 
 abinit --version
 abinit --build

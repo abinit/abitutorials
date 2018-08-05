@@ -39,6 +39,7 @@ class NotebookTest(AbipyTest):
 
     def test_notebooks(self):
         """Testing jupyter notebooks"""
+        retcode = 0
         for i, path in enumerate(self.nb_paths):
             print("Building notebook:", path)
             nb, errors = self.run_nbpath(path)
@@ -46,8 +47,12 @@ class NotebookTest(AbipyTest):
             #expected_errors = EXPECTED_ERRORS.get(path, 0)
             #self.assertEqual(len(errors), expected_errors,
             #                 msg="Errors in nb {} found: {}".format(path, errors))
-            assert errors == []
+            if errors:
+                retcode += 1
+                for e in errors:
+                    print(e)
             #if i == 1: break
+        assert retcode == 0
 
     def run_nbpath(self, nbpath):
         """Test that the notebook in question runs all cells correctly."""
