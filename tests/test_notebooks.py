@@ -35,9 +35,7 @@ class NotebookTest(AbipyTest):
         #nb_paths = [path for path in nbpaths
         #                 if not any([path.startswith(e) for e in EXCLUDE_NBS])]
         self.nb_paths = sorted(nbpaths)
-        print("top", top)
-        print("nbpaths", self.nb_paths)
-        #raise ValueError()
+        #print("top", top, "\nnbpaths", self.nb_paths)
 
     def test_notebooks(self):
         """Testing jupyter notebooks"""
@@ -49,4 +47,44 @@ class NotebookTest(AbipyTest):
             #self.assertEqual(len(errors), expected_errors,
             #                 msg="Errors in nb {} found: {}".format(path, errors))
             assert errors == []
-            if i == 1: break
+            #if i == 1: break
+
+    def run_nbpath(self, nbpath):
+        """Test that the notebook in question runs all cells correctly."""
+        nb, errors = notebook_run(nbpath)
+        return nb, errors
+
+
+def notebook_run(path):
+    """
+    Execute a notebook via nbconvert and collect output.
+
+    Taken from
+    https://blog.thedataincubator.com/2016/06/testing-jupyter-notebooks/
+
+    Args:
+        path (str): file path for the notebook object
+
+    Returns: (parsed nb object, execution errors)
+
+    """
+    import nbformat
+    import tempfile
+    import subprocess
+    dirname, __ = os.path.split(path)
+    os.chdir(dirname)
+    with tempfile.NamedTemporaryFile(suffix=".ipynb") as fout:
+        args = ["jupyter", "nbconvert", "--to", "notebook", "--execute",
+                "--ExecutePreprocessor.timeout=300",
+                "--ExecutePreprocessor.allow_errors=True",
+                "--output", fout.name, path]
+        subprocess.check_call(args)
+
+        fout.seek(0)
+        nb = nbformat.read(fout, nbformat.current_nbformat)
+
+    errors = [output for cell in nb.cells if "outputs" in cell
+              for output in cell["outputs"]\
+              if output.output_type == "error"]
+
+    return nb, errors
