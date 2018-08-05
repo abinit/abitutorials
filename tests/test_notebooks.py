@@ -3,6 +3,7 @@ from __future__ import print_function, division, unicode_literals, absolute_impo
 
 import sys
 import os
+import subprocess
 
 #pack_dir, x = os.path.split(os.path.abspath(__file__))
 #pack_dir, x = os.path.split(pack_dir)
@@ -42,16 +43,23 @@ class NotebookTest(AbipyTest):
         retcode = 0
         for i, path in enumerate(self.nb_paths):
             print("Building notebook:", path)
-            nb, errors = self.run_nbpath(path)
-            #nb, errors = self.run_nbpath(os.path.join(module_dir, path))
-            #expected_errors = EXPECTED_ERRORS.get(path, 0)
-            #self.assertEqual(len(errors), expected_errors,
-            #                 msg="Errors in nb {} found: {}".format(path, errors))
-            if errors:
+            try:
+                nb, errors = self.run_nbpath(path)
+                #nb, errors = self.run_nbpath(os.path.join(module_dir, path))
+                #expected_errors = EXPECTED_ERRORS.get(path, 0)
+                #self.assertEqual(len(errors), expected_errors,
+                #                 msg="Errors in nb {} found: {}".format(path, errors))
+                if errors:
+                    retcode += 1
+                    for e in errors:
+                        print(e)
+
+            except subprocess.CalledProcessError as exc:
+                print(exc)
                 retcode += 1
-                for e in errors:
-                    print(e)
+
             #if i == 1: break
+
         assert retcode == 0
 
     def run_nbpath(self, nbpath):
@@ -75,7 +83,7 @@ def notebook_run(path):
     """
     import nbformat
     import tempfile
-    import subprocess
+
     dirname, __ = os.path.split(path)
     os.chdir(dirname)
     with tempfile.NamedTemporaryFile(suffix=".ipynb") as fout:
