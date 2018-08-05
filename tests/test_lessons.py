@@ -72,14 +72,16 @@ class TestLessons(AbipyTest):
         flow = build_flow_alas_phonons(self.get_options())
         self.abivalidate_flow(flow)
 
-    def test_lesson_elastic(self):
-        """Testing elastic lessons."""
-        from abitutorials.elastic.lesson_elastic import build_flow, build_ngkpt_convflow
-        flow = build_flow(self.get_options())
-        self.abivalidate_flow(flow)
+    # TODO
+    #def test_lesson_elastic(self):
+    #    """Testing elastic lessons."""
+    #    self.skip_if_abinit_not_ge("8.9.3")
+    #    from abitutorials.elastic.lesson_elastic import build_flow, build_ngkpt_convflow
+    #    flow = build_flow(self.get_options())
+    #    self.abivalidate_flow(flow)
 
-        flow = build_ngkpt_convflow(self.get_options())
-        self.abivalidate_flow(flow)
+    #    flow = build_ngkpt_convflow(self.get_options())
+    #    self.abivalidate_flow(flow)
 
     def test_lesson_eph_al(self):
         """Testing eph_al lessons."""

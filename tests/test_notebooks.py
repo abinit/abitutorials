@@ -29,7 +29,7 @@ class NotebookTest(AbipyTest):
         # Get all ipynb files
         top = os.path.dirname(os.path.abspath(__file__))
         top = os.path.abspath(os.path.join(top, ".."))
-        nbpaths = find_exts(top, ".ipynb", exclude_dirs=".ipynb_checkpoints")
+        nbpaths = find_exts(top, ".ipynb", exclude_dirs=".ipynb_checkpoints|old_notebooks")
         # Basenames must be unique.
         assert len(nbpaths) == len(set([os.path.basename(p) for p in nbpaths]))
         #nb_paths = [path for path in nbpaths
