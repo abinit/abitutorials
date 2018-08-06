@@ -123,7 +123,7 @@ def make_inputs(ngkpt, dos_ngkpt=(6, 6, 6), paral_kgb=0):
     return multi.split_datasets()
 
 
-def build_g0w0_flow(workdir="flow_g0w0", ngkpt=(2, 2, 2)):
+def build_g0w0_flow(options=None, ngkpt=(2, 2, 2)):
     """
     Build and return a flow with two works.
     The first work is a standard KS band-structure calculation that consists of
@@ -144,6 +144,7 @@ def build_g0w0_flow(workdir="flow_g0w0", ngkpt=(2, 2, 2)):
     # Call make_input to build our 4 input objects.
     scf, bands_nscf, dos_nscf, gw_nscf, scr, sig = make_inputs(ngkpt=ngkpt)
 
+    workdir = options.workdir if (options and options.workdir) else "flow_g0w0"
     flow = flowtk.Flow(workdir=workdir)
 
     # Add KS band structure work (SCF-GS followed by two NSCF runs
@@ -171,7 +172,7 @@ def build_g0w0_flow(workdir="flow_g0w0", ngkpt=(2, 2, 2)):
 
 @flowtk.flow_main
 def main(options):
-    return build_g0w0_flow()
+    return build_g0w0_flow(options)
 
 
 if __name__ == "__main__":

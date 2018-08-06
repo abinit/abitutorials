@@ -89,12 +89,11 @@ class TestLessons(AbipyTest):
         flow = build_flow(self.get_options())
         self.abivalidate_flow(flow)
 
-    # TODO
-    #def test_lesson_g0w0(self):
-    #    """Testing g0w0 lessons."""
-    #    from abitutorials.g0w0.lesson_g0w0 import build_g0w0_flow
-    #    flow = build_g0w0_flow(self.get_options())
-    #    self.abivalidate_flow(flow)
+    def test_lesson_g0w0(self):
+        """Testing g0w0 lessons."""
+        from abitutorials.g0w0.lesson_g0w0 import build_g0w0_flow
+        flow = build_g0w0_flow(self.get_options())
+        self.abivalidate_flow(flow)
 
     #def test_lesson_optic(self):
     #    """Testing g0w0 lessons."""
