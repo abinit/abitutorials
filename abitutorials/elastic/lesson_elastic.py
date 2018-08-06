@@ -31,7 +31,11 @@ def make_scf_input(ngkpt=(4, 4, 4)):
     """
     This function constructs the input file for the GS calculation of
     AlAs in hypothetical wurzite (hexagonal) structure.
-    In principle, the stucture should be relaxed before starting the calculation
+    In principle, the stucture should be relaxed before starting the calculation,
+    here we use the *unrelaxed* geometry of the official tutorial.
+
+    Args:
+        ngkpt: K-mesh used both in the GS and in the DFPT part.
     """
 
     # Initialize structure. Use enough significant digits
@@ -56,7 +60,7 @@ def make_scf_input(ngkpt=(4, 4, 4)):
     gs_inp = abilab.AbinitInput(structure, pseudos=pseudos)
 
     # Set other important variables (consistent with tutorial)
-    # Aall the other DFPT runs will inherit these parameters.
+    # All the other DFPT runs will inherit these parameters.
     gs_inp.set_vars(
         nband=8,
         ecut=6.0,
@@ -84,7 +88,7 @@ def build_flow(options=None):
 	- 4 Phonon Tasks (Gamma point)
 	- 6 Elastic tasks (3 uniaxial + 3 shear strain)
 
-    The Phonon tasks and the elastic task will read the DDK produced at the beginning
+    The Phonon tasks and the elastic task will read the 3 DDK files produced at the beginning
     """
     workdir = options.workdir if (options and options.workdir) else "flow_elastic"
 
