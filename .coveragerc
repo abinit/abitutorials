@@ -1,6 +1,6 @@
 # .coveragerc to control coverage.py
 [run]
-source = abipy
+source = abitutorials
 
 [report]
 # Regexes for lines to exclude from consideration
@@ -26,13 +26,4 @@ ignore_errors = True
 omit =
     */python?.?/*
     */site-packages/*
-    abipy/data/*
-    abipy/examples/*
-    abipy/htc/*
-    abipy/gui/*
-    abipy/gw/*
-    abipy/extensions/*
-    abipy/gw/*
-    abipy/scripts/*
-    abipy/integration_tests/*
     ./docs/

@@ -11,10 +11,9 @@ abicheck.py --with-flow
 #nosetests abipy -v --with-coverage --cover-package=abipy --logging-level=INFO
 
 # Run unit tests with pytest. No doctests if 2.7
-pytest tests -v 
-#pytest --cov-config .coveragerc --cov=abipy -v  abipy # --doctest-modules 
-# This is to run the integration tests (append results)
-# pytest --cov-config .coveragerc --cov=abipy --cov-append -v abipy/integration_tests
+if [[ "${ABIPY_PYTEST}" == "yes" ]]; then 
+    pytest -n 2 --cov-config=.coveragerc --cov=abitutorials -v tests 
+fi
 
 # Generate documentation
 #if [[ "${ABIPY_SPHINX}" == "yes" ]]; then
