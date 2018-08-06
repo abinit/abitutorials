@@ -1,77 +1,57 @@
 language: python
 cache: pip
-
-#dist: precise
 sudo: false
-
 env:
   global:
-    - ABINIT_VERSION=8.8.2
-    - ABIPY_PYTEST=yes
-    - OPENBLAS_NUM_THREADS=1
-    - OMP_NUM_THREADS=1
-
+  - ABINIT_VERSION=8.8.2
+  - ABIPY_PYTEST=yes
+  - OPENBLAS_NUM_THREADS=1
+  - OMP_NUM_THREADS=1
+  - secure: l+S0aIlco/q33mJhkX76/WykVvALOIPSBIq8smQUUXbGj7kBCjNLCj8P26WnjB5FwUFKjh5svlCrT0oqdiiSimVUuUKdozB8zKa0fyMa8G1//WKSwwsfVlQlcDxWEh9pT7Ox39Jau1ODz31tYvVwdCgEQohk/0uc92uLp4/Q9gSfLdtyW1qGx+2fFBO/Slfb6makdYsRk+QQmHwC+lqnghhzP4dIbWmSy1+EDGcSQN9UFWPEcYi3Thh9TAkZ1iQEEDQptebddESYPPHlgvWfk1hGaBG481jI/Ydmz6FFbXkLCY/bLZ/cntzPEImZFJVGEbK5nfWJpd6es9KcslMPDW5sDWbd6pL4W/mkUGdAqq/Mi/hr/yECmBLmbt13BzyPDqbfwkv/kRGqIKOHVv6RtpgaIoZXe/OR/M9kY+lI6/Oye7MgknRqzYqt6Nh6bXno3LyvDHwfApN9aUqUx6LFAmpZ2/Ki6CAvl54oXR9CPNQPzDQ5Rprjia4GJogPHQ2MsceNbIimZJXSqN9vLnhB5aYF5Oh+9out1Uv9n2D42vadguCvvjUJJWLMfqFtLDT9rme1Ye1cHtajDvDpXS1ddfvts5bum17nLUiE+mfViJBjwvJwSEGJoeQzfln4i4jQo3VQFoZDDRPJKT3cooeNdhtB09gfF0SbcB16A2DCquk=
 matrix:
   include:
-    - os: linux
-      python: 3.6
-      env: 
-        - ABIPY_INSTALLER=conda_environment 
-    - os: linux
-      python: 3.6
-      env: 
-        - ABIPY_INSTALLER=conda ABIPY_COVERALLS=yes
-
+  - os: linux
+    python: 3.6
+    env:
+    - ABIPY_INSTALLER=conda_environment
+  - os: linux
+    python: 3.6
+    env:
+    - ABIPY_INSTALLER=conda ABIPY_COVERALLS=yes
 install:
-  #- sudo apt-get update
-  - env
-  - ulimit -s unlimited
-  - |
-      if [ "${ABIPY_INSTALLER}" == "conda" ]; then
-        source dev_scripts/conda_get.sh
+- env
+- ulimit -s unlimited
+- |
+  if [ "${ABIPY_INSTALLER}" == "conda" ]; then
+    source dev_scripts/conda_get.sh
 
-        # Add channels
-        conda config --add channels conda-forge
-        conda config --add channels matsci
-        conda config --add channels abinit
-        # Install abinit and abipy from conda channels.
-        conda install -y --file ./requirements.txt
-        conda install -y abinit
+    # Add channels
+    conda config --add channels conda-forge
+    conda config --add channels matsci
+    conda config --add channels abinit
+    # Install abinit and abipy from conda channels.
+    conda install -y --file ./requirements.txt
+    conda install -y abinit
 
-      elif [ "${ABIPY_INSTALLER}" == "conda_environment" ]; then
-          # Build conda env from environment.yml produced with:
-          # conda env export | grep -v "^prefix: " > environment.yml
-          source dev_scripts/conda_get.sh
-          conda env update --file=binder/environment.yml
-          conda activate abitutorials
-      fi
-
-  - mkdir -p ${HOME}/.abinit/abipy 
-  - cp managers/scheduler.yml ${HOME}/.abinit/abipy/scheduler.yml
-  - cp managers/manager.yml ${HOME}/.abinit/abipy/manager.yml
-
-#before_script:
-    # This to run tests requiring a graphical user e.g. mayavi
-    # https://docs.travis-ci.com/user/gui-and-headless-browsers/#Using-xvfb-to-Run-Tests-That-Require-a-GUI
-    #- "export DISPLAY=:99.0"
-    #- "sh -e /etc/init.d/xvfb start"
-    #- sleep 3 # give xvfb some time to start
-    # https://github.com/travis-ci/travis-ci/issues/6307
-    #- if [[ "${TRAVIS_OS_NAME}" == "osx" ]]; then rvm get head; fi 
-
-# command to run tests
-script: ./dev_scripts/runtests.sh
-
+  elif [ "${ABIPY_INSTALLER}" == "conda_environment" ]; then
+      # Build conda env from environment.yml produced with:
+      # conda env export | grep -v "^prefix: " > environment.yml
+      source dev_scripts/conda_get.sh
+      conda env update --file=binder/environment.yml
+      conda activate abitutorials
+  fi
+- mkdir -p ${HOME}/.abinit/abipy
+- cp managers/scheduler.yml ${HOME}/.abinit/abipy/scheduler.yml
+- cp managers/manager.yml ${HOME}/.abinit/abipy/manager.yml
+script: "./dev_scripts/runtests.sh"
 branches:
   only:
-    - master
-
+  - master
 after_success:
-    - if [[ "${ABIPY_COVERALLS}" == "yes" ]]; then coveralls; fi
-
+- if [[ "${ABIPY_COVERALLS}" == "yes" ]]; then coveralls; fi
 notifications:
   email:
     recipients:
-      - gmatteo@gmail.com
+    - gmatteo@gmail.com
     on_success: change
     on_failure: always
