@@ -1,18 +1,15 @@
 #!/bin/bash
 set -e  # exit on first error
 
-echo "PMG_MAPI_KEY: 8pkvwRLQSCVbW2Fe" > ${HOME}/.pmgrc.yaml
+echo "PMG_MAPI_KEY: ${PMG_MAPI_KEY}" > ${HOME}/.pmgrc.yaml
 
 abinit --version
 abinit --build
 abicheck.py --with-flow
 
-#nosetests -v --with-coverage --cover-package=abipy --logging-level=INFO
-#nosetests abipy -v --with-coverage --cover-package=abipy --logging-level=INFO
-
-# Run unit tests with pytest. No doctests if 2.7
+# Run unit tests with pytest.
 if [[ "${ABIPY_PYTEST}" == "yes" ]]; then 
-    pytest -n 2 --cov-config=.coveragerc --cov=abitutorials -v tests 
+    pytest --cov-config=.coveragerc --cov=abitutorials -v tests 
 fi
 
 # Generate documentation
