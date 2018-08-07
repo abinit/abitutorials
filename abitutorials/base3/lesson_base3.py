@@ -26,7 +26,7 @@ def build_ngkpt_flow(options):
     shiftk = [float(s) for s in "0.5 0.5 0.5 0.5 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.5".split()]
 
     # Build MultiDataset object (container of `ndtset` inputs).
-    # Structure is initialize from CIF file.
+    # Structure is initialized from CIF file.
     multi = abilab.MultiDataset(structure=abidata.cif_file("si.cif"),
                                 pseudos=abidata.pseudos("14si.pspnc"), ndtset=len(ngkpt_list))
 
@@ -45,7 +45,7 @@ def build_ngkpt_flow(options):
 
 def build_relax_flow(options):
     """
-    Crystalline silicon: computation of the optimal lattice parameter
+    Crystalline silicon: computation of the optimal lattice parameter.
     Convergence with respect to the number of k points. Similar to tbase3_4.in
     """
     # Structural relaxation for different k-point samplings.
