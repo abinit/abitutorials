@@ -45,7 +45,7 @@ def build_ngkpt_flow(options):
 
 def build_relax_flow(options):
     """
-    Crystalline silicon: computation of the optimal lattice parameter
+    Crystalline silicon: computation of the optimal lattice parameter.
     Convergence with respect to the number of k points. Similar to tbase3_4.in
     """
     # Structural relaxation for different k-point samplings.
