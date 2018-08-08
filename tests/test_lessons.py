@@ -110,3 +110,9 @@ class TestLessons(AbipyTest):
     #    from abitutorials.sigeph.lesson_sigeph import build_flow
     #    flow = build_flow(self.get_options())
     #    self.abivalidate_flow(flow)
+
+    #def test_lesson_spin(self):
+    #    """Testing spin lessons."""
+    #    from abitutorials.spin.lesson_spin import build_flow
+    #    flow = build_flow(self.get_options())
+    #    self.abivalidate_flow(flow)
