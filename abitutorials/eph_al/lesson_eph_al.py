@@ -68,7 +68,7 @@ def build_flow(options):
     nscf_kpath_inp.set_kpath(ndivsm=10)
 
     # Build NSCF inputs with denser k-meshes
-    # This steps generates the WFK files used to compute the Eliashberg function.
+    # This step generates the WFK files used to compute the Eliashberg function.
     # We have a cubic material so we only need to specify the first number of divisions.
     nk_list = [16, 24, 32]
 
@@ -88,7 +88,7 @@ def build_flow(options):
 
     # Generate Phonon work with 4x4x4 q-mesh
     # Reuse the variables from GS input and let AbiPy handle the generation of the input files
-    # Note that the q-point grid is a sub-grid of the k-mesh so we don't need WFQ on k+q mesh.
+    # Note that the q-point grid is a sub-grid of the k-mesh so we do not need WFQ on k+q mesh.
     ddb_ngqpt = [4, 4, 4]
     ph_work = flowtk.PhononWork.from_scf_task(work0[0], ddb_ngqpt, is_ngqpt=True)
     flow.register_work(ph_work)

@@ -20,11 +20,11 @@ def make_inputs(ngkpt, dos_ngkpt=(6, 6, 6), paral_kgb=0):
     Return:
         Six AbinitInput objects:
 
-        [0]: ground state run to get the density.
+        [0]: Ground state run to get the density.
         [1]: NSCF run to get the KS band structure on a high-symmetry k-path.
         [2]: NSCF run with a homogeneous sampling of the BZ to compute the KS DOS with `dos_ngkpt`.
         [3]: NSCF run with empty states to prepare the GW steps.
-        [4]: calculation of the screening from the WFK file computed in dataset 4.
+        [4]: Calculation of the screening from the WFK file computed in dataset 4.
         [5]: Use the SCR file computed at step 5 and the WFK file computed in dataset 4 to get the GW corrections.
     """
     multi = abilab.MultiDataset(abidata.cif_file("si.cif"),
@@ -33,8 +33,8 @@ def make_inputs(ngkpt, dos_ngkpt=(6, 6, 6), paral_kgb=0):
     # Add mnemonics to input file.
     multi.set_mnemonics(True)
 
-    # This grid is the most economical and we are gonna use it for the GS
-    # Note that it but does not contain Gamma point so we cannot use it to
+    # This grid is the most economical and we will use it for the GS.
+    # Note that it does not contain Gamma point so we cannot use it to
     # compute the QP corrections at the Gamma point.
     scf_kmesh = dict(
         ngkpt=ngkpt,
