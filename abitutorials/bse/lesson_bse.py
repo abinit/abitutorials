@@ -41,7 +41,7 @@ def make_scf_nscf_bse_inputs(ngkpt=(6, 6, 6), ecut=6, ecuteps=3,
     multi[0].set_vars(tolvrs=1e-8)
     multi[0].set_kmesh(ngkpt=ngkpt, shiftk=(0, 0, 0))
 
-    # NSCF run on a randomly shifted k-mesh (improve the converge of optical properties)
+    # NSCF run on a randomly shifted k-mesh (improve the convergence of optical properties)
     multi[1].set_vars(
         iscf=-2,
         nband=15,
@@ -56,7 +56,7 @@ def make_scf_nscf_bse_inputs(ngkpt=(6, 6, 6), ecut=6, ecuteps=3,
     multi[2].set_vars(
         optdriver=99,                 # BS calculation
         chksymbreak=0,                # To skip the check on the k-mesh.
-        bs_calctype=1,                # L0 is contstructed with KS orbitals and energies.
+        bs_calctype=1,                # L0 is constructed with KS orbitals and energies.
         mbpt_sciss=mbpt_sciss,        # Scissors operator used to correct the KS band structure.
         bs_exchange_term=1,           # Exchange term included.
         bs_coulomb_term=21,           # Coulomb term with model dielectric function.
