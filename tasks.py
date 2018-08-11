@@ -26,10 +26,10 @@ def make_html(ctx):
     #nb_paths = [path for path in nbpaths
     #                 if not any([path.startswith(e) for e in EXCLUDE_NBS])]
     #self.nb_paths = sorted(nbpaths)
-    print("top", top, "\nnbpaths", nbpaths)
+    #print("top", top, "\nnbpaths", nbpaths)
 
     retcode = 0
-    for nbpath in nbpaths:
+    for path in nbpaths:
         print("Building notebook:", path)
         try:
             nb, errors = notebook_run(path, with_html=True)
@@ -37,7 +37,9 @@ def make_html(ctx):
                 retcode += 1
                 for e in errors:
                     print(e)
+
         except subprocess.CalledProcessError as exc:
+            retcode += 1
             print(exc)
 
     return retcode
@@ -149,7 +151,6 @@ def notebook_run(path, with_html=False):
     import nbformat
     import tempfile
     import subprocess
-    html_path = path.replace(".ipynb", ".html")
 
     with tempfile.NamedTemporaryFile(suffix=".ipynb") as fout:
         args = ["jupyter", "nbconvert", "--to", "notebook", "--execute",
@@ -164,7 +165,8 @@ def notebook_run(path, with_html=False):
         errors = [output for cell in nb.cells if "outputs" in cell
             for output in cell["outputs"] if output.output_type == "error"]
 
-        if with_html:
+        if not errors and with_html:
+            html_path = path.replace(".ipynb", ".html")
             args = ["jupyter", "nbconvert", "--to", "html", "--execute",
                     "--ExecutePreprocessor.timeout=300",
                     "--ExecutePreprocessor.allow_errors=True",

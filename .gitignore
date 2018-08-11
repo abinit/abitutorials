@@ -10,6 +10,9 @@ __pycache__/
 abinb_*.ipynb
 __abinb_workdir__
 
+ipynb_jsmoldata/
+*.html
+
 # Distribution / packaging
 .Python
 env/
