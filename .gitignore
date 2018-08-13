@@ -116,7 +116,9 @@ autoparal.json
 out_OUT.nc
 out_EIG.nc
 out_EIG
-out_EBANDS.agr
+*.agr
+*_msqd
+*_by_atom
 in_DEN*
 out_DEN*
 in_WFK*
@@ -140,3 +142,10 @@ out_BSR
 out_HAYDR_SAVE
 in_SCR*
 out_SCR*
+*_PHIBZ.nc
+*_PHDOS
+*_A2FW
+*_A2FW_QPTOPT3_A2FW
+*_A2FW_QPTOPT3_PH_A2FW
+*_THERMO
+*_PHGAMMA
