@@ -1,0 +1,460 @@
+
+.Version 8.9.3 of MRGDDB 
+.(MPI version, prepared for a x86_64_darwin16.7.0_gnu4.8 computer) 
+
+.Copyright (C) 1998-2018 ABINIT group . 
+ MRGDDB comes with ABSOLUTELY NO WARRANTY.
+ It is free software, and you are welcome to redistribute it
+ under certain conditions (GNU General Public License,
+ see ~abinit/COPYING or http://www.gnu.org/copyleft/gpl.txt).
+
+ ABINIT is a project of the Universite Catholique de Louvain,
+ Corning Inc. and other collaborators, see ~abinit/doc/developers/contributors.txt .
+ Please read https://docs.abinit.org/theory/acknowledgments for suggested
+ acknowledgments of the ABINIT effort.
+ For more information, see https://www.abinit.org .
+
+.Starting date : Mon 13 Aug 2018.
+- ( at 17h52 )
+  
+  Give name for output derivative database : 
+ /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/outdata/out_DDB
+  Give short description of the derivative database :
+ DDB file merged by ElasticWork on Mon Aug 13 17:52:09 2018
+  Give number of input ddbs, or 1 if input GS file
+          11
+  Give name for derivative database number           1  : 
+ /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t0/outdata/out_DDB
+  Give name for derivative database number           2  : 
+ /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t4/outdata/out_DDB
+  Give name for derivative database number           3  : 
+ /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t5/outdata/out_DDB
+  Give name for derivative database number           4  : 
+ /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t6/outdata/out_DDB
+  Give name for derivative database number           5  : 
+ /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t7/outdata/out_DDB
+  Give name for derivative database number           6  : 
+ /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t8/outdata/out_DDB
+  Give name for derivative database number           7  : 
+ /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t9/outdata/out_DDB
+  Give name for derivative database number           8  : 
+ /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t10/outdata/out_DDB
+  Give name for derivative database number           9  : 
+ /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t11/outdata/out_DDB
+  Give name for derivative database number          10  : 
+ /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t12/outdata/out_DDB
+  Give name for derivative database number          11  : 
+ /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t13/outdata/out_DDB
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t0/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t4/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t5/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t6/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t7/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t8/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t9/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t10/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t11/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t12/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t13/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t0/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t4/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t5/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t6/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t7/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t8/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t9/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t10/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t11/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t12/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t13/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+  read the input derivative database information
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t0/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ About to open file /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t0/outdata/out_DDB
+ read     2 blocks from the input DDB
+
+ read the input derivative database number     2
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t4/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ About to open file /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t4/outdata/out_DDB
+ no comparison between the current and input DDB information
+
+--- !COMMENT
+src_file: m_ddb.F90
+src_line: 3751
+message: |
+    No comparison/check is performed for the current and input DDB information 
+    because argument --nostrict was passed to the command line. 
+    Use at your own risk!
+...
+
+ Will try to merge this input DDB with the current one.
+ Current number of bloks =    2
+ Will read     1 blocks from the input DDB
+ Now, current number of bloks =    3
+
+ read the input derivative database number     3
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t5/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ About to open file /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t5/outdata/out_DDB
+ no comparison between the current and input DDB information
+
+--- !COMMENT
+src_file: m_ddb.F90
+src_line: 3751
+message: |
+    No comparison/check is performed for the current and input DDB information 
+    because argument --nostrict was passed to the command line. 
+    Use at your own risk!
+...
+
+ Will try to merge this input DDB with the current one.
+ Current number of bloks =    3
+ Will read     1 blocks from the input DDB
+ Now, current number of bloks =    4
+
+ read the input derivative database number     4
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t6/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ About to open file /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t6/outdata/out_DDB
+ no comparison between the current and input DDB information
+
+--- !COMMENT
+src_file: m_ddb.F90
+src_line: 3751
+message: |
+    No comparison/check is performed for the current and input DDB information 
+    because argument --nostrict was passed to the command line. 
+    Use at your own risk!
+...
+
+ Will try to merge this input DDB with the current one.
+ Current number of bloks =    4
+ Will read     1 blocks from the input DDB
+ Now, current number of bloks =    5
+
+ read the input derivative database number     5
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t7/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ About to open file /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t7/outdata/out_DDB
+ no comparison between the current and input DDB information
+
+--- !COMMENT
+src_file: m_ddb.F90
+src_line: 3751
+message: |
+    No comparison/check is performed for the current and input DDB information 
+    because argument --nostrict was passed to the command line. 
+    Use at your own risk!
+...
+
+ Will try to merge this input DDB with the current one.
+ Current number of bloks =    5
+ Will read     1 blocks from the input DDB
+ Now, current number of bloks =    6
+
+ read the input derivative database number     6
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t8/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ About to open file /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t8/outdata/out_DDB
+ no comparison between the current and input DDB information
+
+--- !COMMENT
+src_file: m_ddb.F90
+src_line: 3751
+message: |
+    No comparison/check is performed for the current and input DDB information 
+    because argument --nostrict was passed to the command line. 
+    Use at your own risk!
+...
+
+ Will try to merge this input DDB with the current one.
+ Current number of bloks =    6
+ Will read     1 blocks from the input DDB
+ Now, current number of bloks =    7
+
+ read the input derivative database number     7
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t9/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ About to open file /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t9/outdata/out_DDB
+ no comparison between the current and input DDB information
+
+--- !COMMENT
+src_file: m_ddb.F90
+src_line: 3751
+message: |
+    No comparison/check is performed for the current and input DDB information 
+    because argument --nostrict was passed to the command line. 
+    Use at your own risk!
+...
+
+ Will try to merge this input DDB with the current one.
+ Current number of bloks =    7
+ Will read     1 blocks from the input DDB
+ Now, current number of bloks =    8
+
+ read the input derivative database number     8
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t10/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ About to open file /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t10/outdata/out_DDB
+ no comparison between the current and input DDB information
+
+--- !COMMENT
+src_file: m_ddb.F90
+src_line: 3751
+message: |
+    No comparison/check is performed for the current and input DDB information 
+    because argument --nostrict was passed to the command line. 
+    Use at your own risk!
+...
+
+ Will try to merge this input DDB with the current one.
+ Current number of bloks =    8
+ Will read     1 blocks from the input DDB
+ Now, current number of bloks =    9
+
+ read the input derivative database number     9
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t11/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ About to open file /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t11/outdata/out_DDB
+ no comparison between the current and input DDB information
+
+--- !COMMENT
+src_file: m_ddb.F90
+src_line: 3751
+message: |
+    No comparison/check is performed for the current and input DDB information 
+    because argument --nostrict was passed to the command line. 
+    Use at your own risk!
+...
+
+ Will try to merge this input DDB with the current one.
+ Current number of bloks =    9
+ Will read     1 blocks from the input DDB
+ Now, current number of bloks =   10
+
+ read the input derivative database number    10
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t12/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ About to open file /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t12/outdata/out_DDB
+ no comparison between the current and input DDB information
+
+--- !COMMENT
+src_file: m_ddb.F90
+src_line: 3751
+message: |
+    No comparison/check is performed for the current and input DDB information 
+    because argument --nostrict was passed to the command line. 
+    Use at your own risk!
+...
+
+ Will try to merge this input DDB with the current one.
+ Current number of bloks =   10
+ Will read     1 blocks from the input DDB
+ Now, current number of bloks =   11
+
+ read the input derivative database number    11
+ Opening DDB file: /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t13/outdata/out_DDB
+  inprep8 : nband(1)=           8
+        occ  0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01  0.20000000000000D+01
+             0.20000000000000D+01  0.20000000000000D+01
+ About to open file /Users/gmatteo/git_repos/abitutorials/abitutorials/elastic/flow_elastic_ngkpt_conv/w1/t13/outdata/out_DDB
+ no comparison between the current and input DDB information
+
+--- !COMMENT
+src_file: m_ddb.F90
+src_line: 3751
+message: |
+    No comparison/check is performed for the current and input DDB information 
+    because argument --nostrict was passed to the command line. 
+    Use at your own risk!
+...
+
+ Will try to merge this input DDB with the current one.
+ Current number of bloks =   11
+ Will read     1 blocks from the input DDB
+ Now, current number of bloks =   12
+ All DDBs have been read
+ check the equality of blocks, and eventually merge
+ merge block #    4 to block #    3
+ merge block #    5 to block #    3
+ merge block #    5 to block #    4
+ merge block #    6 to block #    3
+ merge block #    6 to block #    4
+ merge block #    6 to block #    5
+ merge block #    7 to block #    3
+ merge block #    7 to block #    4
+ merge block #    7 to block #    5
+ merge block #    7 to block #    6
+ merge block #    8 to block #    3
+ merge block #    8 to block #    4
+ merge block #    8 to block #    5
+ merge block #    8 to block #    6
+ merge block #    8 to block #    7
+ merge block #    9 to block #    3
+ merge block #    9 to block #    4
+ merge block #    9 to block #    5
+ merge block #    9 to block #    6
+ merge block #    9 to block #    7
+ merge block #    9 to block #    8
+ merge block #   10 to block #    3
+ merge block #   10 to block #    4
+ merge block #   10 to block #    5
+ merge block #   10 to block #    6
+ merge block #   10 to block #    7
+ merge block #   10 to block #    8
+ merge block #   10 to block #    9
+ merge block #   11 to block #    3
+ merge block #   11 to block #    4
+ merge block #   11 to block #    5
+ merge block #   11 to block #    6
+ merge block #   11 to block #    7
+ merge block #   11 to block #    8
+ merge block #   11 to block #    9
+ merge block #   11 to block #   10
+ merge block #   12 to block #    3
+ merge block #   12 to block #    4
+ merge block #   12 to block #    5
+ merge block #   12 to block #    6
+ merge block #   12 to block #    7
+ merge block #   12 to block #    8
+ merge block #   12 to block #    9
+ merge block #   12 to block #   10
+ merge block #   12 to block #   11
+     9 blocks are merged; the new DDB will have      3 blocks.
+ open the output database, write the preliminary information
+ write the DDB
+ Write bloc number   1
+ Write bloc number   2
+ Write bloc number   3
+ Bloc number   4 was merged, so do not write it
+ Bloc number   5 was merged, so do not write it
+ Bloc number   6 was merged, so do not write it
+ Bloc number   7 was merged, so do not write it
+ Bloc number   8 was merged, so do not write it
+ Bloc number   9 was merged, so do not write it
+ Bloc number  10 was merged, so do not write it
+ Bloc number  11 was merged, so do not write it
+ Bloc number  12 was merged, so do not write it
+-
+- Proc.   0 individual time (sec): cpu=          0.0  wall=          0.0
++mrgddb : the run completed successfully

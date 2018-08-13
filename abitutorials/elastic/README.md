@@ -27,8 +27,6 @@ to interact with the flow and:
 to access the documentation.
 The debug COMMAND is quite handy if something goes wrong!
 
-
-
 ## How to post-process the results
 
 
@@ -37,12 +35,4 @@ Once the calculation is completed, use:
     abiopen.py flow_elastic/w0/outdata/out_DDB
 
 to open the DDB file.
-Then start to follow the examples given in the HTML page and try to reproduce them.
-
-
-
-
-
-
-
-
+Then follow the examples given in the HTML page and try to reproduce them.

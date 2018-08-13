@@ -149,3 +149,7 @@ out_SCR*
 *_A2FW_QPTOPT3_PH_A2FW
 *_THERMO
 *_PHGAMMA
+out_PHBST.nc
+out_PHDOS.nc
+mrgdvdb.stdin
+mrgdvdb.stdout

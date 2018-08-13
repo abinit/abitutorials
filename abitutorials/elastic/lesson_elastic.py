@@ -12,7 +12,7 @@ related to strain for an insulator.
     - the atomic relaxation corrections to the elastic and piezoelectric tensor
 
 Here we follow the discussion presented in
-in the `the official tutorial <https://docs.abinit.org/tutorial/elastic/>`_
+in the `official tutorial <https://docs.abinit.org/tutorial/elastic/>`_
 
 The DDB file with all the perturbations will be produced automatically at the end of the run
 and saved in ``flow_elastic/w0/outdata/out_DDB``.
