@@ -16,7 +16,7 @@ Additional examples are available on the:
 
 * [AbiPy plot gallery](http://abinit.github.io/abipy/gallery/index.html)
 * [AbiPy flow gallery](http://abinit.github.io/abipy/flow_gallery/index.html)
-* [Pymatgen website](http://pymatgen.org/examples.html)
+* [Matgenb website](https://matgenb.materialsvirtuallab.org/)
 
 How to use the tutorials
 ========================
@@ -66,14 +66,15 @@ To open, for instance, the notebook for the first lesson, use:
     cd abitutorials
     jupyter notebook base1/lesson_base1.ipynb
 
-Acccessing the notebooks and installing jupyter
-===============================================
+Accessing the notebooks and installing jupyter
+==============================================
 
 First step, download the abitutorials
 
     git clone https://github.com/abinit/abitutorials
 
-In case you followed the conda way to [install Abipy and abinit](https://github.com/abinit/abipy), the installation of jupyter is very simple.
+In case you followed the conda way to [install Abipy and abinit](https://github.com/abinit/abipy), 
+the installation of jupyter is very simple.
 Be sure to install it *in the same conda environment* as Abipy and abinit, though.
 
 Inside the *abitutorials* directory, issue
@@ -81,7 +82,7 @@ Inside the *abitutorials* directory, issue
     conda install --file ./requirements.txt
 
 Then, you might also like to install some other python packages, that are used in selected tutorials or for specific abipy commands.
-Among the list, graphviz and python-graphviz, in order to allow the full vizualization of figures in the tutorials,
+Among the list, graphviz and python-graphviz, in order to allow the full visualization of figures in the tutorials,
 and pybtex if you want to extract references from CIF files .
 
     conda install graphviz
