@@ -5,7 +5,6 @@ ipywidgets
 networkx
 scikit-image
 #graphviz or python-graphviz if conda
-
 # Unit tests
 pytest
 pytest-cov

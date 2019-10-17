@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 """DFPT lesson: phonon band structure of AlAs with Born effective charges."""
-from __future__ import division, print_function, unicode_literals, absolute_import
-
 import sys
 import os
 

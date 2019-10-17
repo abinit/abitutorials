@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 """Calculations of the Fan-Migdal Debye-Waller self-energy in diamond."""
-from __future__ import print_function, division, unicode_literals, absolute_import
-
 import os
 import sys
 import numpy as np
