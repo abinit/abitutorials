@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# flake8: noqa
 """Setup script for abipy."""
 from __future__ import print_function
 
@@ -17,6 +18,7 @@ ext_modules = []
 # Useful globals and utility functions
 #-------------------------------------------------------------------------------
 
+
 # A little utility we'll need below, since glob() does NOT allow you to do exclusion on multiple endings!
 def file_doesnt_end_with(test, endings):
     """
@@ -34,6 +36,7 @@ def file_doesnt_end_with(test, endings):
 # Basic project information
 #---------------------------------------------------------------------------
 
+
 # release.py contains version, authors, license, url, keywords, etc.
 release_file = os.path.join('abipy','core','release.py')
 
@@ -44,6 +47,7 @@ with open(release_file) as f:
 #---------------------------------------------------------------------------
 # Find package data
 #---------------------------------------------------------------------------
+
 
 def find_package_data():
     """Find abipy's package_data."""
@@ -120,8 +124,9 @@ def cleanup():
         except (IOError, OSError):
             try:
                 os.unlink('abipy.egg-info')
-            except:
+            except Exception:
                 pass
+
 
 # List of external packages we rely on.
 # Note setup install will download them from Pypi if they are not available.

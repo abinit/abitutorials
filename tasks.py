@@ -1,3 +1,4 @@
+# flake8: noqa
 """
 Deployment file to facilitate AbiPy releases.
 Use invoke --list to get list of tasks
@@ -7,13 +8,14 @@ import os
 import subprocess
 
 from invoke import task
-from monty.os import cd
+#from monty.os import cd
 
 #from abipy.core.release import __version__ as CURRENT_VER
 #NEW_VER = datetime.datetime.today().strftime("%Y.%-m.%-d")
 
 ABIPY_ROOTDIR = os.path.dirname(__file__)
 #DOCS_DIR = os.path.join(ABIPY_ROOTDIR, "docs")
+
 
 @task
 def make_html(ctx):

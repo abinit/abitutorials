@@ -1,7 +1,7 @@
 """Tests for jupyter notebooks"""
 from __future__ import print_function, division, unicode_literals, absolute_import
 
-import sys
+#import sys
 import os
 import subprocess
 
@@ -9,7 +9,6 @@ import subprocess
 #pack_dir, x = os.path.split(pack_dir)
 #sys.path.insert(0, pack_dir)
 
-from glob import glob
 from monty.os.path import find_exts
 from abipy.core.testing import AbipyTest
 
@@ -23,6 +22,7 @@ EXPECTED_ERRORS = {
     #"lessons/python_primer/5 - Lists.ipynb": 2, # Exception examples
     #"lessons/python_primer/8 - Writing Functions.ipynb": 1, # Fill in example
 }
+
 
 class NotebookTest(AbipyTest):
 
