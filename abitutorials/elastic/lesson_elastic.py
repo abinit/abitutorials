@@ -18,7 +18,6 @@ The DDB file with all the perturbations will be produced automatically at the en
 and saved in ``flow_elastic/w0/outdata/out_DDB``.
 """
 import sys
-import os
 import numpy as np
 import abipy.abilab as abilab
 import abipy.data as abidata
@@ -41,17 +40,17 @@ def make_scf_input(ngkpt=(4, 4, 4)):
     # so that Abinit will recognize the correct spacegroup
     # (Hexagonal and rhombohedral lattices are a bit problematic).
     structure = abilab.Structure.from_abivars(
-	acell=[7.5389648144E+00, 7.5389648144E+00, 1.2277795374E+01],
+        acell=[7.5389648144E+00, 7.5389648144E+00, 1.2277795374E+01],
         natom=4,
         ntypat=2,
-	rprim=[ np.sqrt(0.75), 0.5, 0.0 ,
+        rprim=[ np.sqrt(0.75), 0.5, 0.0 ,
                -np.sqrt(0.75), 0.5, 0.0,
                           0.0, 0.0, 1.0],
         typat=[1, 1, 2, 2],
-	xred=[1/3, 2/3, 0,
+        xred=[1/3, 2/3, 0,
               2/3, 1/3, 1/2,
               1/3, 2/3, 3.7608588373E-01,
-	      2/3, 1/3, 8.7608588373E-01],
+              2/3, 1/3, 8.7608588373E-01],
         znucl=[13, 33],
     )
 
@@ -64,8 +63,8 @@ def make_scf_input(ngkpt=(4, 4, 4)):
         nband=8,
         ecut=6.0,
         ecutsm=0.5,        # Important when performing structural optimization
-	                   # with variable cell. All DFPT calculations should use
-			   # the same value to be consistent.
+                           # with variable cell. All DFPT calculations should use
+                           # the same value to be consistent.
         ngkpt=ngkpt,
         nshiftk=1,
         shiftk=[0.0, 0.0, 0.5],   # This choice preserves the hexagonal symmetry of the grid.
@@ -82,10 +81,10 @@ def build_flow(options=None):
     """
     Create a `Flow` for phonon calculations. The flow has one work with:
 
-	- 1 GS Task
-	- 3 DDK Task
-	- 4 Phonon Tasks (Gamma point)
-	- 6 Elastic tasks (3 uniaxial + 3 shear strain)
+        - 1 GS Task
+        - 3 DDK Task
+        - 4 Phonon Tasks (Gamma point)
+        - 6 Elastic tasks (3 uniaxial + 3 shear strain)
 
     The Phonon tasks and the elastic task will read the 3 DDK files produced at the beginning
     """

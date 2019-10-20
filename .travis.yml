@@ -26,7 +26,6 @@ install:
 
     # Add channels
     conda config --add channels conda-forge
-    conda config --add channels matsci
     conda config --add channels abinit
     # Install abinit and abipy from conda channels.
     conda install -y --file ./requirements.txt

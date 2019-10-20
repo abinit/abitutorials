@@ -5,9 +5,7 @@ Flow for E-PH calculations
 
 This flow computes the phonon linewidths and the Eliashberg function in Al.
 """
-import os
 import sys
-import numpy as np
 import abipy.data as abidata
 import abipy.abilab as abilab
 import abipy.flowtk as flowtk

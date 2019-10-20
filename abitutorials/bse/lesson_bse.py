@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 """Optical properties with excitonic effects (Bethe-Salpeter formalism)."""
 import sys
-import os
-import numpy as np
 import abipy.abilab as abilab
 import abipy.flowtk as flowtk
 import abipy.data as abidata

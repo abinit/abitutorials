@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 """Calculations of the Fan-Migdal Debye-Waller self-energy in diamond."""
-import os
 import sys
-import numpy as np
-import abipy.data as abidata
 import abipy.abilab as abilab
 import abipy.flowtk as flowtk
 

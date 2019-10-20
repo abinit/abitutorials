@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 import sys
-import os
 import abipy.data as abidata
 import abipy.abilab as abilab
 import abipy.flowtk as flowtk
