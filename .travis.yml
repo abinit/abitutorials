@@ -1,12 +1,15 @@
 language: python
 cache: pip
+
 sudo: false
+
 env:
   global:
   - ABINIT_VERSION=8.8.2
   - ABIPY_PYTEST=yes
   - OPENBLAS_NUM_THREADS=1
   - OMP_NUM_THREADS=1
+
 matrix:
   include:
   - os: linux
@@ -14,22 +17,18 @@ matrix:
     env:
     - ABIPY_INSTALLER=conda_environment
   - os: linux
-    python: 3.6
+    python: 3.7
     env:
     - ABIPY_INSTALLER=conda ABIPY_COVERALLS=yes
+
 install:
 - env
 - ulimit -s unlimited
 - |
   if [ "${ABIPY_INSTALLER}" == "conda" ]; then
     source dev_scripts/conda_get.sh
-
-    # Add channels
-    conda config --add channels conda-forge
-    conda config --add channels abinit
     # Install abinit and abipy from conda channels.
     conda install -y --file ./requirements.txt
-    conda install -y abinit
 
   elif [ "${ABIPY_INSTALLER}" == "conda_environment" ]; then
       # Build conda env from environment.yml produced with:
@@ -41,12 +40,16 @@ install:
 - mkdir -p ${HOME}/.abinit/abipy
 - cp managers/scheduler.yml ${HOME}/.abinit/abipy/scheduler.yml
 - cp managers/manager.yml ${HOME}/.abinit/abipy/manager.yml
+
 script: "./dev_scripts/runtests.sh"
+
 branches:
   only:
   - master
+
 after_success:
 - if [[ "${ABIPY_COVERALLS}" == "yes" ]]; then coveralls; fi
+
 notifications:
   email:
     recipients:

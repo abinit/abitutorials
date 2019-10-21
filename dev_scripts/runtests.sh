@@ -3,9 +3,9 @@ set -e  # exit on first error
 
 echo "PMG_MAPI_KEY: 8pkvwRLQSCVbW2Fe" > ${HOME}/.pmgrc.yaml
 
-abinit --version
-abinit --build
-abicheck.py --with-flow
+#abinit --version
+#abinit --build
+#abicheck.py --with-flow
 
 # Run unit tests with pytest.
 if [[ "${ABIPY_PYTEST}" == "yes" ]]; then 

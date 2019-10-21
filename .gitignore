@@ -156,3 +156,4 @@ mrgdvdb.stdout
 abitutorials/elastic/flow_elastic_ngkpt_conv/w*/t*/outdata/
 abitutorials/elastic/flow_elastic/w*/t*/outdata/
 abitutorials/*/flow_*/lesson_*.py
+style.log
