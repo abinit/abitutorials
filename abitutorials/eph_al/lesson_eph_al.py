@@ -89,7 +89,7 @@ def build_flow(options):
     ph_work = flowtk.PhononWork.from_scf_task(work0[0], ddb_ngqpt, is_ngqpt=True)
     flow.register_work(ph_work)
 
-    # Ssction for EPH calculation: compute linewidths with different WKK files.
+    # Ssction for EPH calculation: compute linewidths with different WFK files.
     eph_work = flowtk.Work()
     for ik, nk in enumerate(nk_list):
         # Each task uses a different WFK file. DDB and DBDB do not change.

@@ -32,8 +32,7 @@ def build_flow(options):
 
     # Set basic variables for GS part.
     gs_inp.set_vars(
-        istwfk="*1",
-        ecut=20.0,          # Too low, shout be ~30
+        ecut=25.0,          # Too low, should be ~30
         nband=4,
         tolvrs=1e-8,
     )
@@ -85,18 +84,16 @@ def build_flow(options):
         optdriver=7,             # Enter EPH driver.
         eph_task=4,              # Activate computation of EPH self-energy.
         ddb_ngqpt=ddb_ngqpt,     # q-mesh used to produce the DDB file (must be consistent with DDB data)
-        symsigma=1,              # Use symmetries in self-energy integration (IBZ_k instead of BZ)
         nkptgw=1,
         kptgw=[0, 0, 0],
         bdgw=[1, 8],
         # For more k-points...
         #nkptgw=2,
-        #kptgw=[0, 0, 0,
-        #       0.5, 0, 0],
+        #kptgw=[0, 0, 0, 0.5, 0, 0],
         #bdgw=[1, 8, 1, 8],
-        #gw_qprange=-4,
         tmesh=[0, 200, 5],    # (start, step, num)
-        zcut="0.2 eV",
+        zcut="0.2 eV",        # Too large. needed to get reasonable results due to coarse q-mesh.
+        nfreqsp=301,          # Compute A(w)
     )
 
     # Set q-path for Fourier interpolation of phonons.
@@ -116,18 +113,9 @@ def build_flow(options):
     for eph_ngqpt_fine in [[4, 4, 4], [8, 8, 8]]:
         # Create empty work to contain EPH tasks with this value of eph_ngqpt_fine
         eph_work = flow.register_work(flowtk.Work())
-        #for nband in [50, 100, 200]:
         for nband in [100, 150, 200]:
             new_inp = eph_inp.new_with_vars(eph_ngqpt_fine=eph_ngqpt_fine, nband=nband)
             eph_work.register_eph_task(new_inp, deps=deps)
-
-    # Generate last work with our best parameters to compute the QP correction in the IBZ
-    # We include all occupied states and 4 empty bands.
-    # The QP corrections in the IBZ are then interpolate with star functions
-    #new_inp = eph_inp.new_with_vars(eph_ngqpt_fine=[8, 8, 8], nband=100)
-    #new_inp.pop_vars(["nkptgw", "kptgw", "bdgw"])
-    #new_inp["gw_qprange"] = -4
-    #flow.register_eph_task(new_inp, deps=deps, task_class=flowtk.EphTask, append=False)
 
     flow.allocate()
 
